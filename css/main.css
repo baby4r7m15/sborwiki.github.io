@@ -231,3 +231,64 @@ body {
 .link:hover {
   text-decoration: underline;
 }
+
+/* ───────── DYNAMIC HEADER ───────── */
+
+#wiki-header {
+  background: rgba(20, 55, 75, 0.95);
+  padding: 0 30px;
+}
+
+.wiki-header-inner {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-nav {
+  display: flex;
+  gap: 28px;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-label {
+  font-size: 13px;
+  letter-spacing: 0.8px;
+  cursor: pointer;
+  opacity: 0.85;
+}
+
+.nav-item:hover .nav-label {
+  opacity: 1;
+}
+
+.dropdown {
+  position: absolute;
+  top: 140%;
+  left: 0;
+  background: rgba(30, 60, 75, 0.95);
+  padding: 10px 0;
+  min-width: 180px;
+  display: none;
+  flex-direction: column;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.dropdown a {
+  padding: 8px 16px;
+  text-decoration: none;
+  color: #e6f7ff;
+  font-size: 13px;
+}
+
+.dropdown a:hover {
+  background: rgba(255,255,255,0.05);
+}
+
+.nav-item:hover .dropdown {
+  display: flex;
+}
