@@ -121,6 +121,14 @@ body {
   display: flex;
 }
 
+.nav-item::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  height: 10px;
+  width: 100%;
+}
 
 /* ==================================================
    HERO
