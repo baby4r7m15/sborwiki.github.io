@@ -12,31 +12,31 @@
 
 body {
   font-family: "Montserrat", sans-serif;
-  background: #0e1c23;
-  color: #222;
   line-height: 1.6;
+  color: #e6f7ff;
+
+  /* YOUR BACKGROUND IMAGE */
+  background:
+    linear-gradient(rgba(10, 30, 40, 0.85), rgba(10, 30, 40, 0.85)),
+    url("background.png") center / cover no-repeat fixed;
 }
 
 /* ==================================================
-   PAGE WRAPPER (Fandom Frame)
+   PAGE WRAPPER (REMOVE WHITE BOX)
 ================================================== */
 
 .page-wrapper {
-  max-width: 1300px;
-  margin: 40px auto;
-  background: #f5f6f7;
-  border: 1px solid #c8ccd1;
-  box-shadow: 0 4px 18px rgba(0,0,0,0.35);
+  width: 100%;
 }
 
 /* ==================================================
-   HEADER (Wiki Bar)
+   HEADER (Dark Wiki Bar)
 ================================================== */
 
 .wiki-header {
-  background: #202a30;
-  color: white;
-  border-bottom: 1px solid #000;
+  background: rgba(20, 35, 45, 0.95);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(6px);
 }
 
 .wiki-header-inner {
@@ -76,33 +76,43 @@ body {
 }
 
 .nav-label:hover {
-  color: white;
+  color: #ffffff;
 }
 
 /* ==================================================
-   HERO (Optional Banner Area)
+   HERO
 ================================================== */
 
 .hero {
-  background: #e9eaec;
-  padding: 40px 0;
+  padding: 60px 0;
   text-align: center;
-  border-bottom: 1px solid #c8ccd1;
 }
 
 .hero-logo {
   max-width: 600px;
+  filter: drop-shadow(0 8px 20px rgba(0,0,0,0.6));
 }
 
 /* ==================================================
-   CONTENT AREA
+   CONTENT AREA (GLASS PANEL)
 ================================================== */
 
 .content-area {
-  padding: 40px 50px;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 50px 60px;
+
+  background: rgba(20, 35, 45, 0.75);
+  backdrop-filter: blur(8px);
+
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 0 25px rgba(0, 200, 255, 0.05);
 }
 
-/* Page Title */
+/* ==================================================
+   PAGE TITLE
+================================================== */
 
 .page-title {
   font-size: 28px;
@@ -112,15 +122,13 @@ body {
 
 .page-subtitle {
   font-size: 14px;
-  color: #555;
+  color: #9ec6d6;
   margin-bottom: 30px;
 }
 
-/* Divider under title */
-
 .page-divider {
   height: 1px;
-  background: #c8ccd1;
+  background: rgba(255,255,255,0.1);
   margin-bottom: 30px;
 }
 
@@ -131,7 +139,7 @@ body {
 .content-grid {
   display: grid;
   grid-template-columns: 3fr 1fr;
-  gap: 40px;
+  gap: 50px;
   align-items: start;
 }
 
@@ -141,14 +149,13 @@ body {
 
 .content-left {
   font-size: 15px;
-  color: #202122;
 }
 
 .content-left h2 {
   font-size: 20px;
   margin-top: 40px;
   margin-bottom: 12px;
-  border-bottom: 1px solid #c8ccd1;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
   padding-bottom: 6px;
 }
 
@@ -166,20 +173,22 @@ body {
 }
 
 /* ==================================================
-   SIDEBAR (Infobox Style)
+   SIDEBAR (TRANSLUCENT INFOBOX)
 ================================================== */
 
 .content-right {
-  background: white;
-  border: 1px solid #c8ccd1;
-  padding: 18px;
+  background: rgba(30, 50, 65, 0.75);
+  padding: 20px;
   font-size: 14px;
+
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.08);
 }
 
 .content-right h3 {
   font-size: 15px;
   margin-bottom: 10px;
-  border-bottom: 1px solid #c8ccd1;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
   padding-bottom: 6px;
 }
 
@@ -192,11 +201,11 @@ body {
 }
 
 /* ==================================================
-   LINKS (Wiki Blue)
+   LINKS
 ================================================== */
 
 a {
-  color: #0645ad;
+  color: #00cfff;
   text-decoration: none;
 }
 
