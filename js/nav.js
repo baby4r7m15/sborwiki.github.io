@@ -1,57 +1,56 @@
-fetch("data/nav.json")
-  .then(res => res.json())
-  .then(data => {
-    const header = document.getElementById("wiki-header");
+document.addEventListener("DOMContentLoaded", () => {
+  const header = document.getElementById("wiki-header");
 
-    header.innerHTML = `
-      <div class="wiki-header-inner">
-        <div class="header-left">
-          <img src="${data.logo}" class="site-logo" />
-          <span class="site-title">${data.siteTitle}</span>
+  if (!header) {
+    console.error("wiki-header not found");
+    return;
+  }
+
+  header.innerHTML = `
+    <div class="wiki-header-inner">
+      <div class="header-left">
+        <img src="logo.png" class="site-logo">
+        <span class="site-title">Sword Blox Online Rebirth Wiki</span>
+      </div>
+
+      <nav class="header-nav">
+
+        <div class="nav-item">
+          <button class="nav-label">GAME</button>
+          <div class="dropdown">
+            <a href="#">Items</a>
+            <a href="#">Bosses</a>
+          </div>
         </div>
 
-        <nav class="header-nav">
-          ${data.menus.map((menu, index) => `
-            <div class="nav-item" data-index="${index}">
-              <button class="nav-label">
-                ${menu.label}
-              </button>
+        <div class="nav-item">
+          <button class="nav-label">COMMUNITY</button>
+          <div class="dropdown">
+            <a href="#">Discord</a>
+          </div>
+        </div>
 
-              <div class="dropdown">
-                ${menu.links.map(link => `
-                  <a href="${link.url}">${link.name}</a>
-                `).join("")}
-              </div>
-            </div>
-          `).join("")}
-        </nav>
-      </div>
-    `;
+      </nav>
+    </div>
+  `;
 
-    setupDropdowns();
-  });
+  const navItems = document.querySelectorAll(".nav-item");
 
-function setupDropdowns() {
-  const items = document.querySelectorAll(".nav-item");
-
-  items.forEach(item => {
+  navItems.forEach(item => {
     const button = item.querySelector(".nav-label");
 
     button.addEventListener("click", (e) => {
       e.stopPropagation();
 
-      // Close all others
-      items.forEach(i => {
+      navItems.forEach(i => {
         if (i !== item) i.classList.remove("active");
       });
 
-      // Toggle current
       item.classList.toggle("active");
     });
   });
 
-  // Close when clicking outside
   document.addEventListener("click", () => {
-    items.forEach(i => i.classList.remove("active"));
+    navItems.forEach(i => i.classList.remove("active"));
   });
-}
+});
