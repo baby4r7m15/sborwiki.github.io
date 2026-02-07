@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
   const header = document.getElementById("wiki-header");
 
   if (!header) {
@@ -6,51 +6,67 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
-  header.innerHTML = `
-    <div class="wiki-header-inner">
-      <div class="header-left">
-        <img src="logo.png" class="site-logo">
-        <span class="site-title">Sword Blox Online Rebirth Wiki</span>
-      </div>
+  try {
+    const response = await fetch("js/nav.json");
+    const data = await response.json();
 
-      <nav class="header-nav">
-
-        <div class="nav-item">
-          <button class="nav-label">GAME</button>
-          <div class="dropdown">
-            <a href="#">Items</a>
-            <a href="#">Bosses</a>
-          </div>
+    let navHTML = `
+      <div class="wiki-header-inner">
+        <div class="header-left">
+          <img src="${data.logo}" class="site-logo" alt="Site Logo">
+          <span class="site-title">${data.siteTitle}</span>
         </div>
+        <nav class="header-nav">
+    `;
 
+    data.menus.forEach(menu => {
+      navHTML += `
         <div class="nav-item">
-          <button class="nav-label">COMMUNITY</button>
+          <button class="nav-label">${menu.label}</button>
           <div class="dropdown">
-            <a href="#">Discord</a>
-          </div>
-        </div>
+      `;
 
-      </nav>
-    </div>
-  `;
-
-  const navItems = document.querySelectorAll(".nav-item");
-
-  navItems.forEach(item => {
-    const button = item.querySelector(".nav-label");
-
-    button.addEventListener("click", (e) => {
-      e.stopPropagation();
-
-      navItems.forEach(i => {
-        if (i !== item) i.classList.remove("active");
+      menu.links.forEach(link => {
+        navHTML += `
+          <a href="${link.url}">${link.name}</a>
+        `;
       });
 
-      item.classList.toggle("active");
+      navHTML += `
+          </div>
+        </div>
+      `;
     });
-  });
 
-  document.addEventListener("click", () => {
-    navItems.forEach(i => i.classList.remove("active"));
-  });
+    navHTML += `
+        </nav>
+      </div>
+    `;
+
+    header.innerHTML = navHTML;
+
+    // Dropdown toggle behavior
+    const navItems = document.querySelectorAll(".nav-item");
+
+    navItems.forEach(item => {
+      const button = item.querySelector(".nav-label");
+
+      button.addEventListener("click", (e) => {
+        e.stopPropagation();
+
+        navItems.forEach(i => {
+          if (i !== item) i.classList.remove("active");
+        });
+
+        item.classList.toggle("active");
+      });
+    });
+
+    document.addEventListener("click", () => {
+      navItems.forEach(i => i.classList.remove("active"));
+    });
+
+  } catch (error) {
+    console.error("Failed to load nav.json:", error);
+  }
 });
