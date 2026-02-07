@@ -39,7 +39,6 @@ body {
   justify-content: space-between;
 }
 
-/* Left */
 .header-left {
   display: flex;
   align-items: center;
@@ -56,15 +55,12 @@ body {
   font-weight: 600;
 }
 
-/* Navigation */
 .header-nav {
   display: flex;
   gap: 28px;
 }
 
-.nav-item {
-  position: relative;
-}
+.nav-item { position: relative; }
 
 .nav-label {
   background: none;
@@ -78,11 +74,8 @@ body {
   transition: opacity 0.2s ease;
 }
 
-.nav-label:hover {
-  opacity: 1;
-}
+.nav-label:hover { opacity: 1; }
 
-/* Dropdown */
 .dropdown {
   position: absolute;
   top: 100%;
@@ -112,9 +105,7 @@ body {
   color: #e6f7ff;
 }
 
-.dropdown a:hover {
-  background: rgba(255, 255, 255, 0.05);
-}
+.dropdown a:hover { background: rgba(255, 255, 255, 0.05); }
 
 /* ==================================================
    HERO
@@ -153,22 +144,6 @@ body {
 }
 
 /* ==================================================
-   WELCOME BANNER
-================================================== */
-.welcome {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 38px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 14px;
-  letter-spacing: 1px;
-  background: rgba(0, 0, 0, 0.45);
-}
-
-/* ==================================================
    MAIN CONTENT
 ================================================== */
 .main-content {
@@ -182,33 +157,6 @@ body {
 .narrow-section {
   max-width: 860px;
   margin: 0 auto;
-}
-
-/* ==================================================
-   PAGE BANNERS
-================================================== */
-.page-banner {
-  margin: 24px 0 20px;
-  padding: 12px 36px;
-  font-weight: 600;
-  letter-spacing: 1px;
-  text-align: center;
-  background: rgba(110, 110, 110, 0.65);
-  clip-path: polygon(
-    14px 0%,
-    calc(100% - 14px) 0%,
-    100% 50%,
-    calc(100% - 14px) 100%,
-    14px 100%,
-    0% 50%
-  );
-}
-
-.page-intro {
-  text-align: center;
-  font-size: 14px;
-  opacity: 0.85;
-  margin-bottom: 36px;
 }
 
 /* ==================================================
@@ -237,12 +185,34 @@ body {
 }
 
 /* ==================================================
+   PAGE BANNERS
+================================================== */
+.page-banner {
+  margin: 24px 0 20px;
+  padding: 12px 36px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-align: center;
+  background: rgba(110, 110, 110, 0.65);
+  clip-path: polygon(
+    14px 0%,
+    calc(100% - 14px) 0%,
+    100% 50%,
+    calc(100% - 14px) 100%,
+    14px 100%,
+    0% 50%
+  );
+}
+
+/* ==================================================
    RIGHT PANEL
 ================================================== */
 .content-right {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  justify-content: start;
+  max-width: 300px;
 }
 
 .side-logo {
