@@ -1,0 +1,28 @@
+{
+  "siteTitle": "Sword Blox Online: Rebirth Wiki",
+  "logo": "logo.png",
+  "menus": [
+    {
+      "label": "Game Info",
+      "links": [
+        { "name": "Skills", "url": "skills.html" },
+        { "name": "Items", "url": "items.html" },
+        { "name": "Blacksmithing", "url": "blacksmithing.html" }
+      ]
+    },
+    {
+      "label": "World",
+      "links": [
+        { "name": "Floor 1", "url": "floor1.html" },
+        { "name": "Floor 18", "url": "floor18.html" }
+      ]
+    },
+    {
+      "label": "Community",
+      "links": [
+        { "name": "Discord", "url": "#" },
+        { "name": "Roblox Group", "url": "#" }
+      ]
+    }
+  ]
+}
