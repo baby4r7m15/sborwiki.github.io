@@ -3,25 +3,26 @@
   "logo": "logo.png",
   "menus": [
     {
-      "label": "Game Info",
+      "label": "Information",
       "links": [
-        { "name": "Skills", "url": "skills.html" },
-        { "name": "Items", "url": "items.html" },
-        { "name": "Blacksmithing", "url": "blacksmithing.html" }
+        { "name": "Weapons", "url": "" },
+        { "name": "Protective Gear", "url": "" },
+        { "name": "Items", "url": "" },
+        { "name": "Blacksmithing", "url": "" },
+        { "name": "Guilds", "url": "" },
+        { "name": "Quests", "url": "" }}
       ]
     },
     {
-      "label": "World",
+      "label": "Events",
       "links": [
-        { "name": "Floor 1", "url": "floor1.html" },
-        { "name": "Floor 18", "url": "floor18.html" }
+        { "name": "Events", "url": "" }
       ]
     },
     {
-      "label": "Community",
+      "label": "Floors",
       "links": [
-        { "name": "Discord", "url": "#" },
-        { "name": "Roblox Group", "url": "#" }
+        { "name": "Floors", "url": "#" }
       ]
     }
   ]
