@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap");
 
-
 /* ================= RESET ================= */
 * {
   margin: 0;
@@ -185,6 +184,33 @@ body {
   margin-bottom: 8px;
 }
 
+/* ================= POLYGON BANNERS ================= */
+.page-banner {
+  margin: 30px 0 25px;
+  padding: 12px 40px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  color: #e6f7ff;
+  background: rgba(110, 110, 110, 0.65);
+  border: 1px solid rgba(255,255,255,0.08);
+  clip-path: polygon(
+    14px 0%,
+    calc(100% - 14px) 0%,
+    100% 50%,
+    calc(100% - 14px) 100%,
+    14px 100%,
+    0% 50%
+  );
+}
+
+.page-banner:hover {
+  background: rgba(110, 110, 110, 0.85);
+  box-shadow: 0 0 10px rgba(0,255,255,0.3);
+  transition: 0.3s;
+}
+
 /* ================= TABLE STYLES ================= */
 .info-table {
   width: 100%;
@@ -230,9 +256,19 @@ body {
   border-bottom-right-radius: 6px;
 }
 
-/* Optional highlight for rows */
 .info-table .highlight {
   background: rgba(255,182,193,0.15);
+}
+
+/* ================= NESTED BULLETS ================= */
+ul li ul {
+  margin-top: 5px;
+  margin-left: 20px;
+  list-style-type: disc;
+}
+
+ul li ul li {
+  color: #cceeff;
 }
 
 /* ================= SIDEBAR ================= */
