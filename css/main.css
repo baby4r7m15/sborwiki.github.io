@@ -231,3 +231,25 @@ a:hover {
     0% 50%
   );
 }
+
+/* ================= PAGE INTRO (Styled Like Banner) ================= */
+
+.page-intro-box {
+  margin: 20px 0 35px;
+  padding: 10px 30px;
+  text-align: center;
+  font-size: 14px;
+  opacity: 0.9;
+
+  background: rgba(60, 90, 110, 0.6);
+  border: 1px solid rgba(255,255,255,0.08);
+
+  clip-path: polygon(
+    14px 0%,
+    calc(100% - 14px) 0%,
+    100% 50%,
+    calc(100% - 14px) 100%,
+    14px 100%,
+    0% 50%
+  );
+}
