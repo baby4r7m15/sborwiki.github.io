@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap");
 
 /* ================= RESET ================= */
-
 * {
   margin: 0;
   padding: 0;
@@ -18,7 +17,6 @@ body {
 }
 
 /* ================= HEADER ================= */
-
 .wiki-header {
   background: #1a3a4a;
   border-bottom: 1px solid rgba(255,255,255,0.1);
@@ -69,7 +67,6 @@ body {
 }
 
 /* Dropdown */
-
 .dropdown {
   position: absolute;
   top: 100%;
@@ -98,7 +95,6 @@ body {
 }
 
 /* ================= PAGE WRAPPER ================= */
-
 .page-wrapper {
   max-width: 1200px;
   margin: 40px auto;
@@ -108,7 +104,6 @@ body {
 }
 
 /* ================= HERO ================= */
-
 .hero {
   text-align: center;
   padding: 50px 20px;
@@ -121,7 +116,6 @@ body {
 }
 
 /* ================= CONTENT AREA ================= */
-
 .content-area {
   padding: 40px 50px;
 }
@@ -134,7 +128,6 @@ body {
 }
 
 /* ================= MAIN CONTENT ================= */
-
 .page-title {
   font-size: 28px;
   font-weight: 700;
@@ -177,7 +170,6 @@ body {
 }
 
 /* ================= SIDEBAR ================= */
-
 .content-right {
   background: rgba(20, 40, 50, 0.75);
   padding: 20px;
@@ -201,7 +193,6 @@ body {
 }
 
 /* ================= LINKS ================= */
-
 a {
   color: #00cfff;
   text-decoration: none;
@@ -212,7 +203,6 @@ a:hover {
 }
 
 /* ================= POLYGON UI SYSTEM ================= */
-
 .page-banner,
 .page-intro-box {
   margin: 30px 0 25px;
@@ -236,3 +226,138 @@ a:hover {
   );
 }
 
+/* ================= MOBILE RESPONSIVE ================= */
+@media (max-width: 1024px) {
+  .page-wrapper {
+    margin: 30px 20px;
+  }
+
+  .hero {
+    padding: 40px 20px;
+  }
+
+  .hero-logo {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .content-area {
+    padding: 30px 20px;
+  }
+
+  .content-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .content-right {
+    width: 100%;
+    padding: 15px;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* HEADER */
+  .wiki-header-inner {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 10px 20px;
+  }
+
+  .wiki-logo {
+    width: 28px;
+  }
+
+  .wiki-title {
+    font-size: 14px;
+  }
+
+  .wiki-nav {
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    background: rgba(26, 58, 74, 0.95);
+    margin-top: 10px;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  .wiki-nav.active {
+    display: flex;
+  }
+
+  .nav-item {
+    width: 100%;
+  }
+
+  .nav-label {
+    display: block;
+    padding: 10px 15px;
+    font-size: 14px;
+    opacity: 1;
+  }
+
+  .dropdown {
+    position: static;
+    display: none;
+    flex-direction: column;
+    background: rgba(36, 76, 95, 0.95);
+    border-radius: 0;
+    padding: 5px 0;
+  }
+
+  .nav-item.active .dropdown {
+    display: flex;
+  }
+
+  .dropdown a {
+    padding: 10px 20px;
+  }
+
+  .hamburger {
+    display: block;
+    font-size: 24px;
+    cursor: pointer;
+    color: #e6f7ff;
+  }
+
+  .wiki-left {
+    gap: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 15px;
+  }
+
+  .page-intro-box,
+  .info-box,
+  .page-banner {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  .content-area {
+    padding: 20px 15px;
+  }
+
+  .page-title {
+    font-size: 22px;
+  }
+
+  .section-heading {
+    font-size: 18px;
+  }
+
+  .content-right h3 {
+    font-size: 15px;
+  }
+}
+
+/* ================= IMAGE SCALING ================= */
+img {
+  max-width: 100%;
+  height: auto;
+}
