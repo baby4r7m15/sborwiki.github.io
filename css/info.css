@@ -1,0 +1,306 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap");
+
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background:
+    linear-gradient(rgba(10, 30, 40, 0.85), rgba(10, 30, 40, 0.85)),
+    url("background.png") center / cover no-repeat fixed;
+  color: #e6f7ff;
+  line-height: 1.6;
+}
+
+/* ================= HEADER ================= */
+.wiki-header {
+  background: #1a3a4a;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.wiki-header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 30px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.wiki-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.wiki-logo {
+  width: 34px;
+}
+
+.wiki-title {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.wiki-nav {
+  display: flex;
+  gap: 25px;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-label {
+  font-size: 13px;
+  cursor: pointer;
+  opacity: 0.85;
+}
+
+.nav-label:hover {
+  opacity: 1;
+}
+
+/* Dropdown */
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #244c5f;
+  min-width: 180px;
+  padding: 8px 0;
+  display: none;
+  flex-direction: column;
+  border-radius: 4px;
+}
+
+.dropdown a {
+  padding: 8px 14px;
+  font-size: 13px;
+  text-decoration: none;
+  color: #e6f7ff;
+}
+
+.dropdown a:hover {
+  background: rgba(255,255,255,0.08);
+}
+
+.nav-item:hover .dropdown {
+  display: flex;
+}
+
+/* ================= PAGE WRAPPER ================= */
+.page-wrapper {
+  max-width: 1200px;
+  margin: 40px auto;
+  background: rgba(15, 35, 45, 0.85);
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+}
+
+/* ================= HERO ================= */
+.hero {
+  text-align: center;
+  padding: 50px 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.hero-logo {
+  max-width: 600px;
+  width: 90%;
+}
+
+/* ================= CONTENT AREA ================= */
+.content-area {
+  padding: 40px 50px;
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 50px;
+  align-items: start;
+}
+
+/* ================= MAIN CONTENT ================= */
+.page-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.page-divider {
+  height: 1px;
+  background: rgba(255,255,255,0.1);
+  margin-bottom: 25px;
+}
+
+.page-intro-box {
+  margin: 30px 0 25px;
+  padding: 12px 40px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  color: #e6f7ff;
+  background: rgba(110, 110, 110, 0.65);
+  border: 1px solid rgba(255,255,255,0.08);
+  clip-path: polygon(
+    14px 0%,
+    calc(100% - 14px) 0%,
+    100% 50%,
+    calc(100% - 14px) 100%,
+    14px 100%,
+    0% 50%
+  );
+}
+
+.section-heading {
+  margin-top: 50px;
+  margin-bottom: 15px;
+  font-size: 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  padding-bottom: 6px;
+}
+
+.info-box {
+  background: rgba(30, 50, 65, 0.65);
+  padding: 18px 22px;
+  margin-bottom: 25px;
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.info-box ul {
+  padding-left: 20px;
+}
+
+.info-box li {
+  margin-bottom: 8px;
+}
+
+/* ================= TABLE STYLES ================= */
+.info-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 25px;
+  background: rgba(30, 50, 65, 0.65);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,255,255,0.1);
+}
+
+.info-table th,
+.info-table td {
+  padding: 12px 15px;
+  text-align: left;
+  font-size: 14px;
+  color: #e6f7ff;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.info-table th {
+  background: rgba(70, 130, 180, 0.6);
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+.info-table tbody tr:hover {
+  background: rgba(0,255,255,0.1);
+}
+
+.info-table thead tr:first-child th:first-child {
+  border-top-left-radius: 6px;
+}
+.info-table thead tr:first-child th:last-child {
+  border-top-right-radius: 6px;
+}
+.info-table tbody tr:last-child td:first-child {
+  border-bottom-left-radius: 6px;
+}
+.info-table tbody tr:last-child td:last-child {
+  border-bottom-right-radius: 6px;
+}
+
+/* Optional highlight for rows */
+.info-table .highlight {
+  background: rgba(255,182,193,0.15);
+}
+
+/* ================= SIDEBAR ================= */
+.content-right {
+  background: rgba(20, 40, 50, 0.75);
+  padding: 20px;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 6px;
+}
+
+.content-right h3 {
+  margin-bottom: 12px;
+  font-size: 16px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  padding-bottom: 6px;
+}
+
+.content-right ul {
+  padding-left: 18px;
+}
+
+.content-right li {
+  margin-bottom: 6px;
+}
+
+/* ================= LINKS ================= */
+a {
+  color: #00cfff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ================= MOBILE RESPONSIVE ================= */
+@media (max-width: 1024px) {
+  .page-wrapper { margin: 30px 20px; }
+  .hero { padding: 40px 20px; }
+  .hero-logo { width: 100%; max-width: 100%; }
+  .content-area { padding: 30px 20px; }
+  .content-grid { grid-template-columns: 1fr; gap: 30px; }
+  .content-right { width: 100%; padding: 15px; margin-top: 20px; }
+}
+
+@media (max-width: 768px) {
+  .wiki-header-inner { flex-wrap: wrap; height: auto; padding: 10px 20px; }
+  .wiki-logo { width: 28px; }
+  .wiki-title { font-size: 14px; }
+  .wiki-nav { width: 100%; display: none; flex-direction: column; background: rgba(26,58,74,0.95); margin-top: 10px; border-radius: 6px; overflow: hidden; }
+  .wiki-nav.active { display: flex; }
+  .nav-item { width: 100%; }
+  .nav-label { display: block; padding: 10px 15px; font-size: 14px; opacity: 1; }
+  .dropdown { position: static; display: none; flex-direction: column; background: rgba(36,76,95,0.95); border-radius: 0; padding: 5px 0; }
+  .nav-item.active .dropdown { display: flex; }
+  .dropdown a { padding: 10px 20px; }
+}
+
+@media (max-width: 480px) {
+  body { font-size: 15px; }
+  .page-intro-box, .info-box, .page-banner { padding: 10px 20px; font-size: 14px; }
+  .content-area { padding: 20px 15px; }
+  .page-title { font-size: 22px; }
+  .section-heading { font-size: 18px; }
+  .content-right h3 { font-size: 15px; }
+}
+
+/* ================= IMAGE SCALING ================= */
+img {
+  max-width: 100%;
+  height: auto;
+}
