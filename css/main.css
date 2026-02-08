@@ -1,8 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap");
 
-/* ==================================================
-   RESET
-================================================== */
+/* ================= RESET ================= */
 
 * {
   margin: 0;
@@ -12,38 +10,25 @@
 
 body {
   font-family: "Montserrat", sans-serif;
-  line-height: 1.6;
-  color: #e6f7ff;
-
-  /* YOUR BACKGROUND IMAGE */
   background:
     linear-gradient(rgba(10, 30, 40, 0.85), rgba(10, 30, 40, 0.85)),
     url("background.png") center / cover no-repeat fixed;
+  color: #e6f7ff;
+  line-height: 1.6;
 }
 
-/* ==================================================
-   PAGE WRAPPER (REMOVE WHITE BOX)
-================================================== */
-
-.page-wrapper {
-  width: 100%;
-}
-
-/* ==================================================
-   HEADER (Dark Wiki Bar)
-================================================== */
+/* ================= HEADER ================= */
 
 .wiki-header {
-  background: rgba(20, 35, 45, 0.95);
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-  backdrop-filter: blur(6px);
+  background: #1a3a4a;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
 .wiki-header-inner {
   max-width: 1200px;
   margin: 0 auto;
-  height: 60px;
   padding: 0 30px;
+  height: 60px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -69,72 +54,77 @@ body {
   gap: 25px;
 }
 
+.nav-item {
+  position: relative;
+}
+
 .nav-label {
   font-size: 13px;
   cursor: pointer;
-  color: #cfd8dc;
+  opacity: 0.85;
 }
 
 .nav-label:hover {
-  color: #ffffff;
+  opacity: 1;
 }
 
-/* ==================================================
-   HERO
-================================================== */
+/* Dropdown */
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #244c5f;
+  min-width: 180px;
+  padding: 8px 0;
+  display: none;
+  flex-direction: column;
+  border-radius: 4px;
+}
+
+.dropdown a {
+  padding: 8px 14px;
+  font-size: 13px;
+  text-decoration: none;
+  color: #e6f7ff;
+}
+
+.dropdown a:hover {
+  background: rgba(255,255,255,0.08);
+}
+
+.nav-item:hover .dropdown {
+  display: flex;
+}
+
+/* ================= PAGE WRAPPER ================= */
+
+.page-wrapper {
+  max-width: 1200px;
+  margin: 40px auto;
+  background: rgba(15, 35, 45, 0.85);
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+}
+
+/* ================= HERO ================= */
 
 .hero {
-  padding: 60px 0;
   text-align: center;
+  padding: 50px 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
 .hero-logo {
   max-width: 600px;
-  filter: drop-shadow(0 8px 20px rgba(0,0,0,0.6));
+  width: 90%;
 }
 
-/* ==================================================
-   CONTENT AREA (GLASS PANEL)
-================================================== */
+/* ================= CONTENT AREA ================= */
 
 .content-area {
-  max-width: 1200px;
-  margin: 40px auto;
-  padding: 50px 60px;
-
-  background: rgba(20, 35, 45, 0.75);
-  backdrop-filter: blur(8px);
-
-  border-radius: 8px;
-  border: 1px solid rgba(255,255,255,0.08);
-  box-shadow: 0 0 25px rgba(0, 200, 255, 0.05);
+  padding: 40px 50px;
 }
-
-/* ==================================================
-   PAGE TITLE
-================================================== */
-
-.page-title {
-  font-size: 28px;
-  font-weight: 700;
-  margin-bottom: 10px;
-}
-
-.page-subtitle {
-  font-size: 14px;
-  color: #9ec6d6;
-  margin-bottom: 30px;
-}
-
-.page-divider {
-  height: 1px;
-  background: rgba(255,255,255,0.1);
-  margin-bottom: 30px;
-}
-
-/* ==================================================
-   GRID LAYOUT
-================================================== */
 
 .content-grid {
   display: grid;
@@ -143,51 +133,61 @@ body {
   align-items: start;
 }
 
-/* ==================================================
-   MAIN CONTENT
-================================================== */
+/* ================= MAIN CONTENT ================= */
 
-.content-left {
-  font-size: 15px;
+.page-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 10px;
 }
 
-.content-left h2 {
+.page-divider {
+  height: 1px;
+  background: rgba(255,255,255,0.1);
+  margin-bottom: 25px;
+}
+
+.page-intro {
+  margin-bottom: 25px;
+  opacity: 0.85;
+}
+
+.section-heading {
+  margin-top: 50px;
+  margin-bottom: 15px;
   font-size: 20px;
-  margin-top: 40px;
-  margin-bottom: 12px;
   border-bottom: 1px solid rgba(255,255,255,0.1);
   padding-bottom: 6px;
 }
 
-.content-left p {
-  margin-bottom: 16px;
-}
-
-.content-left ul {
-  padding-left: 22px;
-  margin-bottom: 20px;
-}
-
-.content-left li {
-  margin-bottom: 8px;
-}
-
-/* ==================================================
-   SIDEBAR (TRANSLUCENT INFOBOX)
-================================================== */
-
-.content-right {
-  background: rgba(30, 50, 65, 0.75);
-  padding: 20px;
-  font-size: 14px;
-
+.info-box {
+  background: rgba(30, 50, 65, 0.65);
+  padding: 18px 22px;
+  margin-bottom: 25px;
   border-radius: 6px;
   border: 1px solid rgba(255,255,255,0.08);
 }
 
+.info-box ul {
+  padding-left: 20px;
+}
+
+.info-box li {
+  margin-bottom: 8px;
+}
+
+/* ================= SIDEBAR ================= */
+
+.content-right {
+  background: rgba(20, 40, 50, 0.75);
+  padding: 20px;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 6px;
+}
+
 .content-right h3 {
-  font-size: 15px;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
+  font-size: 16px;
   border-bottom: 1px solid rgba(255,255,255,0.1);
   padding-bottom: 6px;
 }
@@ -200,9 +200,7 @@ body {
   margin-bottom: 6px;
 }
 
-/* ==================================================
-   LINKS
-================================================== */
+/* ================= LINKS ================= */
 
 a {
   color: #00cfff;
