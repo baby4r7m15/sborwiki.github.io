@@ -267,6 +267,17 @@ body {
   background: rgba(0,255,255,0.1);
 }
 
+.skill-gif {
+  width: 80px;          /* adjust size if needed */
+  height: auto;
+  border-radius: 4px;
+  box-shadow: 0 0 8px rgba(0,255,255,0.25);
+  transition: 0.2s ease;
+}
+
+.skill-gif:hover {
+  transform: scale(1.05);
+}
 /* ================= SIDEBAR ================= */
 .content-right {
   background: rgba(20, 40, 50, 0.75);
