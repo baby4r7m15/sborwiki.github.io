@@ -128,6 +128,30 @@ body {
 }
 
 /* ================= MAIN CONTENT ================= */
+.content-left {
+  position: relative;          /* Needed for back link positioning */
+  padding-top: 45px;           /* Space for back link */
+}
+
+/* Back to Main Page Link */
+.back-link {
+  position: absolute;
+  top: 12px;
+  left: 18px;
+  font-size: 0.85rem;
+  color: #9fdcff;
+  text-decoration: none;
+  font-weight: 500;
+  opacity: 0.85;
+  transition: 0.25s ease;
+}
+
+.back-link:hover {
+  opacity: 1;
+  color: #ffb3f5;
+  text-shadow: 0 0 6px rgba(255, 179, 245, 0.8);
+}
+
 .page-title {
   font-size: 28px;
   font-weight: 700;
@@ -243,34 +267,6 @@ body {
   background: rgba(0,255,255,0.1);
 }
 
-.info-table thead tr:first-child th:first-child {
-  border-top-left-radius: 6px;
-}
-.info-table thead tr:first-child th:last-child {
-  border-top-right-radius: 6px;
-}
-.info-table tbody tr:last-child td:first-child {
-  border-bottom-left-radius: 6px;
-}
-.info-table tbody tr:last-child td:last-child {
-  border-bottom-right-radius: 6px;
-}
-
-.info-table .highlight {
-  background: rgba(255,182,193,0.15);
-}
-
-/* ================= NESTED BULLETS ================= */
-ul li ul {
-  margin-top: 5px;
-  margin-left: 20px;
-  list-style-type: disc;
-}
-
-ul li ul li {
-  color: #cceeff;
-}
-
 /* ================= SIDEBAR ================= */
 .content-right {
   background: rgba(20, 40, 50, 0.75);
@@ -302,38 +298,6 @@ a {
 
 a:hover {
   text-decoration: underline;
-}
-
-/* ================= MOBILE RESPONSIVE ================= */
-@media (max-width: 1024px) {
-  .page-wrapper { margin: 30px 20px; }
-  .hero { padding: 40px 20px; }
-  .hero-logo { width: 100%; max-width: 100%; }
-  .content-area { padding: 30px 20px; }
-  .content-grid { grid-template-columns: 1fr; gap: 30px; }
-  .content-right { width: 100%; padding: 15px; margin-top: 20px; }
-}
-
-@media (max-width: 768px) {
-  .wiki-header-inner { flex-wrap: wrap; height: auto; padding: 10px 20px; }
-  .wiki-logo { width: 28px; }
-  .wiki-title { font-size: 14px; }
-  .wiki-nav { width: 100%; display: none; flex-direction: column; background: rgba(26,58,74,0.95); margin-top: 10px; border-radius: 6px; overflow: hidden; }
-  .wiki-nav.active { display: flex; }
-  .nav-item { width: 100%; }
-  .nav-label { display: block; padding: 10px 15px; font-size: 14px; opacity: 1; }
-  .dropdown { position: static; display: none; flex-direction: column; background: rgba(36,76,95,0.95); border-radius: 0; padding: 5px 0; }
-  .nav-item.active .dropdown { display: flex; }
-  .dropdown a { padding: 10px 20px; }
-}
-
-@media (max-width: 480px) {
-  body { font-size: 15px; }
-  .page-intro-box, .info-box, .page-banner { padding: 10px 20px; font-size: 14px; }
-  .content-area { padding: 20px 15px; }
-  .page-title { font-size: 22px; }
-  .section-heading { font-size: 18px; }
-  .content-right h3 { font-size: 15px; }
 }
 
 /* ================= IMAGE SCALING ================= */
