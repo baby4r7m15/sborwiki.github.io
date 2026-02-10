@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <title>Sword Blox Online Rebirth Wiki</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="/css/main.css" />
 </head>
 
 <body>
@@ -13,12 +13,15 @@
 
   <header class="wiki-header">
     <div class="wiki-header-inner">
+
       <div class="wiki-left">
-        <img src="logo.png" class="wiki-logo" alt="Logo" />
+        <img src="/logo.png" class="wiki-logo" alt="Logo" />
         <span class="wiki-title">Sword Blox Online: Rebirth Wiki</span>
       </div>
 
-      <nav class="wiki-nav">
+      <div class="hamburger" id="hamburger">☰</div>
+
+      <nav class="wiki-nav" id="wikiNav">
         <div class="nav-item">
           <span class="nav-label">Information</span>
           <div class="dropdown">
@@ -45,6 +48,7 @@
           </div>
         </div>
       </nav>
+
     </div>
   </header>
 
@@ -54,7 +58,7 @@
 
     <!-- HERO -->
     <section class="hero">
-      <img src="Sborlogotext.png" class="hero-logo" alt="SBO Logo">
+      <img src="/Sborlogotext.png" class="hero-logo" alt="SBO Logo">
     </section>
 
     <!-- CONTENT -->
@@ -68,7 +72,9 @@
           <div class="page-intro-box">
             Welcome to the Sword Blox Online: Rebirth Unofficial Wiki!
           </div>
-          <p>Please report and incorrect or missing information to the Official Discord!</p>
+
+          <p>Please report any incorrect or missing information to the Official Discord!</p>
+
           <p>
             <strong>Sword Blox Online: Rebirth</strong> is currently owned by Zuyashi
             and is receiving constant updates from an active development team.
@@ -77,15 +83,8 @@
           <p>
             We are currently updating the entire website with up-to-date
             information to match the latest game updates.
-            Updates to the wiki will come steadily as improvements are made.
           </p>
 
-          <p>
-            The SBO:R Wiki serves as a reliable source of information
-            maintained by the SBO:R Staff Team.
-          </p>
-
-          <!-- WHAT'S NEW -->
           <div class="page-banner">« What's New »</div>
 
           <div class="info-box">
@@ -95,15 +94,14 @@
                 <a href="https://sborwiki.com">
                   Wiki Homepage
                 </a>
-                from the official Wiki page.
               </li>
-<li>
+              <li>
                 Added
                 <a href="https://sborwiki.com/information/weapons.html">
                   Weapons Page
                 </a>
               </li>
-<li>
+              <li>
                 Added
                 <a href="https://sborwiki.com/information/one-hand.html">
                   One Handed Weapons Page
@@ -112,7 +110,6 @@
             </ul>
           </div>
 
-          <!-- SOCIAL -->
           <div class="page-banner">« Social »</div>
 
           <div class="info-box">
@@ -149,10 +146,12 @@
             <li>Exiled_01</li>
             <li>Celestial_Paradox</li>
           </ul>
-<p>Unofficial Wiki</p>
-<ul>
-<li>XxBelleDevxX</li>
-</ul>
+
+          <p>Unofficial Wiki</p>
+
+          <ul>
+            <li>XxBelleDevxX</li>
+          </ul>
 
         </aside>
 
@@ -161,6 +160,25 @@
     </div>
 
   </div>
+
+  <!-- ================= MOBILE SCRIPT ================= -->
+
+  <script>
+    const hamburger = document.getElementById("hamburger");
+    const nav = document.getElementById("wikiNav");
+
+    hamburger.addEventListener("click", () => {
+      nav.classList.toggle("active");
+    });
+
+    document.querySelectorAll(".nav-label").forEach(label => {
+      label.addEventListener("click", function () {
+        if (window.innerWidth <= 768) {
+          this.parentElement.classList.toggle("active");
+        }
+      });
+    });
+  </script>
 
 </body>
 </html>
