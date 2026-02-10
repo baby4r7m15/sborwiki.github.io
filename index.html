@@ -201,25 +201,40 @@
     });
   </script>
 
-  <div id="popup-overlay">
-  <div id="sao-popup">
-    <div class="sao-popup-header">SYSTEM MESSAGE</div>
-
-    <div class="sao-popup-body">
-      This site is under construction.<br>
-      Some data may be incomplete or inaccurate.
-    </div>
-
-    <button class="sao-popup-button" onclick="closePopup()">
-      CONFIRM
-    </button>
+<div id="sao-toast" role="status" aria-live="polite">
+  <div class="sao-toast-header">SYSTEM MESSAGE</div>
+  <div class="sao-toast-body">
+    This site is under construction. Some data may be incomplete or inaccurate.
   </div>
+  <button
+    class="sao-toast-close"
+    type="button"
+    aria-label="Close system message"
+  >✕</button>
 </div>
 <script>
-  function closePopup() {
-    document.getElementById("popup-overlay").style.display = "none";
+  const toast = document.getElementById("sao-toast");
+  const closeBtn = toast.querySelector(".sao-toast-close");
+
+  function showToast() {
+    toast.classList.remove("hide");
+    toast.classList.add("show");
   }
+
+  function hideToast() {
+    toast.classList.remove("show");
+    toast.classList.add("hide");
+  }
+
+  closeBtn.addEventListener("click", hideToast);
+
+  // show on load
+  showToast();
+
+  // auto-hide after 10 seconds
+  setTimeout(hideToast, 10000);
 </script>
+
 
 </body>
 </html>
