@@ -1,33 +1,56 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap");
 
-/* ================= RESET ================= */
+/* =====================================================
+   RESET
+===================================================== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* =====================================================
+   BASE / BODY
+===================================================== */
 body {
   font-family: "Montserrat", sans-serif;
+  letter-spacing: 0.3px;
+  color: #e6f7ff;
+  line-height: 1.7;
+
   background:
     linear-gradient(rgba(10, 30, 40, 0.85), rgba(10, 30, 40, 0.85)),
     url("/css/background.png") center / cover no-repeat;
-  color: #e6f7ff;
-  line-height: 1.6;
 }
 
-/* Desktop only */
+/* Desktop parallax effect */
 @media (min-width: 1025px) {
   body {
     background-attachment: fixed;
   }
 }
 
-
-/* ================= HEADER ================= */
+/* =====================================================
+   HEADER (Upgraded SAO Style)
+===================================================== */
 .wiki-header {
-  background: #1a3a4a;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  background: linear-gradient(
+    to right,
+    rgba(0, 30, 45, 0.95),
+    rgba(0, 55, 75, 0.85)
+  );
+
+  border-bottom: 1px solid rgba(0, 255, 255, 0.25);
+  backdrop-filter: blur(6px);
 }
 
 .wiki-header-inner {
@@ -35,6 +58,7 @@ body {
   margin: 0 auto;
   padding: 0 30px;
   height: 60px;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -55,9 +79,20 @@ body {
   font-size: 15px;
 }
 
+/* =====================================================
+   NAVIGATION
+===================================================== */
+.hamburger {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #e6f7ff;
+}
+
 .wiki-nav {
   display: flex;
   gap: 25px;
+  transition: all 0.3s ease;
 }
 
 .nav-item {
@@ -68,10 +103,12 @@ body {
   font-size: 13px;
   cursor: pointer;
   opacity: 0.85;
+  transition: 0.2s ease;
 }
 
 .nav-label:hover {
   opacity: 1;
+  color: #00f7ff;
 }
 
 /* Dropdown */
@@ -79,13 +116,16 @@ body {
   position: absolute;
   top: 100%;
   left: 0;
-  background: #244c5f;
+
+  background: rgba(0, 45, 60, 0.95);
+  border: 1px solid rgba(0, 255, 255, 0.25);
+  border-radius: 4px;
+
   min-width: 180px;
   padding: 8px 0;
+
   display: none;
   flex-direction: column;
-  border-radius: 4px;
-  z-index: 100;
 }
 
 .dropdown a {
@@ -93,30 +133,38 @@ body {
   font-size: 13px;
   text-decoration: none;
   color: #e6f7ff;
+  transition: 0.2s ease;
 }
 
 .dropdown a:hover {
-  background: rgba(255,255,255,0.08);
+  background: rgba(0, 255, 255, 0.08);
+  color: #00f7ff;
 }
 
 .nav-item:hover .dropdown {
   display: flex;
 }
 
-/* ================= PAGE WRAPPER ================= */
+/* =====================================================
+   PAGE WRAPPER
+===================================================== */
 .page-wrapper {
   max-width: 1200px;
-  margin: 40px auto;
-  background: rgba(15, 35, 45, 0.85);
-  border: 1px solid rgba(255,255,255,0.08);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+  margin: 80px auto;
+  padding: 40px;
+
+  background: rgba(0, 15, 25, 0.25);
+  border: 1px solid rgba(0, 255, 255, 0.08);
+  backdrop-filter: blur(6px);
 }
 
-/* ================= HERO ================= */
+/* =====================================================
+   HERO
+===================================================== */
 .hero {
   text-align: center;
   padding: 50px 20px;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .hero-logo {
@@ -124,7 +172,9 @@ body {
   width: 90%;
 }
 
-/* ================= CONTENT AREA ================= */
+/* =====================================================
+   CONTENT LAYOUT
+===================================================== */
 .content-area {
   padding: 40px 50px;
 }
@@ -136,53 +186,54 @@ body {
   align-items: start;
 }
 
-/* ================= MAIN CONTENT ================= */
 .content-left {
   position: relative;
-  padding-top: 45px;
 }
 
-/* Back to Main Page Link */
+/* Sidebar controlled by SAO panel */
+.content-right {
+  background: none;
+  padding: 0;
+  border: none;
+}
+
+/* =====================================================
+   BACK LINK (for info pages)
+===================================================== */
 .back-link {
-  position: absolute;
-  top: 12px;
-  left: 18px;
-  font-size: 0.85rem;
+  display: inline-block;
+  margin-bottom: 16px;
+
+  font-size: 0.9rem;
   color: #00cfff;
   text-decoration: none;
-  font-weight: 500;
-  opacity: 0.85;
-  transition: 0.25s ease;
+  font-weight: 600;
+  opacity: 0.9;
+  transition: 0.2s ease;
 }
 
 .back-link:hover {
   opacity: 1;
-  color: #ffb3f5;
-  text-shadow: 0 0 6px rgba(255, 179, 245, 0.8);
+  color: #00f7ff;
+  text-shadow: 0 0 10px rgba(0, 247, 255, 0.35);
 }
 
-.page-title {
-  font-size: 28px;
-  font-weight: 700;
-  margin-bottom: 10px;
-}
-
-.page-divider {
-  height: 1px;
-  background: rgba(255,255,255,0.1);
-  margin-bottom: 25px;
-}
-
+/* =====================================================
+   BANNERS & INFO BOXES
+===================================================== */
+.page-banner,
 .page-intro-box {
   margin: 30px 0 25px;
   padding: 12px 40px;
   text-align: center;
+
   font-size: 15px;
   font-weight: 600;
-  letter-spacing: 0.8px;
-  color: #e6f7ff;
-  background: rgba(110, 110, 110, 0.65);
-  border: 1px solid rgba(255,255,255,0.08);
+  letter-spacing: 1px;
+
+  background: rgba(60, 70, 75, 0.6);
+  border: 1px solid rgba(0, 255, 255, 0.2);
+
   clip-path: polygon(
     14px 0%,
     calc(100% - 14px) 0%,
@@ -191,163 +242,164 @@ body {
     14px 100%,
     0% 50%
   );
-}
-
-.section-heading {
-  margin-top: 50px;
-  margin-bottom: 15px;
-  font-size: 20px;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
-  padding-bottom: 6px;
 }
 
 .info-box {
-  background: rgba(30, 50, 65, 0.65);
+  background: rgba(20, 40, 55, 0.65);
   padding: 18px 22px;
   margin-bottom: 25px;
   border-radius: 6px;
-  border: 1px solid rgba(255,255,255,0.08);
+  border: 1px solid rgba(0, 255, 255, 0.1);
 }
 
-.info-box ul {
-  padding-left: 20px;
+/* =====================================================
+   LINKS
+===================================================== */
+a {
+  color: #00cfff;
+  text-decoration: none;
+  transition: 0.2s ease;
 }
 
-.info-box li {
-  margin-bottom: 8px;
+a:hover {
+  color: #00f7ff;
+  text-decoration: underline;
 }
 
-/* ================= POLYGON BANNERS ================= */
-.page-banner {
-  margin: 30px 0 25px;
-  padding: 12px 40px;
-  text-align: center;
-  font-size: 15px;
-  font-weight: 600;
-  letter-spacing: 0.8px;
-  color: #e6f7ff;
-  background: rgba(110, 110, 110, 0.65);
-  border: 1px solid rgba(255,255,255,0.08);
-  clip-path: polygon(
-    14px 0%,
-    calc(100% - 14px) 0%,
-    100% 50%,
-    calc(100% - 14px) 100%,
-    14px 100%,
-    0% 50%
+/* =====================================================
+   SAO UI PANELS
+===================================================== */
+.sao-section {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin: 25px 0 40px;
+}
+
+.sao-panel {
+  position: relative;
+  padding: 35px 28px 28px;
+
+  background: linear-gradient(
+    135deg,
+    rgba(0, 25, 35, 0.95),
+    rgba(0, 45, 60, 0.85)
   );
+
+  border: 1px solid rgba(0, 255, 255, 0.7);
+  border-radius: 3px;
+
+  box-shadow:
+    0 0 20px rgba(0, 255, 255, 0.35),
+    inset 0 0 20px rgba(0, 255, 255, 0.15);
+
+  transition: 0.3s ease;
 }
 
-.page-banner:hover {
-  background: rgba(110, 110, 110, 0.85);
-  box-shadow: 0 0 10px rgba(0,255,255,0.3);
-  transition: 0.3s;
+.sao-panel:hover {
+  box-shadow:
+    0 0 35px rgba(0, 255, 255, 0.8),
+    inset 0 0 25px rgba(0, 255, 255, 0.25);
 }
 
-/* ================= TABLE STYLES ================= */
+.sao-header {
+  position: absolute;
+  top: -15px;
+  left: 22px;
+
+  padding: 6px 18px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  background: #02161f;
+  border: 1px solid #00f7ff;
+  color: #00f7ff;
+
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+}
+
+.sao-notice { border-color: #00cfff; }
+.sao-update { border-color: #00ffcc; }
+
+.sao-panel p {
+  font-size: 15px;
+  line-height: 1.9;
+  color: #e6f7ff;
+}
+
+/* =====================================================
+   SAO TABLES (info pages)
+===================================================== */
 .info-table {
   width: 100%;
   border-collapse: collapse;
-  margin-bottom: 25px;
-  background: rgba(30, 50, 65, 0.65);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 6px;
   overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0,255,255,0.1);
+
+  border: 1px solid rgba(0, 255, 255, 0.25);
+  background: rgba(0, 20, 30, 0.35);
 }
 
 .info-table th,
 .info-table td {
-  padding: 12px 15px;
-  text-align: left;
+  padding: 12px 14px;
   font-size: 14px;
-  color: #e6f7ff;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  vertical-align: middle;
 }
 
 .info-table th {
-  background: rgba(70, 130, 180, 0.6);
-  font-weight: 600;
-  letter-spacing: 0.8px;
   text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 12px;
+  font-weight: 800;
+
+  color: #00f7ff;
+  background: rgba(0, 45, 60, 0.55);
+  border-bottom: 1px solid rgba(0, 255, 255, 0.25);
 }
 
 .info-table tbody tr:hover {
-  background: rgba(0,255,255,0.1);
+  background: rgba(0, 255, 255, 0.08);
 }
 
-.skill-gif {
-  width: 80px;
+.info-table td a {
+  font-weight: 700;
+}
+
+/* keep table images clean */
+.info-table img {
+  display: block;
+  max-width: 110px;
   height: auto;
-  border-radius: 4px;
-  box-shadow: 0 0 8px rgba(0,255,255,0.25);
-  transition: 0.2s ease;
+  filter: drop-shadow(0 0 10px rgba(0, 255, 255, 0.18));
 }
 
-.skill-gif:hover {
-  transform: scale(1.05);
-}
-
-/* ================= SIDEBAR ================= */
-.content-right {
-  background: rgba(20, 40, 50, 0.75);
-  padding: 20px;
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 6px;
-}
-
-.content-right h3 {
-  margin-bottom: 12px;
-  font-size: 16px;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
-  padding-bottom: 6px;
-}
-
-.content-right ul {
-  padding-left: 18px;
-}
-
-.content-right li {
-  margin-bottom: 6px;
-}
-
-/* ================= LINKS ================= */
-a {
-  color: #00cfff;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-/* ================= IMAGE SCALING ================= */
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-/* ================= MOBILE OPTIMIZATION ================= */
-
-.hamburger {
-  display: none;
-  font-size: 24px;
-  cursor: pointer;
-  color: #e6f7ff;
-}
-
-/* Tablet */
-@media (max-width: 1024px) {
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+@media (max-width: 900px) {
   .content-grid {
     grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .page-wrapper {
+    margin: 30px 20px;
+    padding: 25px;
+  }
+
+  .content-area {
+    padding: 30px 20px;
   }
 }
 
-/* Mobile */
-@media (max-width: 900px) {
-
+@media (max-width: 768px) {
   .wiki-header-inner {
-    padding: 0 18px;
+    flex-wrap: wrap;
+    height: auto;
+    padding: 10px 20px;
   }
 
   .hamburger {
@@ -355,13 +407,12 @@ img {
   }
 
   .wiki-nav {
+    width: 100%;
     display: none;
     flex-direction: column;
-    width: 100%;
-    background: #244c5f;
+    background: rgba(0, 40, 55, 0.98);
     margin-top: 10px;
     border-radius: 6px;
-    padding: 10px 0;
   }
 
   .wiki-nav.active {
@@ -373,15 +424,15 @@ img {
   }
 
   .nav-label {
-    padding: 14px 18px;
     display: block;
-    width: 100%;
+    padding: 14px 18px;
+    font-size: 14px;
+    opacity: 1;
   }
 
   .dropdown {
     position: static;
     display: none;
-    background: #1f3f50;
   }
 
   .nav-item.active .dropdown {
@@ -392,27 +443,7 @@ img {
     padding: 12px 22px;
   }
 
-  .content-area {
-    padding: 25px 20px;
-  }
-
-  .page-wrapper {
-    margin: 20px 12px;
-  }
-
-  .hero {
-    padding: 30px 15px;
-  }
-
-  .back-link {
-    position: relative;
-    top: auto;
-    left: auto;
-    display: inline-block;
-    margin-bottom: 15px;
-  }
-
-  /* STACK TABLES */
+  /* MOBILE STACKED TABLES */
   .info-table thead {
     display: none;
   }
@@ -426,14 +457,18 @@ img {
   }
 
   .info-table tr {
-    margin-bottom: 18px;
-    border-bottom: 2px solid rgba(255,255,255,0.1);
+    border: 1px solid rgba(0, 255, 255, 0.18);
+    border-radius: 6px;
+    margin-bottom: 14px;
+    overflow: hidden;
+    background: rgba(0, 20, 30, 0.28);
   }
 
   .info-table td {
-    padding: 10px 12px;
-    text-align: right;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
     position: relative;
+    padding: 12px 12px 12px 45%;
+    text-align: left;
     font-size: 13px;
   }
 
@@ -441,11 +476,36 @@ img {
     content: attr(data-label);
     position: absolute;
     left: 12px;
-    font-weight: 600;
-    text-align: left;
+    top: 12px;
+    width: 40%;
+    font-weight: 800;
+    color: #00f7ff;
+    letter-spacing: 0.6px;
   }
 
-  .skill-gif {
-    width: 100px;
+  .info-table img {
+    max-width: 90px;
+    margin-left: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 15px;
+  }
+
+  .page-banner,
+  .page-intro-box,
+  .info-box {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  .hero-logo {
+    width: 100%;
+  }
+
+  .info-table td {
+    padding-left: 48%;
   }
 }
