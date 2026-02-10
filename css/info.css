@@ -560,8 +560,13 @@ a:hover {
 
 #sao-toast-stack {
   position: fixed;
-  top: calc(var(--nav-height) + 20px); /* navbar + spacing */
+
+  bottom: 22px;
   right: 22px;
+
+  top: auto;
+  left: auto;
+
   z-index: 999999;
 
   display: flex;
