@@ -11,7 +11,7 @@ body {
   font-family: "Montserrat", sans-serif;
   background:
     linear-gradient(rgba(10, 30, 40, 0.85), rgba(10, 30, 40, 0.85)),
-    url("background.png") center / cover no-repeat fixed;
+    url("/background.png") center / cover no-repeat;
   color: #e6f7ff;
   line-height: 1.6;
 }
@@ -77,6 +77,7 @@ body {
   display: none;
   flex-direction: column;
   border-radius: 4px;
+  z-index: 100;
 }
 
 .dropdown a {
@@ -129,8 +130,8 @@ body {
 
 /* ================= MAIN CONTENT ================= */
 .content-left {
-  position: relative;          /* Needed for back link positioning */
-  padding-top: 45px;           /* Space for back link */
+  position: relative;
+  padding-top: 45px;
 }
 
 /* Back to Main Page Link */
@@ -268,7 +269,7 @@ body {
 }
 
 .skill-gif {
-  width: 80px;          /* adjust size if needed */
+  width: 80px;
   height: auto;
   border-radius: 4px;
   box-shadow: 0 0 8px rgba(0,255,255,0.25);
@@ -278,6 +279,7 @@ body {
 .skill-gif:hover {
   transform: scale(1.05);
 }
+
 /* ================= SIDEBAR ================= */
 .content-right {
   background: rgba(20, 40, 50, 0.75);
@@ -315,4 +317,127 @@ a:hover {
 img {
   max-width: 100%;
   height: auto;
+}
+
+/* ================= MOBILE OPTIMIZATION ================= */
+
+.hamburger {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #e6f7ff;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+
+  .wiki-header-inner {
+    padding: 0 18px;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .wiki-nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: #244c5f;
+    margin-top: 10px;
+    border-radius: 6px;
+    padding: 10px 0;
+  }
+
+  .wiki-nav.active {
+    display: flex;
+  }
+
+  .nav-item {
+    width: 100%;
+  }
+
+  .nav-label {
+    padding: 14px 18px;
+    display: block;
+    width: 100%;
+  }
+
+  .dropdown {
+    position: static;
+    display: none;
+    background: #1f3f50;
+  }
+
+  .nav-item.active .dropdown {
+    display: flex;
+  }
+
+  .dropdown a {
+    padding: 12px 22px;
+  }
+
+  .content-area {
+    padding: 25px 20px;
+  }
+
+  .page-wrapper {
+    margin: 20px 12px;
+  }
+
+  .hero {
+    padding: 30px 15px;
+  }
+
+  .back-link {
+    position: relative;
+    top: auto;
+    left: auto;
+    display: inline-block;
+    margin-bottom: 15px;
+  }
+
+  /* STACK TABLES */
+  .info-table thead {
+    display: none;
+  }
+
+  .info-table,
+  .info-table tbody,
+  .info-table tr,
+  .info-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .info-table tr {
+    margin-bottom: 18px;
+    border-bottom: 2px solid rgba(255,255,255,0.1);
+  }
+
+  .info-table td {
+    padding: 10px 12px;
+    text-align: right;
+    position: relative;
+    font-size: 13px;
+  }
+
+  .info-table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 12px;
+    font-weight: 600;
+    text-align: left;
+  }
+
+  .skill-gif {
+    width: 100px;
+  }
 }
