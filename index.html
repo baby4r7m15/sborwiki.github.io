@@ -217,7 +217,6 @@
   const closeBtn = toast.querySelector(".sao-toast-close");
 
   function showToast() {
-    toast.classList.remove("hide");
     toast.classList.add("show");
   }
 
@@ -228,12 +227,10 @@
 
   closeBtn.addEventListener("click", hideToast);
 
-  // show on load
+  // show on load (no auto-hide)
   showToast();
-
-  // auto-hide after 10 seconds
-  setTimeout(hideToast, 10000);
 </script>
+
 
 
 </body>
