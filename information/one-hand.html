@@ -394,7 +394,9 @@
 <script>
   document.querySelectorAll(".sao-toast-close").forEach(btn => {
     btn.addEventListener("click", () => {
-      btn.closest(".sao-toast").classList.remove("show");
+      const toast = btn.closest(".sao-toast");
+      toast.classList.remove("show");
+      setTimeout(() => toast.remove(), 200);
     });
   });
 </script>
