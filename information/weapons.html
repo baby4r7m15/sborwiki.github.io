@@ -4,101 +4,114 @@
   <meta charset="UTF-8" />
   <title>SBO:R Wiki – Weapons</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- INFORMATION PAGE CSS -->
   <link rel="stylesheet" href="/css/info.css">
 </head>
 
 <body>
 
-  <!-- ================= HEADER ================= -->
-  <header class="wiki-header">
-    <div class="wiki-header-inner">
-      <div class="wiki-left">
-        <img src="https://sborwiki.com/logo.png" class="wiki-logo" alt="Logo" />
-        <span class="wiki-title">Sword Blox Online: Rebirth Wiki</span>
-      </div>
+<header class="wiki-header">
+  <div class="wiki-header-inner">
 
-      <nav class="wiki-nav">
-        <div class="nav-item">
-          <span class="nav-label">Information</span>
-          <div class="dropdown">
-            <a href="/index.html">Main Page</a>
-            <a href="#">Protective Gear</a>
-            <a href="#">Items</a>
-            <a href="#">Blacksmithing</a>
-            <a href="#">Guilds</a>
-            <a href="#">Quests</a>
-          </div>
-        </div>
-
-        <div class="nav-item">
-          <span class="nav-label">Events</span>
-          <div class="dropdown">
-            <a href="#">All Events</a>
-          </div>
-        </div>
-
-        <div class="nav-item">
-          <span class="nav-label">Floors</span>
-          <div class="dropdown">
-            <a href="#">All Floors</a>
-          </div>
-        </div>
-      </nav>
+    <div class="wiki-left">
+      <img src="/logo.png" class="wiki-logo" alt="Logo" />
+      <span class="wiki-title">Sword Blox Online: Rebirth Wiki</span>
     </div>
-  </header>
 
-  <!-- ================= PAGE WRAPPER ================= -->
-  <div class="page-wrapper">
+    <div class="hamburger" id="hamburger">☰</div>
 
-    <!-- HERO -->
-    <section class="hero">
-      <img src="https://sborwiki.com/Sborlogotext.png" class="hero-logo" alt="SBO Logo">
-    </section>
-
-    <!-- CONTENT AREA -->
-    <div class="content-area">
-      <div class="content-grid">
-        <!-- CONTENT AREA -->
-    <div class="content-area">
-      <div class="content-grid">
-
-        <!-- MAIN CONTENT -->
-        <article class="content-left">
-          
-          <!-- BACK LINK -->
-          <a href="/index.html" class="back-link">← Back to Main Page</a>
-          
-          <div class="page-intro-box">
-            <strong>Weapons</strong>
-          </div>
-          
-          <!-- Overview -->
-          <div class="page-banner">« Overview »</div>
-          <p>There are 5 Weapon Classes to choose from. Each one has it's own stats, skills, and advantages/disadvantages.</p>
-        <!-- Stats Table -->
-          <table class="info-table">
-            <thead>
-              <tr>
-                <th>Weapon Class</th>
-                <th>Logo</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td data-label="Weapon Class">
-                  <a href="/information/one-hand.html" class="table-link">One Hand</a>
-                </td>
-              <td data-label="Logo">
-                <img src="/images/Onehandedlogo.png" alt="Reaver" style="max-width: 100px; height: auto;">
-              </td>
-          </tr>
-            </tbody>
-          </table>
-        </article>
+    <nav class="wiki-nav" id="wikiNav">
+      <div class="nav-item">
+        <span class="nav-label">Information</span>
+        <div class="dropdown">
+          <a href="/index.html">Main Page</a>
+          <a href="#">Protective Gear</a>
+          <a href="#">Items</a>
+          <a href="#">Blacksmithing</a>
+          <a href="#">Guilds</a>
+          <a href="#">Quests</a>
+        </div>
       </div>
+
+      <div class="nav-item">
+        <span class="nav-label">Events</span>
+        <div class="dropdown">
+          <a href="#">All Events</a>
+        </div>
+      </div>
+
+      <div class="nav-item">
+        <span class="nav-label">Floors</span>
+        <div class="dropdown">
+          <a href="#">All Floors</a>
+        </div>
+      </div>
+    </nav>
+
+  </div>
+</header>
+
+<div class="page-wrapper">
+
+  <section class="hero">
+    <img src="/Sborlogotext.png" class="hero-logo" alt="SBO Logo">
+  </section>
+
+  <div class="content-area">
+    <div class="content-grid">
+
+      <article class="content-left">
+
+        <a href="/index.html" class="back-link">← Back to Main Page</a>
+
+        <div class="page-intro-box">
+          <strong>Weapons</strong>
+        </div>
+        <p>
+          There are 5 Weapon Classes to choose from. Each one has its own stats, skills, and advantages/disadvantages.
+        </p>
+
+        <table class="info-table">
+          <thead>
+            <tr>
+              <th>Weapon Class</th>
+              <th>Logo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="Weapon Class">
+                <a href="/information/one-hand.html">One Hand</a>
+              </td>
+              <td data-label="Logo">
+                <img src="/images/Onehandedlogo.png" alt="One Hand Logo" style="max-width: 100px;">
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+      </article>
+
     </div>
   </div>
+
+</div>
+
+<script>
+const hamburger = document.getElementById("hamburger");
+const nav = document.getElementById("wikiNav");
+
+hamburger.addEventListener("click", () => {
+  nav.classList.toggle("active");
+});
+
+document.querySelectorAll(".nav-label").forEach(label => {
+  label.addEventListener("click", function () {
+    if (window.innerWidth <= 768) {
+      this.parentElement.classList.toggle("active");
+    }
+  });
+});
+</script>
+
 </body>
 </html>
