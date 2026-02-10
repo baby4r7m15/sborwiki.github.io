@@ -9,109 +9,156 @@
 
 <body>
 
-<header class="wiki-header">
-  <div class="wiki-header-inner">
+  <!-- ================= HEADER ================= -->
+  <header class="wiki-header">
+    <div class="wiki-header-inner">
 
-    <div class="wiki-left">
-      <img src="/logo.png" class="wiki-logo" alt="Logo" />
-      <span class="wiki-title">Sword Blox Online: Rebirth Wiki</span>
-    </div>
-
-    <div class="hamburger" id="hamburger">☰</div>
-
-    <nav class="wiki-nav" id="wikiNav">
-      <div class="nav-item">
-        <span class="nav-label">Information</span>
-        <div class="dropdown">
-          <a href="/index.html">Main Page</a>
-          <a href="#">Protective Gear</a>
-          <a href="#">Items</a>
-          <a href="#">Blacksmithing</a>
-          <a href="#">Guilds</a>
-          <a href="#">Quests</a>
-        </div>
+      <div class="wiki-left">
+        <img src="/logo.png" class="wiki-logo" alt="Logo" />
+        <span class="wiki-title">Sword Blox Online: Rebirth Wiki</span>
       </div>
 
-      <div class="nav-item">
-        <span class="nav-label">Events</span>
-        <div class="dropdown">
-          <a href="#">All Events</a>
+      <div class="hamburger" id="hamburger">☰</div>
+
+      <nav class="wiki-nav" id="wikiNav">
+        <div class="nav-item">
+          <span class="nav-label">Information</span>
+          <div class="dropdown">
+            <a href="/index.html">Main Page</a>
+            <a href="/information/weapons.html">Weapons</a>
+            <a href="#">Protective Gear</a>
+            <a href="#">Items</a>
+            <a href="#">Blacksmithing</a>
+            <a href="#">Guilds</a>
+            <a href="#">Quests</a>
+          </div>
         </div>
-      </div>
 
-      <div class="nav-item">
-        <span class="nav-label">Floors</span>
-        <div class="dropdown">
-          <a href="#">All Floors</a>
+        <div class="nav-item">
+          <span class="nav-label">Events</span>
+          <div class="dropdown">
+            <a href="#">All Events</a>
+          </div>
         </div>
-      </div>
-    </nav>
 
-  </div>
-</header>
-
-<div class="page-wrapper">
-
-  <section class="hero">
-    <img src="/Sborlogotext.png" class="hero-logo" alt="SBO Logo">
-  </section>
-
-  <div class="content-area">
-    <div class="content-grid">
-
-      <article class="content-left">
-
-        <a href="/index.html" class="back-link">← Back to Main Page</a>
-
-        <div class="page-intro-box">
-          <strong>Weapons</strong>
+        <div class="nav-item">
+          <span class="nav-label">Floors</span>
+          <div class="dropdown">
+            <a href="#">All Floors</a>
+          </div>
         </div>
-        <p>
-          There are 5 Weapon Classes to choose from. Each one has its own stats, skills, and advantages/disadvantages.
-        </p>
-
-        <table class="info-table">
-          <thead>
-            <tr>
-              <th>Weapon Class</th>
-              <th>Logo</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td data-label="Weapon Class">
-                <a href="/information/one-hand.html">One Hand</a>
-              </td>
-              <td data-label="Logo">
-                <img src="/images/Onehandedlogo.png" alt="One Hand Logo" style="max-width: 100px;">
-              </td>
-            </tr>
-          </tbody>
-        </table>
-
-      </article>
+      </nav>
 
     </div>
-  </div>
+  </header>
 
-</div>
+  <!-- ================= PAGE WRAPPER ================= -->
+  <main class="page-wrapper">
 
-<script>
-const hamburger = document.getElementById("hamburger");
-const nav = document.getElementById("wikiNav");
+    <!-- HERO -->
+    <section class="hero">
+      <img src="/Sborlogotext.png" class="hero-logo" alt="SBO Logo">
+    </section>
 
-hamburger.addEventListener("click", () => {
-  nav.classList.toggle("active");
-});
+    <!-- ================= CONTENT ================= -->
+    <section class="content-area">
+      <div class="content-grid">
 
-document.querySelectorAll(".nav-label").forEach(label => {
-  label.addEventListener("click", function () {
-    if (window.innerWidth <= 768) {
-      this.parentElement.classList.toggle("active");
-    }
-  });
-});
-</script>
+        <!-- ================= MAIN ================= -->
+        <article class="content-left">
+
+          <a href="/index.html" class="back-link">← Back to Main Page</a>
+
+          <div class="page-intro-box">
+            <strong>Weapons</strong>
+          </div>
+
+          <!-- SAO PANEL: Intro -->
+          <div class="sao-section">
+
+            <div class="sao-panel sao-notice">
+              <div class="sao-header">OVERVIEW</div>
+              <p>
+                There are 5 Weapon Classes to choose from. Each one has its own stats, skills,
+                and advantages/disadvantages.
+              </p>
+            </div>
+
+            <!-- SAO PANEL: Table -->
+            <div class="sao-panel">
+              <div class="sao-header">WEAPON CLASSES</div>
+
+              <table class="info-table">
+                <thead>
+                  <tr>
+                    <th>Weapon Class</th>
+                    <th>Logo</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td data-label="Weapon Class">
+                      <a href="/information/one-hand.html">One Hand</a>
+                    </td>
+                    <td data-label="Logo">
+                      <img src="/images/Onehandedlogo.png" alt="One Hand Logo">
+                    </td>
+                  </tr>
+
+                  <!-- Add more rows like this:
+                  <tr>
+                    <td data-label="Weapon Class"><a href="#">Two Hand</a></td>
+                    <td data-label="Logo"><img src="/images/Twohandedlogo.png" alt="Two Hand Logo"></td>
+                  </tr>
+                  -->
+
+                </tbody>
+              </table>
+
+            </div>
+
+          </div>
+
+        </article>
+
+        <!-- ================= SIDEBAR ================= -->
+        <aside class="content-right">
+
+          <div class="sao-panel">
+            <div class="sao-header">QUICK LINKS</div>
+            <ul>
+              <li><a href="/information/one-hand.html">One Hand</a></li>
+              <li><a href="#">Two Hand</a></li>
+              <li><a href="#">Spear</a></li>
+              <li><a href="#">Dagger</a></li>
+              <li><a href="#">Bow</a></li>
+            </ul>
+          </div>
+
+        </aside>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= MOBILE SCRIPT ================= -->
+  <script>
+    const hamburger = document.getElementById("hamburger");
+    const nav = document.getElementById("wikiNav");
+
+    hamburger.addEventListener("click", () => {
+      nav.classList.toggle("active");
+    });
+
+    document.querySelectorAll(".nav-label").forEach(label => {
+      label.addEventListener("click", function () {
+        if (window.innerWidth <= 768) {
+          this.parentElement.classList.toggle("active");
+        }
+      });
+    });
+  </script>
 
 </body>
 </html>
