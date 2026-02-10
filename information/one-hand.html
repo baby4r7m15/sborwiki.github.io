@@ -19,35 +19,39 @@
         <span class="wiki-title">Sword Blox Online: Rebirth Wiki</span>
       </div>
 
-      <nav class="wiki-nav">
-        <div class="nav-item">
-          <span class="nav-label">Information</span>
-          <div class="dropdown">
-            <a href="/information/weapons.html">Weapons</a>
-            <a href="#">Protective Gear</a>
-            <a href="#">Items</a>
-            <a href="#">Blacksmithing</a>
-            <a href="#">Guilds</a>
-            <a href="#">Quests</a>
-          </div>
-        </div>
+      <!-- NEW: Hamburger (only visible on mobile) -->
+    <div class="hamburger" id="hamburger">☰</div>
 
-        <div class="nav-item">
-          <span class="nav-label">Events</span>
-          <div class="dropdown">
-            <a href="#">All Events</a>
-          </div>
+    <nav class="wiki-nav" id="wikiNav">
+      <div class="nav-item">
+        <span class="nav-label">Information</span>
+        <div class="dropdown">
+          <a href="/information/weapons.html">Weapons</a>
+          <a href="#">Protective Gear</a>
+          <a href="#">Items</a>
+          <a href="#">Blacksmithing</a>
+          <a href="#">Guilds</a>
+          <a href="#">Quests</a>
         </div>
+      </div>
 
-        <div class="nav-item">
-          <span class="nav-label">Floors</span>
-          <div class="dropdown">
-            <a href="#">All Floors</a>
-          </div>
+      <div class="nav-item">
+        <span class="nav-label">Events</span>
+        <div class="dropdown">
+          <a href="#">All Events</a>
         </div>
-      </nav>
-    </div>
-  </header>
+      </div>
+
+      <div class="nav-item">
+        <span class="nav-label">Floors</span>
+        <div class="dropdown">
+          <a href="#">All Floors</a>
+        </div>
+      </div>
+    </nav>
+
+  </div>
+</header>
 
   <!-- ================= PAGE WRAPPER ================= -->
   <div class="page-wrapper">
@@ -274,5 +278,22 @@
       </div>
     </div>
   </div>
+  <!-- Mobile Navigation Script -->
+<script>
+const hamburger = document.getElementById("hamburger");
+const nav = document.getElementById("wikiNav");
+
+hamburger.addEventListener("click", () => {
+  nav.classList.toggle("active");
+});
+
+document.querySelectorAll(".nav-label").forEach(label => {
+  label.addEventListener("click", function () {
+    if (window.innerWidth <= 900) {
+      this.parentElement.classList.toggle("active");
+    }
+  });
+});
+</script>
 </body>
 </html>
