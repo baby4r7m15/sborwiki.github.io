@@ -505,3 +505,17 @@ a:hover {
   );
   pointer-events: none;
 }
+
+/* Mobile: keep toast visible + account for safe area + header height */
+@media (max-width: 768px) {
+  #sao-toast {
+    top: calc(env(safe-area-inset-top, 0px) + 70px) !important; /* below sticky header */
+    right: 12px !important;
+    width: calc(100vw - 24px) !important;
+    max-width: none !important;
+  }
+
+  .sao-toast-body {
+    font-size: 0.88rem;
+  }
+}
