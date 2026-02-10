@@ -670,6 +670,31 @@ a:hover {
   color: #fff1b8;
 }
 
+/* ================= GREEN (STATUS / SUCCESS) ================= */
+
+.sao-toast-green {
+  background: linear-gradient(
+    180deg,
+    rgba(20, 90, 45, 0.95),
+    rgba(10, 45, 25, 0.95)
+  );
+  border: 1px solid rgba(80, 255, 170, 0.75);
+  box-shadow:
+    0 0 22px rgba(80, 255, 170, 0.5),
+    inset 0 0 16px rgba(80, 255, 170, 0.25);
+}
+
+.sao-toast-green .sao-toast-header {
+  color: #9dffce;
+  border-bottom: 1px solid rgba(120, 255, 190, 0.45);
+}
+
+.sao-toast-green .sao-toast-close {
+  background: rgba(80, 255, 170, 0.18);
+  border: 1px solid rgba(120, 255, 190, 0.45);
+  color: #c9ffea;
+}
+
 /* Mobile */
 @media (max-width: 768px) {
   #sao-toast-stack {
