@@ -311,6 +311,34 @@
       });
     });
   </script>
+<div id="sao-toast" role="status" aria-live="polite">
+  <div class="sao-toast-header">SYSTEM MESSAGE</div>
+  <div class="sao-toast-body">
+    This site is under construction. Some data may be incomplete or inaccurate.
+  </div>
+  <button
+    class="sao-toast-close"
+    type="button"
+    aria-label="Close system message"
+  >✕</button>
+</div>
+<script>
+  const toast = document.getElementById("sao-toast");
+  const closeBtn = toast.querySelector(".sao-toast-close");
 
+  function showToast() {
+    toast.classList.add("show");
+  }
+
+  function hideToast() {
+    toast.classList.remove("show");
+    toast.classList.add("hide");
+  }
+
+  closeBtn.addEventListener("click", hideToast);
+
+  // show on load (no auto-hide)
+  showToast();
+</script>
 </body>
 </html>
