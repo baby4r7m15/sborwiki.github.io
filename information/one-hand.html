@@ -4,8 +4,6 @@
   <meta charset="UTF-8" />
   <title>SBO:R Wiki – One-Handed</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- INFORMATION PAGE CSS -->
   <link rel="stylesheet" href="/css/info.css">
 </head>
 
@@ -15,54 +13,52 @@
   <header class="wiki-header">
     <div class="wiki-header-inner">
       <div class="wiki-left">
-        <img src="https://sborwiki.com/logo.png" class="wiki-logo" alt="Logo" />
+        <img src="/logo.png" class="wiki-logo" alt="Logo" />
         <span class="wiki-title">Sword Blox Online: Rebirth Wiki</span>
       </div>
 
-      <!-- NEW: Hamburger (only visible on mobile) -->
-    <div class="hamburger" id="hamburger">☰</div>
+      <div class="hamburger" id="hamburger">☰</div>
 
-    <nav class="wiki-nav" id="wikiNav">
-      <div class="nav-item">
-        <span class="nav-label">Information</span>
-        <div class="dropdown">
-          <a href="/information/weapons.html">Weapons</a>
-          <a href="#">Protective Gear</a>
-          <a href="#">Items</a>
-          <a href="#">Blacksmithing</a>
-          <a href="#">Guilds</a>
-          <a href="#">Quests</a>
+      <nav class="wiki-nav" id="wikiNav">
+        <div class="nav-item">
+          <span class="nav-label">Information</span>
+          <div class="dropdown">
+            <a href="/information/weapons.html">Weapons</a>
+            <a href="#">Protective Gear</a>
+            <a href="#">Items</a>
+            <a href="#">Blacksmithing</a>
+            <a href="#">Guilds</a>
+            <a href="#">Quests</a>
+          </div>
         </div>
-      </div>
 
-      <div class="nav-item">
-        <span class="nav-label">Events</span>
-        <div class="dropdown">
-          <a href="#">All Events</a>
+        <div class="nav-item">
+          <span class="nav-label">Events</span>
+          <div class="dropdown">
+            <a href="#">All Events</a>
+          </div>
         </div>
-      </div>
 
-      <div class="nav-item">
-        <span class="nav-label">Floors</span>
-        <div class="dropdown">
-          <a href="#">All Floors</a>
+        <div class="nav-item">
+          <span class="nav-label">Floors</span>
+          <div class="dropdown">
+            <a href="#">All Floors</a>
+          </div>
         </div>
-      </div>
-    </nav>
-
-  </div>
-</header>
+      </nav>
+    </div>
+  </header>
 
   <!-- ================= PAGE WRAPPER ================= -->
-  <div class="page-wrapper">
+  <main class="page-wrapper">
 
     <!-- HERO -->
     <section class="hero">
-      <img src="https://sborwiki.com/Sborlogotext.png" class="hero-logo" alt="SBO Logo">
+      <img src="/Sborlogotext.png" class="hero-logo" alt="SBO Logo">
     </section>
 
     <!-- CONTENT AREA -->
-    <div class="content-area">
+    <section class="content-area">
       <div class="content-grid">
 
         <!-- MAIN CONTENT -->
@@ -74,226 +70,304 @@
           <div class="page-intro-box">
             <strong>One-Handed Weapons</strong>
           </div>
-          
-          <!-- Overview -->
-          <div class="page-banner">« Overview »</div>
-          <p>One of the 5 Main Weapon Classes in SBO:R. Their Attack Speed is the second slowest of the different weapon types, and their Attack stat is the second highest when compared to other weapon types of equal Skill Level rating.</p>
-          <ul style="padding-left: 40px; list-style-position: inside;">
-            <li>Contrary to player belief, having a Shield equipped will not affect your attack speed.</li>
-            <li>Critical Chance of all Weapon Types is 15%, raising LUK up to max will add up to +5% Critical Chance, totaling 20% with 500 LUK invested.</li>
-            <li>Critical Hit damage is calculated as (base*crit multi) + (base*STR multi)
-              <ul style="padding-left: 20px; list-style-position: inside;">
-                <li>"STR Multi" ranges from 0 - 2 based on your STR points invested.</li>
-                <li>Critical Hits with One-Handed weapons will multiply your Base Attack stat by 2.</li>
+
+          <div class="sao-section">
+
+            <!-- Overview -->
+            <div class="sao-panel sao-notice">
+              <div class="sao-header">OVERVIEW</div>
+
+              <p>
+                One of the 5 Main Weapon Classes in SBO:R. Their Attack Speed is the second slowest of the different weapon types, and their Attack stat is the second highest when compared to other weapon types of equal Skill Level rating.
+              </p>
+
+              <ul class="sao-list">
+                <li>Contrary to player belief, having a Shield equipped will not affect your attack speed.</li>
+                <li>Critical Chance of all Weapon Types is 15%, raising LUK up to max will add up to +5% Critical Chance, totaling 20% with 500 LUK invested.</li>
+                <li>
+                  Critical Hit damage is calculated as (base*crit multi) + (base*STR multi)
+                  <ul class="sao-list sub">
+                    <li>"STR Multi" ranges from 0 - 2 based on your STR points invested.</li>
+                    <li>Critical Hits with One-Handed weapons will multiply your Base Attack stat by 2.</li>
+                  </ul>
+                </li>
               </ul>
-            </li>
-          </ul>
-          <!-- Skills -->
-          <div class="page-banner">« Skills »</div>
-          <p>This weapon type currently has 7 unlockable sword skills...</p>
+            </div>
 
-          <table class="info-table">
-            <thead>
-              <tr>
-                <th>Sword Skill</th>
-                <th>Type</th>
-                <th>Skill Requirement</th>
-                <th>Animation</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td data-label="Sword Skill">Reaver</td>
-                <td data-label="Type">One Hand</td>
-                <td data-label="Skill Requirement">5 Skill</td>
-                <td data-label="Animation">
-                  <img src="/images/1HReaver.gif" alt="Reaver Animation" class="skill-gif">
-                </td>
-                <tr>
-                <td data-label="Sword Skill">Sharp Nail</td>
-                <td data-label="Type">One Hand</td>
-                <td data-label="Skill Requirement">25 Skill</td>
-                <td data-label="Animation">
-                  <img src="/images/SharpNail.gif" alt="Sharp Nail Animation" class="skill-gif">
-                </td>
-              </tr>
-              <tr>
-                <td data-label="Sword Skill">Sharp Nail II</td>
-                <td data-label="Type">One Hand</td>
-                <td data-label="Skill Requirement">75 Skill</td>
-                <td data-label="Animation">
-                  <img src="/images/SharpNail2.gif" alt="Sharp Nail 2 Animation" class="skill-gif">
-                </td>
-                <tr>
-                <td data-label="Sword Skill">Sharp Nail III</td>
-                <td data-label="Type">One Hand</td>
-                <td data-label="Skill Requirement">150 Skill</td>
-                <td data-label="Animation">
-                  <img src="/images/SharpNail3.gif" alt="Sharp Nail 3 Animation" class="skill-gif">
-                </td>
-            </tbody>
-          </table>
+            <!-- Skills -->
+            <div class="sao-panel">
+              <div class="sao-header">SKILLS</div>
 
-          <!-- Dual Blades -->
-          <div class="page-banner">« Dual Blades »</div>
-          <p>Dual Blades is a Passive Skill that is unlockable by acquiring 200 One-Handed Skill.</p>
-          
-          <table class="info-table">
-            <thead>
-              <tr>
-                <th>Sword Skill</th>
-                <th>Type</th>
-                <th>Skill Requirement</th>
-                <th>Animation</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td data-label="Sword Skill">Gale Slicer</td>
-                <td data-label="Type">Dual Blade</td>
-                <td data-label="Skill Requirement">225 Skill</td>
-                <td data-label="Animation">
-                  <img src="/images/GaleSlicer.gif" alt="Gale Slicer Animation" class="skill-gif">
-                </td>
-                <tr>
-                <td data-label="Sword Skill">Starburst</td>
-                <td data-label="Type">Dual Blade</td>
-                <td data-label="Skill Requirement">300 Skill</td>
-                <td data-label="Animation">
-                  <img src="/images/Starburst.gif" alt="Starburst Animation" class="skill-gif">
-                </td>
+              <p>This weapon type currently has 7 unlockable sword skills...</p>
+
+              <table class="info-table">
+                <thead>
                   <tr>
-                <td data-label="Sword Skill">Starburst Stream</td>
-                <td data-label="Type">Dual Blade</td>
-                <td data-label="Skill Requirement">375 Skill</td>
-                <td data-label="Animation">
-                  <img src="/images/StarburstStream.gif" alt="Starburst Stream Animation" class="skill-gif">
-                </td>
-            </tbody>
-          </table>
-          <div class="page-banner">« Weapons List »</div>
+                    <th>Sword Skill</th>
+                    <th>Type</th>
+                    <th>Skill Requirement</th>
+                    <th>Animation</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td data-label="Sword Skill">Reaver</td>
+                    <td data-label="Type">One Hand</td>
+                    <td data-label="Skill Requirement">5 Skill</td>
+                    <td data-label="Animation">
+                      <img src="/images/1HReaver.gif" alt="Reaver Animation" class="skill-gif">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td data-label="Sword Skill">Sharp Nail</td>
+                    <td data-label="Type">One Hand</td>
+                    <td data-label="Skill Requirement">25 Skill</td>
+                    <td data-label="Animation">
+                      <img src="/images/SharpNail.gif" alt="Sharp Nail Animation" class="skill-gif">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td data-label="Sword Skill">Sharp Nail II</td>
+                    <td data-label="Type">One Hand</td>
+                    <td data-label="Skill Requirement">75 Skill</td>
+                    <td data-label="Animation">
+                      <img src="/images/SharpNail2.gif" alt="Sharp Nail 2 Animation" class="skill-gif">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td data-label="Sword Skill">Sharp Nail III</td>
+                    <td data-label="Type">One Hand</td>
+                    <td data-label="Skill Requirement">150 Skill</td>
+                    <td data-label="Animation">
+                      <img src="/images/SharpNail3.gif" alt="Sharp Nail 3 Animation" class="skill-gif">
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
 
-<p>Please note that weapons for each associated floor will have their Skill Level rated according to how they are obtained.</p>
+            <!-- Dual Blades -->
+            <div class="sao-panel">
+              <div class="sao-header">DUAL BLADES</div>
 
-<ul style="padding-left: 40px; list-style-position: inside;">
-  <li>Crafted - Highest</li>
-  <li>Boss Drop - 2nd Highest</li>
-  <li>Mob Drop - 2nd Lowest</li>
-  <li>Shops - Lowest</li>
-</ul>
+              <p>Dual Blades is a Passive Skill that is unlockable by acquiring 200 One-Handed Skill.</p>
 
-<p>Badge and Gamepass weapons will scale according to your Skill Level:</p>
+              <table class="info-table">
+                <thead>
+                  <tr>
+                    <th>Sword Skill</th>
+                    <th>Type</th>
+                    <th>Skill Requirement</th>
+                    <th>Animation</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td data-label="Sword Skill">Gale Slicer</td>
+                    <td data-label="Type">Dual Blade</td>
+                    <td data-label="Skill Requirement">225 Skill</td>
+                    <td data-label="Animation">
+                      <img src="/images/GaleSlicer.gif" alt="Gale Slicer Animation" class="skill-gif">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td data-label="Sword Skill">Starburst</td>
+                    <td data-label="Type">Dual Blade</td>
+                    <td data-label="Skill Requirement">300 Skill</td>
+                    <td data-label="Animation">
+                      <img src="/images/Starburst.gif" alt="Starburst Animation" class="skill-gif">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td data-label="Sword Skill">Starburst Stream</td>
+                    <td data-label="Type">Dual Blade</td>
+                    <td data-label="Skill Requirement">375 Skill</td>
+                    <td data-label="Animation">
+                      <img src="/images/StarburstStream.gif" alt="Starburst Stream Animation" class="skill-gif">
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
 
-<ul style="padding-left: 40px; list-style-position: inside;">
-  <li>Badge Weapons will scale up every 5 Skill Level.</li>
-  <li>Gamepass Weapons will scale up every Skill Level.</li>
-  <li>Any weapon with a Max Skill stat has higher damage scaling than other weapons around its Skill Level. Their Max Attack and Skill will be shown in the table below.</li>
-</ul>
+            <!-- Weapons List -->
+            <div class="sao-panel sao-update">
+              <div class="sao-header">WEAPONS LIST</div>
 
-<p><strong>Please note that any weapon noted as Legendary Tier in this list have the highest damage scaling, making them a lot more powerful than other weapons near its Skill Level.</strong></p>
+              <p>Please note that weapons for each associated floor will have their Skill Level rated according to how they are obtained.</p>
 
-          <!-- SHOP WEAPONS -->
-          <h2 class="section-heading">Shop Weapons</h2>
-          <table class="info-table">
-            <thead><tr><th>Weapon Name</th><th>Max Skill</th><th>Attack Damage</th><th>How to Obtain</th></tr></thead>
-            <tbody>
-              <tr><td data-label="Weapon Name">Beginner Sword</td><td data-label="Max Skill">1</td><td data-label="Attack Damage">3.4</td><td data-label="How to Obtain">Starter Inventory</td></tr>
-              <tr><td data-label="Weapon Name">Iron Sword</td><td data-label="Max Skill">1</td><td data-label="Attack Damage">3.4</td><td data-label="How to Obtain">Floor 1 Shop</td></tr>
-              <tr><td data-label="Weapon Name">Steel Sword</td><td data-label="Max Skill">5</td><td data-label="Attack Damage">8.4</td><td data-label="How to Obtain">Floor 1 Shop, Floor 2 Shop</td></tr>
-              <tr><td data-label="Weapon Name">Basin Broadsword</td><td data-label="Max Skill">26</td><td data-label="Attack Damage">58</td><td data-label="How to Obtain">Floor 2 Shop, Floor 3 Shop</td></tr>
-              <tr><td data-label="Weapon Name">Scimitar</td><td data-label="Max Skill">45</td><td data-label="Attack Damage">121</td><td data-label="How to Obtain">Floor 4 Shop</td></tr>
-              <tr><td data-label="Weapon Name">Mirror Blade</td><td data-label="Max Skill">65</td><td data-label="Attack Damage">200</td><td data-label="How to Obtain">Floor 5 Shop</td></tr>
-              <tr><td data-label="Weapon Name">Dark Steel Blade</td><td data-label="Max Skill">85</td><td data-label="Attack Damage">288</td><td data-label="How to Obtain">Floor 5 Shop</td></tr>
-              <tr><td data-label="Weapon Name">Shadow Eater</td><td data-label="Max Skill">125</td><td data-label="Attack Damage">488</td><td data-label="How to Obtain">Floor 5 Shop</td></tr>
-              <tr><td data-label="Weapon Name">Chimera</td><td data-label="Max Skill">105</td><td data-label="Attack Damage">385</td><td data-label="How to Obtain">Floor 7 Shop</td></tr>
-              <tr><td data-label="Weapon Name">Deepsea SwiftBlade</td><td data-label="Max Skill">145</td><td data-label="Attack Damage">598</td><td data-label="How to Obtain">Floor 9 Shop</td></tr>
-              <tr><td data-label="Weapon Name">Butterfly Blade</td><td data-label="Max Skill">165</td><td data-label="Attack Damage">714</td><td data-label="How to Obtain">Floor 10 Shop</td></tr>
-              <tr><td data-label="Weapon Name">Crimson Shadow</td><td data-label="Max Skill">185</td><td data-label="Attack Damage">835</td><td data-label="How to Obtain">Floor 10 Shop</td></tr>
-              <tr><td data-label="Weapon Name">Stalhrim Blade</td><td data-label="Max Skill">205</td><td data-label="Attack Damage">961</td><td data-label="How to Obtain">Floor 12 Shop</td></tr>
-              <tr><td data-label="Weapon Name">Sweet Blade</td><td data-label="Max Skill">305</td><td data-label="Attack Damage">1655</td><td data-label="How to Obtain">Floor 17 Shop</td></tr>
-              <tr><td data-label="Weapon Name">Enforcer Blade</td><td data-label="Max Skill">330</td><td data-label="Attack Damage">1843</td><td data-label="How to Obtain">Floor 18 Dungeon Merchant</td></tr>
-            </tbody>
-          </table>
+              <ul class="sao-list">
+                <li>Crafted - Highest</li>
+                <li>Boss Drop - 2nd Highest</li>
+                <li>Mob Drop - 2nd Lowest</li>
+                <li>Shops - Lowest</li>
+              </ul>
 
-          <!-- CRAFTED / BLACKSMITHING -->
-          <h2 class="section-heading">Blacksmithing / Crafted Weapons</h2>
-          <table class="info-table">
-            <thead><tr><th>Weapon Name</th><th>Max Skill</th><th>Attack Damage</th><th>How to Obtain</th></tr></thead>
-            <tbody>
-              <!-- Full wiki list of every crafted/crafted-event variant -->
-              <tr><td data-label="Weapon Name">Master Steel Sword</td><td data-label="Max Skill">10</td><td data-label="Attack Damage">17.4</td><td data-label="How to Obtain">Blacksmithing, floor 1 Shop, Floor 2 Shop</td></tr>
-              <tr><td data-label="Weapon Name">Master Steel Sword Mk II</td><td data-label="Max Skill">13</td><td data-label="Attack Damage">23</td><td data-label="How to Obtain">Blacksmithing</td></tr>
-              <tr><td data-label="Weapon Name">GrandMaster Steel Blade</td><td data-label="Max Skill">16</td><td data-label="Attack Damage">30</td><td data-label="How to Obtain">Kobold Sentinel (Mob Drop)</td></tr>
-              <tr><td data-label="Weapon Name">GrandMaster Steel Blade Mk II</td><td data-label="Max Skill">18</td><td data-label="Attack Damage">35</td><td data-label="How to Obtain">Blacksmithing</td></tr>
-              <tr><td data-label="Weapon Name">GrandMaster Steel Blade Mk III</td><td data-label="Max Skill">35</td><td data-label="Attack Damage">86</td><td data-label="How to Obtain">Blacksmithing</td></tr>
-              <tr><td data-label="Weapon Name">Malachite Blade</td><td data-label="Max Skill">55</td><td data-label="Attack Damage">159</td><td data-label="How to Obtain">Blacksmithing</td></tr>
-              <tr><td data-label="Weapon Name">Sandstorm Blade</td><td data-label="Max Skill">75</td><td data-label="Attack Damage">243</td><td data-label="How to Obtain">Blacksmithing</td></tr>
-              <tr><td data-label="Weapon Name">Dark Repulser</td><td data-label="Max Skill">90</td><td data-label="Attack Damage">312</td><td data-label="How to Obtain">Blacksmithing</td></tr>
-              <tr><td data-label="Weapon Name"> ... (all event Mk 2 / Mk 3 / up to Mk V variants)</td><td data-label="Max Skill">Various</td><td data-label="Attack Damage">Various</td><td data-label="How to Obtain">Blacksmithing / Event Blacksmithing</td></tr>
-              <!-- Note: Full list pulled from wiki and much longer — every variant shown in official table. :contentReference[oaicite:2]{index=2} -->
-            </tbody>
-          </table>
+              <p>Badge and Gamepass weapons will scale according to your Skill Level:</p>
 
-          <!-- EVENT / MOB / SPECIAL DROPS -->
-          <h2 class="section-heading">Event & Special Drops</h2>
-          <table class="info-table">
-            <thead><tr><th>Weapon Name</th><th>Max Skill</th><th>Attack Damage</th><th>How to Obtain</th></tr></thead>
-            <tbody>
-              <tr><td data-label="Weapon Name">Inferno Staff</td><td data-label="Max Skill">45</td><td data-label="Attack Damage">121</td><td data-label="How to Obtain">Halloween Event: Quest/Boss Drop</td></tr>
-              <tr><td data-label="Weapon Name">Eggceptional Katana</td><td data-label="Max Skill">75</td><td data-label="Attack Damage">243</td><td data-label="How to Obtain">Easter Event Shop</td></tr>
-              <tr><td data-label="Weapon Name">Blade of Ice</td><td data-label="Max Skill">70</td><td data-label="Attack Damage">221</td><td data-label="How to Obtain">White Baby Wyrm (Mob)</td></tr>
-              <tr><td data-label="Weapon Name">Volcanic Blade</td><td data-label="Max Skill">90</td><td data-label="Attack Damage">312</td><td data-label="How to Obtain">Bloodsilk Spider (Mob)</td></tr>
-              <tr><td data-label="Weapon Name">Gran</td><td data-label="Max Skill">110</td><td data-label="Attack Damage">410</td><td data-label="How to Obtain">Magic Shroom (Mob)</td></tr>
-            </tbody>
-          </table>
+              <ul class="sao-list">
+                <li>Badge Weapons will scale up every 5 Skill Level.</li>
+                <li>Gamepass Weapons will scale up every Skill Level.</li>
+                <li>Any weapon with a Max Skill stat has higher damage scaling than other weapons around its Skill Level. Their Max Attack and Skill will be shown in the table below.</li>
+              </ul>
 
-          <!-- BADGE WEAPONS -->
-          <h2 class="section-heading">Badge Weapons</h2>
-          <table class="info-table">
-            <thead><tr><th>Weapon Name</th><th>Max Skill</th><th>Attack Damage</th><th>How to Obtain</th></tr></thead>
-            <tbody>
-              <tr><td data-label="Weapon Name">Silver Beater 1H</td><td data-label="Max Skill">270</td><td data-label="Attack Damage">1535</td><td data-label="How to Obtain">Beater Badge</td></tr>
-              <tr><td data-label="Weapon Name">Purple Death</td><td data-label="Max Skill">270</td><td data-label="Attack Damage">1375</td><td data-label="How to Obtain">1K Likes Badge</td></tr>
-              <tr><td data-label="Weapon Name">Ordinal Scale Sword</td><td data-label="Max Skill">270</td><td data-label="Attack Damage">1528</td><td data-label="How to Obtain">10K Likes Badge</td></tr>
-              <tr><td data-label="Weapon Name">Ascending Blade</td><td data-label="Max Skill">270</td><td data-label="Attack Damage">1528</td><td data-label="How to Obtain">2M Visits Badge</td></tr>
-              <tr><td data-label="Weapon Name">Victorious Blade</td><td data-label="Max Skill">275</td><td data-label="Attack Damage">1567</td><td data-label="How to Obtain">25K Likes Badge</td></tr>
-            </tbody>
-          </table>
+              <p><strong>Please note that any weapon noted as Legendary Tier in this list have the highest damage scaling, making them a lot more powerful than other weapons near its Skill Level.</strong></p>
+            </div>
 
-          <!-- GAMEPASS WEAPONS -->
-          <h2 class="section-heading">Gamepass Weapons</h2>
-          <table class="info-table">
-            <thead><tr><th>Weapon Name</th><th>Max Skill</th><th>Attack Damage</th><th>How to Obtain</th></tr></thead>
-            <tbody>
-              <tr><td data-label="Weapon Name">Elucidator VI</td><td data-label="Max Skill">290</td><td data-label="Attack Damage">1701</td><td data-label="How to Obtain">Black Swordsman Gamepass</td></tr>
-              <tr><td data-label="Weapon Name">Blue Rose Sword</td><td data-label="Max Skill">290</td><td data-label="Attack Damage">1701</td><td data-label="How to Obtain">Blue Swordsman Gamepass</td></tr>
-              <tr><td data-label="Weapon Name">Karakurenai</td><td data-label="Max Skill">290</td><td data-label="Attack Damage">1685</td><td data-label="How to Obtain">Red Samurai Gamepass</td></tr>
-              <tr><td data-label="Weapon Name">Liberator Sword</td><td data-label="Max Skill">290</td><td data-label="Attack Damage">1685</td><td data-label="How to Obtain">Grandmaster Liberator Gamepass</td></tr>
-              <tr><td data-label="Weapon Name">Master Smiths Mace</td><td data-label="Max Skill">290</td><td data-label="Attack Damage">1685</td><td data-label="How to Obtain">Master Blacksmith Gamepass</td></tr>
-            </tbody>
-          </table>
+            <!-- SHOP WEAPONS -->
+            <div class="sao-panel">
+              <div class="sao-header">SHOP WEAPONS</div>
+
+              <table class="info-table">
+                <thead>
+                  <tr>
+                    <th>Weapon Name</th>
+                    <th>Max Skill</th>
+                    <th>Attack Damage</th>
+                    <th>How to Obtain</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td data-label="Weapon Name">Beginner Sword</td><td data-label="Max Skill">1</td><td data-label="Attack Damage">3.4</td><td data-label="How to Obtain">Starter Inventory</td></tr>
+                  <tr><td data-label="Weapon Name">Iron Sword</td><td data-label="Max Skill">1</td><td data-label="Attack Damage">3.4</td><td data-label="How to Obtain">Floor 1 Shop</td></tr>
+                  <tr><td data-label="Weapon Name">Steel Sword</td><td data-label="Max Skill">5</td><td data-label="Attack Damage">8.4</td><td data-label="How to Obtain">Floor 1 Shop, Floor 2 Shop</td></tr>
+                  <tr><td data-label="Weapon Name">Basin Broadsword</td><td data-label="Max Skill">26</td><td data-label="Attack Damage">58</td><td data-label="How to Obtain">Floor 2 Shop, Floor 3 Shop</td></tr>
+                  <tr><td data-label="Weapon Name">Scimitar</td><td data-label="Max Skill">45</td><td data-label="Attack Damage">121</td><td data-label="How to Obtain">Floor 4 Shop</td></tr>
+                  <tr><td data-label="Weapon Name">Mirror Blade</td><td data-label="Max Skill">65</td><td data-label="Attack Damage">200</td><td data-label="How to Obtain">Floor 5 Shop</td></tr>
+                  <tr><td data-label="Weapon Name">Dark Steel Blade</td><td data-label="Max Skill">85</td><td data-label="Attack Damage">288</td><td data-label="How to Obtain">Floor 5 Shop</td></tr>
+                  <tr><td data-label="Weapon Name">Shadow Eater</td><td data-label="Max Skill">125</td><td data-label="Attack Damage">488</td><td data-label="How to Obtain">Floor 5 Shop</td></tr>
+                  <tr><td data-label="Weapon Name">Chimera</td><td data-label="Max Skill">105</td><td data-label="Attack Damage">385</td><td data-label="How to Obtain">Floor 7 Shop</td></tr>
+                  <tr><td data-label="Weapon Name">Deepsea SwiftBlade</td><td data-label="Max Skill">145</td><td data-label="Attack Damage">598</td><td data-label="How to Obtain">Floor 9 Shop</td></tr>
+                  <tr><td data-label="Weapon Name">Butterfly Blade</td><td data-label="Max Skill">165</td><td data-label="Attack Damage">714</td><td data-label="How to Obtain">Floor 10 Shop</td></tr>
+                  <tr><td data-label="Weapon Name">Crimson Shadow</td><td data-label="Max Skill">185</td><td data-label="Attack Damage">835</td><td data-label="How to Obtain">Floor 10 Shop</td></tr>
+                  <tr><td data-label="Weapon Name">Stalhrim Blade</td><td data-label="Max Skill">205</td><td data-label="Attack Damage">961</td><td data-label="How to Obtain">Floor 12 Shop</td></tr>
+                  <tr><td data-label="Weapon Name">Sweet Blade</td><td data-label="Max Skill">305</td><td data-label="Attack Damage">1655</td><td data-label="How to Obtain">Floor 17 Shop</td></tr>
+                  <tr><td data-label="Weapon Name">Enforcer Blade</td><td data-label="Max Skill">330</td><td data-label="Attack Damage">1843</td><td data-label="How to Obtain">Floor 18 Dungeon Merchant</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- CRAFTED / BLACKSMITHING -->
+            <div class="sao-panel">
+              <div class="sao-header">BLACKSMITHING / CRAFTED WEAPONS</div>
+
+              <table class="info-table">
+                <thead>
+                  <tr>
+                    <th>Weapon Name</th>
+                    <th>Max Skill</th>
+                    <th>Attack Damage</th>
+                    <th>How to Obtain</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td data-label="Weapon Name">Master Steel Sword</td><td data-label="Max Skill">10</td><td data-label="Attack Damage">17.4</td><td data-label="How to Obtain">Blacksmithing, floor 1 Shop, Floor 2 Shop</td></tr>
+                  <tr><td data-label="Weapon Name">Master Steel Sword Mk II</td><td data-label="Max Skill">13</td><td data-label="Attack Damage">23</td><td data-label="How to Obtain">Blacksmithing</td></tr>
+                  <tr><td data-label="Weapon Name">GrandMaster Steel Blade</td><td data-label="Max Skill">16</td><td data-label="Attack Damage">30</td><td data-label="How to Obtain">Kobold Sentinel (Mob Drop)</td></tr>
+                  <tr><td data-label="Weapon Name">GrandMaster Steel Blade Mk II</td><td data-label="Max Skill">18</td><td data-label="Attack Damage">35</td><td data-label="How to Obtain">Blacksmithing</td></tr>
+                  <tr><td data-label="Weapon Name">GrandMaster Steel Blade Mk III</td><td data-label="Max Skill">35</td><td data-label="Attack Damage">86</td><td data-label="How to Obtain">Blacksmithing</td></tr>
+                  <tr><td data-label="Weapon Name">Malachite Blade</td><td data-label="Max Skill">55</td><td data-label="Attack Damage">159</td><td data-label="How to Obtain">Blacksmithing</td></tr>
+                  <tr><td data-label="Weapon Name">Sandstorm Blade</td><td data-label="Max Skill">75</td><td data-label="Attack Damage">243</td><td data-label="How to Obtain">Blacksmithing</td></tr>
+                  <tr><td data-label="Weapon Name">Dark Repulser</td><td data-label="Max Skill">90</td><td data-label="Attack Damage">312</td><td data-label="How to Obtain">Blacksmithing</td></tr>
+                  <tr><td data-label="Weapon Name"> ... (all event Mk 2 / Mk 3 / up to Mk V variants)</td><td data-label="Max Skill">Various</td><td data-label="Attack Damage">Various</td><td data-label="How to Obtain">Blacksmithing / Event Blacksmithing</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- EVENT / MOB / SPECIAL DROPS -->
+            <div class="sao-panel">
+              <div class="sao-header">EVENT & SPECIAL DROPS</div>
+
+              <table class="info-table">
+                <thead>
+                  <tr>
+                    <th>Weapon Name</th>
+                    <th>Max Skill</th>
+                    <th>Attack Damage</th>
+                    <th>How to Obtain</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td data-label="Weapon Name">Inferno Staff</td><td data-label="Max Skill">45</td><td data-label="Attack Damage">121</td><td data-label="How to Obtain">Halloween Event: Quest/Boss Drop</td></tr>
+                  <tr><td data-label="Weapon Name">Eggceptional Katana</td><td data-label="Max Skill">75</td><td data-label="Attack Damage">243</td><td data-label="How to Obtain">Easter Event Shop</td></tr>
+                  <tr><td data-label="Weapon Name">Blade of Ice</td><td data-label="Max Skill">70</td><td data-label="Attack Damage">221</td><td data-label="How to Obtain">White Baby Wyrm (Mob)</td></tr>
+                  <tr><td data-label="Weapon Name">Volcanic Blade</td><td data-label="Max Skill">90</td><td data-label="Attack Damage">312</td><td data-label="How to Obtain">Bloodsilk Spider (Mob)</td></tr>
+                  <tr><td data-label="Weapon Name">Gran</td><td data-label="Max Skill">110</td><td data-label="Attack Damage">410</td><td data-label="How to Obtain">Magic Shroom (Mob)</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- BADGE WEAPONS -->
+            <div class="sao-panel">
+              <div class="sao-header">BADGE WEAPONS</div>
+
+              <table class="info-table">
+                <thead>
+                  <tr>
+                    <th>Weapon Name</th>
+                    <th>Max Skill</th>
+                    <th>Attack Damage</th>
+                    <th>How to Obtain</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td data-label="Weapon Name">Silver Beater 1H</td><td data-label="Max Skill">270</td><td data-label="Attack Damage">1535</td><td data-label="How to Obtain">Beater Badge</td></tr>
+                  <tr><td data-label="Weapon Name">Purple Death</td><td data-label="Max Skill">270</td><td data-label="Attack Damage">1375</td><td data-label="How to Obtain">1K Likes Badge</td></tr>
+                  <tr><td data-label="Weapon Name">Ordinal Scale Sword</td><td data-label="Max Skill">270</td><td data-label="Attack Damage">1528</td><td data-label="How to Obtain">10K Likes Badge</td></tr>
+                  <tr><td data-label="Weapon Name">Ascending Blade</td><td data-label="Max Skill">270</td><td data-label="Attack Damage">1528</td><td data-label="How to Obtain">2M Visits Badge</td></tr>
+                  <tr><td data-label="Weapon Name">Victorious Blade</td><td data-label="Max Skill">275</td><td data-label="Attack Damage">1567</td><td data-label="How to Obtain">25K Likes Badge</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- GAMEPASS WEAPONS -->
+            <div class="sao-panel">
+              <div class="sao-header">GAMEPASS WEAPONS</div>
+
+              <table class="info-table">
+                <thead>
+                  <tr>
+                    <th>Weapon Name</th>
+                    <th>Max Skill</th>
+                    <th>Attack Damage</th>
+                    <th>How to Obtain</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td data-label="Weapon Name">Elucidator VI</td><td data-label="Max Skill">290</td><td data-label="Attack Damage">1701</td><td data-label="How to Obtain">Black Swordsman Gamepass</td></tr>
+                  <tr><td data-label="Weapon Name">Blue Rose Sword</td><td data-label="Max Skill">290</td><td data-label="Attack Damage">1701</td><td data-label="How to Obtain">Blue Swordsman Gamepass</td></tr>
+                  <tr><td data-label="Weapon Name">Karakurenai</td><td data-label="Max Skill">290</td><td data-label="Attack Damage">1685</td><td data-label="How to Obtain">Red Samurai Gamepass</td></tr>
+                  <tr><td data-label="Weapon Name">Liberator Sword</td><td data-label="Max Skill">290</td><td data-label="Attack Damage">1685</td><td data-label="How to Obtain">Grandmaster Liberator Gamepass</td></tr>
+                  <tr><td data-label="Weapon Name">Master Smiths Mace</td><td data-label="Max Skill">290</td><td data-label="Attack Damage">1685</td><td data-label="How to Obtain">Master Blacksmith Gamepass</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+          </div>
 
         </article>
 
       </div>
-    </div>
-  </div>
+    </section>
+  </main>
+
   <!-- Mobile Navigation Script -->
-<script>
-const hamburger = document.getElementById("hamburger");
-const nav = document.getElementById("wikiNav");
+  <script>
+    const hamburger = document.getElementById("hamburger");
+    const nav = document.getElementById("wikiNav");
 
-hamburger.addEventListener("click", () => {
-  nav.classList.toggle("active");
-});
+    hamburger.addEventListener("click", () => {
+      nav.classList.toggle("active");
+    });
 
-document.querySelectorAll(".nav-label").forEach(label => {
-  label.addEventListener("click", function () {
-    if (window.innerWidth <= 900) {
-      this.parentElement.classList.toggle("active");
-    }
-  });
-});
-</script>
+    document.querySelectorAll(".nav-label").forEach(label => {
+      label.addEventListener("click", function () {
+        if (window.innerWidth <= 900) {
+          this.parentElement.classList.toggle("active");
+        }
+      });
+    });
+  </script>
+
 </body>
 </html>
