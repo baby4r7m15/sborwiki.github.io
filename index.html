@@ -250,24 +250,28 @@
     <button class="sao-toast-close" type="button" aria-label="Close system notice">✕</button>
   </div> -->
 
-    <!-- GREEN: STATUS / SUCCESS -->
-<div class="sao-toast sao-toast-green show" role="status" aria-live="polite">
-  <div class="sao-toast-header">SYSTEM STATUS</div>
-  <div class="sao-toast-body">
-    One Hand Page is complete!
+    <div id="sao-toast-stack">
+
+  <!-- GREEN: STATUS -->
+  <div class="sao-toast sao-toast-green show" role="status" aria-live="polite">
+    <div class="sao-toast-header">SYSTEM STATUS</div>
+    <div class="sao-toast-body">
+      One Hand Page is complete!
+    </div>
+    <button class="sao-toast-close" type="button">✕</button>
   </div>
-  <button class="sao-toast-close" type="button" aria-label="Close system status">✕</button>
-</div>
-</div>
-  <!-- GREEN: STATUS / SUCCESS -->
-<div class="sao-toast sao-toast-green show" role="status" aria-live="polite">
-  <div class="sao-toast-header">SYSTEM STATUS</div>
-  <div class="sao-toast-body">
-    Melee Page is complete!
+
+  <!-- GREEN: STATUS -->
+  <div class="sao-toast sao-toast-green show" role="status" aria-live="polite">
+    <div class="sao-toast-header">SYSTEM STATUS</div>
+    <div class="sao-toast-body">
+      Melee Page is complete!
+    </div>
+    <button class="sao-toast-close" type="button">✕</button>
   </div>
-  <button class="sao-toast-close" type="button" aria-label="Close system status">✕</button>
+
 </div>
-</div>
+
 
 <script>
   document.querySelectorAll(".sao-toast-close").forEach(btn => {
