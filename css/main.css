@@ -11,10 +11,18 @@ body {
   font-family: "Montserrat", sans-serif;
   background:
     linear-gradient(rgba(10, 30, 40, 0.85), rgba(10, 30, 40, 0.85)),
-    url("/background.png") center / cover no-repeat;
+    url("/css/background.png") center / cover no-repeat;
   color: #e6f7ff;
   line-height: 1.6;
 }
+
+/* Desktop only */
+@media (min-width: 1025px) {
+  body {
+    background-attachment: fixed;
+  }
+}
+
 
 /* ================= HEADER ================= */
 .wiki-header {
