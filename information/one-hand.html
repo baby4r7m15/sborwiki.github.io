@@ -419,6 +419,27 @@
     });
   });
 </script>
+<script>
+  function setToastOffset() {
+    const header = document.querySelector(".wiki-header");
+    const toastStack = document.getElementById("sao-toast-stack");
+    if (!header || !toastStack) return;
+
+    const headerHeight = header.getBoundingClientRect().height;
+    toastStack.style.top = `${headerHeight + 12}px`;
+  }
+
+  window.addEventListener("load", setToastOffset);
+  window.addEventListener("resize", setToastOffset);
+
+  // If your hamburger toggles nav, call it after toggle too:
+  const hamburger = document.getElementById("hamburger");
+  if (hamburger) {
+    hamburger.addEventListener("click", () => {
+      setTimeout(setToastOffset, 50);
+    });
+  }
+</script>
 
 </body>
 </html>
