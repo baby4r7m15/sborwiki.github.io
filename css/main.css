@@ -397,38 +397,36 @@ a:hover {
   }
 }
 
-/* ================= SAO TOP-RIGHT TOAST (FORCED) ================= */
+/* ================= SAO TOP-RIGHT RED TOAST ================= */
 
 #sao-toast {
   position: fixed !important;
-
   top: 80px !important;
   right: 22px !important;
-
   left: auto !important;
   bottom: auto !important;
 
   width: 360px !important;
   max-width: calc(100vw - 44px) !important;
-
   padding: 14px 14px 12px !important;
+
   z-index: 999999 !important;
 
   background: linear-gradient(
     180deg,
-    rgba(20, 70, 90, 0.95),
-    rgba(10, 30, 40, 0.95)
+    rgba(90, 20, 20, 0.95),
+    rgba(45, 10, 10, 0.95)
   ) !important;
 
-  border: 1px solid rgba(0,255,255,0.55) !important;
+  border: 1px solid rgba(255, 80, 80, 0.7) !important;
 
   box-shadow:
-    0 0 20px rgba(0,255,255,0.35),
-    inset 0 0 16px rgba(0,255,255,0.12) !important;
+    0 0 22px rgba(255, 60, 60, 0.55),
+    inset 0 0 16px rgba(255, 80, 80, 0.2) !important;
 
   border-radius: 10px !important;
 
-  color: #e6f7ff !important;
+  color: #ffecec !important;
   font-family: "Montserrat", sans-serif !important;
 
   opacity: 0;
@@ -450,16 +448,18 @@ a:hover {
   transition: opacity 180ms ease, transform 180ms ease;
 }
 
+/* Header */
 .sao-toast-header {
   font-size: 0.75rem;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: #7dd3fc;
+  color: #ff8a8a;
   margin-right: 26px;
   padding-bottom: 6px;
-  border-bottom: 1px solid rgba(125, 211, 252, 0.25);
+  border-bottom: 1px solid rgba(255, 120, 120, 0.35);
 }
 
+/* Body */
 .sao-toast-body {
   margin-top: 10px;
   font-size: 0.9rem;
@@ -467,6 +467,7 @@ a:hover {
   opacity: 0.95;
 }
 
+/* Close button */
 .sao-toast-close {
   position: absolute;
   top: 8px;
@@ -476,19 +477,20 @@ a:hover {
   height: 28px;
   border-radius: 8px;
 
-  background: rgba(125, 211, 252, 0.08);
-  border: 1px solid rgba(125, 211, 252, 0.25);
-  color: #7dd3fc;
+  background: rgba(255, 80, 80, 0.12);
+  border: 1px solid rgba(255, 120, 120, 0.45);
+  color: #ffb3b3;
 
   cursor: pointer;
   transition: 0.2s ease;
 }
 
 .sao-toast-close:hover {
-  background: rgba(125, 211, 252, 0.18);
-  box-shadow: 0 0 10px rgba(125, 211, 252, 0.45);
+  background: rgba(255, 80, 80, 0.25);
+  box-shadow: 0 0 10px rgba(255, 80, 80, 0.65);
 }
 
+/* Subtle scanlines */
 #sao-toast::after {
   content: "";
   position: absolute;
@@ -496,8 +498,8 @@ a:hover {
   border-radius: 10px;
   background: repeating-linear-gradient(
     180deg,
-    rgba(255,255,255,0.03),
-    rgba(255,255,255,0.03) 1px,
+    rgba(255,255,255,0.02),
+    rgba(255,255,255,0.02) 1px,
     transparent 1px,
     transparent 3px
   );
