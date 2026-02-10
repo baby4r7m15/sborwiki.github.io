@@ -202,13 +202,19 @@
   </script>
 
   <div id="popup-overlay">
-  <div id="popup-box">
-    <h2>⚠️ Notice</h2>
-    <p>This site is under construction. Things may change!</p>
-    <button onclick="closePopup()">Got it</button>
+  <div id="sao-popup">
+    <div class="sao-popup-header">SYSTEM MESSAGE</div>
+
+    <div class="sao-popup-body">
+      This site is under construction.<br>
+      Some data may be incomplete or inaccurate.
+    </div>
+
+    <button class="sao-popup-button" onclick="closePopup()">
+      CONFIRM
+    </button>
   </div>
 </div>
-
 <script>
   function closePopup() {
     document.getElementById("popup-overlay").style.display = "none";
