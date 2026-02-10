@@ -1,36 +1,56 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap");
 
-/* ================= RESET ================= */
+/* =====================================================
+   RESET
+===================================================== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* =====================================================
+   BASE / BODY
+===================================================== */
 body {
   font-family: "Montserrat", sans-serif;
+  letter-spacing: 0.3px;
+  color: #e6f7ff;
+  line-height: 1.7;
+
   background:
     linear-gradient(rgba(10, 30, 40, 0.85), rgba(10, 30, 40, 0.85)),
     url("/css/background.png") center / cover no-repeat;
-  color: #e6f7ff;
-  line-height: 1.6;
 }
 
-/* Desktop only */
+/* Desktop parallax effect */
 @media (min-width: 1025px) {
   body {
     background-attachment: fixed;
   }
 }
 
-
-/* ================= HEADER ================= */
+/* =====================================================
+   HEADER (Upgraded SAO Style)
+===================================================== */
 .wiki-header {
-  background: #1a3a4a;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
   position: sticky;
   top: 0;
   z-index: 1000;
+
+  background: linear-gradient(
+    to right,
+    rgba(0, 30, 45, 0.95),
+    rgba(0, 55, 75, 0.85)
+  );
+
+  border-bottom: 1px solid rgba(0, 255, 255, 0.25);
+  backdrop-filter: blur(6px);
 }
 
 .wiki-header-inner {
@@ -38,6 +58,7 @@ body {
   margin: 0 auto;
   padding: 0 30px;
   height: 60px;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -58,7 +79,9 @@ body {
   font-size: 15px;
 }
 
-/* Hamburger */
+/* =====================================================
+   NAVIGATION
+===================================================== */
 .hamburger {
   display: none;
   font-size: 24px;
@@ -66,7 +89,6 @@ body {
   color: #e6f7ff;
 }
 
-/* Navigation */
 .wiki-nav {
   display: flex;
   gap: 25px;
@@ -81,23 +103,29 @@ body {
   font-size: 13px;
   cursor: pointer;
   opacity: 0.85;
+  transition: 0.2s ease;
 }
 
 .nav-label:hover {
   opacity: 1;
+  color: #00f7ff;
 }
 
+/* Dropdown */
 .dropdown {
   position: absolute;
   top: 100%;
   left: 0;
-  background: #244c5f;
+
+  background: rgba(0, 45, 60, 0.95);
+  border: 1px solid rgba(0,255,255,0.25);
+  border-radius: 4px;
+
   min-width: 180px;
   padding: 8px 0;
+
   display: none;
   flex-direction: column;
-  border-radius: 4px;
-  transition: all 0.3s ease;
 }
 
 .dropdown a {
@@ -105,28 +133,34 @@ body {
   font-size: 13px;
   text-decoration: none;
   color: #e6f7ff;
+  transition: 0.2s ease;
 }
 
 .dropdown a:hover {
-  background: rgba(255,255,255,0.08);
+  background: rgba(0,255,255,0.08);
+  color: #00f7ff;
 }
 
 .nav-item:hover .dropdown {
   display: flex;
 }
 
-/* ================= PAGE WRAPPER ================= */
+/* =====================================================
+   PAGE WRAPPER (Softened so SAO panels pop)
+===================================================== */
 .page-wrapper {
   max-width: 1200px;
   margin: 80px auto;
   padding: 40px;
-  background: rgba(0, 15, 25, 0.35);
-  border: 1px solid rgba(0,255,255,0.15);
-  box-shadow: 0 0 40px rgba(0,255,255,0.08);
-  backdrop-filter: blur(8px);
+
+  background: rgba(0, 15, 25, 0.25);
+  border: 1px solid rgba(0,255,255,0.08);
+  backdrop-filter: blur(6px);
 }
 
-/* HERO */
+/* =====================================================
+   HERO
+===================================================== */
 .hero {
   text-align: center;
   padding: 50px 20px;
@@ -138,7 +172,9 @@ body {
   width: 90%;
 }
 
-/* CONTENT */
+/* =====================================================
+   CONTENT LAYOUT
+===================================================== */
 .content-area {
   padding: 40px 50px;
 }
@@ -150,25 +186,29 @@ body {
   align-items: start;
 }
 
-/* Boxes */
-.info-box {
-  background: rgba(30, 50, 65, 0.65);
-  padding: 18px 22px;
-  margin-bottom: 25px;
-  border-radius: 6px;
-  border: 1px solid rgba(255,255,255,0.08);
+/* Sidebar now fully controlled by SAO panel */
+.content-right {
+  background: none;
+  padding: 0;
+  border: none;
 }
 
+/* =====================================================
+   BANNERS & INFO BOXES
+===================================================== */
 .page-banner,
 .page-intro-box {
   margin: 30px 0 25px;
   padding: 12px 40px;
   text-align: center;
+
   font-size: 15px;
   font-weight: 600;
-  letter-spacing: 0.8px;
-  background: rgba(110, 110, 110, 0.65);
-  border: 1px solid rgba(255,255,255,0.08);
+  letter-spacing: 1px;
+
+  background: rgba(60, 70, 75, 0.6);
+  border: 1px solid rgba(0,255,255,0.2);
+
   clip-path: polygon(
     14px 0%,
     calc(100% - 14px) 0%,
@@ -179,34 +219,106 @@ body {
   );
 }
 
-/* Sidebar */
-.content-right {
-  background: rgba(20, 40, 50, 0.75);
-  padding: 20px;
-  border: 1px solid rgba(255,255,255,0.08);
+.info-box {
+  background: rgba(20, 40, 55, 0.65);
+  padding: 18px 22px;
+  margin-bottom: 25px;
   border-radius: 6px;
+  border: 1px solid rgba(0,255,255,0.1);
 }
 
-/* LINKS */
+/* =====================================================
+   LINKS
+===================================================== */
 a {
   color: #00cfff;
   text-decoration: none;
+  transition: 0.2s ease;
 }
 
 a:hover {
+  color: #00f7ff;
   text-decoration: underline;
 }
 
-/* ================= RESPONSIVE ================= */
+/* =====================================================
+   SAO UI PANELS
+===================================================== */
+.sao-section {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin: 40px 0;
+}
 
+/* Base Panel */
+.sao-panel {
+  position: relative;
+  padding: 35px 28px 28px;
+
+  background: linear-gradient(
+    135deg,
+    rgba(0, 25, 35, 0.95),
+    rgba(0, 45, 60, 0.85)
+  );
+
+  border: 1px solid rgba(0,255,255,0.7);
+  border-radius: 3px;
+
+  box-shadow:
+    0 0 20px rgba(0,255,255,0.35),
+    inset 0 0 20px rgba(0,255,255,0.15);
+
+  transition: 0.3s ease;
+}
+
+.sao-panel:hover {
+  box-shadow:
+    0 0 35px rgba(0,255,255,0.8),
+    inset 0 0 25px rgba(0,255,255,0.25);
+}
+
+/* Floating Header Tab */
+.sao-header {
+  position: absolute;
+  top: -15px;
+  left: 22px;
+
+  padding: 6px 18px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  background: #02161f;
+  border: 1px solid #00f7ff;
+  color: #00f7ff;
+
+  box-shadow: 0 0 10px rgba(0,255,255,0.8);
+}
+
+/* Variants */
+.sao-notice {
+  border-color: #00cfff;
+}
+
+.sao-update {
+  border-color: #00ffcc;
+}
+
+.sao-panel p {
+  font-size: 15px;
+  line-height: 1.9;
+  color: #e6f7ff;
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
 @media (max-width: 900px) {
   .content-grid {
     grid-template-columns: 1fr;
     gap: 30px;
-  }
-
-  .content-right {
-    order: 2;
   }
 
   .page-wrapper {
@@ -234,7 +346,7 @@ a:hover {
     width: 100%;
     display: none;
     flex-direction: column;
-    background: rgba(26, 58, 74, 0.98);
+    background: rgba(0, 40, 55, 0.98);
     margin-top: 10px;
     border-radius: 6px;
   }
@@ -257,8 +369,6 @@ a:hover {
   .dropdown {
     position: static;
     display: none;
-    flex-direction: column;
-    background: rgba(36, 76, 95, 0.95);
   }
 
   .nav-item.active .dropdown {
@@ -267,14 +377,6 @@ a:hover {
 
   .dropdown a {
     padding: 12px 22px;
-  }
-
-  .hero {
-    padding: 40px 20px;
-  }
-
-  .content-area {
-    padding: 25px 18px;
   }
 }
 
@@ -293,77 +395,4 @@ a:hover {
   .hero-logo {
     width: 100%;
   }
-}
-
-/* Images */
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-/* ================= SAO UI STYLE ================= */
-
-.sao-section {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  margin: 40px 0;
-}
-
-/* Panel Base */
-.sao-panel {
-  position: relative;
-  padding: 35px 28px 28px 28px;
-  background: linear-gradient(
-    135deg,
-    rgba(0, 25, 35, 0.95),
-    rgba(0, 45, 60, 0.85)
-  );
-  border: 1px solid rgba(0,255,255,0.7);
-  border-radius: 3px;
-  box-shadow:
-    0 0 20px rgba(0,255,255,0.4),
-    inset 0 0 20px rgba(0,255,255,0.15);
-  transition: 0.3s ease;
-}
-
-/* Glow pulse */
-.sao-panel:hover {
-  box-shadow:
-    0 0 35px rgba(0,255,255,0.9),
-    inset 0 0 25px rgba(0,255,255,0.25);
-}
-
-/* Floating Tab Header */
-.sao-header {
-  position: absolute;
-  top: -15px;
-  left: 22px;
-  padding: 6px 18px;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  background: #02161f;
-  border: 1px solid #00f7ff;
-  color: #00f7ff;
-  box-shadow:
-    0 0 10px rgba(0,255,255,0.8);
-}
-
-/* Variants */
-.sao-notice {
-  border-color: #00cfff;
-}
-
-.sao-update {
-  border-color: #00ffcc;
-}
-
-/* Paragraph */
-.sao-panel p {
-  font-size: 15px;
-  line-height: 1.9;
-  color: #e6f7ff;
-  letter-spacing: 0.3px;
 }
