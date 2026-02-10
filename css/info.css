@@ -329,6 +329,11 @@ a:hover {
   color: #e6f7ff;
 }
 
+/* Optional: tighten SAO panel spacing like the homepage */
+.content-left .sao-section {
+  margin-top: 10px;
+}
+
 /* =====================================================
    SAO TABLES (info pages)
 ===================================================== */
@@ -368,12 +373,41 @@ a:hover {
   font-weight: 700;
 }
 
-/* keep table images clean */
-.info-table img {
-  display: block;
-  max-width: 110px;
+/* Table logos/icons (NOT skill gifs) */
+.info-table img:not(.skill-gif) {
+  max-width: 72px;
+  max-height: 72px;
+  width: auto;
   height: auto;
+  margin: 0 auto;
+  display: block;
   filter: drop-shadow(0 0 10px rgba(0, 255, 255, 0.18));
+}
+
+/* Keep skill GIFs readable but not huge */
+.skill-gif {
+  max-width: 90px;
+  max-height: 60px;
+  width: auto;
+  height: auto;
+  border-radius: 4px;
+  display: block;
+  margin: 0 auto;
+  filter: drop-shadow(0 0 6px rgba(0, 255, 255, 0.35));
+}
+
+/* =====================================================
+   SAO LISTS (for info pages)
+===================================================== */
+.sao-list {
+  padding-left: 26px;
+  margin: 10px 0;
+  list-style-position: inside;
+}
+
+.sao-list.sub {
+  padding-left: 18px;
+  margin-top: 8px;
 }
 
 /* =====================================================
@@ -483,8 +517,15 @@ a:hover {
     letter-spacing: 0.6px;
   }
 
-  .info-table img {
+  .info-table img:not(.skill-gif) {
+    max-width: 72px;
+    max-height: 72px;
+    margin-left: auto;
+  }
+
+  .skill-gif {
     max-width: 90px;
+    max-height: 60px;
     margin-left: auto;
   }
 }
@@ -508,44 +549,4 @@ a:hover {
   .info-table td {
     padding-left: 48%;
   }
-}
-
-/* =====================================================
-   ONE-HAND PAGE: SAO LISTS (replaces inline list styles)
-===================================================== */
-.sao-list {
-  padding-left: 26px;
-  margin: 10px 0;
-  list-style-position: inside;
-}
-
-.sao-list.sub {
-  padding-left: 18px;
-  margin-top: 8px;
-}
-
-/* =====================================================
-   TABLE IMAGE SIZING FIX (weapons icons / table logos)
-===================================================== */
-.info-table img {
-  max-width: 72px;
-  max-height: 72px;
-  width: auto;
-  height: auto;
-  margin: 0 auto;
-}
-
-/* Keep skill GIFs readable but not huge */
-.skill-gif {
-  max-width: 90px;
-  max-height: 60px;
-  width: auto;
-  height: auto;
-  border-radius: 4px;
-  filter: drop-shadow(0 0 6px rgba(0, 255, 255, 0.35));
-}
-
-/* Optional: tighten SAO panel spacing like the homepage */
-.content-left .sao-section {
-  margin-top: 10px;
 }
