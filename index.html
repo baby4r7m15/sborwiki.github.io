@@ -10,7 +10,6 @@
 <body>
 
   <!-- ================= HEADER ================= -->
-
   <header class="wiki-header">
     <div class="wiki-header-inner">
 
@@ -22,6 +21,7 @@
       <div class="hamburger" id="hamburger">☰</div>
 
       <nav class="wiki-nav" id="wikiNav">
+
         <div class="nav-item">
           <span class="nav-label">Information</span>
           <div class="dropdown">
@@ -47,87 +47,85 @@
             <a href="#">All Floors</a>
           </div>
         </div>
-      </nav>
 
+      </nav>
     </div>
   </header>
 
-  <!-- ================= PAGE WRAPPER ================= -->
 
-  <div class="page-wrapper">
+  <!-- ================= PAGE WRAPPER ================= -->
+  <main class="page-wrapper">
 
     <!-- HERO -->
     <section class="hero">
       <img src="/Sborlogotext.png" class="hero-logo" alt="SBO Logo">
     </section>
 
-    <!-- CONTENT -->
-    <div class="content-area">
+
+    <!-- ================= CONTENT ================= -->
+    <section class="content-area">
 
       <div class="content-grid">
 
-        <!-- MAIN CONTENT -->
+        <!-- ================= MAIN ================= -->
         <article class="content-left">
 
           <div class="page-intro-box">
             Welcome to the Sword Blox Online: Rebirth Unofficial Wiki!
           </div>
+
+          <!-- SAO INFO PANELS -->
           <div class="sao-section">
 
-  <div class="sao-panel sao-notice">
-    <div class="sao-header">SYSTEM NOTICE</div>
-    <p>
-      Please report any incorrect or missing information to the Official Discord!
-    </p>
-  </div>
+            <div class="sao-panel sao-notice">
+              <div class="sao-header">SYSTEM NOTICE</div>
+              <p>
+                Please report any incorrect or missing information to the Official Discord!
+              </p>
+            </div>
 
-  <div class="sao-panel">
-    <div class="sao-header">GAME OVERVIEW</div>
-    <p>
-      Sword Blox Online: Rebirth (SBO:R) is a game roughly based on the
-      Sword Art Online anime and is continued by Zuyashi from the work of
-      Atarru and the Apex development team. Under a different development
-      group, the game is about players going through the world of SAO and
-      making their way up the numerous floors and overcoming challenges
-      with a variety of weapons, armors, and shields.
-    </p>
-  </div>
+            <div class="sao-panel">
+              <div class="sao-header">GAME OVERVIEW</div>
+              <p>
+                Sword Blox Online: Rebirth (SBO:R) is a game roughly based on the
+                Sword Art Online anime and is continued by Zuyashi from the work of
+                Atarru and the Apex development team. Under a different development
+                group, the game is about players going through the world of SAO and
+                making their way up the numerous floors and overcoming challenges
+                with a variety of weapons, armors, and shields.
+              </p>
+            </div>
 
-  <div class="sao-panel sao-update">
-    <div class="sao-header">UPDATE STATUS</div>
-    <p>
-      We are currently updating the entire website with up-to-date
-      information to match the latest game updates.
-    </p>
-  </div>
+            <div class="sao-panel sao-update">
+              <div class="sao-header">UPDATE STATUS</div>
+              <p>
+                We are currently updating the entire website with up-to-date
+                information to match the latest game updates.
+              </p>
+            </div>
 
-</div>
+          </div>
 
+
+          <!-- WHAT'S NEW -->
           <div class="page-banner">« What's New »</div>
 
           <div class="info-box">
             <ul>
               <li>
-                Added
-                <a href="https://sborwiki.com">
-                  Wiki Homepage
-                </a>
+                Added <a href="https://sborwiki.com">Wiki Homepage</a>
               </li>
               <li>
-                Added
-                <a href="https://sborwiki.com/information/weapons.html">
-                  Weapons Page
-                </a>
+                Added <a href="https://sborwiki.com/information/weapons.html">Weapons Page</a>
               </li>
               <li>
-                Added
-                <a href="https://sborwiki.com/information/one-hand.html">
-                  One Handed Weapons Page
-                </a>
+                Added <a href="https://sborwiki.com/information/one-hand.html">One Handed Weapons Page</a>
               </li>
             </ul>
           </div>
 
+
+          <!-- SOCIAL -->
           <div class="page-banner">« Social »</div>
 
           <div class="info-box">
@@ -147,40 +145,45 @@
 
         </article>
 
-        <!-- SIDEBAR -->
+
+        <!-- ================= SIDEBAR ================= -->
         <aside class="content-right">
 
-          <h3>Wiki Staff</h3>
+          <div class="sao-panel">
+            <div class="sao-header">WIKI STAFF</div>
 
-          <ul>
-            <li>Acheolis</li>
-            <li>AFTERHE4RTZ</li>
-            <li>Badenglishj</li>
-            <li>Kens1ies</li>
-            <li>the4thdissapointment</li>
-            <li>HazzaGCB</li>
-            <li>IINekemi</li>
-            <li>Xuekome</li>
-            <li>Exiled_01</li>
-            <li>Celestial_Paradox</li>
-          </ul>
+            <ul>
+              <li>Acheolis</li>
+              <li>AFTERHE4RTZ</li>
+              <li>Badenglishj</li>
+              <li>Kens1ies</li>
+              <li>the4thdissapointment</li>
+              <li>HazzaGCB</li>
+              <li>IINekemi</li>
+              <li>Xuekome</li>
+              <li>Exiled_01</li>
+              <li>Celestial_Paradox</li>
+            </ul>
 
-          <p>Unofficial Wiki</p>
+            <br>
 
-          <ul>
-            <li>XxBelleDevxX</li>
-          </ul>
+            <strong>Unofficial Wiki</strong>
+
+            <ul>
+              <li>XxBelleDevxX</li>
+            </ul>
+          </div>
 
         </aside>
 
       </div>
 
-    </div>
+    </section>
 
-  </div>
+  </main>
+
 
   <!-- ================= MOBILE SCRIPT ================= -->
-
   <script>
     const hamburger = document.getElementById("hamburger");
     const nav = document.getElementById("wikiNav");
