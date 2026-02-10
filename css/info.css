@@ -146,6 +146,10 @@ body {
   display: flex;
 }
 
+:root {
+  --nav-height: 60px;
+}
+
 /* =====================================================
    PAGE WRAPPER
 ===================================================== */
@@ -556,7 +560,7 @@ a:hover {
 
 #sao-toast-stack {
   position: fixed;
-  top: 80px;
+  top: calc(var(--nav-height) + 20px); /* navbar + spacing */
   right: 22px;
   z-index: 999999;
 
@@ -697,9 +701,14 @@ a:hover {
 
 /* Mobile */
 @media (max-width: 768px) {
+  :root {
+    --nav-height: 90px;
+  }
+
   #sao-toast-stack {
-    top: calc(env(safe-area-inset-top, 0px) + 110px);
+    top: calc(var(--nav-height) + env(safe-area-inset-top, 0px) + 12px);
     right: 12px;
     width: calc(100vw - 24px);
+    max-width: none;
   }
 }
