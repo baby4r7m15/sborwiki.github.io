@@ -397,77 +397,98 @@ a:hover {
   }
 }
 
-/* ================= SAO SYSTEM POPUP ================= */
+/* ================= SAO TOP-RIGHT TOAST ================= */
 
-#popup-overlay {
+#sao-toast {
   position: fixed;
-  inset: 0;
-  background: rgba(0, 15, 25, 0.85);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  top: 80px;             /* clears sticky header */
+  right: 22px;
+  width: min(360px, calc(100vw - 44px));
+  padding: 14px 14px 12px;
   z-index: 9999;
+
+  background: linear-gradient(
+    180deg,
+    rgba(20, 70, 90, 0.95),
+    rgba(10, 30, 40, 0.95)
+  );
+  border: 1px solid rgba(0,255,255,0.55);
+  box-shadow:
+    0 0 20px rgba(0,255,255,255,0.35),
+    inset 0 0 16px rgba(0,255,255,0.12);
+  border-radius: 10px;
+
+  color: #e6f7ff;
+  font-family: "Montserrat", sans-serif;
+
+  /* animation defaults */
+  opacity: 0;
+  transform: translateX(18px);
+  pointer-events: none;
 }
 
-#sao-popup {
-  width: 420px;
-  padding: 1.5rem;
-  background:
-    linear-gradient(
-      180deg,
-      rgba(20, 70, 90, 0.95),
-      rgba(10, 30, 40, 0.95)
-    );
-  border: 2px solid rgba(120, 220, 255, 0.6);
-  box-shadow:
-    0 0 25px rgba(120, 220, 255, 0.45),
-    inset 0 0 18px rgba(120, 220, 255, 0.15);
-  font-family: "Montserrat", sans-serif;
-  color: #e6f7ff;
-  position: relative;
+#sao-toast.show {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+  transition: opacity 220ms ease, transform 220ms ease;
+}
+
+#sao-toast.hide {
+  opacity: 0;
+  transform: translateX(18px);
+  pointer-events: none;
+  transition: opacity 180ms ease, transform 180ms ease;
 }
 
 /* Header */
-.sao-popup-header {
-  font-size: 0.85rem;
+.sao-toast-header {
+  font-size: 0.75rem;
   letter-spacing: 2px;
+  text-transform: uppercase;
   color: #7dd3fc;
-  border-bottom: 1px solid rgba(125, 211, 252, 0.3);
-  padding-bottom: 0.4rem;
-  margin-bottom: 1rem;
+  margin-right: 26px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(125, 211, 252, 0.25);
 }
 
-/* Body text */
-.sao-popup-body {
-  font-size: 0.95rem;
-  line-height: 1.5;
-  text-align: center;
-  margin-bottom: 1.2rem;
+/* Body */
+.sao-toast-body {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  line-height: 1.45;
+  opacity: 0.95;
 }
 
-/* Button */
-.sao-popup-button {
-  width: 100%;
-  padding: 0.6rem 0;
-  background: transparent;
-  border: 1px solid rgba(125, 211, 252, 0.7);
+/* Close button */
+.sao-toast-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+
+  background: rgba(125, 211, 252, 0.08);
+  border: 1px solid rgba(125, 211, 252, 0.25);
   color: #7dd3fc;
-  font-weight: 600;
-  letter-spacing: 1px;
+
   cursor: pointer;
-  transition: all 0.25s ease;
+  transition: 0.2s ease;
 }
 
-.sao-popup-button:hover {
-  background: rgba(125, 211, 252, 0.15);
-  box-shadow: 0 0 12px rgba(125, 211, 252, 0.6);
+.sao-toast-close:hover {
+  background: rgba(125, 211, 252, 0.18);
+  box-shadow: 0 0 10px rgba(125, 211, 252, 0.45);
 }
 
-/* Optional scanline effect */
-#sao-popup::after {
+/* Optional scanlines */
+#sao-toast::after {
   content: "";
   position: absolute;
   inset: 0;
+  border-radius: 10px;
   background: repeating-linear-gradient(
     180deg,
     rgba(255,255,255,0.03),
