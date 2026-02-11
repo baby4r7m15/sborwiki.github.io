@@ -420,13 +420,16 @@ a:hover {
 
 /* ================= SAO TOAST STACK ================= */
 
+/* ================= SAO TOAST STACK ================= */
+
 #sao-toast-stack {
   position: fixed;
 
+  /* Desktop default: bottom-right */
   bottom: 22px;
   right: 22px;
 
-  top: auto;
+  top: auto !important;   /* overrides JS inline top on desktop */
   left: auto;
 
   z-index: 999999;
@@ -575,11 +578,13 @@ a:hover {
   }
 
   #sao-toast-stack {
-    top: calc(var(--nav-height) + env(safe-area-inset-top, 0px) + 12px);
+    top: calc(var(--nav-height) + env(safe-area-inset-top, 0px) + 12px) !important;
     right: 12px;
     left: 12px;
-    bottom: auto; /* CRITICAL: prevents full-height overlay */
+
+    bottom: auto; /* prevents full-height overlay */
     width: auto;
     max-width: none;
   }
 }
+
