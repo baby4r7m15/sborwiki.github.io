@@ -28,6 +28,12 @@ body {
     url("/css/background.png") center / cover no-repeat;
 }
 
+/* Decorative layers should never block taps */
+body::before,
+body::after {
+  pointer-events: none;
+}
+
 /* Desktop parallax effect */
 @media (min-width: 1025px) {
   body {
@@ -36,7 +42,7 @@ body {
 }
 
 /* =====================================================
-   HEADER (Upgraded SAO Style)
+   HEADER
 ===================================================== */
 .wiki-header {
   position: sticky;
@@ -51,6 +57,11 @@ body {
 
   border-bottom: 1px solid rgba(0, 255, 255, 0.25);
   backdrop-filter: blur(6px);
+}
+
+.wiki-header::before,
+.wiki-header::after {
+  pointer-events: none;
 }
 
 .wiki-header-inner {
@@ -150,7 +161,7 @@ body {
 }
 
 /* =====================================================
-   PAGE WRAPPER (Softened so SAO panels pop)
+   PAGE WRAPPER
 ===================================================== */
 .page-wrapper {
   max-width: 1200px;
@@ -177,7 +188,7 @@ body {
 }
 
 /* =====================================================
-   CONTENT LAYOUT
+   CONTENT
 ===================================================== */
 .content-area {
   padding: 40px 50px;
@@ -187,18 +198,10 @@ body {
   display: grid;
   grid-template-columns: 3fr 1fr;
   gap: 50px;
-  align-items: start;
-}
-
-/* Sidebar now fully controlled by SAO panel */
-.content-right {
-  background: none;
-  padding: 0;
-  border: none;
 }
 
 /* =====================================================
-   BANNERS & INFO BOXES
+   BANNERS
 ===================================================== */
 .page-banner,
 .page-intro-box {
@@ -237,7 +240,6 @@ body {
 a {
   color: #00cfff;
   text-decoration: none;
-  transition: 0.2s ease;
 }
 
 a:hover {
@@ -246,16 +248,8 @@ a:hover {
 }
 
 /* =====================================================
-   SAO UI PANELS
+   SAO PANELS
 ===================================================== */
-.sao-section {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  margin: 40px 0;
-}
-
-/* Base Panel */
 .sao-panel {
   position: relative;
   padding: 35px 28px 28px;
@@ -268,149 +262,15 @@ a:hover {
 
   border: 1px solid rgba(0,255,255,0.7);
   border-radius: 3px;
-
-  box-shadow:
-    0 0 20px rgba(0,255,255,0.35),
-    inset 0 0 20px rgba(0,255,255,0.15);
-
-  transition: 0.3s ease;
-}
-
-.sao-panel:hover {
-  box-shadow:
-    0 0 35px rgba(0,255,255,0.8),
-    inset 0 0 25px rgba(0,255,255,0.25);
-}
-
-/* Floating Header Tab */
-.sao-header {
-  position: absolute;
-  top: -15px;
-  left: 22px;
-
-  padding: 6px 18px;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-
-  background: #02161f;
-  border: 1px solid #00f7ff;
-  color: #00f7ff;
-
-  box-shadow: 0 0 10px rgba(0,255,255,0.8);
-}
-
-/* Variants */
-.sao-notice {
-  border-color: #00cfff;
-}
-
-.sao-update {
-  border-color: #00ffcc;
-}
-
-.sao-panel p {
-  font-size: 15px;
-  line-height: 1.9;
-  color: #e6f7ff;
 }
 
 /* =====================================================
-   RESPONSIVE
+   TOAST STACK (FIXED)
 ===================================================== */
-@media (max-width: 900px) {
-  .content-grid {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-
-  .page-wrapper {
-    margin: 30px 20px;
-  }
-
-  .content-area {
-    padding: 30px 20px;
-  }
-}
-
-@media (max-width: 768px) {
-
-  .wiki-header-inner {
-    flex-wrap: wrap;
-    height: auto;
-    padding: 10px 20px;
-  }
-
-  .hamburger {
-    display: block;
-  }
-
-  .wiki-nav {
-    width: 100%;
-    display: none;
-    flex-direction: column;
-    background: rgba(0, 40, 55, 0.98);
-    margin-top: 10px;
-    border-radius: 6px;
-  }
-
-  .wiki-nav.active {
-    display: flex;
-  }
-
-  .nav-item {
-    width: 100%;
-  }
-
-  .nav-label {
-    display: block;
-    padding: 14px 18px;
-    font-size: 14px;
-    opacity: 1;
-  }
-
-  .dropdown {
-    position: static;
-    display: none;
-  }
-
-  .nav-item.active .dropdown {
-    display: flex;
-  }
-
-  .dropdown a {
-    padding: 12px 22px;
-  }
-}
-
-@media (max-width: 480px) {
-  body {
-    font-size: 15px;
-  }
-
-  .page-banner,
-  .page-intro-box,
-  .info-box {
-    padding: 10px 20px;
-    font-size: 14px;
-  }
-
-  .hero-logo {
-    width: 100%;
-  }
-}
-
-/* ================= SAO TOAST STACK ================= */
-
 #sao-toast-stack {
   position: fixed;
-
   bottom: 22px;
   right: 22px;
-
-  top: auto;
-  left: auto;
 
   z-index: 999999;
 
@@ -420,145 +280,52 @@ a:hover {
 
   width: 360px;
   max-width: calc(100vw - 44px);
+
+  pointer-events: none; /* 🔑 never blocks page */
 }
 
-/* Base toast */
 .sao-toast {
-  position: relative;
-  padding: 14px 14px 12px;
+  padding: 14px;
   border-radius: 10px;
-
-  font-family: "Montserrat", sans-serif;
-  color: #e6f7ff;
-
   opacity: 0;
   transform: translateX(18px);
-  pointer-events: none;
 }
 
 .sao-toast.show {
   opacity: 1;
   transform: translateX(0);
-  pointer-events: auto;
-  transition: opacity 220ms ease, transform 220ms ease;
+  pointer-events: auto; /* toast only */
 }
 
-/* Header */
-.sao-toast-header {
-  font-size: 0.75rem;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  margin-right: 26px;
-  padding-bottom: 6px;
-}
-
-/* Body */
-.sao-toast-body {
-  margin-top: 10px;
-  font-size: 0.9rem;
-  line-height: 1.45;
-  opacity: 0.95;
-}
-
-/* Close button */
-.sao-toast-close {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-
-  width: 28px;
-  height: 28px;
-  border-radius: 8px;
-
-  cursor: pointer;
-  transition: 0.2s ease;
-}
-
-/* ================= RED (WARNING) ================= */
-
-.sao-toast-red {
-  background: linear-gradient(
-    180deg,
-    rgba(90, 20, 20, 0.95),
-    rgba(45, 10, 10, 0.95)
-  );
-  border: 1px solid rgba(255, 80, 80, 0.7);
-  box-shadow:
-    0 0 22px rgba(255, 60, 60, 0.55),
-    inset 0 0 16px rgba(255, 80, 80, 0.2);
-}
-
-.sao-toast-red .sao-toast-header {
-  color: #ff8a8a;
-  border-bottom: 1px solid rgba(255, 120, 120, 0.35);
-}
-
-.sao-toast-red .sao-toast-close {
-  background: rgba(255, 80, 80, 0.12);
-  border: 1px solid rgba(255, 120, 120, 0.45);
-  color: #ffb3b3;
-}
-
-/* ================= YELLOW (NOTICE) ================= */
-
-.sao-toast-yellow {
-  background: linear-gradient(
-    180deg,
-    rgba(90, 80, 20, 0.95),
-    rgba(45, 40, 10, 0.95)
-  );
-  border: 1px solid rgba(255, 215, 100, 0.75);
-  box-shadow:
-    0 0 22px rgba(255, 215, 100, 0.45),
-    inset 0 0 16px rgba(255, 215, 100, 0.25);
-}
-
-.sao-toast-yellow .sao-toast-header {
-  color: #ffe08a;
-  border-bottom: 1px solid rgba(255, 215, 120, 0.4);
-}
-
-.sao-toast-yellow .sao-toast-close {
-  background: rgba(255, 215, 120, 0.18);
-  border: 1px solid rgba(255, 215, 120, 0.45);
-  color: #fff1b8;
-}
-
-/* ================= GREEN (STATUS / SUCCESS) ================= */
-
-.sao-toast-green {
-  background: linear-gradient(
-    180deg,
-    rgba(20, 90, 45, 0.95),
-    rgba(10, 45, 25, 0.95)
-  );
-  border: 1px solid rgba(80, 255, 170, 0.75);
-  box-shadow:
-    0 0 22px rgba(80, 255, 170, 0.5),
-    inset 0 0 16px rgba(80, 255, 170, 0.25);
-}
-
-.sao-toast-green .sao-toast-header {
-  color: #9dffce;
-  border-bottom: 1px solid rgba(120, 255, 190, 0.45);
-}
-
-.sao-toast-green .sao-toast-close {
-  background: rgba(80, 255, 170, 0.18);
-  border: 1px solid rgba(120, 255, 190, 0.45);
-  color: #c9ffea;
-}
-
-/* Mobile */
+/* =====================================================
+   RESPONSIVE
+===================================================== */
 @media (max-width: 768px) {
   :root {
     --nav-height: 90px;
   }
 
+  .hamburger {
+    display: block;
+  }
+
+  .wiki-nav {
+    display: none;
+    flex-direction: column;
+  }
+
+  .wiki-nav.active {
+    display: flex;
+  }
+
+  /* 🔥 MOBILE TOAST FIX */
   #sao-toast-stack {
     top: calc(var(--nav-height) + env(safe-area-inset-top, 0px) + 12px);
+    bottom: auto;
+    left: 12px;
     right: 12px;
-    width: calc(100vw - 24px);
+
+    width: auto;
     max-width: none;
   }
 }
