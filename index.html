@@ -331,18 +331,27 @@
 
   <!-- ================= TOAST OFFSET SCRIPT ================= -->
   <script>
-    function setToastOffset() {
-      const header = document.querySelector(".wiki-header");
-      const toastStack = document.getElementById("sao-toast-stack");
-      if (!header || !toastStack) return;
+  function setToastOffset() {
+    const header = document.querySelector(".wiki-header");
+    const toastStack = document.getElementById("sao-toast-stack");
+    if (!header || !toastStack) return;
 
+    // Mobile: tuck under header
+    if (window.innerWidth <= 768) {
       const headerHeight = header.getBoundingClientRect().height;
       toastStack.style.top = `${headerHeight + 12}px`;
+      toastStack.style.bottom = "auto";
+    } else {
+      // Desktop: bottom-right (remove inline top so CSS wins)
+      toastStack.style.top = "";
+      toastStack.style.bottom = "";
     }
+  }
 
-    window.addEventListener("load", setToastOffset);
-    window.addEventListener("resize", setToastOffset);
-  </script>
+  window.addEventListener("load", setToastOffset);
+  window.addEventListener("resize", setToastOffset);
+</script>
+
 
 </body>
 </html>
