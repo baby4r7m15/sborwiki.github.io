@@ -25,7 +25,7 @@ body {
 
   background:
     linear-gradient(rgba(10, 30, 40, 0.85), rgba(10, 30, 40, 0.85)),
-    url("/css/background.png") center / cover no-repeat;
+    url("/css/background6.png") center / cover no-repeat;
 }
 
 /* Decorative layers should never block taps */
