@@ -328,6 +328,12 @@ a:hover {
   color: #e6f7ff;
 }
 
+.sao-dramatic-lines {
+  margin-top: 1.5rem;
+  line-height: 2;
+  letter-spacing: 1px;
+}
+
 /* =====================================================
    RESPONSIVE
 ===================================================== */
