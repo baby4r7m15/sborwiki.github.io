@@ -171,7 +171,7 @@ body::after {
 
   background: rgba(0, 15, 25, 0.25);
   border: 1px solid rgba(0,255,255,0.08);
-  backdrop-filter: blur(6px);
+  backdrop-filter: blur(3px);
 }
 
 /* =====================================================
