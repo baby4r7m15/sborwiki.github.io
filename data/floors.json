@@ -47,11 +47,11 @@
     {
       "id": "2",
       "number": 2,
-      "name": "Forest of Trials",
+      "name": "Swordsman Fields",
       "tags": ["COMBAT ZONE", "FIELD MOBS"],
       "info": [
         "First Combat Area",
-        "Home of Goblin Mobs",
+        "Home of Illfang the Kobold Lord (Boss)",
         "Outdoor Field Map"
       ],
       "activities": [
@@ -60,21 +60,30 @@
         "Material Farming"
       ],
       "shops": [
-        "Field Merchant"
+        "Floor 2 Shop",
+        "Guild Merchants"
       ],
       "keyPoints": [
-        "Goblin Camp",
-        "Hidden Clearing",
-        "Mini-Boss Spawn"
+        "Spawn",
+        "Village",
+        "Lake",
+        "Forest",
+        "Mine",
+        "Boss Tower"
       ],
       "map": {
-        "image": "/images/floors/floor-2.png",
+        "image": "/images/floors/floor2.png",
         "alt": "Floor 2 map",
         "callouts": [
-          { "label": "Goblin Camp", "top": "40%", "left": "20%" }
+          { "label": "Spawn", "top": "40%", "left": "20%" },
+          { "label": "Village", "top": "40%", "left": "20%" },
+          { "label": "Guild Merchants", "top": "40%", "left": "20%" },
+          { "label": "Shop", "top": "40%", "left": "20%" },
+          { "label": "Mine", "top": "40%", "left": "20%" },
+          { "label": "Tower", "top": "40%", "left": "20%" }
         ]
       },
-      "systemNote": "Recommended level 5+ before entering."
+      "systemNote": "Floor 2 is the beginning floor for leveling."
     }
 
   ]
