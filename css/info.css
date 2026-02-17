@@ -737,11 +737,6 @@ a:hover {
   transform: scaleX(1);
 }
 
-/* Animation class */
-.sao-toast-progress.animate {
-  animation: toastTimer 45s linear forwards;
-}
-
 @keyframes toastTimer {
   from { transform: scaleX(1); }
   to   { transform: scaleX(0); }
