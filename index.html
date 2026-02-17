@@ -322,20 +322,25 @@
 
   <!-- ================= TOAST CLOSE SCRIPT ================= -->
   <script>
-  document.querySelectorAll(".sao-toast").forEach(toast => {
+  const BASE_TIME = 15000;   // 15 seconds
+  const STAGGER = 2000;      // 2 seconds apart
+
+  document.querySelectorAll(".sao-toast").forEach((toast, index) => {
 
     const progress = toast.querySelector(".sao-toast-progress");
 
-    // Start progress animation
+    // Adjust animation duration for stagger
+    const totalTime = BASE_TIME + (index * STAGGER);
+
     if (progress) {
-      progress.classList.add("animate");
+      progress.style.animation = `toastTimer ${totalTime / 1000}s linear forwards`;
     }
 
-    // Auto close timer (45s)
+    // Auto close with stagger
     const autoClose = setTimeout(() => {
       toast.classList.remove("show");
       setTimeout(() => toast.remove(), 220);
-    }, 45000);
+    }, totalTime);
 
 
     // Manual close
@@ -344,7 +349,6 @@
       closeBtn.addEventListener("click", () => {
         clearTimeout(autoClose);
 
-        // Stop animation instantly
         if (progress) {
           progress.style.animation = "none";
         }
@@ -356,8 +360,6 @@
 
   });
 </script>
-
-
 
   <!-- ================= TOAST OFFSET SCRIPT ================= -->
   <script>
