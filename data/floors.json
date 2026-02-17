@@ -35,10 +35,10 @@
           { "label": "Starter Shop", "top": "45%", "left": "81%" },
           { "label": "Potion Shop", "top": "28%", "right": "15%" },
           { "label": "Blacksmith", "top": "45%", "right": "20%" },
-          { "label": "Event Shop", "bottom": "2%", "right": "56%" },
+          { "label": "Event Shop", "bottom": "56%", "right": "2%" },
           { "label": "Cole’s Cuts", "bottom": "68%", "left": "59%" },
-          { "label": "Spawn", "bottom": "68%", "left": "59%" },
-          { "label": "Black Iron Palace", "bottom": "68%", "left": "59%" }
+          { "label": "Spawn", "bottom": "57%", "left": "37%" },
+          { "label": "Black Iron Palace", "bottom": "58%", "left": "10%" }
         ]
       },
       "systemNote": "Floor 1 is the primary safe hub for new players."
