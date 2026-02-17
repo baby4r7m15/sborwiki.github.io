@@ -144,22 +144,9 @@
 
   <!-- ================= MOBILE SCRIPT ================= -->
   <script>
-    const hamburger = document.getElementById("hamburger");
-    const nav = document.getElementById("wikiNav");
+  const hamburger = document.getElementById("hamburger");
+  const nav = document.getElementById("wikiNav");
 
-    hamburger.addEventListener("click", () => {
-      nav.classList.toggle("active");
-    });
-
-    document.querySelectorAll(".nav-label").forEach(label => {
-      label.addEventListener("click", function () {
-        if (window.innerWidth <= 768) {
-          this.parentElement.classList.toggle("active");
-        }
-      });
-    });
-  </script>
-<script>
   function setToastOffset() {
     const header = document.querySelector(".wiki-header");
     const toastStack = document.getElementById("sao-toast-stack");
@@ -169,17 +156,28 @@
     toastStack.style.top = `${headerHeight + 12}px`;
   }
 
-  window.addEventListener("load", setToastOffset);
-  window.addEventListener("resize", setToastOffset);
-
-  // If your hamburger toggles nav, call it after toggle too:
-  const hamburger = document.getElementById("hamburger");
-  if (hamburger) {
+  // Mobile nav toggle
+  if (hamburger && nav) {
     hamburger.addEventListener("click", () => {
+      nav.classList.toggle("active");
       setTimeout(setToastOffset, 50);
     });
   }
+
+  // Dropdown toggles on mobile (only if you have .nav-label elements)
+  document.querySelectorAll(".nav-label").forEach(label => {
+    label.addEventListener("click", function () {
+      if (window.innerWidth <= 768) {
+        this.parentElement.classList.toggle("active");
+        setTimeout(setToastOffset, 50);
+      }
+    });
+  });
+
+  window.addEventListener("load", setToastOffset);
+  window.addEventListener("resize", setToastOffset);
 </script>
+
 
 <script>
 async function loadFloorsTable() {
