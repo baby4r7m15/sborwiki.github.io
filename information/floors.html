@@ -205,7 +205,7 @@ async function loadFloorsTable() {
         nameCell.setAttribute("data-label", "Name");
 
         const link = document.createElement("a");
-        link.href = `/information/floors/?id=${floor.id}`;
+        link.href = `/information/floors/floor.html?id=${floor.id}`;
         link.textContent = floor.name || `Floor ${floor.id}`;
         nameCell.appendChild(link);
 
