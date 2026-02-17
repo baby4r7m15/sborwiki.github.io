@@ -52,7 +52,7 @@
       "info": [
         "First Combat Area",
         "Home of Illfang the Kobold Lord (Boss)",
-        "Outdoor Field Map"
+        "Boars/Wolves (Mobs)"
       ],
       "activities": [
         "Mob Grinding",
@@ -74,12 +74,12 @@
         "image": "/images/floors/floor2map.png",
         "alt": "Floor 2 map",
         "callouts": [
-          { "label": "Spawn", "top": "40%", "left": "20%" },
-          { "label": "Village", "top": "40%", "left": "20%" },
-          { "label": "Guild Merchants", "top": "40%", "left": "20%" },
-          { "label": "Shop", "top": "40%", "left": "20%" },
-          { "label": "Mine", "top": "40%", "left": "20%" },
-          { "label": "Tower", "top": "40%", "left": "20%" }
+          { "label": "Spawn", "top": "33%", "left": "3%" },
+          { "label": "Village", "top": "48%", "left": "45%" },
+          { "label": "Guild Merchants", "top": "55%", "left": "40%" },
+          { "label": "Shop", "top": "62%", "left": "50%" },
+          { "label": "Mine", "top": "38%", "left": "63%" },
+          { "label": "Tower", "top": "82%", "left": "86%" }
         ]
       },
       "systemNote": "Floor 2 is the beginning floor for leveling."
