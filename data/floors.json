@@ -67,12 +67,11 @@
         "Spawn",
         "Village",
         "Lake",
-        "Forest",
         "Mine",
         "Boss Tower"
       ],
       "map": {
-        "image": "/images/floors/floor2.png",
+        "image": "/images/floors/floor2map.png",
         "alt": "Floor 2 map",
         "callouts": [
           { "label": "Spawn", "top": "40%", "left": "20%" },
