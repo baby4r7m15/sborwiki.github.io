@@ -343,3 +343,59 @@ body{
   .hud-panel{ padding: 14px; }
   .map-placeholder{ height: 280px; }
 }
+
+/* ===== EXTRA MOBILE SAFETY ===== */
+@media (max-width: 520px){
+
+  /* Sticky HUD: reduce footprint */
+  .hud-top{
+    padding: 14px 14px;
+    gap: 10px;
+  }
+  .hud-kicker{ font-size: 11px; letter-spacing: 1.5px; }
+  .hud-subtitle{ font-size: 12px; letter-spacing: 1.5px; }
+
+  /* Tags/chips: smaller + wrap nicely */
+  .hud-right{ gap: 8px; }
+  .hud-chip{
+    font-size: 10px;
+    padding: 5px 8px;
+  }
+
+  /* Callouts: shrink so they don’t stomp the map */
+  .callout{
+    font-size: 10px;
+    padding: 5px 8px;
+    max-width: 60%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* SYSTEM NOTE: don’t block the bottom of the page */
+  .floor-note{
+    left: 14px;
+    right: 14px;
+    bottom: 14px;
+    width: auto;
+    max-height: 38vh;
+    overflow: auto;
+  }
+}
+
+/* Even better UX: on tiny screens, put the note in-flow (no overlay) */
+@media (max-width: 420px){
+  .floor-note{
+    position: static;
+    margin: 14px;
+    max-height: none;
+  }
+  .floor-grid{
+    padding-bottom: 24px; /* no need to reserve space for overlay */
+  }
+}
+
+/* Accessibility: respect reduced motion */
+@media (prefers-reduced-motion: reduce){
+  .scanline{ animation: none; }
+}
