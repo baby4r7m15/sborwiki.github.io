@@ -318,15 +318,29 @@
 
 
   <!-- ================= TOAST CLOSE SCRIPT ================= -->
-  <script>
-    document.querySelectorAll(".sao-toast-close").forEach(btn => {
-      btn.addEventListener("click", () => {
-        const toast = btn.closest(".sao-toast");
+<script>
+  document.querySelectorAll(".sao-toast").forEach(toast => {
+
+    // --- Auto close after 45 seconds ---
+    const autoClose = setTimeout(() => {
+      toast.classList.remove("show");
+      setTimeout(() => toast.remove(), 220);
+    }, 45000); // 45,000ms = 45 seconds
+
+
+    // --- Manual close button ---
+    const closeBtn = toast.querySelector(".sao-toast-close");
+    if (closeBtn) {
+      closeBtn.addEventListener("click", () => {
+        clearTimeout(autoClose); // stop auto close if user clicks
         toast.classList.remove("show");
         setTimeout(() => toast.remove(), 220);
       });
-    });
-  </script>
+    }
+
+  });
+</script>
+
 
 
   <!-- ================= TOAST OFFSET SCRIPT ================= -->
