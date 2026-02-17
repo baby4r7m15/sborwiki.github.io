@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SBO:R Wiki – Floors</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/info.css">
+
+  <!-- ====== FAVICON / TAB ICON ====== -->
+<link rel="icon" href="/logo.png" type="image/png" />
+<link rel="apple-touch-icon" href="/logo.png" />
+
+  <!-- ====== EMBED / LINK PREVIEW ====== -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Sword Blox Online: Rebirth Wiki" />
+<meta property="og:title" content="SBO:R Floors Page" />
+<meta property="og:description" content="A list of the floors in SBO:R." />
+<meta property="og:url" content="https://sborwiki.com/information/floors" />
+
+<!-- This should be your banner image (Sborlogotext) -->
+<meta property="og:image" content="https://sborwiki.com/Sborlogotext.png" />
+<meta property="og:image:alt" content="Sword Blox Online Rebirth Wiki banner" />
+
+<!-- Optional but helps some platforms -->
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+
+<!-- Twitter/X -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="SBO:R Floors Page" />
+<meta name="twitter:description" content="A list of the floors in SBO:R." />
+<meta name="twitter:image" content="https://sborwiki.com/Sborlogotext.png" />
+</head>
+
+<body>
+
+  <!-- ================= HEADER ================= -->
+  <header class="wiki-header">
+    <div class="wiki-header-inner">
+
+      <div class="wiki-left">
+        <img src="/logo.png" class="wiki-logo" alt="Logo" />
+        <span class="wiki-title">Sword Blox Online: Rebirth Wiki</span>
+      </div>
+
+      <div class="hamburger" id="hamburger">☰</div>
+
+      <nav class="wiki-nav" id="wikiNav">
+
+        <div class="nav-item">
+          <a href="https://sborwiki.com">Home</a>
+        </div>
+        
+        <!--<div class="nav-item">
+          <span class="nav-label">Information</span>
+          <div class="dropdown">
+            <a href="#">Protective Gear</a>
+            <a href="#">Items</a>
+            <a href="#">Blacksmithing</a>
+            <a href="#">Guilds</a>
+            <a href="#">Quests</a>
+          </div>
+        </div>-->
+
+        <!--<div class="nav-item">
+          <span class="nav-label">Events</span>
+          <div class="dropdown">
+            <a href="#">All Events</a>
+          </div>
+        </div>-->
+
+        <!--<div class="nav-item">
+          <span class="nav-label">Floors</span>
+          <div class="dropdown">
+            <a href="#">All Floors</a>
+          </div>
+        </div>-->
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- ================= PAGE WRAPPER ================= -->
+  <main class="page-wrapper">
+
+    <!-- HERO -->
+    <section class="hero">
+      <img src="/Sborlogotext.png" class="hero-logo" alt="SBO Logo">
+    </section>
+
+    <!-- ================= CONTENT ================= -->
+    <section class="content-area">
+      <div class="content-grid">
+
+        <!-- ================= MAIN ================= -->
+        <article class="content-left">
+
+          <a href="/index.html" class="back-link">← Back to Main Page</a>
+
+          <div class="page-intro-box">
+            <strong>Floors</strong>
+          </div>
+
+          <!-- SAO PANEL: Intro -->
+          <div class="sao-section">
+
+            <div class="sao-panel sao-notice">
+              <div class="sao-header">OVERVIEW</div>
+              <p>
+                This is a list of the floors currently in SBO:R.
+              </p>
+            </div>
+
+            <!-- SAO PANEL: Floors -->
+<div class="sao-panel">
+  <div class="sao-header">FLOORS</div>
+
+  <table class="info-table">
+    <thead>
+      <tr>
+        <th>Floor</th>
+        <th>Name</th>
+        <th>Tags</th>
+        <th>Map</th>
+      </tr>
+    </thead>
+    <tbody id="floorsTableBody">
+      <!-- Auto generated -->
+    </tbody>
+  </table>
+</div>
+
+
+            </div>
+
+          </div>
+
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= MOBILE SCRIPT ================= -->
+  <script>
+    const hamburger = document.getElementById("hamburger");
+    const nav = document.getElementById("wikiNav");
+
+    hamburger.addEventListener("click", () => {
+      nav.classList.toggle("active");
+    });
+
+    document.querySelectorAll(".nav-label").forEach(label => {
+      label.addEventListener("click", function () {
+        if (window.innerWidth <= 768) {
+          this.parentElement.classList.toggle("active");
+        }
+      });
+    });
+  </script>
+<script>
+  function setToastOffset() {
+    const header = document.querySelector(".wiki-header");
+    const toastStack = document.getElementById("sao-toast-stack");
+    if (!header || !toastStack) return;
+
+    const headerHeight = header.getBoundingClientRect().height;
+    toastStack.style.top = `${headerHeight + 12}px`;
+  }
+
+  window.addEventListener("load", setToastOffset);
+  window.addEventListener("resize", setToastOffset);
+
+  // If your hamburger toggles nav, call it after toggle too:
+  const hamburger = document.getElementById("hamburger");
+  if (hamburger) {
+    hamburger.addEventListener("click", () => {
+      setTimeout(setToastOffset, 50);
+    });
+  }
+</script>
+
+<script>
+async function loadFloorsTable() {
+  try {
+    const res = await fetch("/data/floors.json", { cache: "no-store" });
+    if (!res.ok) throw new Error("Failed to load floors.json");
+
+    const data = await res.json();
+    const floors = data.floors || [];
+
+    const tbody = document.getElementById("floorsTableBody");
+    tbody.innerHTML = "";
+
+    floors
+      .sort((a, b) => Number(a.number || a.id) - Number(b.number || b.id))
+      .forEach(floor => {
+
+        const tr = document.createElement("tr");
+
+        const floorCell = document.createElement("td");
+        floorCell.setAttribute("data-label", "Floor");
+        floorCell.textContent = floor.number || floor.id;
+
+        const nameCell = document.createElement("td");
+        nameCell.setAttribute("data-label", "Name");
+
+        const link = document.createElement("a");
+        link.href = `/information/floors/?id=${floor.id}`;
+        link.textContent = floor.name || `Floor ${floor.id}`;
+        nameCell.appendChild(link);
+
+        const tagsCell = document.createElement("td");
+        tagsCell.setAttribute("data-label", "Tags");
+        tagsCell.textContent = (floor.tags || []).join(", ");
+
+        const mapCell = document.createElement("td");
+        mapCell.setAttribute("data-label", "Map");
+
+        if (floor.map && floor.map.image) {
+          const img = document.createElement("img");
+          img.src = floor.map.image;
+          img.alt = floor.map.alt || `Floor ${floor.id} map`;
+          img.style.width = "80px";
+          img.style.height = "auto";
+          mapCell.appendChild(img);
+        } else {
+          mapCell.textContent = "—";
+        }
+
+        tr.appendChild(floorCell);
+        tr.appendChild(nameCell);
+        tr.appendChild(tagsCell);
+        tr.appendChild(mapCell);
+
+        tbody.appendChild(tr);
+      });
+
+  } catch (err) {
+    console.error(err);
+    document.getElementById("floorsTableBody").innerHTML =
+      "<tr><td colspan='4'>Failed to load floors.</td></tr>";
+  }
+}
+
+loadFloorsTable();
+</script>
+
+</body>
+</html>
