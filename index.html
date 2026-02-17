@@ -288,13 +288,14 @@
   <div id="sao-toast-stack">
 
     <!-- RED: WARNING -->
-    <div class="sao-toast sao-toast-red show" role="alert" aria-live="assertive">
+    <!--<div class="sao-toast sao-toast-red show" role="alert" aria-live="assertive">
       <div class="sao-toast-header">SYSTEM WARNING</div>
       <div class="sao-toast-body">
         This site is under construction. Some data may be incomplete or inaccurate.
       </div>
-      <button class="sao-toast-close" type="button" aria-label="Close system warning">✕</button>
-    </div>
+      <button class="sao-toast-close" type="button">✕</button>
+      <div class="sao-toast-progress"></div>
+    </div>-->
 
     <!-- YELLOW: NOTICE -->
     <div class="sao-toast sao-toast-yellow show" role="status" aria-live="polite">
@@ -302,7 +303,8 @@
       <div class="sao-toast-body">
         Gamepass/Badge/Floor Pages are delayed at a minimum of 2 weeks!
       </div>
-      <button class="sao-toast-close" type="button" aria-label="Close system notice">✕</button>
+      <button class="sao-toast-close" type="button">✕</button>
+      <div class="sao-toast-progress"></div>
     </div>
 
     <!-- GREEN: STATUS (EXAMPLES) -->
@@ -312,27 +314,41 @@
         Weapons Pages are completed! (floor 19 weapons not included.)
       </div>
       <button class="sao-toast-close" type="button">✕</button>
+      <div class="sao-toast-progress"></div>
     </div>
 
   </div>
 
 
   <!-- ================= TOAST CLOSE SCRIPT ================= -->
-<script>
+  <script>
   document.querySelectorAll(".sao-toast").forEach(toast => {
 
-    // --- Auto close after 45 seconds ---
+    const progress = toast.querySelector(".sao-toast-progress");
+
+    // Start progress animation
+    if (progress) {
+      progress.classList.add("animate");
+    }
+
+    // Auto close timer (45s)
     const autoClose = setTimeout(() => {
       toast.classList.remove("show");
       setTimeout(() => toast.remove(), 220);
-    }, 45000); // 45,000ms = 45 seconds
+    }, 45000);
 
 
-    // --- Manual close button ---
+    // Manual close
     const closeBtn = toast.querySelector(".sao-toast-close");
     if (closeBtn) {
       closeBtn.addEventListener("click", () => {
-        clearTimeout(autoClose); // stop auto close if user clicks
+        clearTimeout(autoClose);
+
+        // Stop animation instantly
+        if (progress) {
+          progress.style.animation = "none";
+        }
+
         toast.classList.remove("show");
         setTimeout(() => toast.remove(), 220);
       });
