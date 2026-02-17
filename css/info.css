@@ -717,3 +717,32 @@ a:hover {
     max-width: none;
   }
 }
+
+/* ================= TOAST TIMER LINE ================= */
+
+.sao-toast {
+  position: relative;
+  overflow: hidden;
+}
+
+.sao-toast-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  background: linear-gradient(90deg, #00eaff, #4de1ff);
+  box-shadow: 0 0 8px #00eaff;
+  transform-origin: left;
+  transform: scaleX(1);
+}
+
+/* Animation class */
+.sao-toast-progress.animate {
+  animation: toastTimer 45s linear forwards;
+}
+
+@keyframes toastTimer {
+  from { transform: scaleX(1); }
+  to   { transform: scaleX(0); }
+}
