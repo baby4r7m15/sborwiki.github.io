@@ -42,38 +42,40 @@
         ]
       },
       "systemNote": "Floor 1 is the primary safe hub for new players."
+    },
+
+    {
+      "id": "2",
+      "number": 2,
+      "name": "Forest of Trials",
+      "tags": ["COMBAT ZONE", "FIELD MOBS"],
+      "info": [
+        "First Combat Area",
+        "Home of Goblin Mobs",
+        "Outdoor Field Map"
+      ],
+      "activities": [
+        "Mob Grinding",
+        "Side Quests",
+        "Material Farming"
+      ],
+      "shops": [
+        "Field Merchant"
+      ],
+      "keyPoints": [
+        "Goblin Camp",
+        "Hidden Clearing",
+        "Mini-Boss Spawn"
+      ],
+      "map": {
+        "image": "/images/floors/floor-2.png",
+        "alt": "Floor 2 map",
+        "callouts": [
+          { "label": "Goblin Camp", "top": "40%", "left": "20%" }
+        ]
+      },
+      "systemNote": "Recommended level 5+ before entering."
     }
+
   ]
-},
-{
-  "id": "2",
-  "number": 2,
-  "name": "Forest of Trials",
-  "tags": ["COMBAT ZONE", "FIELD MOBS"],
-  "info": [
-    "First Combat Area",
-    "Home of Goblin Mobs",
-    "Outdoor Field Map"
-  ],
-  "activities": [
-    "Mob Grinding",
-    "Side Quests",
-    "Material Farming"
-  ],
-  "shops": [
-    "Field Merchant"
-  ],
-  "keyPoints": [
-    "Goblin Camp",
-    "Hidden Clearing",
-    "Mini-Boss Spawn"
-  ],
-  "map": {
-    "image": "/images/floors/floor-2.png",
-    "alt": "Floor 2 map",
-    "callouts": [
-      { "label": "Goblin Camp", "top": "40%", "left": "20%" }
-    ]
-  },
-  "systemNote": "Recommended level 5+ before entering."
 }
