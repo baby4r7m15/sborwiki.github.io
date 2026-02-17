@@ -29,7 +29,7 @@
         "Black Iron Palace"
       ],
       "map": {
-        "image": "/images/floors/floor-1.png",
+        "image": "/images/floors/floor1map.png",
         "alt": "Floor 1 map",
         "callouts": [
           { "label": "Starter Shop", "top": "38%", "left": "12%" },
