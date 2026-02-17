@@ -1,0 +1,45 @@
+{
+  "floors": [
+    {
+      "id": "1",
+      "number": 1,
+      "name": "Town of Beginnings",
+      "tags": ["SAFE ZONE", "NO MOBS"],
+      "info": [
+        "Safe Zone — No Mobs",
+        "First Spawn / Starting Location",
+        "Main Shop, Inn, NPCs",
+        "Black Iron Palace"
+      ],
+      "activities": [
+        "Change Appearance",
+        "Fishing",
+        "Blacksmithing / Crafting",
+        "Amphitheater Seating / Meeting"
+      ],
+      "shops": [
+        "Starter Shop",
+        "Misc Merchant",
+        "Event Shop"
+      ],
+      "keyPoints": [
+        "Barber: Cole’s Cuts",
+        "Blacksmith Station",
+        "Amphitheater",
+        "Black Iron Palace"
+      ],
+      "map": {
+        "image": "/images/floors/floor-1.png",
+        "alt": "Floor 1 map",
+        "callouts": [
+          { "label": "Starter Shop", "top": "38%", "left": "12%" },
+          { "label": "Misc Merchant", "top": "22%", "right": "10%" },
+          { "label": "Blacksmith", "top": "52%", "right": "18%" },
+          { "label": "Event Shop", "bottom": "16%", "right": "12%" },
+          { "label": "Cole’s Cuts", "bottom": "22%", "left": "10%" }
+        ]
+      },
+      "systemNote": "Floor 1 is the primary safe hub for new players."
+    }
+  ]
+}
