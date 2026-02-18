@@ -62,13 +62,13 @@
         "Floor 2 Shop",
         "Guild Merchants"
       ],
-      "keyPoints": [
-        "Spawn",
-        "Village",
-        "Lake",
-        "Mine",
-        "Boss Tower"
-      ],
+      "lore": [
+  "Swordsman Fields is where safety ends and survival begins. Beyond the Town of Beginnings, the land opens into rolling plains filled with restless monsters and inexperienced adventurers testing their strength.",
+  "The fields appear peaceful at first glance — wind through tall grass, distant hills, scattered ruins — but danger spawns relentlessly. Boars charge without warning, wolves hunt in packs, and hesitation is punished swiftly.",
+  "At the far end of the floor stands the looming Boss Tower, home to Illfang the Kobold Lord. The structure can be seen from nearly anywhere in the fields, a constant reminder that progress demands coordination.",
+  "Many guilds form here out of necessity rather than ambition. Players quickly learn that reckless solo grinding leads to shattered HP bars and broken morale.",
+  "Veteran players often say the system subtly adjusts aggression on this floor — as if measuring whether newcomers are worthy of advancing. Whether rumor or reality, one truth remains: Floor 2 decides who will continue climbing… and who will not."
+]
       "map": {
         "image": "/images/floors/floor2map.png",
         "alt": "Floor 2 map",
