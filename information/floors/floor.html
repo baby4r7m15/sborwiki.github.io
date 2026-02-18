@@ -80,157 +80,196 @@
     <div class="floor-note-body" id="systemNote"></div>
   </div>
 
-  <script>
-    const byId = (id) => document.getElementById(id);
+<script>
+  const byId = (id) => document.getElementById(id);
 
-    function getFloorIdFromURL() {
-      const params = new URLSearchParams(window.location.search);
-      return params.get("id") || "1";
+  function getFloorIdFromURL() {
+    const params = new URLSearchParams(window.location.search);
+    return params.get("id") || "1";
+  }
+
+  function li(text) {
+    const el = document.createElement("li");
+    el.textContent = text;
+    return el;
+  }
+
+  function chip(text, soft = false) {
+    const el = document.createElement("div");
+    el.className = soft ? "hud-chip hud-chip-soft" : "hud-chip";
+    el.textContent = text;
+    return el;
+  }
+
+  // Safe list renderer (won't crash if an element is missing)
+  function renderList(targetUl, items) {
+    if (!targetUl) return;
+    targetUl.innerHTML = "";
+    (items || []).forEach(item => targetUl.appendChild(li(item)));
+  }
+
+  // Lore renderer (array of paragraphs OR single string)
+  function renderLore(target, lore) {
+    if (!target) return;
+
+    target.innerHTML = "";
+
+    if (Array.isArray(lore) && lore.length) {
+      lore.forEach(line => {
+        const p = document.createElement("p");
+        p.textContent = line;
+        target.appendChild(p);
+      });
+      return;
     }
 
-    function li(text) {
-      const el = document.createElement("li");
-      el.textContent = text;
-      return el;
+    if (typeof lore === "string" && lore.trim()) {
+      const p = document.createElement("p");
+      p.textContent = lore.trim();
+      target.appendChild(p);
+      return;
     }
 
-    function chip(text, soft = false) {
-      const el = document.createElement("div");
-      el.className = soft ? "hud-chip hud-chip-soft" : "hud-chip";
-      el.textContent = text;
-      return el;
-    }
+    target.textContent = "NO LORE DATA AVAILABLE.";
+  }
 
-    function renderList(targetUl, items) {
-      targetUl.innerHTML = "";
-      (items || []).forEach(item => targetUl.appendChild(li(item)));
-    }
+  function renderMap(map) {
+    const host = byId("mapHost");
+    if (!host) return;
 
-    function renderMap(map) {
-      const host = byId("mapHost");
-      host.innerHTML = "";
+    host.innerHTML = "";
 
-      // If an image is provided, show it. If it 404s, fallback to placeholder.
-      const hasImage = map && map.image;
+    // If an image is provided, show it. If it 404s, fallback to placeholder.
+    const hasImage = map && map.image;
 
-      if (hasImage) {
-        const wrap = document.createElement("div");
-        wrap.className = "map-image-wrap";
+    if (hasImage) {
+      const wrap = document.createElement("div");
+      wrap.className = "map-image-wrap";
 
-        const img = document.createElement("img");
-        img.className = "map-img";
-        img.src = map.image;
-        img.alt = map.alt || "Floor map";
+      const img = document.createElement("img");
+      img.className = "map-img";
+      img.src = map.image;
+      img.alt = map.alt || "Floor map";
 
-        // Callouts container overlays the image
-        const overlay = document.createElement("div");
-        overlay.className = "map-overlay";
+      // Callouts container overlays the image
+      const overlay = document.createElement("div");
+      overlay.className = "map-overlay";
 
-        (map.callouts || []).forEach(c => {
-          const co = document.createElement("div");
-          co.className = "callout";
-          co.textContent = c.label || "";
-
-          // Support top/left/right/bottom from JSON
-          if (c.top) co.style.top = c.top;
-          if (c.left) co.style.left = c.left;
-          if (c.right) co.style.right = c.right;
-          if (c.bottom) co.style.bottom = c.bottom;
-
-          overlay.appendChild(co);
-        });
-
-        // Fallback if image fails to load
-        img.addEventListener("error", () => {
-          host.innerHTML = "";
-          host.appendChild(makePlaceholder(map));
-        });
-
-        wrap.appendChild(img);
-        wrap.appendChild(overlay);
-        host.appendChild(wrap);
-        return;
-      }
-
-      host.appendChild(makePlaceholder(map));
-    }
-
-    function makePlaceholder(map) {
-      const placeholder = document.createElement("div");
-      placeholder.className = "map-placeholder";
-
-      const scan = document.createElement("div");
-      scan.className = "scanline";
-      placeholder.appendChild(scan);
-
-      (map?.callouts || []).forEach(c => {
+      (map.callouts || []).forEach(c => {
         const co = document.createElement("div");
         co.className = "callout";
         co.textContent = c.label || "";
 
+        // Support top/left/right/bottom from JSON
         if (c.top) co.style.top = c.top;
         if (c.left) co.style.left = c.left;
         if (c.right) co.style.right = c.right;
         if (c.bottom) co.style.bottom = c.bottom;
 
-        placeholder.appendChild(co);
+        overlay.appendChild(co);
       });
 
-      return placeholder;
+      // Fallback if image fails to load
+      img.addEventListener("error", () => {
+        host.innerHTML = "";
+        host.appendChild(makePlaceholder(map));
+      });
+
+      wrap.appendChild(img);
+      wrap.appendChild(overlay);
+      host.appendChild(wrap);
+      return;
     }
 
-    async function init() {
-      const floorId = getFloorIdFromURL();
+    host.appendChild(makePlaceholder(map));
+  }
 
-      const res = await fetch("/data/floors.json", { cache: "no-store" });
-      if (!res.ok) {
-        byId("floorSubtitle").textContent = "FAILED TO LOAD FLOORS.JSON";
-        return;
-      }
+  function makePlaceholder(map) {
+    const placeholder = document.createElement("div");
+    placeholder.className = "map-placeholder";
 
-      const data = await res.json();
-      const floor = (data.floors || []).find(f => String(f.id) === String(floorId));
+    const scan = document.createElement("div");
+    scan.className = "scanline";
+    placeholder.appendChild(scan);
 
-      if (!floor) {
-        byId("floorTitle").textContent = "FLOOR NOT FOUND";
-        byId("floorSubtitle").textContent = `No entry for id=${floorId}`;
-        return;
-      }
+    (map?.callouts || []).forEach(c => {
+      const co = document.createElement("div");
+      co.className = "callout";
+      co.textContent = c.label || "";
 
-      // Top HUD
-      byId("floorTitle").textContent = `FLOOR ${floor.number ?? floor.id}`;
-      byId("floorSubtitle").textContent = (floor.name || "UNKNOWN FLOOR").toUpperCase();
+      if (c.top) co.style.top = c.top;
+      if (c.left) co.style.left = c.left;
+      if (c.right) co.style.right = c.right;
+      if (c.bottom) co.style.bottom = c.bottom;
 
-      const tagsHost = byId("floorTags");
+      placeholder.appendChild(co);
+    });
+
+    return placeholder;
+  }
+
+  async function init() {
+    const floorId = getFloorIdFromURL();
+
+    const res = await fetch("/data/floors.json", { cache: "no-store" });
+    if (!res.ok) {
+      byId("floorSubtitle").textContent = "FAILED TO LOAD FLOORS.JSON";
+      return;
+    }
+
+    const data = await res.json();
+    const floor = (data.floors || []).find(f => String(f.id) === String(floorId));
+
+    if (!floor) {
+      byId("floorTitle").textContent = "FLOOR NOT FOUND";
+      byId("floorSubtitle").textContent = `No entry for id=${floorId}`;
+      return;
+    }
+
+    // Top HUD
+    byId("floorTitle").textContent = `FLOOR ${floor.number ?? floor.id}`;
+    byId("floorSubtitle").textContent = (floor.name || "UNKNOWN FLOOR").toUpperCase();
+
+    const tagsHost = byId("floorTags");
+    if (tagsHost) {
       tagsHost.innerHTML = "";
       (floor.tags || []).forEach((t, i) => tagsHost.appendChild(chip(t, i > 0)));
+    }
 
-      // Lists
-      renderList(byId("floorInfo"), floor.info);
-      renderList(byId("floorActivities"), floor.activities);
-      renderList(byId("floorShops"), floor.shops);
-      renderList(byId("floorKeyPoints"), floor.keyPoints);
+    // Lists
+    renderList(byId("floorInfo"), floor.info);
+    renderList(byId("floorActivities"), floor.activities);
+    renderList(byId("floorShops"), floor.shops);
 
-      // Map
-      byId("mapChip").textContent = floor.name ? floor.name.toUpperCase() : "FLOOR MAP";
-      renderMap(floor.map);
+    // Lore (replaces keyPoints)
+    renderLore(byId("floorLore"), floor.lore || floor.systemNote);
 
-      // System note
-      const noteBox = byId("systemNoteBox");
-      const note = (floor.systemNote || "").trim();
+    // Map
+    const mapChip = byId("mapChip");
+    if (mapChip) {
+      mapChip.textContent = floor.name ? floor.name.toUpperCase() : "FLOOR MAP";
+    }
+    renderMap(floor.map);
+
+    // System note
+    const noteBox = byId("systemNoteBox");
+    const note = (floor.systemNote || "").trim();
+    if (noteBox) {
       if (note) {
         byId("systemNote").textContent = note;
         noteBox.hidden = false;
       } else {
         noteBox.hidden = true;
       }
-
-      // Update page title
-      document.title = `SBO:R Wiki – Floor ${floor.number ?? floor.id}`;
     }
 
-    init();
-  </script>
+    // Update page title
+    document.title = `SBO:R Wiki – Floor ${floor.number ?? floor.id}`;
+  }
+
+  init();
+</script>
+
 
 </body>
 </html>
