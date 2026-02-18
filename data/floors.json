@@ -26,7 +26,7 @@
   "Floor 1 is where the system first locks you in — a safe zone that feels calm for a reason.",
   "Most players gather here before stepping into real combat zones.",
   "The Black Iron Palace is treated like a monument… and a warning."
-]
+],
       "map": {
         "image": "/images/floors/floor1map.png",
         "alt": "Floor 1 map",
@@ -68,7 +68,7 @@
   "At the far end of the floor stands the looming Boss Tower, home to Illfang the Kobold Lord. The structure can be seen from nearly anywhere in the fields, a constant reminder that progress demands coordination.",
   "Many guilds form here out of necessity rather than ambition. Players quickly learn that reckless solo grinding leads to shattered HP bars and broken morale.",
   "Veteran players often say the system subtly adjusts aggression on this floor — as if measuring whether newcomers are worthy of advancing. Whether rumor or reality, one truth remains: Floor 2 decides who will continue climbing… and who will not."
-]
+],
       "map": {
         "image": "/images/floors/floor2map.png",
         "alt": "Floor 2 map",
