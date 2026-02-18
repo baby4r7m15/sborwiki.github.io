@@ -22,12 +22,11 @@
         "Misc Merchant",
         "Event Shop"
       ],
-      "keyPoints": [
-        "Barber: Cole’s Cuts",
-        "Blacksmith Station",
-        "Amphitheater",
-        "Black Iron Palace"
-      ],
+      "lore": [
+  "Floor 1 is where the system first locks you in — a safe zone that feels calm for a reason.",
+  "Most players gather here before stepping into real combat zones.",
+  "The Black Iron Palace is treated like a monument… and a warning."
+]
       "map": {
         "image": "/images/floors/floor1map.png",
         "alt": "Floor 1 map",
