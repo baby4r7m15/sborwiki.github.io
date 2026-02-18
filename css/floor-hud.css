@@ -228,6 +228,21 @@ body{
   opacity: 0.95;
 }
 
+/* ===== LORE TEXT BLOCK ===== */
+.hud-lore{
+  border: 1px solid var(--line2);
+  background: rgba(0,234,255,0.04);
+  padding: 12px 12px;
+  line-height: 1.6;
+  opacity: 0.95;
+  display: grid;
+  gap: 10px;
+}
+
+.hud-lore p{
+  margin: 0;
+}
+
 /* ===== MAP PANEL ===== */
 .panel-map{
   padding: 16px;
