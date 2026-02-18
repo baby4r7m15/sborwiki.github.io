@@ -82,7 +82,42 @@
         ]
       },
       "systemNote": "Floor 2 is the beginning floor for leveling."
-    }
+    },
 
+    {
+      "id": "3",
+      "number": 3,
+      "name": "Swamp Land",
+      "tags": ["COMBAT ZONE", "SWAMP MOBS"],
+      "info": [
+        
+      ],
+      "activities": [
+        
+      ],
+      "shops": [
+        "Floor 3 Shop"
+      ],
+      "lore": [
+  "SwampLands is where warmth dies and comfort becomes a memory. The air hangs heavy and damp, clinging to armor and skin alike. Cold mist rolls endlessly across flooded plains, turning every breath into a chilling reminder that this floor was never meant to nurture life.",
+  "At first glance the marsh seems still — shallow waters stretching beneath a gray sky, moss-covered ruins barely rising above the mire — but the silence is deceptive. Beneath the murk, serpents coil unseen, crocodiles drift like shadows, and unseen creatures disturb the surface with sudden, violent splashes.",
+  "The water never truly dries. Boots remain soaked, footing slips without warning, and the chill seeps through metal and cloth until stamina drains as surely as HP. Players who linger too long find their movements sluggish, their reactions dulled by the relentless cold.",
+  "Rising from the flooded expanse stands the Slime Caverns, a stone structure emerging from the swamp like a monument to decay. It looms in the fog from nearly every direction, its entrance the only promise of progress — and the source of the swamp’s corruption.",
+  "Within the cavern’s slick, twisting corridors, moisture drips endlessly from the ceiling as giant snails gather in flooded chambers. At the center waits Lord Slug, grotesque sovereign of stagnation. His presence thickens the very water around him, turning the swamp itself into a weapon. Floor 3 is not conquered through haste or bravery alone — it is endured. And those who cannot withstand the cold, the wet, and the weight of the mire will simply disappear beneath it."
+],
+      "map": {
+        "image": "/images/floors/floor3map.png",
+        "alt": "Floor 3 map",
+        "callouts": [
+          { "label": "Spawn", "top": "33%", "left": "3%" },
+          { "label": "Village", "top": "48%", "left": "45%" },
+          { "label": "Guild Merchants", "top": "55%", "left": "40%" },
+          { "label": "Shop", "top": "62%", "left": "50%" },
+          { "label": "Mine", "top": "38%", "left": "63%" },
+          { "label": "Tower", "top": "82%", "left": "86%" }
+        ]
+      },
+      "systemNote": "Floor 3 is a swamp. Damp and cold, with just snakes and snails to keep you company."
+    }
   ]
 }
