@@ -90,10 +90,13 @@
       "name": "Swamp Land",
       "tags": ["COMBAT ZONE", "SWAMP MOBS"],
       "info": [
-        
+        "Floor 3 is a small swamp.",
+        "There isn't a lot to do on floor 3 besides the boss.",
+        "The tower should be visible everywhere on the floor."
       ],
       "activities": [
-        
+        "Mob Farming.",
+        "Boss Battle."
       ],
       "shops": [
         "Floor 3 Shop"
