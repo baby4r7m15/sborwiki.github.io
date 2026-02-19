@@ -152,10 +152,10 @@
     "alt": "Floor 4 map",
     "callouts": [
       { "label": "Spawn", "top": "38%", "left": "8%" },
-      { "label": "Desert Outpost", "top": "45%", "left": "30%" },
-      { "label": "Relic Ruins", "top": "25%", "left": "55%" },
-      { "label": "Canyon Pass", "top": "60%", "left": "65%" },
-      { "label": "Tower", "top": "82%", "left": "88%" }
+      { "label": "Canyon Pass", "top": "45%", "left": "30%" },
+      { "label": "Ancient Mine", "top": "25%", "left": "55%" },
+      { "label": "Oasis", "top": "36%", "left": "78%" },
+      { "label": "Tower", "top": "55%", "left": "90%" }
     ]
   },
   "systemNote": "Floor 4 is a vast desert. Harsh sunlight, shifting terrain, and relentless enemies make endurance the true challenge."
