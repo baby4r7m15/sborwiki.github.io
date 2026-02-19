@@ -23,21 +23,64 @@
         "Event Shop"
       ],
       "lore": [
-  "Floor 1 is where the system first locks you in — a safe zone that feels calm for a reason.",
-  "Most players gather here before stepping into real combat zones.",
-  "The Black Iron Palace is treated like a monument… and a warning."
-],
+        "Floor 1 is where the system first locks you in — a safe zone that feels calm for a reason.",
+        "Most players gather here before stepping into real combat zones.",
+        "The Black Iron Palace is treated like a monument… and a warning."
+      ],
       "map": {
         "image": "/images/floors/floor1map.png",
         "alt": "Floor 1 map",
         "callouts": [
-          { "label": "Starter Shop", "top": "45%", "left": "81%" },
-          { "label": "Potion Shop", "top": "28%", "right": "15%" },
-          { "label": "Blacksmith", "top": "45%", "right": "20%" },
-          { "label": "Event Shop", "bottom": "56%", "right": "2%" },
-          { "label": "Cole’s Cuts", "bottom": "68%", "left": "59%" },
-          { "label": "Spawn", "bottom": "57%", "left": "37%" },
-          { "label": "Black Iron Palace", "bottom": "58%", "left": "10%" }
+          {
+            "label": "Starter Shop",
+            "top": "45%",
+            "left": "81%",
+            "desc": "Basic starter gear, early supplies, and the first prices players learn to fear.",
+            "system": "SYSTEM: Commerce Node Detected"
+          },
+          {
+            "label": "Potion Shop",
+            "top": "28%",
+            "right": "15%",
+            "desc": "Potions and recovery items. The line here gets longer after every raid attempt.",
+            "system": "SYSTEM: Recovery Vendor Online"
+          },
+          {
+            "label": "Blacksmith",
+            "top": "45%",
+            "right": "20%",
+            "desc": "Upgrades, forging, and repairs. The sound of metal here is the floor’s heartbeat.",
+            "system": "SYSTEM: Enhancement Terminal Active"
+          },
+          {
+            "label": "Event Shop",
+            "bottom": "56%",
+            "right": "2%",
+            "desc": "Limited stock, rotating rewards, and items that vanish the moment you hesitate.",
+            "system": "SYSTEM: Limited-Time Inventory"
+          },
+          {
+            "label": "Cole’s Cuts",
+            "bottom": "68%",
+            "left": "59%",
+            "desc": "Cosmetic changes and styling. Because even trapped players still want to look cute.",
+            "system": "SYSTEM: Appearance Editor"
+          },
+          {
+            "label": "Spawn",
+            "bottom": "57%",
+            "left": "37%",
+            "desc": "The first place you wake up. The last place you can pretend it’s a game.",
+            "system": "SYSTEM: Respawn Anchor"
+          },
+          {
+            "label": "Black Iron Palace",
+            "bottom": "58%",
+            "left": "10%",
+            "desc": "A monument of polished stone and cold silence. It feels like the system is watching from inside.",
+            "system": "SYSTEM: Restricted Structure",
+            "danger": "WARNING"
+          }
         ]
       },
       "systemNote": "Floor 1 is the primary safe hub for new players."
@@ -63,22 +106,60 @@
         "Guild Merchants"
       ],
       "lore": [
-  "Swordsman Fields is where safety ends and survival begins. Beyond the Town of Beginnings, the land opens into rolling plains filled with restless monsters and inexperienced adventurers testing their strength.",
-  "The fields appear peaceful at first glance — wind through tall grass, distant hills, scattered ruins — but danger spawns relentlessly. Boars charge without warning, wolves hunt in packs, and hesitation is punished swiftly.",
-  "At the far end of the floor stands the looming Boss Tower, home to Illfang the Kobold Lord. The structure can be seen from nearly anywhere in the fields, a constant reminder that progress demands coordination.",
-  "Many guilds form here out of necessity rather than ambition. Players quickly learn that reckless solo grinding leads to shattered HP bars and broken morale.",
-  "Veteran players often say the system subtly adjusts aggression on this floor — as if measuring whether newcomers are worthy of advancing. Whether rumor or reality, one truth remains: Floor 2 decides who will continue climbing… and who will not."
-],
+        "Swordsman Fields is where safety ends and survival begins. Beyond the Town of Beginnings, the land opens into rolling plains filled with restless monsters and inexperienced adventurers testing their strength.",
+        "The fields appear peaceful at first glance — wind through tall grass, distant hills, scattered ruins — but danger spawns relentlessly. Boars charge without warning, wolves hunt in packs, and hesitation is punished swiftly.",
+        "At the far end of the floor stands the looming Boss Tower, home to Illfang the Kobold Lord. The structure can be seen from nearly anywhere in the fields, a constant reminder that progress demands coordination.",
+        "Many guilds form here out of necessity rather than ambition. Players quickly learn that reckless solo grinding leads to shattered HP bars and broken morale.",
+        "Veteran players often say the system subtly adjusts aggression on this floor — as if measuring whether newcomers are worthy of advancing. Whether rumor or reality, one truth remains: Floor 2 decides who will continue climbing… and who will not."
+      ],
       "map": {
         "image": "/images/floors/floor2map.png",
         "alt": "Floor 2 map",
         "callouts": [
-          { "label": "Spawn", "top": "33%", "left": "3%" },
-          { "label": "Village", "top": "48%", "left": "45%" },
-          { "label": "Guild Merchants", "top": "55%", "left": "40%" },
-          { "label": "Shop", "top": "62%", "left": "50%" },
-          { "label": "Mine", "top": "38%", "left": "63%" },
-          { "label": "Tower", "top": "82%", "left": "86%" }
+          {
+            "label": "Spawn",
+            "top": "33%",
+            "left": "3%",
+            "desc": "Your last breath of safety before the fields start collecting mistakes.",
+            "system": "SYSTEM: Entry Point"
+          },
+          {
+            "label": "Village",
+            "top": "48%",
+            "left": "45%",
+            "desc": "A fragile pocket of calm. A place for regrouping, trading, and quiet panic.",
+            "system": "SYSTEM: Neutral Settlement"
+          },
+          {
+            "label": "Guild Merchants",
+            "top": "55%",
+            "left": "40%",
+            "desc": "Supplies favored by organized parties. The prices assume you’re not alone.",
+            "system": "SYSTEM: Guild Network Vendor"
+          },
+          {
+            "label": "Shop",
+            "top": "62%",
+            "left": "50%",
+            "desc": "Standard supplies. If you’re underprepared here, the fields will notice.",
+            "system": "SYSTEM: General Vendor"
+          },
+          {
+            "label": "Mine",
+            "top": "38%",
+            "left": "63%",
+            "desc": "Materials and danger in equal measure. Echoes carry… and so do mobs.",
+            "system": "SYSTEM: Resource Zone",
+            "danger": "CAUTION"
+          },
+          {
+            "label": "Tower",
+            "top": "82%",
+            "left": "86%",
+            "desc": "Illfang’s domain. Always visible. Always waiting.",
+            "system": "SYSTEM: Boss Structure",
+            "danger": "WARNING"
+          }
         ]
       },
       "systemNote": "Floor 2 is the beginning floor for leveling."
@@ -102,64 +183,116 @@
         "Floor 3 Shop"
       ],
       "lore": [
-  "The Swamp Lands is where warmth dies and comfort becomes a memory. The air hangs heavy and damp, clinging to armor and skin alike. Cold mist rolls endlessly across flooded plains, turning every breath into a chilling reminder that this floor was never meant to nurture life.",
-  "At first glance the marsh seems still — shallow waters stretching beneath a gray sky, moss-covered ruins barely rising above the mire — but the silence is deceptive. Beneath the murk, serpents coil unseen, crocodiles drift like shadows, and unseen creatures disturb the surface with sudden, violent splashes.",
-  "The water never truly dries. Boots remain soaked, footing slips without warning, and the chill seeps through metal and cloth until stamina drains as surely as HP. Players who linger too long find their movements sluggish, their reactions dulled by the relentless cold.",
-  "Rising from the flooded expanse stands the Slime Caverns, a stone structure emerging from the swamp like a monument to decay. It looms in the fog from nearly every direction, its entrance the only promise of progress — and the source of the swamp’s corruption.",
-  "Within the cavern’s slick, twisting corridors, moisture drips endlessly from the ceiling as giant snails gather in flooded chambers. At the center waits Lord Slug, grotesque sovereign of stagnation. His presence thickens the very water around him, turning the swamp itself into a weapon. Floor 3 is not conquered through haste or bravery alone — it is endured. And those who cannot withstand the cold, the wet, and the weight of the mire will simply disappear beneath it."
-],
+        "The Swamp Lands is where warmth dies and comfort becomes a memory. The air hangs heavy and damp, clinging to armor and skin alike. Cold mist rolls endlessly across flooded plains, turning every breath into a chilling reminder that this floor was never meant to nurture life.",
+        "At first glance the marsh seems still — shallow waters stretching beneath a gray sky, moss-covered ruins barely rising above the mire — but the silence is deceptive. Beneath the murk, serpents coil unseen, crocodiles drift like shadows, and unseen creatures disturb the surface with sudden, violent splashes.",
+        "The water never truly dries. Boots remain soaked, footing slips without warning, and the chill seeps through metal and cloth until stamina drains as surely as HP. Players who linger too long find their movements sluggish, their reactions dulled by the relentless cold.",
+        "Rising from the flooded expanse stands the Slime Caverns, a stone structure emerging from the swamp like a monument to decay. It looms in the fog from nearly every direction, its entrance the only promise of progress — and the source of the swamp’s corruption.",
+        "Within the cavern’s slick, twisting corridors, moisture drips endlessly from the ceiling as giant snails gather in flooded chambers. At the center waits Lord Slug, grotesque sovereign of stagnation. His presence thickens the very water around him, turning the swamp itself into a weapon. Floor 3 is not conquered through haste or bravery alone — it is endured. And those who cannot withstand the cold, the wet, and the weight of the mire will simply disappear beneath it."
+      ],
       "map": {
         "image": "/images/floors/floor3map.png",
         "alt": "Floor 3 map",
         "callouts": [
-          { "label": "Spawn", "top": "33%", "left": "3%" },
-          { "label": "Shop", "top": "13%", "left": "15%" },
-          { "label": "Tower", "top": "82%", "left": "86%" }
+          {
+            "label": "Spawn",
+            "top": "33%",
+            "left": "3%",
+            "desc": "Fog, wet stone, and that immediate chill that crawls under your armor.",
+            "system": "SYSTEM: Entry Point"
+          },
+          {
+            "label": "Shop",
+            "top": "13%",
+            "left": "15%",
+            "desc": "Supplies for people who learned the swamp punishes ‘I’ll be fine.’",
+            "system": "SYSTEM: Vendor Node"
+          },
+          {
+            "label": "Tower",
+            "top": "82%",
+            "left": "86%",
+            "desc": "The Slime Caverns. A shape in the mist that never feels far enough away.",
+            "system": "SYSTEM: Boss Structure",
+            "danger": "WARNING"
+          }
         ]
       },
       "systemNote": "Floor 3 is a swamp. Damp and cold, with just snakes and snails to keep you company."
     },
 
     {
-  "id": "4",
-  "number": 4,
-  "name": "Desert Land",
-  "tags": ["COMBAT ZONE", "DESERT MOBS"],
-  "info": [
-    "Large Desert Biome",
-    "Home of Stallord (Boss)",
-    "Scorpions and Cobras (Mobs)",
-    "Ancient Gold Mine"
-  ],
-  "activities": [
-    "Mob Grinding",
-    "Material Farming",
-    "Boss Battle"
-  ],
-  "shops": [
-    "Desert Outpost Shop",
-    "Relic Trader"
-  ],
-  "lore": [
-    "Floor 4 greets players not with cold or rain — but with heat that suffocates. Endless dunes stretch beneath a merciless sun, the sand shifting constantly as though the land itself refuses to stay still.",
-    "Wind howls across the desert in violent gusts, carving the terrain into towering ridges and swallowing footsteps within seconds. Visibility drops without warning when sandstorms roll in, turning even short journeys into dangerous gambles.",
-    "Scorpions burrow beneath the dunes, striking from below with venomous precision, while cobras coil silently waiting to strike. The desert is not loud like the fields, nor oppressive like the swamp — it is patient.",
-    "At the far end of the desert rises the Boss Tower, framed by canyon walls carved by centuries of wind. Within waits Stallord, a colossal demon whose hardened skull gleams like obsidian under the sun. It is said that during battle, the storm answers his call — and the sands themselves begin to move.",
-    "Floor 4 tests endurance more than bravery. The heat drains stamina, the terrain slows movement, and the constant glare disorients even veteran fighters. Only those who adapt — and who learn to read the desert rather than fight it — will survive long enough to challenge its ruler."
-  ],
-  "map": {
-    "image": "/images/floors/floor4map.png",
-    "alt": "Floor 4 map",
-    "callouts": [
-      { "label": "Spawn", "top": "38%", "left": "8%" },
-      { "label": "Canyon Pass", "top": "45%", "left": "30%" },
-      { "label": "Ancient Mine", "top": "25%", "left": "55%" },
-      { "label": "Oasis", "top": "36%", "left": "78%" },
-      { "label": "Tower", "top": "55%", "left": "90%" }
-    ]
-  },
-  "systemNote": "Floor 4 is a vast desert. Harsh sunlight, shifting terrain, and relentless enemies make endurance the true challenge."
-}
-
+      "id": "4",
+      "number": 4,
+      "name": "Desert Land",
+      "tags": ["COMBAT ZONE", "DESERT MOBS"],
+      "info": [
+        "Large Desert Biome",
+        "Home of Stallord (Boss)",
+        "Scorpions and Cobras (Mobs)",
+        "Ancient Gold Mine"
+      ],
+      "activities": [
+        "Mob Grinding",
+        "Material Farming",
+        "Boss Battle"
+      ],
+      "shops": [
+        "Desert Outpost Shop",
+        "Relic Trader"
+      ],
+      "lore": [
+        "Floor 4 greets players not with cold or rain — but with heat that suffocates. Endless dunes stretch beneath a merciless sun, the sand shifting constantly as though the land itself refuses to stay still.",
+        "Wind howls across the desert in violent gusts, carving the terrain into towering ridges and swallowing footprints within seconds. Visibility drops without warning when sandstorms roll in, turning even short journeys into dangerous gambles.",
+        "Scorpions burrow beneath the dunes, striking from below with venomous precision, while cobras coil silently between broken stone and half-buried ruins. The desert is not loud like the fields, nor oppressive like the swamp — it is patient.",
+        "Veterans whisper the floor doesn’t behave naturally. Encounters feel placed, not found. Aggro snaps too fast. Spawns cluster where players are weakest, like the system is collecting data and correcting outcomes mid-run.",
+        "Some swear the landmarks drift by a few steps between trips — an outpost slightly off, a ruin not where it was, a path that ‘should’ exist suddenly gone. If you trust your memory more than your map, the sand will punish you for it.",
+        "At the far end of the desert rises the Boss Tower, framed by canyon walls carved by centuries of wind. Within waits Stallord — a colossal demon sovereign whose skull gleams like obsidian under the sun. When the battle begins, the storm answers… and the floor stops feeling like a place, and starts feeling like a test."
+      ],
+      "map": {
+        "image": "/images/floors/floor4map.png",
+        "alt": "Floor 4 map",
+        "callouts": [
+          {
+            "label": "Spawn",
+            "top": "38%",
+            "left": "8%",
+            "desc": "Heat shimmer, dry wind, and a horizon that looks the same in every direction.",
+            "system": "SYSTEM: Entry Point"
+          },
+          {
+            "label": "Desert Outpost",
+            "top": "45%",
+            "left": "30%",
+            "desc": "A battered safe pocket. Water, supplies, and exhausted parties counting potions.",
+            "system": "SYSTEM: Neutral Settlement"
+          },
+          {
+            "label": "Relic Ruins",
+            "top": "25%",
+            "left": "55%",
+            "desc": "Ancient stone swallowed by sand. Players report ‘layout inconsistencies’ between visits.",
+            "system": "SYSTEM: Anomaly Detected",
+            "danger": "CAUTION"
+          },
+          {
+            "label": "Canyon Pass",
+            "top": "60%",
+            "left": "65%",
+            "desc": "A narrow route with bad sightlines. Ambush territory—especially during storms.",
+            "system": "SYSTEM: Pathing Hazard",
+            "danger": "CAUTION"
+          },
+          {
+            "label": "Tower",
+            "top": "82%",
+            "left": "88%",
+            "desc": "Stallord’s domain. If the wind changes direction, it’s already too late.",
+            "system": "SYSTEM: Boss Structure",
+            "danger": "WARNING"
+          }
+        ]
+      },
+      "systemNote": "Floor 4 is a vast desert. Harsh sunlight, shifting terrain, and strange spawn behavior make endurance the true challenge."
+    }
   ]
 }
