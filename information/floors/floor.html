@@ -133,13 +133,208 @@
     target.textContent = "NO LORE DATA AVAILABLE.";
   }
 
+  // ===== SAO MAP TOOLTIP SYSTEM =====
+
+  function isTouchLike() {
+    return window.matchMedia("(hover: none), (pointer: coarse)").matches;
+  }
+
+  function clamp(n, min, max) {
+    return Math.max(min, Math.min(max, n));
+  }
+
+  function buildTooltip() {
+    const tip = document.createElement("div");
+    tip.className = "map-tooltip";
+    tip.setAttribute("role", "dialog");
+    tip.setAttribute("aria-live", "polite");
+    tip.hidden = true;
+
+    tip.innerHTML = `
+      <div class="map-tooltip-scan" aria-hidden="true"></div>
+      <div class="map-tooltip-head">
+        <div class="map-tooltip-title" id="mapTipTitle">LOCATION</div>
+        <button class="map-tooltip-close" type="button" aria-label="Close tooltip">✕</button>
+      </div>
+      <div class="map-tooltip-system" id="mapTipSystem"></div>
+      <div class="map-tooltip-body" id="mapTipDesc"></div>
+    `;
+
+    return tip;
+  }
+
+  function setTooltipContent(tip, data) {
+    const titleEl = tip.querySelector("#mapTipTitle");
+    const sysEl = tip.querySelector("#mapTipSystem");
+    const descEl = tip.querySelector("#mapTipDesc");
+
+    titleEl.textContent = (data.label || "LOCATION").toUpperCase();
+    descEl.textContent = data.desc || "NO DATA AVAILABLE.";
+
+    const sys = (data.system || "").trim();
+    if (sys) {
+      sysEl.textContent = sys;
+      sysEl.style.display = "";
+    } else {
+      sysEl.textContent = "";
+      sysEl.style.display = "none";
+    }
+
+    tip.dataset.danger = (data.danger || "").toUpperCase();
+  }
+
+  function positionTooltip(tip, anchorEl, containerEl) {
+    // Default: position near the callout in the map container
+    const cRect = containerEl.getBoundingClientRect();
+    const aRect = anchorEl.getBoundingClientRect();
+
+    // Tooltip size (after unhide)
+    const tRect = tip.getBoundingClientRect();
+
+    // Try above-right first
+    let x = (aRect.left - cRect.left) + 14;
+    let y = (aRect.top - cRect.top) - tRect.height - 12;
+
+    // If above goes off-screen, put below
+    if (y < 8) y = (aRect.top - cRect.top) + aRect.height + 10;
+
+    // Clamp inside container
+    x = clamp(x, 8, cRect.width - tRect.width - 8);
+    y = clamp(y, 8, cRect.height - tRect.height - 8);
+
+    tip.style.left = `${x}px`;
+    tip.style.top = `${y}px`;
+  }
+
+  function attachInteractiveCallouts(overlay, container, callouts) {
+    const tip = buildTooltip();
+    container.appendChild(tip);
+
+    let pinned = false;
+    let pinnedEl = null;
+
+    const closeBtn = tip.querySelector(".map-tooltip-close");
+
+    function showTipFor(el, data, pin = false) {
+      pinned = pin;
+      pinnedEl = pin ? el : pinnedEl;
+
+      tip.classList.toggle("pinned", pin);
+      setTooltipContent(tip, data);
+
+      tip.hidden = false;
+      tip.classList.add("show");
+
+      // Danger styling hook
+      tip.classList.toggle("danger", (tip.dataset.danger === "WARNING"));
+
+      // Desktop: position near callout. Mobile: becomes a bottom sheet via CSS.
+      if (!isTouchLike()) {
+        // Need a layout pass to measure size
+        requestAnimationFrame(() => {
+          positionTooltip(tip, el, container);
+        });
+      }
+
+      // Accessibility
+      el.setAttribute("aria-expanded", "true");
+    }
+
+    function hideTip(force = false) {
+      if (!force && pinned) return;
+
+      pinned = false;
+      pinnedEl = null;
+
+      tip.classList.remove("show", "pinned", "danger");
+      tip.hidden = true;
+
+      overlay.querySelectorAll(".callout").forEach(btn => btn.setAttribute("aria-expanded", "false"));
+    }
+
+    closeBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      hideTip(true);
+    });
+
+    // Tap outside to close on mobile, click outside on desktop when pinned
+    document.addEventListener("pointerdown", (e) => {
+      if (tip.hidden) return;
+      const inTip = tip.contains(e.target);
+      const inCallout = overlay.contains(e.target);
+      if (!inTip && !inCallout) hideTip(true);
+    });
+
+    // Build callout buttons
+    (callouts || []).forEach((c) => {
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "callout";
+      btn.textContent = c.label || "";
+      btn.setAttribute("aria-haspopup", "dialog");
+      btn.setAttribute("aria-expanded", "false");
+
+      // Support top/left/right/bottom from JSON
+      if (c.top) btn.style.top = c.top;
+      if (c.left) btn.style.left = c.left;
+      if (c.right) btn.style.right = c.right;
+      if (c.bottom) btn.style.bottom = c.bottom;
+
+      // Desktop hover/focus previews (non-pinned)
+      btn.addEventListener("pointerenter", () => {
+        if (isTouchLike()) return;
+        if (pinned) return;
+        showTipFor(btn, c, false);
+      });
+
+      btn.addEventListener("pointerleave", () => {
+        if (isTouchLike()) return;
+        if (pinned) return;
+        hideTip(true);
+      });
+
+      btn.addEventListener("focus", () => {
+        if (pinned) return;
+        showTipFor(btn, c, false);
+      });
+
+      btn.addEventListener("blur", () => {
+        if (pinned) return;
+        hideTip(true);
+      });
+
+      // Click/tap pins on mobile (and also works on desktop)
+      btn.addEventListener("click", (e) => {
+        e.stopPropagation();
+
+        // If tapping the same callout while pinned -> close
+        if (pinned && pinnedEl === btn) {
+          hideTip(true);
+          return;
+        }
+
+        // Pin always on touch devices
+        const shouldPin = isTouchLike() ? true : true;
+        showTipFor(btn, c, shouldPin);
+      });
+
+      overlay.appendChild(btn);
+    });
+
+    // Keep tooltip positioned if window resizes (desktop)
+    window.addEventListener("resize", () => {
+      if (!tip.hidden && pinned && pinnedEl && !isTouchLike()) {
+        positionTooltip(tip, pinnedEl, container);
+      }
+    });
+  }
+
   function renderMap(map) {
     const host = byId("mapHost");
     if (!host) return;
 
     host.innerHTML = "";
 
-    // If an image is provided, show it. If it 404s, fallback to placeholder.
     const hasImage = map && map.image;
 
     if (hasImage) {
@@ -151,33 +346,21 @@
       img.src = map.image;
       img.alt = map.alt || "Floor map";
 
-      // Callouts container overlays the image
       const overlay = document.createElement("div");
       overlay.className = "map-overlay";
 
-      (map.callouts || []).forEach(c => {
-        const co = document.createElement("div");
-        co.className = "callout";
-        co.textContent = c.label || "";
+      // Tooltip + interactive callouts live inside the wrap
+      wrap.appendChild(img);
+      wrap.appendChild(overlay);
+      host.appendChild(wrap);
 
-        // Support top/left/right/bottom from JSON
-        if (c.top) co.style.top = c.top;
-        if (c.left) co.style.left = c.left;
-        if (c.right) co.style.right = c.right;
-        if (c.bottom) co.style.bottom = c.bottom;
+      attachInteractiveCallouts(overlay, wrap, map.callouts);
 
-        overlay.appendChild(co);
-      });
-
-      // Fallback if image fails to load
       img.addEventListener("error", () => {
         host.innerHTML = "";
         host.appendChild(makePlaceholder(map));
       });
 
-      wrap.appendChild(img);
-      wrap.appendChild(overlay);
-      host.appendChild(wrap);
       return;
     }
 
@@ -192,18 +375,11 @@
     scan.className = "scanline";
     placeholder.appendChild(scan);
 
-    (map?.callouts || []).forEach(c => {
-      const co = document.createElement("div");
-      co.className = "callout";
-      co.textContent = c.label || "";
+    const overlay = document.createElement("div");
+    overlay.className = "map-overlay";
+    placeholder.appendChild(overlay);
 
-      if (c.top) co.style.top = c.top;
-      if (c.left) co.style.left = c.left;
-      if (c.right) co.style.right = c.right;
-      if (c.bottom) co.style.bottom = c.bottom;
-
-      placeholder.appendChild(co);
-    });
+    attachInteractiveCallouts(overlay, placeholder, map?.callouts || []);
 
     return placeholder;
   }
@@ -241,7 +417,7 @@
     renderList(byId("floorActivities"), floor.activities);
     renderList(byId("floorShops"), floor.shops);
 
-    // Lore (replaces keyPoints)
+    // Lore
     renderLore(byId("floorLore"), floor.lore || floor.systemNote);
 
     // Map
@@ -269,7 +445,6 @@
 
   init();
 </script>
-
 
 </body>
 </html>
