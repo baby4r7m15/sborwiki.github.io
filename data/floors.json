@@ -110,10 +110,7 @@
         "alt": "Floor 3 map",
         "callouts": [
           { "label": "Spawn", "top": "33%", "left": "3%" },
-          { "label": "Village", "top": "48%", "left": "45%" },
-          { "label": "Guild Merchants", "top": "55%", "left": "40%" },
-          { "label": "Shop", "top": "62%", "left": "50%" },
-          { "label": "Mine", "top": "38%", "left": "63%" },
+          { "label": "Shop", "top": "13%", "left": "15%" },
           { "label": "Tower", "top": "82%", "left": "86%" }
         ]
       },
