@@ -118,6 +118,48 @@
         ]
       },
       "systemNote": "Floor 3 is a swamp. Damp and cold, with just snakes and snails to keep you company."
-    }
+    },
+
+    {
+  "id": "4",
+  "number": 4,
+  "name": "Desert Land",
+  "tags": ["COMBAT ZONE", "DESERT MOBS"],
+  "info": [
+    "Large Desert Biome",
+    "Home of Stallord (Boss)",
+    "Scorpions and Cobras (Mobs)",
+    "Ancient Gold Mine"
+  ],
+  "activities": [
+    "Mob Grinding",
+    "Material Farming",
+    "Boss Battle"
+  ],
+  "shops": [
+    "Desert Outpost Shop",
+    "Relic Trader"
+  ],
+  "lore": [
+    "Floor 4 greets players not with cold or rain — but with heat that suffocates. Endless dunes stretch beneath a merciless sun, the sand shifting constantly as though the land itself refuses to stay still.",
+    "Wind howls across the desert in violent gusts, carving the terrain into towering ridges and swallowing footsteps within seconds. Visibility drops without warning when sandstorms roll in, turning even short journeys into dangerous gambles.",
+    "Scorpions burrow beneath the dunes, striking from below with venomous precision, while cobras coil silently waiting to strike. The desert is not loud like the fields, nor oppressive like the swamp — it is patient.",
+    "At the far end of the desert rises the Boss Tower, framed by canyon walls carved by centuries of wind. Within waits Stallord, a colossal demon whose hardened skull gleams like obsidian under the sun. It is said that during battle, the storm answers his call — and the sands themselves begin to move.",
+    "Floor 4 tests endurance more than bravery. The heat drains stamina, the terrain slows movement, and the constant glare disorients even veteran fighters. Only those who adapt — and who learn to read the desert rather than fight it — will survive long enough to challenge its ruler."
+  ],
+  "map": {
+    "image": "/images/floors/floor4map.png",
+    "alt": "Floor 4 map",
+    "callouts": [
+      { "label": "Spawn", "top": "38%", "left": "8%" },
+      { "label": "Desert Outpost", "top": "45%", "left": "30%" },
+      { "label": "Relic Ruins", "top": "25%", "left": "55%" },
+      { "label": "Canyon Pass", "top": "60%", "left": "65%" },
+      { "label": "Tower", "top": "82%", "left": "88%" }
+    ]
+  },
+  "systemNote": "Floor 4 is a vast desert. Harsh sunlight, shifting terrain, and relentless enemies make endurance the true challenge."
+}
+
   ]
 }
