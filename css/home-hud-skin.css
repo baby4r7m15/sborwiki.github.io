@@ -19,7 +19,7 @@ body{
   background:
     radial-gradient(1200px 600px at 30% 10%, rgba(0,234,255,0.18), transparent 60%),
     linear-gradient(var(--hud-bg1), var(--hud-bg1)),
-    url("/css/background.png") center / cover no-repeat !important;
+    url("/css/background2.jpg") center / cover no-repeat !important;
 }
 
 /* Keep desktop parallax behavior consistent */
