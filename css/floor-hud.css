@@ -414,3 +414,172 @@ body{
 @media (prefers-reduced-motion: reduce){
   .scanline{ animation: none; }
 }
+
+/* =====================================================
+   SAO MAP INTERACTIVITY (Hover + Mobile Tap)
+===================================================== */
+
+/* Overlay must accept interaction now */
+.map-overlay{
+  pointer-events: auto; /* was none */
+}
+
+/* Make callouts real buttons + SAO glow */
+.callout{
+  pointer-events: auto;
+  cursor: pointer;
+
+  border-radius: 10px;
+  backdrop-filter: blur(8px);
+
+  /* Keep your vibe */
+  color: var(--text);
+
+  transition: transform 0.14s ease, box-shadow 0.14s ease, border-color 0.14s ease;
+}
+
+.callout:hover,
+.callout:focus-visible{
+  transform: translateY(-1px) scale(1.02);
+  border-color: var(--line);
+  box-shadow: 0 0 18px rgba(0,234,255,0.22);
+  outline: none;
+}
+
+/* Tiny “ping” dot on callouts for SAO feel */
+.callout::before{
+  content:"";
+  display:inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  margin-right: 8px;
+  background: rgba(0,234,255,0.85);
+  box-shadow: 0 0 10px rgba(0,234,255,0.55);
+  vertical-align: middle;
+}
+
+/* ===== Tooltip Panel ===== */
+.map-tooltip{
+  position: absolute;
+  z-index: 50;
+  width: min(360px, calc(100% - 20px));
+  padding: 12px 12px 12px;
+
+  background: rgba(10,30,40,0.94);
+  border: 1px solid var(--line);
+  box-shadow: 0 0 24px rgba(0,234,255,0.18), inset 0 0 18px rgba(0,234,255,0.10);
+  backdrop-filter: blur(10px);
+
+  border-radius: 14px;
+  overflow: hidden;
+
+  opacity: 0;
+  transform: translateY(6px) scale(0.99);
+  transition: opacity 0.14s ease, transform 0.14s ease;
+}
+
+.map-tooltip.show{
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.map-tooltip-scan{
+  position:absolute;
+  inset:0;
+  background: linear-gradient(180deg, transparent, rgba(0,234,255,0.08), transparent);
+  animation: scan 3.6s linear infinite;
+  opacity: 0.55;
+  pointer-events:none;
+}
+
+.map-tooltip-head{
+  position: relative;
+  display:flex;
+  justify-content: space-between;
+  align-items:center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.map-tooltip-title{
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: var(--cyan);
+  text-shadow: 0 0 14px rgba(0,234,255,0.25);
+  font-size: 13px;
+}
+
+.map-tooltip-close{
+  border: 1px solid var(--line2);
+  background: rgba(0,234,255,0.06);
+  color: var(--text);
+  border-radius: 10px;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-weight: 800;
+  box-shadow: 0 0 10px rgba(0,234,255,0.12);
+}
+
+.map-tooltip-close:hover{
+  box-shadow: 0 0 16px rgba(0,234,255,0.18);
+  border-color: var(--line);
+}
+
+.map-tooltip-system{
+  position: relative;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.3px;
+  opacity: 0.95;
+
+  padding: 7px 10px;
+  border: 1px solid var(--line2);
+  background: rgba(0,234,255,0.05);
+  margin-bottom: 10px;
+}
+
+.map-tooltip-body{
+  position: relative;
+  font-size: 13px;
+  line-height: 1.6;
+  opacity: 0.95;
+
+  padding: 10px 10px;
+  border: 1px solid var(--line2);
+  background: rgba(0,234,255,0.04);
+}
+
+/* Optional “danger” styling when danger === WARNING */
+.map-tooltip.danger{
+  border-color: rgba(255, 80, 80, 0.55);
+  box-shadow: 0 0 26px rgba(255, 80, 80, 0.22), inset 0 0 18px rgba(0,234,255,0.08);
+}
+.map-tooltip.danger .map-tooltip-title{
+  color: #ffb3b3;
+  text-shadow: 0 0 14px rgba(255, 80, 80, 0.25);
+}
+
+/* ===== Mobile: Tooltip becomes a pinned bottom “SYSTEM PANEL” ===== */
+@media (max-width: 520px){
+  .map-tooltip{
+    position: fixed;
+    left: 14px !important;
+    right: 14px !important;
+    top: auto !important;
+    bottom: 14px !important;
+    width: auto;
+    max-height: 44vh;
+    overflow: auto;
+  }
+
+  /* Make it feel intentional, not just “floating” */
+  .map-tooltip.pinned{
+    box-shadow: 0 0 28px rgba(0,234,255,0.22);
+  }
+}
+
+/* Accessibility: respect reduced motion */
+@media (prefers-reduced-motion: reduce){
+  .map-tooltip-scan{ animation: none; }
+}
