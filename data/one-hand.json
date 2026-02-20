@@ -32,7 +32,7 @@
     { "name": "Starburst", "type": "Dual One Hand", "requirement": "300 Skill", "animation": "/images/Starburst.gif" },
     { "name": "Starburst Stream", "type": "Dual One Hand", "requirement": "375 Skill", "animation": "/images/StarburstStream.gif" }
   ]
-}
+},
   "weaponsListInfo": {
     "preNote": "Please note that weapons for each associated floor will have their Skill Level rated according to how they are obtained.",
     "ratingBullets": [
