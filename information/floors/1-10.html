@@ -390,7 +390,7 @@
   async function init() {
     const floorId = getFloorIdFromURL();
 
-    const res = await fetch("/data/floors.json", { cache: "no-store" });
+    const res = await fetch("/data/floors10.json", { cache: "no-store" });
     if (!res.ok) {
       byId("floorSubtitle").textContent = "FAILED TO LOAD FLOORS.JSON";
       return;
