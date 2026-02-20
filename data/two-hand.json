@@ -34,7 +34,7 @@
     { "name": "Cascade", "type": "Two Hand", "requirement": "300 Skill", "animation": "/images/Cascade.gif" },
     { "name": "Cyclone", "type": "Two Hand", "requirement": "375 Skill", "animation": "/images/Cyclone.gif" }
   ]
-}
+},
   "weaponsListInfo": {
     "preNote": "Please note that weapons for each associated floor will have their Skill Level rated according to how they are obtained.",
     "ratingBullets": [
