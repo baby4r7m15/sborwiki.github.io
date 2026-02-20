@@ -5,6 +5,7 @@
   <title>SBO:R Wiki – Floors</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/css/info.css">
+  <link rel="stylesheet" href="/css/home-hud-skin.css">
 
   <!-- ====== FAVICON / TAB ICON ====== -->
 <link rel="icon" href="/logo.png" type="image/png" />
@@ -206,7 +207,7 @@ async function loadFloorsTable() {
         nameCell.setAttribute("data-label", "Name");
 
         const link = document.createElement("a");
-        link.href = `/information/floors/floor.html?id=${floor.id}`;
+        link.href = `/information/floors/1-10.html?id=${floor.id}`;
         link.textContent = floor.name || `Floor ${floor.id}`;
         nameCell.appendChild(link);
 
