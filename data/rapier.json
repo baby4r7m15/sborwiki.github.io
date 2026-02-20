@@ -1,4 +1,93 @@
 {
-  "overview": { "text": "Rapier weapon data coming soon." },
-  "weaponTables": []
+  "sidebar": {
+    "title": "Tip:",
+    "bullets": [
+      "Rapiers are best used alongside a shield.",
+      "Using a shield will not impact attack speed."
+    ]
+  },
+
+  "overview": {
+    "text": "Rapiers are one of the five weapon classes. Their Attack Speed is in the middle of the different weapon types, and their Attack stat is the same when compared to other weapon types of equal Skill Level rating.",
+    "bullets": [
+      "Contrary to player belief, having a Shield equipped will not affect your attack speed.",
+      "Critical Chance of all Weapon Types is 15%, raising LUK up to max will add up to +5% Critical Chance, totaling 20% with 500 LUK invested."
+    ],
+    "nested": {
+      "lead": "Critical Hit damage is calculated as (base*crit multi) + (base*STR multi)",
+      "sub": [
+        "\"STR Multi\" ranges from 0 - 2 based on your STR points invested.",
+        "Critical Hits with Rapier weapons will multiply your Base Attack stat by 2.4."
+      ]
+    }
+  },
+
+  "skills": {
+    "text": "This weapon type currently has 7 unlockable sword skills. Reaver is a Universal sword skill that all weapons will unlock first at 5 Skill. Investing points into AGI increases Attack Speed and lowers Sword Skill cooldowns.",
+    "rows": [
+      { "name": "Reaver", "type": "Rapier", "requirement": "5 Skill", "animation": "/images/RapierReaver.gif" },
+      { "name": "Stinger", "type": "Rapier", "requirement": "25 Skill", "animation": "/images/Stinger.gif" },
+      { "name": "Stinger II", "type": "Rapier", "requirement": "75 Skill", "animation": "/images/Stinger2.gif" },
+      { "name": "Stinger III", "type": "Rapier", "requirement": "150 Skill", "animation": "/images/Stinger3.gif" },
+      { "name": "Streak", "type": "Rapier", "requirement": "225 Skill", "animation": "/images/RapierStreak.gif" },
+      { "name": "Linear", "type": "Rapier", "requirement": "300 Skill", "animation": "/images/Linear.gif" },
+      { "name": "Quadruple Pain", "type": "Rapier", "requirement": "375 Skill", "animation": "/images/QuadruplePain.gif" }
+    ]
+  },
+
+  "weaponsListInfo": {
+    "preNote": "Please note that weapons for each associated floor will have their Skill Level rated according to how they are obtained.",
+    "ratingBullets": [
+      "Crafted - Highest",
+      "Boss Drop - 2nd Highest",
+      "Mob Drop - 2nd Lowest",
+      "Shops - Lowest"
+    ],
+    "scalingIntro": "Badge and Gamepass weapons will scale according to your Skill Level:",
+    "scalingBullets": [
+      "Badge Weapons will scale up every 5 Skill Level.",
+      "Gamepass Weapons will scale up every Skill Level.",
+      "Any weapon with a Max Skill stat has higher damage scaling than other weapons around its Skill Level."
+    ],
+    "legendaryNote": "Weapons noted as Legendary Tier have the highest damage scaling."
+  },
+
+  "weaponTables": [
+    {
+      "title": "Shop Weapons",
+      "rows": [
+        { "name": "Iron Rapier", "maxSkill": 1, "attack": 2.6, "obtain": "Starter Inventory, Floor 1 Shop" },
+        { "name": "Steel Rapier", "maxSkill": 5, "attack": 7.6, "obtain": "Floor 1 Shop, Floor 2 Shop" },
+        { "name": "Tree Branch Rapier", "maxSkill": 26, "attack": 51, "obtain": "Floor 2 Shop" },
+        { "name": "Timeless Rapier", "maxSkill": 45, "attack": 106, "obtain": "Floor 4 Shop" },
+        { "name": "Mirror Rapier", "maxSkill": 65, "attack": 175, "obtain": "Floor 5 Shop" },
+        { "name": "Dark Steel Rapier", "maxSkill": 85, "attack": 252, "obtain": "Floor 5 Shop" },
+        { "name": "Inyo Striker", "maxSkill": 105, "attack": 337, "obtain": "Floor 7 Shop" },
+        { "name": "Shadow Striker", "maxSkill": 125, "attack": 427, "obtain": "Floor 5 Shop" },
+        { "name": "Deepsea Challenger", "maxSkill": 145, "attack": 523, "obtain": "Floor 9 Shop" },
+        { "name": "Butterfly Rapier", "maxSkill": 165, "attack": 624, "obtain": "Floor 10 Shop, Dead Samurai" },
+        { "name": "Ember Challenger", "maxSkill": 185, "attack": 730, "obtain": "Floor 10 Shop" },
+        { "name": "Stalhrim Lance", "maxSkill": 205, "attack": 840, "obtain": "Floor 12 Shop" },
+        { "name": "Blackened Riposte", "maxSkill": 225, "attack": 955, "obtain": "Floor 12 Shop" },
+        { "name": "Sweet Rapier", "maxSkill": 305, "attack": 1448, "obtain": "Floor 17 Shop" },
+        { "name": "Sentry Sting", "maxSkill": 330, "attack": 1613, "obtain": "Floor 18 Squid Game Dungeon Merchant" }
+      ]
+    },
+
+    {
+      "title": "Legendary Weapons",
+      "rows": [
+        { "name": "Hells Slayer", "maxSkill": 220, "attack": 1111, "obtain": "Blacksmithing (Legendary Tier)" },
+        { "name": "Gigas Lacerator", "maxSkill": 280, "attack": 1545, "obtain": "Blacksmithing (Legendary Tier)" },
+        { "name": "Queens Maiden", "maxSkill": 340, "attack": 2016, "obtain": "Blacksmithing (Legendary Tier)" }
+      ]
+    },
+
+    {
+      "title": "Gamepass Weapons",
+      "rows": [
+        { "name": "Lambent Light VI", "maxSkill": 290, "attack": 1474, "obtain": "Floor 1 Starter Shop, Requires Blood Enforcer Gamepass" }
+      ]
+    }
+  ]
 }
