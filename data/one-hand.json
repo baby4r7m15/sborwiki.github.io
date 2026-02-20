@@ -39,10 +39,6 @@
     ],
     "legendaryNote": "Please note that any weapon noted as Legendary Tier in this list have the highest damage scaling, making them a lot more powerful than other weapons near its Skill Level."
   },
-  {
-  "overview": {
-    "text": "One-Handed weapons are one of the five weapon classes. Their Attack Speed is the second slowest of the different weapon types, and their Attack stat is the second highest when compared to other weapon types of equal Skill Level rating."
-  },
   "weaponTables": [
     {
       "title": "Shop Weapons",
