@@ -21,8 +21,18 @@
     }
   },
   "skills": {
-    "text": "This weapon type currently has 7 unlockable sword skills. Reaver is a Universal sword skill that all weapons will unlock first at 5 Skill. Each new sword skill unlocked is stronger than the previous one, and capable of hitting more enemies at the same time. Investing points into AGI will increase your weapon's Attack Speed, the speed of the 4 lower level skills, and lower Sword Skill cooldowns."
-  },
+  "text": "This weapon type currently has 7 unlockable sword skills. Reaver is a Universal sword skill that all weapons unlock at 5 Skill.",
+  "rows": [
+    { "name": "Reaver", "type": "One Hand", "requirement": "5 Skill", "animation": "/images/1HReaver.gif" },
+    { "name": "Sharp Nail", "type": "One Hand", "requirement": "25 Skill", "animation": "/images/SharpNail.gif" },
+    { "name": "Sharp Nail II", "type": "One Hand", "requirement": "75 Skill", "animation": "/images/SharpNail2.gif" },
+    { "name": "Sharp Nail III", "type": "One Hand", "requirement": "150 Skill", "animation": "/images/SharpNail3.gif" },
+    { "name": "Dual Weild", "type": "Passive One Hand", "requirement": "200 Skill", "animation": "" },
+    { "name": "Gale Slicer", "type": "Dual One Hand", "requirement": "225 Skill", "animation": "/images/GaleSlicer.gif" },
+    { "name": "Starburst", "type": "Dual One Hand", "requirement": "300 Skill", "animation": "/images/Starburst.gif" },
+    { "name": "Starburst Stream", "type": "Dual One Hand", "requirement": "375 Skill", "animation": "/images/StarburstStream.gif" }
+  ]
+}
   "weaponsListInfo": {
     "preNote": "Please note that weapons for each associated floor will have their Skill Level rated according to how they are obtained.",
     "ratingBullets": [
