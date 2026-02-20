@@ -23,7 +23,7 @@
   },
 
   "skills": {
-    "text": "This weapon type currently has 7 unlockable sword skills. Reaver is a Universal sword skill that all weapons will unlock first at 5 Skill. Investing points into AGI increases Attack Speed and lowers Sword Skill cooldowns.",
+    "text": "This weapon type currently has 7 unlockable sword skills. Reaver is a Universal sword skill that all weapons unlock first at 5 Skill. Investing points into AGI increases Attack Speed and lowers Sword Skill cooldowns.",
     "rows": [
       { "name": "Reaver", "type": "Rapier", "requirement": "5 Skill", "animation": "/images/RapierReaver.gif" },
       { "name": "Stinger", "type": "Rapier", "requirement": "25 Skill", "animation": "/images/Stinger.gif" },
@@ -53,6 +53,7 @@
   },
 
   "weaponTables": [
+
     {
       "title": "Shop Weapons",
       "rows": [
@@ -75,6 +76,62 @@
     },
 
     {
+      "title": "Blacksmithing / Crafted Weapons",
+      "rows": [
+        { "name": "Noble Rapier", "maxSkill": 10, "attack": 15.6, "obtain": "Blacksmithing" },
+        { "name": "Noble Rapier Mk II", "maxSkill": 13, "attack": 20, "obtain": "Blacksmithing" },
+        { "name": "GrandMaster Steel Rapier Mk II", "maxSkill": 18, "attack": 31, "obtain": "Blacksmithing" },
+        { "name": "Corruption Stinger", "maxSkill": 20, "attack": 36, "obtain": "Blacksmithing" },
+        { "name": "GrandMaster Steel Rapier Mk III", "maxSkill": 35, "attack": 75, "obtain": "Blacksmithing" },
+        { "name": "Malachite Rapier", "maxSkill": 55, "attack": 139, "obtain": "Blacksmithing" },
+        { "name": "Sandstorm Rapier", "maxSkill": 75, "attack": 213, "obtain": "Blacksmithing" },
+        { "name": "Permafrost Rapier", "maxSkill": 95, "attack": 294, "obtain": "Blacksmithing" },
+        { "name": "Demonic Rapier", "maxSkill": 115, "attack": 381, "obtain": "Blacksmithing" },
+        { "name": "Ancient Maiden", "maxSkill": 135, "attack": 475, "obtain": "Blacksmithing" },
+        { "name": "Corroded Piercer", "maxSkill": 155, "attack": 573, "obtain": "Blacksmithing" },
+        { "name": "Atlantic Enguarde", "maxSkill": 175, "attack": 677, "obtain": "Blacksmithing" },
+        { "name": "Forest Maiden", "maxSkill": 200, "attack": 812, "obtain": "Blacksmithing" },
+        { "name": "Royal Guard Rapier", "maxSkill": 215, "attack": 897, "obtain": "Blacksmithing" },
+        { "name": "Floral Rapier", "maxSkill": 235, "attack": 1013, "obtain": "Blacksmithing" },
+        { "name": "Blessed Rapier", "maxSkill": 260, "attack": 1164, "obtain": "Blacksmithing" },
+        { "name": "Licorice Lancer", "maxSkill": 335, "attack": 1646, "obtain": "Blacksmithing" }
+      ]
+    },
+
+    {
+      "title": "Mob Drops",
+      "rows": [
+        { "name": "GrandMaster Steel Rapier", "maxSkill": 16, "attack": 26, "obtain": "Corrupted Sentinel (Mob Drop)" },
+        { "name": "Swamp Striker", "maxSkill": 30, "attack": 61, "obtain": "Swamp Snake (Mob Drop)" },
+        { "name": "Desert Striker", "maxSkill": 50, "attack": 122, "obtain": "Albino Scorpion (Mob Drop)" },
+        { "name": "Frostberge Skewer", "maxSkill": 70, "attack": 194, "obtain": "White Baby Wyrm (Mob Drop)" },
+        { "name": "Molten Lance", "maxSkill": 90, "attack": 273, "obtain": "Bloodsilk Spider (Mob Drop)" },
+        { "name": "Timberland Striker", "maxSkill": 110, "attack": 359, "obtain": "Spriggan (Mob Drop)" },
+        { "name": "Deaths Kiss", "maxSkill": 130, "attack": 451, "obtain": "Skeleton (Mob Drop)" },
+        { "name": "Aquatic Striker", "maxSkill": 150, "attack": 548, "obtain": "Giant Crab (Mob Drop)" },
+        { "name": "Cyber Rapier", "maxSkill": 170, "attack": 650, "obtain": "Mantis (Mob Drop)" },
+        { "name": "Coladas Black Blade", "maxSkill": 190, "attack": 757, "obtain": "Noble (Mob Drop)" },
+        { "name": "Rose Rapier", "maxSkill": 210, "attack": 869, "obtain": "Giant Venus Flytrap (Mob Drop)" },
+        { "name": "Cursed Rapier", "maxSkill": 230, "attack": 984, "obtain": "Undead Reprobate (Mob Drop)" },
+        { "name": "Gilded Rapier", "maxSkill": 290, "attack": 1351, "obtain": "Goblin (Mob Drop)" },
+        { "name": "Candy Striker", "maxSkill": 310, "attack": 1480, "obtain": "Slim Dragon (Mob Drop)" },
+        { "name": "Pipe Stinger", "maxSkill": 325, "attack": 1579, "obtain": "Prowler Street Thug (Mob Drop)" },
+        { "name": "Redline Lace", "maxSkill": 337, "attack": 1660, "obtain": "The Custodian (Mob Drop)" }
+      ]
+    },
+
+    {
+      "title": "Boss Drops",
+      "rows": [
+        { "name": "Poseidons Trident", "maxSkill": 172, "attack": 661, "obtain": "Guardian of the Gate (Boss Drop)" },
+        { "name": "Eternity Branches", "maxSkill": 232, "attack": 996, "obtain": "Slime Lord Pengonis (Boss Drop)" },
+        { "name": "Holy Rapier", "maxSkill": 250, "attack": 1103, "obtain": "Celatid (Boss Drop)" },
+        { "name": "Hope Rapier", "maxSkill": 252, "attack": 1115, "obtain": "The Tormented Soul (Boss Drop)" },
+        { "name": "Die Klarheit", "maxSkill": 270, "attack": 1225, "obtain": "Young Celestia (Boss Drop)" }
+      ]
+    },
+
+    {
       "title": "Legendary Weapons",
       "rows": [
         { "name": "Hells Slayer", "maxSkill": 220, "attack": 1111, "obtain": "Blacksmithing (Legendary Tier)" },
@@ -84,10 +141,19 @@
     },
 
     {
+      "title": "Badge Weapons",
+      "rows": [
+        { "name": "Silver Beater Rapier", "maxSkill": 270, "attack": 1343, "obtain": "Requires Beater Badge" },
+        { "name": "Victorious Rapier", "maxSkill": 275, "attack": 1371, "obtain": "Requires 25K Likes Badge" }
+      ]
+    },
+
+    {
       "title": "Gamepass Weapons",
       "rows": [
-        { "name": "Lambent Light VI", "maxSkill": 290, "attack": 1474, "obtain": "Floor 1 Starter Shop, Requires Blood Enforcer Gamepass" }
+        { "name": "Lambent Light VI", "maxSkill": 290, "attack": 1474, "obtain": "Requires Blood Enforcer Gamepass" }
       ]
     }
+
   ]
 }
