@@ -184,7 +184,7 @@
 <script>
 async function loadFloorsTable() {
   try {
-    const res = await fetch("/data/floors.json", { cache: "no-store" });
+    const res = await fetch("/data/floors20.json", { cache: "no-store" });
     if (!res.ok) throw new Error("Failed to load floors.json");
 
     const data = await res.json();
