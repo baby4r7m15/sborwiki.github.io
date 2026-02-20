@@ -1,4 +1,54 @@
 {
-  "overview": { "text": "Melee weapon data coming soon." },
-  "weaponTables": []
+  "sidebar": {
+    "title": "Tip:",
+    "bullets": [
+      "Melee weapons have the fastest attack speed of all weapon types.",
+      "Investing points into AGI increases attack speed and lowers Sword Skill cooldowns."
+    ]
+  },
+
+  "overview": {
+    "text": "Melee weapons are one of the five weapon classes. Their Attack Speed is the quickest of the different weapon types, and their Attack stat is the lowest when compared to other weapon types of equal Skill Level rating.",
+    "bullets": [
+      "Critical Chance of all Weapon Types is 15%, raising LUK up to max will add up to +5% Critical Chance, totaling 20% with 500 LUK invested."
+    ],
+    "nested": {
+      "lead": "Critical Hit damage is calculated as (base*crit multi) + (base*STR multi)",
+      "sub": [
+        "\"STR Multi\" ranges from 0 - 2 based on your STR points invested.",
+        "Critical Hits with Melee weapons will multiply your Base Attack stat by 3."
+      ]
+    }
+  },
+
+  "skills": {
+    "text": "This weapon type currently has three unlockable sword skills. Reaver is a Universal sword skill that all weapons unlock first at 5 Skill. Investing points into AGI will increase your weapon's Attack Speed and lower Sword Skill cooldowns.",
+    "rows": [
+      { "name": "Reaver", "type": "Melee", "requirement": "5 Skill", "animation": "/images/MeleeSkillReaver.gif" },
+      { "name": "Embracer", "type": "Melee", "requirement": "100 Skill", "animation": "/images/MeleeSkillEmbracer.gif" },
+      { "name": "Senda Suigetsu", "type": "Melee", "requirement": "200 Skill", "animation": "/images/MeleeSkillSendaSuigetsu.gif" }
+    ]
+  },
+
+  "weaponsListInfo": {
+    "preNote": "Melee weapons do not follow the same shop/mob/boss lists as other weapon classes. This table lists all currently known melee weapons.",
+    "ratingBullets": [],
+    "scalingIntro": "",
+    "scalingBullets": [],
+    "legendaryNote": ""
+  },
+
+  "weaponTables": [
+    {
+      "title": "Melee Weapons",
+      "rows": [
+        { "name": "Fists", "maxSkill": 30, "attack": 40, "obtain": "Starter Inventory" },
+        { "name": "Easter Royal Gauntlet", "maxSkill": 32, "attack": 49, "obtain": "Easter Event Craftable" },
+        { "name": "Easter Royal Gauntlet Mk II", "maxSkill": 108, "attack": 266, "obtain": "Easter Event Craftable" },
+        { "name": "Easter Royal Gauntlet Mk III", "maxSkill": 184, "attack": 555, "obtain": "Easter Event Craftable" },
+        { "name": "Easter Royal Gauntlet Mk IV", "maxSkill": 260, "attack": 892, "obtain": "Easter Event Craftable" },
+        { "name": "Easter Royal Gauntlet Mk V", "maxSkill": 336, "attack": 1269, "obtain": "Easter Event Craftable" }
+      ]
+    }
+  ]
 }
