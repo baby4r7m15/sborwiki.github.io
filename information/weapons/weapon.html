@@ -78,13 +78,14 @@ function getWeaponIdFromURL() {
   return params.get("id") || "one-hand";
 }
 
-function esc(s) {
-  return String(s ?? "")
-    .replaceAll("&", "&amp;")
-    .replaceAll("<", "&lt;")
-    .replaceAll(">", "&gt;")
-    .replaceAll('"', "&quot;")
-    .replaceAll("'", "&#039;");
+function esc(str) {
+  if (str === null || str === undefined) return "";
+  return String(str)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
 }
 
 function renderList(items, extraClass = "") {
@@ -121,7 +122,9 @@ function renderWeaponTable(title, rows) {
 }
 
 function renderSkillsTable(rows) {
-  const body = (rows || []).map(skill => `
+  if (!Array.isArray(rows) || !rows.length) return "";
+
+  const body = rows.map(skill => `
     <tr>
       <td data-label="Sword Skill">${esc(skill.name)}</td>
       <td data-label="Type">${esc(skill.type)}</td>
@@ -142,9 +145,7 @@ function renderSkillsTable(rows) {
           <th>Animation</th>
         </tr>
       </thead>
-      <tbody>
-        ${body}
-      </tbody>
+      <tbody>${body}</tbody>
     </table>
   `;
 }
@@ -191,23 +192,13 @@ async function init() {
         ${wdata.overview.text ? `<p>${esc(wdata.overview.text)}</p>` : ""}
         ${renderList(wdata.overview.bullets || [])}
       `;
-      if (wdata.overview.nested?.lead) {
-        html += `
-          <ul class="sao-list">
-            <li>
-              ${esc(wdata.overview.nested.lead)}
-              ${renderList(wdata.overview.nested.sub || [], "sub")}
-            </li>
-          </ul>
-        `;
-      }
     }
 
     if (wdata.skills) {
       html += `
         <div class="page-banner">« Skills »</div>
         ${wdata.skills.text ? `<p>${esc(wdata.skills.text)}</p>` : ""}
-        ${renderSkillsTable(wdata.skills.rows || [])}
+        ${renderSkillsTable(wdata.skills.rows)}
       `;
     }
 
