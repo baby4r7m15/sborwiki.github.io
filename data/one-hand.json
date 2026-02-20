@@ -1,1 +1,50 @@
-
+{
+  "sidebar": {
+    "title": "Tip:",
+    "bullets": [
+      "Although you can use 2 swords (Dual Wield) it is advised you use a shield for better defense.",
+      "Using Dual Wield also does not inflict more damage to mobs and bosses, each sword does it's own damage per hit. (Not combined)"
+    ]
+  },
+  "overview": {
+    "text": "One of the 5 Main Weapon Classes in SBO:R. Their Attack Speed is the second slowest of the different weapon types, and their Attack stat is the second highest when compared to other weapon types of equal Skill Level rating.",
+    "bullets": [
+      "Contrary to player belief, having a Shield equipped will not affect your attack speed.",
+      "Critical Chance of all Weapon Types is 15%, raising LUK up to max will add up to +5% Critical Chance, totaling 20% with 500 LUK invested."
+    ],
+    "nested": {
+      "lead": "Critical Hit damage is calculated as (base*crit multi) + (base*STR multi)",
+      "sub": [
+        "\"STR Multi\" ranges from 0 - 2 based on your STR points invested.",
+        "Critical Hits with One-Handed weapons will multiply your Base Attack stat by 2."
+      ]
+    }
+  },
+  "skills": {
+    "text": "This weapon type currently has 7 unlockable sword skills. Reaver is a Universal sword skill that all weapons will unlock first at 5 Skill. Each new sword skill unlocked is stronger than the previous one, and capable of hitting more enemies at the same time. Investing points into AGI will increase your weapon's Attack Speed, the speed of the 4 lower level skills, and lower Sword Skill cooldowns."
+  },
+  "weaponsListInfo": {
+    "preNote": "Please note that weapons for each associated floor will have their Skill Level rated according to how they are obtained.",
+    "ratingBullets": [
+      "Crafted - Highest",
+      "Boss Drop - 2nd Highest",
+      "Mob Drop - 2nd Lowest",
+      "Shops - Lowest"
+    ],
+    "scalingIntro": "Badge and Gamepass weapons will scale according to your Skill Level:",
+    "scalingBullets": [
+      "Badge Weapons will scale up every 5 Skill Level.",
+      "Gamepass Weapons will scale up every Skill Level.",
+      "Any weapon with a Max Skill stat has higher damage scaling than other weapons around its Skill Level. Their Max Attack and Skill will be shown in the table below."
+    ],
+    "legendaryNote": "Please note that any weapon noted as Legendary Tier in this list have the highest damage scaling, making them a lot more powerful than other weapons near its Skill Level."
+  },
+  "weaponTables": [
+    {
+      "title": "Shop Weapons",
+      "rows": [
+        { "name": "Beginner Sword", "maxSkill": 1, "attack": 3.4, "obtain": "Starter Inventory" }
+      ]
+    }
+  ]
+}
