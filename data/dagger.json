@@ -1,4 +1,126 @@
 {
-  "overview": { "text": "Dagger weapon data coming soon." },
-  "weaponTables": []
+  "sidebar": {
+    "title": "Tip:",
+    "bullets": [
+      "Daggers have the second fastest attack speed of all weapon types.",
+      "Investing points into AGI increases attack speed and lowers Sword Skill cooldowns."
+    ]
+  },
+
+  "overview": {
+    "text": "Daggers are one of the five weapon classes. Their Attack Speed is the second fastest of the different weapon types, and their Attack stat is the second lowest when compared to other weapon types of equal Skill Level rating.",
+    "bullets": [
+      "Contrary to player belief, having a Shield equipped will not affect your attack speed.",
+      "Critical Chance of all Weapon Types is 15%, raising LUK up to max will add up to +5% Critical Chance, totaling 20% with 500 LUK invested."
+    ],
+    "nested": {
+      "lead": "Critical Hit damage is calculated as (base*crit multi) + (base*STR multi)",
+      "sub": [
+        "\"STR Multi\" ranges from 0 - 2 based on your STR points invested.",
+        "Critical Hits with Dagger weapons will multiply your Base Attack stat by 2.7."
+      ]
+    }
+  },
+
+  "skills": {
+    "text": "This weapon type currently has 7 unlockable sword skills. Reaver is a Universal sword skill that all weapons unlock first at 5 Skill. Investing points into AGI increases attack speed and lowers Sword Skill cooldowns.",
+    "rows": [
+      { "name": "Reaver", "type": "Dagger", "requirement": "5 Skill", "animation": "/images/DaggerReaver.gif" },
+      { "name": "Fading Edge", "type": "Dagger", "requirement": "25 Skill", "animation": "/images/FadingEdge.gif" },
+      { "name": "Fading Edge II", "type": "Dagger", "requirement": "75 Skill", "animation": "/images/FadingEdge2.gif" },
+      { "name": "Fading Edge III", "type": "Dagger", "requirement": "150 Skill", "animation": "/images/FadingEdge3.gif" },
+      { "name": "Canine", "type": "Dagger", "requirement": "225 Skill", "animation": "/images/Canine.gif" },
+      { "name": "Canine II", "type": "Dagger", "requirement": "300 Skill", "animation": "/images/Canine2.gif" },
+      { "name": "Rapid Bite", "type": "Dagger", "requirement": "375 Skill", "animation": "/images/RapidBite.gif" }
+    ]
+  },
+
+  "weaponsListInfo": {
+    "preNote": "Please note that weapons for each associated floor will have their Skill Level rated according to how they are obtained.",
+    "ratingBullets": [
+      "Crafted - Highest",
+      "Boss Drop - 2nd Highest",
+      "Mob Drop - 2nd Lowest",
+      "Shops - Lowest"
+    ],
+    "scalingIntro": "Badge and Gamepass weapons will scale according to your Skill Level:",
+    "scalingBullets": [
+      "Badge Weapons will scale up every 5 Skill Level.",
+      "Gamepass Weapons will scale up every Skill Level.",
+      "Any weapon with a Max Skill stat has higher damage scaling than other weapons around its Skill Level."
+    ],
+    "legendaryNote": "Weapons noted as Legendary Tier have the highest damage scaling."
+  },
+
+  "weaponTables": [
+
+    {
+      "title": "Shop Weapons",
+      "rows": [
+        { "name": "Iron Dagger", "maxSkill": 1, "attack": 2.5, "obtain": "Starter Inventory, Floor 1 Shop" },
+        { "name": "Steel Dagger", "maxSkill": 5, "attack": 7.5, "obtain": "Floor 1 Shop, Floor 2 Shop" },
+        { "name": "Swamp Edge", "maxSkill": 26, "attack": 47, "obtain": "Floor 2 Shop, Floor 3 Shop" },
+        { "name": "Timeless Dagger", "maxSkill": 45, "attack": 99, "obtain": "Floor 4 Shop" },
+        { "name": "Mirror Dagger", "maxSkill": 65, "attack": 162, "obtain": "Floor 5 Shop" },
+        { "name": "Dark Steel Dagger", "maxSkill": 85, "attack": 234, "obtain": "Floor 5 Shop" },
+        { "name": "Shadow Void", "maxSkill": 125, "attack": 397, "obtain": "Floor 5 Shop" },
+        { "name": "Beta Slasher", "maxSkill": 105, "attack": 313, "obtain": "Floor 7 Shop" },
+        { "name": "Deepsea Crescent", "maxSkill": 145, "attack": 486, "obtain": "Floor 9 Shop" },
+        { "name": "Butterfly Dagger", "maxSkill": 165, "attack": 580, "obtain": "Floor 10 Shop" },
+        { "name": "Ember Strike", "maxSkill": 185, "attack": 678, "obtain": "Floor 10 Shop" },
+        { "name": "Stalhrim Dagger", "maxSkill": 205, "attack": 780, "obtain": "Floor 12 Shop" },
+        { "name": "Echoe", "maxSkill": 225, "attack": 886, "obtain": "Floor 12 Shop" },
+        { "name": "Sweet Dagger", "maxSkill": 305, "attack": 1344, "obtain": "Floor 17 Shop" },
+        { "name": "Catchblade", "maxSkill": 330, "attack": 1497, "obtain": "Floor 18 Squid Game Dungeon Merchant" }
+      ]
+    },
+
+    {
+      "title": "Blacksmithing / Crafted Weapons",
+      "rows": [
+        { "name": "Master Steel Dagger", "maxSkill": 10, "attack": 14.5, "obtain": "Blacksmithing" },
+        { "name": "Master Steel Dagger Mk II", "maxSkill": 13, "attack": 19, "obtain": "Blacksmithing" },
+        { "name": "GrandMaster Steel Dagger Mk II", "maxSkill": 18, "attack": 29, "obtain": "Blacksmithing" },
+        { "name": "Corruption Carver", "maxSkill": 20, "attack": 33, "obtain": "Blacksmithing" },
+        { "name": "GrandMaster Steel Dagger Mk III", "maxSkill": 35, "attack": 70, "obtain": "Blacksmithing" },
+        { "name": "Malachite Dagger", "maxSkill": 55, "attack": 129, "obtain": "Blacksmithing" },
+        { "name": "Sandstorm Dagger", "maxSkill": 75, "attack": 197, "obtain": "Blacksmithing" },
+        { "name": "Permafrost Dagger", "maxSkill": 95, "attack": 273, "obtain": "Blacksmithing" },
+        { "name": "Demonic Dagger", "maxSkill": 115, "attack": 354, "obtain": "Blacksmithing" },
+        { "name": "Ancient Assassin", "maxSkill": 135, "attack": 441, "obtain": "Blacksmithing" },
+        { "name": "Corroded Shank", "maxSkill": 155, "attack": 532, "obtain": "Blacksmithing" },
+        { "name": "Apocalyptic Bringer", "maxSkill": 175, "attack": 628, "obtain": "Blacksmithing" },
+        { "name": "Forest Assassin", "maxSkill": 200, "attack": 754, "obtain": "Blacksmithing" },
+        { "name": "Thiefs Blade", "maxSkill": 215, "attack": 833, "obtain": "Blacksmithing" },
+        { "name": "Floral Dagger", "maxSkill": 235, "attack": 941, "obtain": "Blacksmithing" },
+        { "name": "Blessed Dagger", "maxSkill": 260, "attack": 1080, "obtain": "Blacksmithing" },
+        { "name": "Sour Lemon Stabber", "maxSkill": 335, "attack": 1529, "obtain": "Blacksmithing" }
+      ]
+    },
+
+    {
+      "title": "Legendary Weapons",
+      "rows": [
+        { "name": "Anguish Carver", "maxSkill": 220, "attack": 1032, "obtain": "Blacksmithing (Legendary Tier)" },
+        { "name": "Gigas Grinder", "maxSkill": 280, "attack": 1435, "obtain": "Blacksmithing (Legendary Tier)" },
+        { "name": "Katherines Dagger", "maxSkill": 340, "attack": 1872, "obtain": "Blacksmithing (Legendary Tier)" }
+      ]
+    },
+
+    {
+      "title": "Badge Weapons",
+      "rows": [
+        { "name": "Silver Beater Dagger", "maxSkill": 270, "attack": 1247, "obtain": "Requires Beater Badge" },
+        { "name": "Victorious Dagger", "maxSkill": 275, "attack": 1273, "obtain": "Requires 25K Likes Badge" }
+      ]
+    },
+
+    {
+      "title": "Gamepass Weapons",
+      "rows": [
+        { "name": "Ebon Dagger", "maxSkill": 310, "attack": 1500, "obtain": "Requires Beast Tamer Gamepass" }
+      ]
+    }
+
+  ]
 }
