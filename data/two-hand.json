@@ -1,4 +1,223 @@
 {
-  "overview": { "text": "Two-Handed weapon data coming soon." },
-  "weaponTables": []
+  "id": "two-hand",
+  "name": "Two-Handed Weapons",
+
+  "sidebar": {
+    "title": "Tip:",
+    "bullets": [
+      "It is recommended to use 1 hand weapons till at least floor 17 and then level up your 2 hand weapons.",
+      "It is not recommended to use 2 hand weapons solely for leveling. They are better for Duels and PvP use."
+    ]
+  },
+
+  "overview": {
+    "text": "Two-Handed weapons are one of the five weapon classes. Their Attack Speed is the slowest of the different weapon types, and their Attack stat is the highest when compared to other weapon types of equal Skill Level rating.",
+    "bullets": [
+      "Critical Chance of all Weapon Types is 15%, raising LUK up to max will add up to +5% Critical Chance, totaling 20% with 500 LUK invested."
+    ],
+    "nested": {
+      "lead": "Critical Hit damage is calculated as (base*crit multi) + (base*STR multi)",
+      "sub": [
+        "\"STR Multi\" ranges from 0 - 2 based on your STR points invested.",
+        "Critical Hits with Two-Handed weapons will multiply your Base Attack stat by 1.5."
+      ]
+    }
+  },
+"skills": {
+  "text": "This weapon type currently has 7 unlockable sword skills. Reaver is a Universal sword skill that all weapons will unlock first at 5 Skill. Each new sword skill unlocked is stronger than the previous one, and capable of hitting more enemies at the same time. Investing points into AGI will increase your weapon's Attack Speed, the speed of the 4 lower level skills, and lower Sword Skill cooldowns.",
+  "rows": [
+    { "name": "Reaver", "type": "Two Hand", "requirement": "5 Skill", "animation": "/images/2HReaver.gif" },
+    { "name": "Avalanche", "type": "Two Hand", "requirement": "25 Skill", "animation": "/images/Avalanche1.gif" },
+    { "name": "Avalanche II", "type": "Two Hand", "requirement": "75 Skill", "animation": "/images/Avalanche2.gif" },
+    { "name": "Avalanche III", "type": "Two Hand", "requirement": "150 Skill", "animation": "/images/Avalanche3.gif" },
+    { "name": "Backslash", "type": "Two Hand", "requirement": "225 Skill", "animation": "/images/Backslash.gif" },
+    { "name": "Cascade", "type": "Two Hand", "requirement": "300 Skill", "animation": "/images/Cascade.gif" },
+    { "name": "Cyclone", "type": "Two Hand", "requirement": "375 Skill", "animation": "/images/Cyclone.gif" }
+  ]
+}
+  "weaponsListInfo": {
+    "preNote": "Please note that weapons for each associated floor will have their Skill Level rated according to how they are obtained.",
+    "ratingBullets": [
+      "Crafted - Highest",
+      "Boss Drop - 2nd Highest",
+      "Mob Drop - 2nd Lowest",
+      "Shops - Lowest"
+    ],
+    "scalingIntro": "Badge and Gamepass weapons will scale according to your Skill Level:",
+    "scalingBullets": [
+      "Badge Weapons will scale up every 5 Skill Level.",
+      "Gamepass Weapons will scale up every Skill Level.",
+      "Any weapon with a Max Skill stat has higher damage scaling than other weapons around its Skill Level. Their Max Attack and Skill will be shown in the table below."
+    ],
+    "legendaryNote": "Please note that any weapon noted as Legendary Tier in this list have the highest damage scaling, making them a lot more powerful than other weapons near its Skill Level."
+  },
+
+  "weaponTables": [
+    {
+      "title": "Shop Weapons",
+      "rows": [
+        { "name": "Iron Greatsword", "maxSkill": 1, "attack": 3, "obtain": "Starter Inventory, Floor 1 Shop" },
+        { "name": "Steel Greatsword", "maxSkill": 5, "attack": 10, "obtain": "Floor 1 Shop, Floor 2 Shop" },
+        { "name": "Basin Buster", "maxSkill": 26, "attack": 72, "obtain": "Floor 2 Shop, Floor 3 Shop" },
+        { "name": "Great Scimitar", "maxSkill": 45, "attack": 152, "obtain": "Floor 4 Shop" },
+        { "name": "Mirror Shatterer", "maxSkill": 65, "attack": 300, "obtain": "Floor 5 Shop" },
+        { "name": "Dark Steel Greatsword", "maxSkill": 85, "attack": 361, "obtain": "Floor 5 Shop" },
+        { "name": "Shadow Destroyer", "maxSkill": 125, "attack": 610, "obtain": "Floor 5 Shop" },
+        { "name": "Inyo Buster", "maxSkill": 105, "attack": 481, "obtain": "Floor 7 Shop" },
+        { "name": "Charus Claymore", "maxSkill": 145, "attack": 748, "obtain": "Floor 9 Shop" },
+        { "name": "Butterfly Buster", "maxSkill": 165, "attack": 892, "obtain": "Floor 10 Shop" },
+        { "name": "Shadow Edge", "maxSkill": 185, "attack": 1043, "obtain": "Floor 10 Shop" },
+        { "name": "Stalhrim Greatsword", "maxSkill": 205, "attack": 1201, "obtain": "Floor 12 Shop" },
+        { "name": "Shadow Buster", "maxSkill": 225, "attack": 1364, "obtain": "Floor 12 Shop" },
+        { "name": "Sweet Buster", "maxSkill": 305, "attack": 2068, "obtain": "Floor 17 Shop" },
+        { "name": "Executioner Buster", "maxSkill": 330, "attack": 2304, "obtain": "Floor 18 Dungeon Merchant" }
+      ]
+    },
+
+    {
+      "title": "Blacksmithing / Crafted Weapons",
+      "rows": [
+        { "name": "Master Steel Greatsword", "maxSkill": 10, "attack": 21, "obtain": "Blacksmithing, Floor 1 Shop, Floor 2 Shop" },
+        { "name": "Master Steel Greatsword Mk II", "maxSkill": 13, "attack": 29, "obtain": "Blacksmithing" },
+        { "name": "Corruption Buster", "maxSkill": 20, "attack": 51, "obtain": "Blacksmithing" },
+        { "name": "GrandMaster Steel Greatsword Mk II", "maxSkill": 24, "attack": 65, "obtain": "Blacksmithing" },
+        { "name": "GrandMaster Steel Greatsword Mk III", "maxSkill": 35, "attack": 108, "obtain": "Blacksmithing" },
+        { "name": "Malachite Greatsword", "maxSkill": 55, "attack": 199, "obtain": "Blacksmithing" },
+        { "name": "Sandstorm Buster", "maxSkill": 75, "attack": 304, "obtain": "Blacksmithing" },
+        { "name": "Permafrost Greatsword", "maxSkill": 95, "attack": 420, "obtain": "Blacksmithing" },
+        { "name": "Demonic Greatsword", "maxSkill": 115, "attack": 545, "obtain": "Blacksmithing" },
+        { "name": "Ancient Berserker", "maxSkill": 135, "attack": 678, "obtain": "Blacksmithing" },
+        { "name": "Corroded Berserker", "maxSkill": 155, "attack": 819, "obtain": "Blacksmithing" },
+        { "name": "Atlantic Destroyer", "maxSkill": 175, "attack": 967, "obtain": "Blacksmithing" },
+        { "name": "Forest Buster", "maxSkill": 200, "attack": 1161, "obtain": "Blacksmithing" },
+        { "name": "Zweihander", "maxSkill": 215, "attack": 1282, "obtain": "Blacksmithing" },
+        { "name": "Floral Buster", "maxSkill": 235, "attack": 1448, "obtain": "Blacksmithing" },
+        { "name": "Blessed Greatsword", "maxSkill": 260, "attack": 1662, "obtain": "Blacksmithing" },
+        { "name": "Cinnamon Sword", "maxSkill": 335, "attack": 2532, "obtain": "Blacksmithing" },
+
+        { "name": "Obsidian Breaker", "maxSkill": 375, "attack": 2745, "obtain": "Blacksmithing (Quest 111 unlock)" },
+        { "name": "Finale", "maxSkill": 395, "attack": 2947, "obtain": "Blacksmithing (Quest 111 unlock)" }
+      ]
+    },
+
+    {
+      "title": "Mob Drops",
+      "rows": [
+        { "name": "GrandMaster Steel Greatsword", "maxSkill": 16, "attack": 38, "obtain": "Corrupted Sentinel" },
+        { "name": "Glade Striker", "maxSkill": 30, "attack": 88, "obtain": "Marshland Crocodile" },
+        { "name": "Lightning Edge", "maxSkill": 50, "attack": 175, "obtain": "Albino Scorpion" },
+        { "name": "Legendary Stalhrim Blade", "maxSkill": 70, "attack": 277, "obtain": "Frost Chaurus" },
+        { "name": "Infernal Cleaver", "maxSkill": 90, "attack": 390, "obtain": "Ember Spider" },
+        { "name": "Shiek Greatsword", "maxSkill": 110, "attack": 513, "obtain": "Stone Golem" },
+        { "name": "Wretched Greatsword", "maxSkill": 130, "attack": 644, "obtain": "Shadow Walker" },
+        { "name": "Aqua Buster", "maxSkill": 150, "attack": 783, "obtain": "Sea Turtle" },
+        { "name": "Kamikaze Katana", "maxSkill": 170, "attack": 929, "obtain": "Oni" },
+        { "name": "Doomed Treasure", "maxSkill": 190, "attack": 1082, "obtain": "Fallen Noble" },
+        { "name": "Holy Buster", "maxSkill": 250, "attack": 1575, "obtain": "Luo" },
+        { "name": "Rugged Greatsword", "maxSkill": 290, "attack": 1930, "obtain": "Werewolf" },
+        { "name": "Candy Halberd", "maxSkill": 310, "attack": 2115, "obtain": "Chubby Dragon" },
+        { "name": "Rebar Crusher", "maxSkill": 325, "attack": 2256, "obtain": "Wrecker Street Thug" }
+      ]
+    },
+
+    {
+      "title": "Boss Drops",
+      "rows": [
+        { "name": "Legendary Malachite Blade", "maxSkill": 52, "attack": 185, "obtain": "Lord Slug" },
+        { "name": "Yukkis Mourne", "maxSkill": 112, "attack": 525, "obtain": "Uakmaroth, the Demon Lord" },
+        { "name": "Trunk Destroyer", "maxSkill": 210, "attack": 1241, "obtain": "Land Anemone, Laurellis Convict" },
+        { "name": "Whale", "maxSkill": 212, "attack": 1257, "obtain": "Grimlock the Fallen King" },
+        { "name": "Cursed Buster", "maxSkill": 230, "attack": 1406, "obtain": "Tormented Spectrum" },
+        { "name": "Hope Buster", "maxSkill": 252, "attack": 1593, "obtain": "The Tormented Soul" },
+        { "name": "Der Zerstorer", "maxSkill": 270, "attack": 1751, "obtain": "Young Celestia" },
+        { "name": "Giant Hammer", "maxSkill": 312, "attack": 2134, "obtain": "Two-Headed Giant" },
+        { "name": "Gamebreaker Greatsword", "maxSkill": 337, "attack": 2371, "obtain": "The Arbitrator" }
+      ]
+    },
+
+    {
+      "title": "Legendary Weapons",
+      "rows": [
+        { "name": "Twilight Buster", "maxSkill": 220, "attack": 1587, "obtain": "Blacksmithing (Legendary Tier)" },
+        { "name": "Gigas Soul", "maxSkill": 280, "attack": 2208, "obtain": "Requires Quests 71-72-73, Blacksmithing (Legendary Tier)" },
+        { "name": "Zurandal", "maxSkill": 340, "attack": 2880, "obtain": "Blacksmithing (Legendary Tier)" }
+      ]
+    },
+
+    {
+      "title": "Event Weapons",
+      "rows": [
+        { "name": "Grand Inert Staff", "maxSkill": 45, "attack": 152, "obtain": "Halloween Event: Event Quest Reward, Event Boss Rare Drop [2021 - 2022]" },
+
+        { "name": "Eggsecution Claymore", "maxSkill": 75, "attack": 304, "obtain": "Easter Event: Easter Shop [2023 - 2024]" },
+        { "name": "Summer Cracked Greatsword", "maxSkill": 76, "attack": 310, "obtain": "Summer Event: Summer Shop [2023]" },
+        { "name": "Summer Atlantean Trident", "maxSkill": 76, "attack": 310, "obtain": "Summer Event: Summer Shop [2024]" },
+        { "name": "Labrys Soul Cleaver", "maxSkill": 76, "attack": 310, "obtain": "Halloween Event: Blacksmithing [2023]" },
+        { "name": "Frosted Onyx Buster", "maxSkill": 76, "attack": 310, "obtain": "Christmas Event: Blacksmithing [2023]" },
+        { "name": "Emberwrath", "maxSkill": 77, "attack": 315, "obtain": "Halloween Event: Blacksmithing [2024]" },
+        { "name": "Winter Holiday Axe", "maxSkill": 77, "attack": 315, "obtain": "Christmas Event: QE52 Reward unlocks in Blacksmithing [2024]" },
+        { "name": "Easter Royale Claymore", "maxSkill": 78, "attack": 321, "obtain": "Easter Event: QE15 Reward unlocks in Blacksmithing [2025]" },
+
+        { "name": "Eostre Claymore", "maxSkill": 95, "attack": 420, "obtain": "Easter Event: Easter Shop [2020 - 2022]" },
+        { "name": "Grand Inert Staff Mk II", "maxSkill": 115, "attack": 545, "obtain": "Halloween Event: Blacksmithing [2021 - 2022]" },
+
+        { "name": "Eggsecution Claymore Mk II", "maxSkill": 150, "attack": 783, "obtain": "Easter Event: Blacksmithing [2023 - 2024]" },
+        { "name": "Summer Cracked Greatsword Mk II", "maxSkill": 152, "attack": 798, "obtain": "Summer Event: Blacksmithing [2023]" },
+        { "name": "Summer Atlantean Trident Mk II", "maxSkill": 152, "attack": 798, "obtain": "Summer Event: Blacksmithing [2024]" },
+        { "name": "Labrys Soul Cleaver Mk II", "maxSkill": 152, "attack": 798, "obtain": "Halloween Event: Blacksmithing [2023]" },
+        { "name": "Frosted Onyx Buster Mk II", "maxSkill": 152, "attack": 798, "obtain": "Christmas Event: Blacksmithing [2023]" },
+        { "name": "Emberwrath MK II", "maxSkill": 154, "attack": 812, "obtain": "Halloween Event: Blacksmithing [2024]" },
+        { "name": "Winter Holiday Axe Mk II", "maxSkill": 154, "attack": 812, "obtain": "Christmas Event: QE52 Reward unlocks in Blacksmithing [2024]" },
+        { "name": "Easter Royale Claymore Mk II", "maxSkill": 155, "attack": 819, "obtain": "Easter Event: QE18 Reward unlocks in Blacksmithing [2025]" },
+
+        { "name": "Eostre Claymore MII", "maxSkill": 195, "attack": 1121, "obtain": "Easter Event: Blacksmithing [2021 - 2022]" },
+
+        { "name": "Eggsecution Claymore Mk III", "maxSkill": 225, "attack": 1364, "obtain": "Easter Event: Blacksmithing [2023 - 2024]" },
+        { "name": "Summer Cracked Greatsword Mk III", "maxSkill": 228, "attack": 1389, "obtain": "Summer Event: Blacksmithing [2023]" },
+        { "name": "Summer Atlantean Trident Mk III", "maxSkill": 228, "attack": 1389, "obtain": "Summer Event: Blacksmithing [2024]" },
+        { "name": "Labrys Soul Cleaver Mk III", "maxSkill": 228, "attack": 1389, "obtain": "Halloween Event: Blacksmithing [2023]" },
+        { "name": "Frosted Onyx Buster Mk III", "maxSkill": 228, "attack": 1389, "obtain": "Christmas Event: Blacksmithing [2023]" },
+        { "name": "Emberwrath MK III", "maxSkill": 231, "attack": 1414, "obtain": "Halloween Event: Blacksmithing [2024]" },
+        { "name": "Winter Holiday Axe Mk III", "maxSkill": 232, "attack": 1422, "obtain": "Christmas Event: QE53 Reward unlocks in Blacksmithing [2024]" },
+        { "name": "Easter Royale Claymore Mk III", "maxSkill": 232, "attack": 1422, "obtain": "Easter Event: QE19 Reward unlocks in Blacksmithing [2025]" },
+
+        { "name": "Eggsecution Claymore Mk IV", "maxSkill": 300, "attack": 2022, "obtain": "Easter Event: Blacksmithing [2023 - 2024]" },
+        { "name": "Summer Cracked Greatsword Mk IV", "maxSkill": 304, "attack": 2059, "obtain": "Summer Event: Blacksmithing [2023]" },
+        { "name": "Summer Atlantean Trident Mk IV", "maxSkill": 304, "attack": 2059, "obtain": "Summer Event: Blacksmithing [2024]" },
+        { "name": "Labrys Soul Cleaver Mk IV", "maxSkill": 304, "attack": 2059, "obtain": "Halloween Event: Blacksmithing [2023]" },
+        { "name": "Frosted Onyx Buster Mk IV", "maxSkill": 304, "attack": 2059, "obtain": "Christmas Event: Blacksmithing [2023]" },
+        { "name": "Demon Clover Scythe", "maxSkill": 305, "attack": 2068, "obtain": "Halloween Event: Demon of the Dark Clover" },
+        { "name": "Grimveil", "maxSkill": 305, "attack": 2068, "obtain": "Halloween Event: Harbinger Anselith" },
+        { "name": "Emberwrath MK IV", "maxSkill": 308, "attack": 2096, "obtain": "Halloween Event: Blacksmithing [2024]" },
+        { "name": "Winter Holiday Axe Mk IV", "maxSkill": 309, "attack": 2106, "obtain": "Christmas Event: QE52 Reward unlocks in Blacksmithing [2024]" },
+        { "name": "Easter Royale Claymore Mk IV", "maxSkill": 309, "attack": 2106, "obtain": "Easter Event: QE20 Reward unlocks in Blacksmithing [2025]" },
+        { "name": "Bloodred Knight Veil Buster", "maxSkill": 310, "attack": 2115, "obtain": "Halloween Event: Blacksmithing [2024]" },
+
+        { "name": "Eostre Claymore MIII", "maxSkill": 325, "attack": 2256, "obtain": "Easter Event: Blacksmithing [2021 - 2022]" },
+
+        { "name": "Eggsecution Claymore Mk V", "maxSkill": 375, "attack": 2745, "obtain": "Easter Event: Blacksmithing [2023 - 2024]" },
+        { "name": "Summer Cracked Greatsword Mk V", "maxSkill": 380, "attack": 2795, "obtain": "Summer Event: Blacksmithing [2023]" },
+        { "name": "Summer Atlantean Trident Mk V", "maxSkill": 380, "attack": 2795, "obtain": "Summer Event: Blacksmithing [2024]" },
+        { "name": "Labrys Soul Cleaver Mk V", "maxSkill": 380, "attack": 2795, "obtain": "Halloween Event: Blacksmithing [2023]" },
+        { "name": "Frosted Onyx Buster Mk V", "maxSkill": 380, "attack": 2795, "obtain": "Christmas Event: Blacksmithing [2023]" },
+        { "name": "Emberwrath MK V", "maxSkill": 385, "attack": 2845, "obtain": "Halloween Event: Blacksmithing [2024]" },
+        { "name": "Winter Holiday Axe Mk V", "maxSkill": 386, "attack": 2855, "obtain": "Christmas Event: QE55 Reward unlocks in Blacksmithing [2024]" },
+        { "name": "Easter Royale Claymore Mk V", "maxSkill": 386, "attack": 2855, "obtain": "Easter Event: QE20-2 Reward unlocks in Blacksmithing [2025]" },
+
+        { "name": "Grimms Scythe", "maxSkill": "270 [Max]", "attack": "1910 [Max]", "obtain": "Halloween Event: Grimm" },
+        { "name": "Wreath Buster", "maxSkill": "270 [Max]", "attack": "1910 [Max]", "obtain": "Christmas Event: Christmas Shop [2020 - 2022]" },
+        { "name": "Jackenmoure", "maxSkill": "280 [Max]", "attack": "2007 [Max]", "obtain": "Halloween Event: Halloween Shop [2021 - 2022]" },
+        { "name": "Crescent Blood Moon Halberd", "maxSkill": "280 [Max]", "attack": "2007 [Max]", "obtain": "Halloween Event: Halloween Shop / Boss Drop / Blacksmithing [2022 - 2023]" },
+        { "name": "Scorched Crucible Backsword", "maxSkill": "285 [Max]", "attack": "2056 [Max]", "obtain": "Halloween Event: One-Eyed Spirit" },
+        { "name": "Gobbler", "maxSkill": "290 [Max]", "attack": "2106 [Max]", "obtain": "Thanksgiving Event: Thanksgiving Shop [2021 - 2022]" },
+        { "name": "Rabbit Claw", "maxSkill": "295 [Max]", "attack": "2156 [Max]", "obtain": "Easter Event: Easter Shop [2022]" },
+        { "name": "Renegade Saint Axe", "maxSkill": "300 [Max]", "attack": "2206 [Max]", "obtain": "Christmas Event: Drops from Renegade Saint Nick" },
+        { "name": "Bell Scythe", "maxSkill": "305 [Max]", "attack": "2256 [Max]", "obtain": "Christmas Event: Christmas Shop [2021 - 2022]" },
+        { "name": "Matrimonys Sickle (All Colors)", "maxSkill": "305 [Max]", "attack": "2256 [Max]", "obtain": "Valentines Day Event: Valentines Day Shop [2023, 2024]" },
+        { "name": "Fatal Scythe", "maxSkill": "310 [Max]", "attack": "2307 [Max]", "obtain": "Halloween Event: Blacksmithing" },
+        { "name": "Clover Greatsword", "maxSkill": "310 [Max]", "attack": "2307 [Max]", "obtain": "Saint Patricks Event: Saint Patrick's Day Shop [2023, 2024]" },
+        { "name": "Krampus Klaws", "maxSkill": "320 [Max]", "attack": "2410 [Max]", "obtain": "Christmas Event: Drops from Perfidious Krampus" }
+      ]
+    }
+  ]
 }
