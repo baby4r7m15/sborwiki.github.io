@@ -13,240 +13,228 @@
 
 <body>
 
-  <!-- ================= HEADER ================= -->
-  <header class="wiki-header">
-    <div class="wiki-header-inner">
+<header class="wiki-header">
+  <div class="wiki-header-inner">
 
-      <div class="wiki-left">
-        <img src="/logo.png" class="wiki-logo" alt="Logo" />
-        <span class="wiki-title">Sword Blox Online: Rebirth Wiki</span>
+    <div class="wiki-left">
+      <img src="/logo.png" class="wiki-logo" alt="Logo" />
+      <span class="wiki-title">Sword Blox Online: Rebirth Wiki</span>
+    </div>
+
+    <div class="hamburger" id="hamburger">☰</div>
+
+    <nav class="wiki-nav" id="wikiNav">
+      <div class="nav-item">
+        <a href="https://sborwiki.com">Home</a>
       </div>
 
-      <div class="hamburger" id="hamburger">☰</div>
-
-      <nav class="wiki-nav" id="wikiNav">
-        <div class="nav-item">
-          <a href="https://sborwiki.com">Home</a>
+      <div class="nav-item">
+        <span class="nav-label">Information</span>
+        <div class="dropdown">
+          <a href="/information/weapons">Weapons</a>
+          <a href="/information/floors-1-10">Floors</a>
         </div>
+      </div>
+    </nav>
 
-        <div class="nav-item">
-          <span class="nav-label">Information</span>
-          <div class="dropdown">
-            <a href="/information/weapons">Weapons</a>
-            <a href="/information/floors-1-10">Floors</a>
-          </div>
-        </div>
-      </nav>
+  </div>
+</header>
+
+<main class="page-wrapper">
+
+  <section class="hero">
+    <img src="/Sborlogotext.png" class="hero-logo" alt="SBO Logo">
+  </section>
+
+  <section class="content-area">
+    <div class="content-grid">
+
+      <article class="content-left" id="weaponMount">
+        LOADING…
+      </article>
+
+      <aside class="content-right" id="weaponSidebar"></aside>
 
     </div>
-  </header>
+  </section>
 
-  <main class="page-wrapper">
+</main>
 
-    <section class="hero">
-      <img src="/Sborlogotext.png" class="hero-logo" alt="SBO Logo">
-    </section>
+<script>
+const hamburger = document.getElementById("hamburger");
+const nav = document.getElementById("wikiNav");
+if (hamburger && nav) {
+  hamburger.addEventListener("click", () => {
+    nav.classList.toggle("active");
+  });
+}
+</script>
 
-    <section class="content-area">
-      <div class="content-grid">
+<script>
+const byId = (id) => document.getElementById(id);
 
-        <article class="content-left" id="weaponMount">
-          LOADING…
-        </article>
+function getWeaponIdFromURL() {
+  const params = new URLSearchParams(window.location.search);
+  return params.get("id") || "one-hand";
+}
 
-        <aside class="content-right" id="weaponSidebar">
-          <!-- Optional sidebar from JSON -->
-        </aside>
+function esc(s) {
+  return String(s ?? "")
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
+}
 
-      </div>
-    </section>
+function renderList(items, extraClass = "") {
+  if (!Array.isArray(items) || !items.length) return "";
+  return `<ul class="sao-list ${extraClass}">${items.map(x => `<li>${esc(x)}</li>`).join("")}</ul>`;
+}
 
-  </main>
+function renderWeaponTable(title, rows) {
+  const body = (rows || []).map(w => `
+    <tr>
+      <td data-label="Weapon Name">${esc(w.name)}</td>
+      <td data-label="Max Skill">${esc(w.maxSkill)}</td>
+      <td data-label="Attack Damage">${esc(w.attack)}</td>
+      <td data-label="How to Obtain">${esc(w.obtain)}</td>
+    </tr>
+  `).join("");
 
-  <!-- ================= MOBILE SCRIPT (same style) ================= -->
-  <script>
-    const hamburger = document.getElementById("hamburger");
-    const nav = document.getElementById("wikiNav");
-
-    if (hamburger && nav) {
-      hamburger.addEventListener("click", () => {
-        nav.classList.toggle("active");
-      });
-    }
-
-    document.querySelectorAll(".nav-label").forEach(label => {
-      label.addEventListener("click", function () {
-        if (window.innerWidth <= 900) {
-          this.parentElement.classList.toggle("active");
-        }
-      });
-    });
-  </script>
-
-  <!-- ================= WEAPON DETAIL LOADER ================= -->
-  <script>
-    const byId = (id) => document.getElementById(id);
-
-    function getWeaponIdFromURL() {
-      const params = new URLSearchParams(window.location.search);
-      return params.get("id") || "one-hand";
-    }
-
-    function esc(s) {
-      return String(s ?? "")
-        .replaceAll("&", "&amp;")
-        .replaceAll("<", "&lt;")
-        .replaceAll(">", "&gt;")
-        .replaceAll('"', "&quot;")
-        .replaceAll("'", "&#039;");
-    }
-
-    function renderList(items, extraClass = "") {
-      if (!Array.isArray(items) || !items.length) return "";
-      return `<ul class="sao-list ${extraClass}">${items.map(x => `<li>${esc(x)}</li>`).join("")}</ul>`;
-    }
-
-    function renderWeaponTable(title, rows) {
-      const body = (rows || []).map(w => `
+  return `
+    <h2 class="section-heading">${esc(title)}</h2>
+    <table class="info-table">
+      <thead>
         <tr>
-          <td data-label="Weapon Name">${esc(w.name)}</td>
-          <td data-label="Max Skill">${esc(w.maxSkill)}</td>
-          <td data-label="Attack Damage">${esc(w.attack)}</td>
-          <td data-label="How to Obtain">${esc(w.obtain)}</td>
+          <th>Weapon Name</th>
+          <th>Max Skill</th>
+          <th>Attack Damage</th>
+          <th>How to Obtain</th>
         </tr>
-      `).join("");
+      </thead>
+      <tbody>
+        ${body || `<tr><td colspan="4">No items found.</td></tr>`}
+      </tbody>
+    </table>
+  `;
+}
 
-      return `
-        <h2 class="section-heading">${esc(title)}</h2>
-        <table class="info-table">
-          <thead>
-            <tr>
-              <th>Weapon Name</th>
-              <th>Max Skill</th>
-              <th>Attack Damage</th>
-              <th>How to Obtain</th>
-            </tr>
-          </thead>
-          <tbody>
-            ${body || `<tr><td colspan="4">No items found.</td></tr>`}
-          </tbody>
-        </table>
+function renderSkillsTable(rows) {
+  const body = (rows || []).map(skill => `
+    <tr>
+      <td data-label="Sword Skill">${esc(skill.name)}</td>
+      <td data-label="Type">${esc(skill.type)}</td>
+      <td data-label="Skill Requirement">${esc(skill.requirement)}</td>
+      <td data-label="Animation">
+        ${skill.animation ? `<img src="${esc(skill.animation)}" class="skill-gif" alt="${esc(skill.name)} Animation">` : "—"}
+      </td>
+    </tr>
+  `).join("");
+
+  return `
+    <table class="info-table">
+      <thead>
+        <tr>
+          <th>Sword Skill</th>
+          <th>Type</th>
+          <th>Skill Requirement</th>
+          <th>Animation</th>
+        </tr>
+      </thead>
+      <tbody>
+        ${body}
+      </tbody>
+    </table>
+  `;
+}
+
+function renderSidebar(sidebar) {
+  const host = byId("weaponSidebar");
+  if (!sidebar) { host.innerHTML = ""; return; }
+
+  host.innerHTML = `
+    <div class="sao-panel">
+      <div class="sao-header">${esc(sidebar.title || "Tip:")}</div>
+      ${renderList(sidebar.bullets || [])}
+    </div>
+  `;
+}
+
+async function init() {
+  const weaponId = getWeaponIdFromURL();
+  const mount = byId("weaponMount");
+
+  try {
+    const indexRes = await fetch("/data/weapons-index.json");
+    const indexData = await indexRes.json();
+    const meta = (indexData.weapons || []).find(w => w.id === weaponId);
+    if (!meta) throw new Error("Weapon type not found.");
+
+    const fileRes = await fetch(meta.file);
+    const wdata = await fileRes.json();
+
+    document.title = `SBO:R Wiki – ${meta.name}`;
+
+    renderSidebar(wdata.sidebar);
+
+    let html = `
+      <a href="/information/weapons" class="back-link">← Back to Weapons Page</a>
+      <div class="page-intro-box">
+        <strong>${esc(meta.name)}</strong>
+      </div>
+    `;
+
+    if (wdata.overview) {
+      html += `
+        <div class="page-banner">« Overview »</div>
+        ${wdata.overview.text ? `<p>${esc(wdata.overview.text)}</p>` : ""}
+        ${renderList(wdata.overview.bullets || [])}
       `;
-    }
-
-    function renderSidebar(sidebar) {
-      const host = byId("weaponSidebar");
-      if (!host) return;
-
-      if (!sidebar || (!sidebar.title && !Array.isArray(sidebar.bullets))) {
-        host.innerHTML = "";
-        return;
-      }
-
-      host.innerHTML = `
-        <div class="sao-panel">
-          <div class="sao-header">${esc(sidebar.title || "Tip:")}</div>
-          ${renderList(sidebar.bullets || [])}
-        </div>
-      `;
-    }
-
-    async function init() {
-      const weaponId = getWeaponIdFromURL();
-      const mount = byId("weaponMount");
-
-      try {
-        // 1) load index
-        const indexRes = await fetch("/data/weapons-index.json", { cache: "no-store" });
-        if (!indexRes.ok) throw new Error("Failed to load /data/weapons-index.json");
-        const indexData = await indexRes.json();
-
-        const meta = (indexData.weapons || []).find(w => String(w.id) === String(weaponId));
-        if (!meta) throw new Error(`Weapon type not found for id=${weaponId}`);
-
-        // 2) load the weapon file
-        const fileRes = await fetch(meta.file, { cache: "no-store" });
-        if (!fileRes.ok) throw new Error(`Failed to load ${meta.file}`);
-        const wdata = await fileRes.json();
-
-        // Title
-        document.title = `SBO:R Wiki – ${meta.name || weaponId}`;
-
-        // Sidebar (optional)
-        renderSidebar(wdata.sidebar);
-
-        // Build page
-        let html = `
-          <a href="/information/weapons" class="back-link">← Back to Weapons Page</a>
-
-          <div class="page-intro-box">
-            <strong>${esc(meta.name || weaponId)}</strong>
-          </div>
-        `;
-
-        // Overview
-        if (wdata.overview) {
-          html += `
-            <div class="page-banner">« Overview »</div>
-            ${wdata.overview.text ? `<p>${esc(wdata.overview.text)}</p>` : ""}
-            ${renderList(wdata.overview.bullets || [])}
-          `;
-
-          if (wdata.overview.nested?.lead) {
-            html += `
-              <ul class="sao-list">
-                <li>
-                  ${esc(wdata.overview.nested.lead)}
-                  ${renderList(wdata.overview.nested.sub || [], "sub")}
-                </li>
-              </ul>
-            `;
-          }
-        }
-
-        // Skills (optional text for now)
-        if (wdata.skills && (wdata.skills.text || Array.isArray(wdata.skills.bullets))) {
-          html += `
-            <div class="page-banner">« Skills »</div>
-            ${wdata.skills.text ? `<p>${esc(wdata.skills.text)}</p>` : ""}
-            ${renderList(wdata.skills.bullets || [])}
-          `;
-        }
-
-        // Weapons List Info
-        if (wdata.weaponsListInfo) {
-          html += `
-            <div class="page-banner">« Weapons List »</div>
-            ${wdata.weaponsListInfo.preNote ? `<p>${esc(wdata.weaponsListInfo.preNote)}</p>` : ""}
-            ${renderList(wdata.weaponsListInfo.ratingBullets || [])}
-
-            ${wdata.weaponsListInfo.scalingIntro ? `<p>${esc(wdata.weaponsListInfo.scalingIntro)}</p>` : ""}
-            ${renderList(wdata.weaponsListInfo.scalingBullets || [])}
-
-            ${wdata.weaponsListInfo.legendaryNote ? `<p><strong>${esc(wdata.weaponsListInfo.legendaryNote)}</strong></p>` : ""}
-          `;
-        }
-
-        // Weapon Tables
-        (wdata.weaponTables || []).forEach(tbl => {
-          html += renderWeaponTable(tbl.title, tbl.rows);
-        });
-
-        mount.innerHTML = html;
-
-      } catch (err) {
-        console.error(err);
-        mount.innerHTML = `
-          <div class="sao-panel">
-            <div class="sao-header">SYSTEM WARNING</div>
-            <p>${esc(err.message || err)}</p>
-          </div>
+      if (wdata.overview.nested?.lead) {
+        html += `
+          <ul class="sao-list">
+            <li>
+              ${esc(wdata.overview.nested.lead)}
+              ${renderList(wdata.overview.nested.sub || [], "sub")}
+            </li>
+          </ul>
         `;
       }
     }
 
-    init();
-  </script>
+    if (wdata.skills) {
+      html += `
+        <div class="page-banner">« Skills »</div>
+        ${wdata.skills.text ? `<p>${esc(wdata.skills.text)}</p>` : ""}
+        ${renderSkillsTable(wdata.skills.rows || [])}
+      `;
+    }
+
+    if (wdata.weaponsListInfo) {
+      html += `
+        <div class="page-banner">« Weapons List »</div>
+        ${wdata.weaponsListInfo.preNote ? `<p>${esc(wdata.weaponsListInfo.preNote)}</p>` : ""}
+        ${renderList(wdata.weaponsListInfo.ratingBullets || [])}
+        ${wdata.weaponsListInfo.scalingIntro ? `<p>${esc(wdata.weaponsListInfo.scalingIntro)}</p>` : ""}
+        ${renderList(wdata.weaponsListInfo.scalingBullets || [])}
+        ${wdata.weaponsListInfo.legendaryNote ? `<p><strong>${esc(wdata.weaponsListInfo.legendaryNote)}</strong></p>` : ""}
+      `;
+    }
+
+    (wdata.weaponTables || []).forEach(tbl => {
+      html += renderWeaponTable(tbl.title, tbl.rows);
+    });
+
+    mount.innerHTML = html;
+
+  } catch (err) {
+    mount.innerHTML = `<p>Error loading weapon data.</p>`;
+  }
+}
+
+init();
+</script>
 
 </body>
 </html>
