@@ -1,0 +1,39 @@
+{
+  "weapons": [
+    {
+      "id": "one-hand",
+      "name": "One-Handed",
+      "tags": ["BALANCED", "SHIELD OK"],
+      "file": "/data/weapons/one-hand.json",
+      "icon": "/images/weapons/one-hand.png"
+    },
+    {
+      "id": "two-hand",
+      "name": "Two-Handed",
+      "tags": ["HEAVY", "SLOW"],
+      "file": "/data/weapons/two-hand.json",
+      "icon": "/images/weapons/two-hand.png"
+    },
+    {
+      "id": "rapier",
+      "name": "Rapier",
+      "tags": ["FAST", "CRIT"],
+      "file": "/data/weapons/rapier.json",
+      "icon": "/images/weapons/rapier.png"
+    },
+    {
+      "id": "dagger",
+      "name": "Daggers",
+      "tags": ["BURST", "AGI"],
+      "file": "/data/weapons/dagger.json",
+      "icon": "/images/weapons/dagger.png"
+    },
+    {
+      "id": "melee",
+      "name": "Melee",
+      "tags": ["BRAWLER", "CLOSE"],
+      "file": "/data/weapons/melee.json",
+      "icon": "/images/weapons/melee.png"
+    }
+  ]
+}
