@@ -39,12 +39,208 @@
     ],
     "legendaryNote": "Please note that any weapon noted as Legendary Tier in this list have the highest damage scaling, making them a lot more powerful than other weapons near its Skill Level."
   },
+  {
+  "overview": {
+    "text": "One-Handed weapons are one of the five weapon classes. Their Attack Speed is the second slowest of the different weapon types, and their Attack stat is the second highest when compared to other weapon types of equal Skill Level rating."
+  },
   "weaponTables": [
     {
       "title": "Shop Weapons",
       "rows": [
-        { "name": "Beginner Sword", "maxSkill": 1, "attack": 3.4, "obtain": "Starter Inventory" }
+        { "name": "Beginner Sword", "maxSkill": 1, "attack": 3.4, "obtain": "Starter Inventory" },
+        { "name": "Iron Sword", "maxSkill": 1, "attack": 3.4, "obtain": "Floor 1 Shop" },
+        { "name": "Steel Sword", "maxSkill": 5, "attack": 8.4, "obtain": "Floor 1 Shop, Floor 2 Shop" },
+        { "name": "Basin Broadsword", "maxSkill": 26, "attack": 58, "obtain": "Floor 2 Shop, Floor 3 Shop" },
+        { "name": "Scimitar", "maxSkill": 45, "attack": 121, "obtain": "Floor 4 Shop" },
+        { "name": "Mirror Blade", "maxSkill": 65, "attack": 200, "obtain": "Floor 5 Shop" },
+        { "name": "Dark Steel Blade", "maxSkill": 85, "attack": 288, "obtain": "Floor 5 Shop" },
+        { "name": "Shadow Eater", "maxSkill": 125, "attack": 488, "obtain": "Floor 5 Shop" },
+        { "name": "Chimera", "maxSkill": 105, "attack": 385, "obtain": "Floor 7 Shop" },
+        { "name": "Deepsea SwiftBlade", "maxSkill": 145, "attack": 598, "obtain": "Floor 9 Shop" },
+        { "name": "Butterfly Blade", "maxSkill": 165, "attack": 714, "obtain": "Floor 10 Shop" },
+        { "name": "Crimson Shadow", "maxSkill": 185, "attack": 835, "obtain": "Floor 10 Shop" },
+        { "name": "Stalhrim Blade", "maxSkill": 205, "attack": 961, "obtain": "Floor 12 Shop" },
+        { "name": "Dark Viel", "maxSkill": 225, "attack": 1091, "obtain": "Floor 12 Shop" },
+        { "name": "Sweet Blade", "maxSkill": 305, "attack": 1655, "obtain": "Floor 17 Shop" },
+        { "name": "Enforcer Blade", "maxSkill": 330, "attack": 1843, "obtain": "Floor 18 Squid Game Dungeon Merchant" }
+      ]
+    },
+
+    {
+      "title": "Blacksmithing / Crafted Weapons",
+      "rows": [
+        { "name": "Master Steel Sword", "maxSkill": 10, "attack": 17.4, "obtain": "Blacksmithing, Floor 1 Shop, Floor 2 Shop" },
+        { "name": "Master Steel Sword Mk II", "maxSkill": 13, "attack": 23, "obtain": "Blacksmithing" },
+        { "name": "GrandMaster Steel Blade Mk II", "maxSkill": 18, "attack": 35, "obtain": "Blacksmithing" },
+        { "name": "GrandMaster Steel Blade Mk III", "maxSkill": 35, "attack": 86, "obtain": "Blacksmithing" },
+        { "name": "Malachite Blade", "maxSkill": 55, "attack": 159, "obtain": "Blacksmithing" },
+        { "name": "Sandstorm Blade", "maxSkill": 75, "attack": 243, "obtain": "Blacksmithing" },
+        { "name": "Dark Repulser", "maxSkill": 90, "attack": 312, "obtain": "Blacksmithing" },
+        { "name": "Permafrost Sword", "maxSkill": 95, "attack": 336, "obtain": "Blacksmithing" },
+        { "name": "Demonic Blade", "maxSkill": 115, "attack": 436, "obtain": "Blacksmithing" },
+        { "name": "Ancient Warrior", "maxSkill": 135, "attack": 542, "obtain": "Blacksmithing" },
+        { "name": "Dark Repulser Mk II", "maxSkill": 140, "attack": 570, "obtain": "Blacksmithing" },
+        { "name": "Corroded Crusader", "maxSkill": 155, "attack": 655, "obtain": "Blacksmithing" },
+        { "name": "Poseidons Repulser", "maxSkill": 175, "attack": 774, "obtain": "Blacksmithing" },
+        { "name": "Dark Repulser Mk III", "maxSkill": 190, "attack": 866, "obtain": "Blacksmithing" },
+        { "name": "Forest Warrior", "maxSkill": 200, "attack": 929, "obtain": "Blacksmithing" },
+        { "name": "Impartial Edge", "maxSkill": 215, "attack": 1025, "obtain": "Blacksmithing" },
+        { "name": "Floral Blade", "maxSkill": 235, "attack": 1158, "obtain": "Blacksmithing" },
+        { "name": "Dark Repulser Mk IV", "maxSkill": 240, "attack": 1192, "obtain": "Blacksmithing" },
+        { "name": "Blessed Blade", "maxSkill": 260, "attack": 1330, "obtain": "Blacksmithing" },
+        { "name": "Butterscotch Blade", "maxSkill": 335, "attack": 1881, "obtain": "Blacksmithing" }
+      ]
+    },
+
+    {
+      "title": "Quest Rewards",
+      "rows": [
+        { "name": "Corruption Slicer", "maxSkill": 20, "attack": 41, "obtain": "Quest #8 Reward" },
+        { "name": "Akikos Will", "maxSkill": 255, "attack": 1295, "obtain": "Quest #60 Reward" },
+        { "name": "Black Verdict", "maxSkill": 375, "attack": 2196, "obtain": "Q111 Reward (Unlocks in Blacksmithing)" },
+        { "name": "Decree", "maxSkill": 395, "attack": 2357, "obtain": "Q111 Reward (Unlocks in Blacksmithing)" }
+      ]
+    },
+
+    {
+      "title": "Mob Drops",
+      "rows": [
+        { "name": "GrandMaster Steel Blade", "maxSkill": 16, "attack": 30, "obtain": "Kobold Sentinel (Mob Drop)" },
+        { "name": "Glade Blade", "maxSkill": 30, "attack": 70, "obtain": "Snail (Mob Drop)" },
+        { "name": "Neko Slayer", "maxSkill": 50, "attack": 140, "obtain": "Scorpion (Mob Drop)" },
+        { "name": "Blade of Ice", "maxSkill": 70, "attack": 221, "obtain": "White Baby Wyrm (Mob Drop)" },
+        { "name": "Volcanic Blade", "maxSkill": 90, "attack": 312, "obtain": "Bloodsilk Spider (Mob Drop)" },
+        { "name": "Gran", "maxSkill": 110, "attack": 410, "obtain": "Magic Shroom (Mob Drop)" },
+        { "name": "Shadow Guardian", "maxSkill": 140, "attack": 570, "obtain": "Lizard (Mob Drop)" },
+        { "name": "Aqua Blade", "maxSkill": 150, "attack": 627, "obtain": "Jellyfish (Mob Drop)" },
+        { "name": "Butterfly Katana", "maxSkill": 170, "attack": 743, "obtain": "Samurai (Mob Drop)" },
+        { "name": "Vindictus Blade", "maxSkill": 190, "attack": 866, "obtain": "Knight (Mob Drop)" },
+        { "name": "Purification", "maxSkill": 210, "attack": 993, "obtain": "Land Anemone (Mob Drop)" },
+        { "name": "Cursed Blade", "maxSkill": 230, "attack": 1124, "obtain": "Kaimen (Mob Drop)" },
+        { "name": "Gilded Blade", "maxSkill": 290, "attack": 1544, "obtain": "Orc (Mob Drop)" },
+        { "name": "Candy Katana", "maxSkill": 310, "attack": 1692, "obtain": "Candy Soldier (Mob Drop)" },
+        { "name": "Crowbar Edge", "maxSkill": 325, "attack": 1805, "obtain": "Slugger Street Thug (Mob Drop)" }
+      ]
+    },
+
+    {
+      "title": "Boss Drops",
+      "rows": [
+        { "name": "The Green Flame Sword", "maxSkill": 132, "attack": 526, "obtain": "Storm Atronach (Boss Drop)" },
+        { "name": "Yang Katana", "maxSkill": 192, "attack": 878, "obtain": "Hotoke The Enlightened (Boss Drop)" },
+        { "name": "Queens Resolve", "maxSkill": 211, "attack": 999, "obtain": "Buffed Knight (Boss Drop)" },
+        { "name": "Harmony Renaissance", "maxSkill": 231, "attack": 1131, "obtain": "Laurellis Convict (Boss Drop)" },
+        { "name": "Holy Blade", "maxSkill": 250, "attack": 1260, "obtain": "Grimm (Boss Drop)" },
+        { "name": "Hope Blade", "maxSkill": 252, "attack": 1274, "obtain": "The Tormented Soul (Boss Drop)" },
+        { "name": "Das Chaos", "maxSkill": 270, "attack": 1400, "obtain": "Young Celestia (Boss Drop)" },
+        { "name": "Poisonous Cleaver", "maxSkill": 311, "attack": 1699, "obtain": "Leader Goblin (Boss Drop)" },
+        { "name": "Redline Protocol", "maxSkill": 337, "attack": 1897, "obtain": "The Arbitrator (Boss Drop)" }
+      ]
+    },
+
+    {
+      "title": "Event Weapons",
+      "rows": [
+        { "name": "Inferno Staff", "maxSkill": 45, "attack": 121, "obtain": "Halloween Event: Event Quest Reward / Event Boss Rare Drop [2021 - 2022]" },
+
+        { "name": "Eggceptional Katana", "maxSkill": 75, "attack": 243, "obtain": "Easter Event: Easter Shop [2023 - 2024]" },
+        { "name": "Summer Water Sword", "maxSkill": 76, "attack": 248, "obtain": "Summer Event: Summer Shop [2023]" },
+        { "name": "Summer Atlantean Blade", "maxSkill": 76, "attack": 248, "obtain": "Summer Event: Summer Shop [2024]" },
+        { "name": "Ghouls Grace", "maxSkill": 76, "attack": 248, "obtain": "Halloween Event: Blacksmithing [2023]" },
+        { "name": "Frostbitten Blade", "maxSkill": 76, "attack": 248, "obtain": "Christmas Event: Blacksmithing [2023]" },
+        { "name": "Lunar Reaper", "maxSkill": 77, "attack": 252, "obtain": "Halloween Event: Blacksmithing [2024]" },
+        { "name": "Winter Holiday Blade", "maxSkill": 77, "attack": 252, "obtain": "Christmas Event: QE52 Reward unlocks in Blacksmithing [2024]" },
+        { "name": "Easter Royale Sword", "maxSkill": 78, "attack": 256, "obtain": "Easter Event: QE15 Reward unlocks in Blacksmithing [2025]" },
+
+        { "name": "Trinity Longsword", "maxSkill": 95, "attack": 336, "obtain": "Easter Event: Easter Shop [2021 - 2022]" },
+        { "name": "Inferno Staff Mk II", "maxSkill": 115, "attack": 436, "obtain": "Halloween Event: Blacksmithing [2021 - 2022]" },
+
+        { "name": "Eggceptional Katana Mk II", "maxSkill": 150, "attack": 627, "obtain": "Easter Event: Blacksmithing [2023 - 2024]" },
+        { "name": "Summer Water Sword Mk II", "maxSkill": 152, "attack": 638, "obtain": "Summer Event: Blacksmithing [2023]" },
+        { "name": "Summer Atlantean Blade Mk II", "maxSkill": 152, "attack": 638, "obtain": "Summer Event: Blacksmithing [2024]" },
+        { "name": "Ghouls Grace Mk II", "maxSkill": 152, "attack": 638, "obtain": "Halloween Event: Blacksmithing [2023]" },
+        { "name": "Frostbitten Blade Mk II", "maxSkill": 152, "attack": 638, "obtain": "Christmas Event: Blacksmithing [2023]" },
+        { "name": "Lunar Reaper MK II", "maxSkill": 154, "attack": 649, "obtain": "Halloween Event: Blacksmithing [2024]" },
+        { "name": "Winter Holiday Blade Mk II", "maxSkill": 154, "attack": 649, "obtain": "Christmas Event: QE52 Reward unlocks in Blacksmithing [2024]" },
+        { "name": "Easter Royale Sword Mk II", "maxSkill": 155, "attack": 655, "obtain": "Easter Event: QE18 Reward unlocks in Blacksmithing [2025]" },
+
+        { "name": "Trinity Longsword MII", "maxSkill": 195, "attack": 897, "obtain": "Easter Event: Blacksmithing [2021 - 2023]" },
+
+        { "name": "Eggceptional Katana Mk III", "maxSkill": 225, "attack": 1091, "obtain": "Easter Event: Blacksmithing [2023 - 2024]" },
+        { "name": "Summer Water Sword Mk III", "maxSkill": 228, "attack": 1111, "obtain": "Summer Event: Blacksmithing [2023]" },
+        { "name": "Summer Atlantean Blade Mk III", "maxSkill": 228, "attack": 1111, "obtain": "Summer Event: Blacksmithing [2024]" },
+        { "name": "Ghouls Grace Mk III", "maxSkill": 228, "attack": 1111, "obtain": "Halloween Event: Blacksmithing [2023]" },
+        { "name": "Frostbitten Blade Mk III", "maxSkill": 228, "attack": 1111, "obtain": "Christmas Event: Blacksmithing [2023]" },
+        { "name": "Lunar Reaper MK III", "maxSkill": 231, "attack": 1131, "obtain": "Halloween Event: Blacksmithing [2024]" },
+        { "name": "Winter Holiday Blade Mk III", "maxSkill": 232, "attack": 1138, "obtain": "Christmas Event: QE53 Reward unlocks in Blacksmithing [2024]" },
+        { "name": "Easter Royale Sword Mk III", "maxSkill": 232, "attack": 1138, "obtain": "Easter Event: QE19 Reward unlocks in Blacksmithing [2025]" },
+
+        { "name": "Eggceptional Katana Mk IV", "maxSkill": 300, "attack": 1618, "obtain": "Easter Event: Blacksmithing [2023 - 2024]" },
+        { "name": "Summer Water Sword Mk IV", "maxSkill": 304, "attack": 1647, "obtain": "Summer Event: Blacksmithing [2023]" },
+        { "name": "Summer Atlantean Blade Mk IV", "maxSkill": 304, "attack": 1647, "obtain": "Summer Event: Blacksmithing [2024]" },
+        { "name": "Ghouls Grace Mk IV", "maxSkill": 304, "attack": 1647, "obtain": "Halloween Event: Blacksmithing [2023]" },
+        { "name": "Frostbitten Blade Mk IV", "maxSkill": 304, "attack": 1647, "obtain": "Christmas Event: Blacksmithing [2023]" },
+        { "name": "Lunar Reaper MK IV", "maxSkill": 308, "attack": 1677, "obtain": "Halloween Event: Blacksmithing [2024]" },
+        { "name": "Winter Holiday Blade Mk IV", "maxSkill": 309, "attack": 1684, "obtain": "Christmas Event: QE54 Reward unlocks in Blacksmithing [2024]" },
+        { "name": "Easter Royale Sword Mk IV", "maxSkill": 309, "attack": 1684, "obtain": "Easter Event: QE20 Reward unlocks in Blacksmithing [2025]" },
+
+        { "name": "Trinity Longsword MIII", "maxSkill": 325, "attack": 1805, "obtain": "Easter Event: Blacksmithing [2021 - 2023]" },
+
+        { "name": "Eggceptional Katana Mk V", "maxSkill": 375, "attack": 2196, "obtain": "Easter Event: Blacksmithing [2023 - 2024]" },
+        { "name": "Summer Water Sword Mk V", "maxSkill": 380, "attack": 2236, "obtain": "Summer Event: Blacksmithing [2023]" },
+        { "name": "Summer Atlantean Blade Mk V", "maxSkill": 380, "attack": 2236, "obtain": "Summer Event: Blacksmithing [2024]" },
+        { "name": "Ghouls Grace Mk V", "maxSkill": 380, "attack": 2236, "obtain": "Halloween Event: Blacksmithing [2023]" },
+        { "name": "Frostbitten Blade Mk V", "maxSkill": 380, "attack": 2236, "obtain": "Christmas Event: Blacksmithing [2023]" },
+        { "name": "Lunar Reaper MK V", "maxSkill": 385, "attack": 2276, "obtain": "Halloween Event: Blacksmithing [2024]" },
+        { "name": "Winter Holiday Blade Mk V", "maxSkill": 386, "attack": 2284, "obtain": "Christmas Event: QE55 Reward unlocks in Blacksmithing [2024]" },
+        { "name": "Easter Royale Sword Mk V", "maxSkill": 386, "attack": 2284, "obtain": "Easter Event: QE20-2 Reward unlocks in Blacksmithing [2025]" },
+
+        { "name": "Forsaken Soul Slayer", "maxSkill": 270, "attack": 1400, "obtain": "Soulbane the Forsaken (Event Boss Drop) (2%)" },
+        { "name": "Bloodred Knight Blade", "maxSkill": 275, "attack": 1436, "obtain": "Bloodred Knight Commander (Event Boss Drop) (1.66%)" },
+
+        { "name": "Lighted Fir Blade", "maxSkill": 270, "attack": 1528, "obtain": "Christmas Event: Christmas Shop [2020 - 2022]" },
+        { "name": "Webripper", "maxSkill": 280, "attack": 1606, "obtain": "Halloween Event: Halloween Shop [2021 - 2022]" },
+        { "name": "Crescent Blood Moon Bayonet", "maxSkill": 280, "attack": 1606, "obtain": "Halloween Event: Halloween Shop / Boss Drop / Blacksmithing [2022 - 2023]" },
+        { "name": "Wishbone", "maxSkill": 290, "attack": 1685, "obtain": "Thanksgiving Event: Thanksgiving Shop [2021 - 2022]" },
+        { "name": "Turkish Axe", "maxSkill": 295, "attack": 1725, "obtain": "Thanksgiving Event: Kufuku no Toruko [2020]" },
+        { "name": "Rabbit Fang", "maxSkill": 295, "attack": 1725, "obtain": "Easter Event: Easter Shop [2022]" },
+        { "name": "Christmas Blade", "maxSkill": 305, "attack": 1805, "obtain": "Christmas Event: Christmas Shop [2021 - 2022]" },
+        { "name": "Lovers Edge (All Colors)", "maxSkill": 305, "attack": 1805, "obtain": "Valentines Day Event: Valentines Day Shop [2023, 2024]" },
+        { "name": "Clover Blade", "maxSkill": 310, "attack": 1846, "obtain": "Saint Patricks Event: Saint Patrick's Day Shop [2023, 2024]" }
+      ]
+    },
+
+    {
+      "title": "Legendary Weapons",
+      "rows": [
+        { "name": "Poseidons Scale", "maxSkill": 220, "attack": 1270, "obtain": "Blacksmithing (Legendary Tier)" },
+        { "name": "Gigas Spirit", "maxSkill": 280, "attack": 1766, "obtain": "Blacksmithing (Legendary Tier)" },
+        { "name": "Divinity", "maxSkill": 340, "attack": 2304, "obtain": "Blacksmithing (Legendary Tier)" }
+      ]
+    },
+
+    {
+      "title": "Badge Weapons",
+      "rows": [
+        { "name": "Purple Death", "maxSkill": 270, "attack": 1375, "obtain": "Floor 1 Shop, Requires 1K Likes Badge" },
+        { "name": "Ordinal Scale Sword", "maxSkill": 270, "attack": 1528, "obtain": "Floor 1 Shop, Requires 10K Likes Badge" },
+        { "name": "Ascending Blade", "maxSkill": 270, "attack": 1528, "obtain": "Floor 1 Shop, Requires 2 Million Visits Badge" },
+        { "name": "Silver Beater 1H", "maxSkill": 270, "attack": 1535, "obtain": "Floor 1 Shop, Requires Beater Badge" },
+        { "name": "Victorious Blade", "maxSkill": 275, "attack": 1567, "obtain": "Floor 1 Shop, Requires 25K Likes Badge" }
+      ]
+    },
+
+    {
+      "title": "Gamepass Weapons",
+      "rows": [
+        { "name": "Master Smiths Mace", "maxSkill": 290, "attack": 1685, "obtain": "Floor 1 Shop, Requires Master Blacksmith Gamepass" },
+        { "name": "Karakurenai", "maxSkill": 290, "attack": 1685, "obtain": "Floor 1 Shop, Requires Red Samurai Gamepass" },
+        { "name": "Elucidator VI", "maxSkill": 290, "attack": 1701, "obtain": "Floor 1 Shop, Requires Black Swordsman Gamepass" },
+        { "name": "Blue Rose Sword", "maxSkill": 290, "attack": 1701, "obtain": "Floor 1 Shop, Requires Blue Swordsman Gamepass" },
+        { "name": "Liberator Sword", "maxSkill": 310, "attack": 1843, "obtain": "Floor 1 Shop, Requires Grandmaster Liberator Gamepass" }
       ]
     }
+  ]
+}
   ]
 }
