@@ -193,7 +193,7 @@
   <div id="sao-toast-stack">
 
     <!-- RED: WARNING -->
-    <div class="sao-toast sao-toast-red show" role="alert" aria-live="assertive">
+    <!--<div class="sao-toast sao-toast-red show" role="alert" aria-live="assertive">
       <div class="sao-toast-header">SYSTEM WARNING</div>
       <div class="sao-toast-body">
         The only way to be a cutie is to join the guild:
@@ -201,197 +201,19 @@
       </div>
       <button class="sao-toast-close" type="button">✕</button>
       <div class="sao-toast-progress"></div>
-    </div>
+    </div>-->
 
     <!-- YELLOW: NOTICE -->
     <div class="sao-toast sao-toast-yellow show" role="status" aria-live="polite">
       <div class="sao-toast-header">SYSTEM NOTICE</div>
       <div class="sao-toast-body">
-        Weapons Pages are getting a revamp! They will not be shown for a bit.
+        Floors 11-20 will have their own page when they are made.
       </div>
       <button class="sao-toast-close" type="button">✕</button>
       <div class="sao-toast-progress"></div>
     </div>
 
   </div>
-
-  <!-- ================= TOAST CLOSE SCRIPT ================= -->
-  <script>
-    const BASE_TIME = 7000;   // 7 seconds
-    const STAGGER = 1500;     // 1.5 seconds apart
-
-    document.querySelectorAll(".sao-toast").forEach((toast, index) => {
-      const progress = toast.querySelector(".sao-toast-progress");
-      const totalTime = BASE_TIME + (index * STAGGER);
-
-      if (progress) {
-        progress.style.animation = `toastTimer ${totalTime / 1000}s linear forwards`;
-      }
-
-      const autoClose = setTimeout(() => {
-        toast.classList.remove("show");
-        setTimeout(() => toast.remove(), 220);
-      }, totalTime);
-
-      const closeBtn = toast.querySelector(".sao-toast-close");
-      if (closeBtn) {
-        closeBtn.addEventListener("click", () => {
-          clearTimeout(autoClose);
-          if (progress) progress.style.animation = "none";
-          toast.classList.remove("show");
-          setTimeout(() => toast.remove(), 220);
-        });
-      }
-    });
-  </script>
-
-  <!-- ================= TOAST OFFSET SCRIPT (HUD + legacy safe) ================= -->
-  <script>
-    function setToastOffset() {
-      const toastStack = document.getElementById("sao-toast-stack");
-      if (!toastStack) return;
-
-      const header = document.querySelector(".hud-top") || document.querySelector(".wiki-header");
-      if (!header) return;
-
-      if (window.innerWidth <= 768) {
-        const headerHeight = header.getBoundingClientRect().height;
-        toastStack.style.top = `${headerHeight + 12}px`;
-        toastStack.style.bottom = "auto";
-      } else {
-        toastStack.style.top = "";
-        toastStack.style.bottom = "";
-      }
-    }
-
-    window.addEventListener("load", setToastOffset);
-    window.addEventListener("resize", setToastOffset);
-  </script>
-
-  <!-- ================= FLOORS TABLE LOADER ================= -->
-  <script>
-    async function loadFloorsTable() {
-      try {
-        const res = await fetch("/data/floors10.json", { cache: "no-store" });
-        if (!res.ok) throw new Error("Failed to load floors10.json");
-
-        const data = await res.json();
-        const floors = data.floors || [];
-
-        const tbody = document.getElementById("floorsTableBody");
-        tbody.innerHTML = "";
-
-        floors
-          .sort((a, b) => Number(a.number || a.id) - Number(b.number || b.id))
-          .forEach(floor => {
-            const tr = document.createElement("tr");
-
-            const floorCell = document.createElement("td");
-            floorCell.setAttribute("data-label", "Floor");
-            floorCell.textContent = floor.number || floor.id;
-
-            const nameCell = document.createElement("td");
-            nameCell.setAttribute("data-label", "Name");
-
-            const link = document.createElement("a");
-            link.href = `/information/floors/1-10.html?id=${encodeURIComponent(floor.id)}`;
-            link.textContent = floor.name || `Floor ${floor.id}`;
-            nameCell.appendChild(link);
-
-            const tagsCell = document.createElement("td");
-            tagsCell.setAttribute("data-label", "Tags");
-            tagsCell.textContent = (floor.tags || []).join(", ");
-
-            const mapCell = document.createElement("td");
-            mapCell.setAttribute("data-label", "Map");
-
-            if (floor.map && floor.map.image) {
-              const img = document.createElement("img");
-              img.src = floor.map.image;
-              img.alt = floor.map.alt || `Floor ${floor.id} map`;
-              img.className = "floor-map-thumb";
-              mapCell.appendChild(img);
-            } else {
-              mapCell.textContent = "—";
-            }
-
-            tr.appendChild(floorCell);
-            tr.appendChild(nameCell);
-            tr.appendChild(tagsCell);
-            tr.appendChild(mapCell);
-
-            tbody.appendChild(tr);
-          });
-
-      } catch (err) {
-        console.error(err);
-        const tbody = document.getElementById("floorsTableBody");
-        if (tbody) tbody.innerHTML = "<tr><td colspan='4'>Failed to load floors.</td></tr>";
-      }
-    }
-
-    loadFloorsTable();
-  </script>
-
-  <!-- =====================================================
-       HUD NAV DROPDOWNS CSS (put in floor-hud.css ideally)
-       Keeping here as a safety net so this page works now.
-  ====================================================== -->
-  <style>
-    .hud-nav{ position: relative; }
-    .hud-drop{ position: relative; display: inline-flex; align-items: center; }
-    .hud-drop-btn{ cursor: pointer; }
-    .hud-menu{
-      position: absolute;
-      top: calc(100% + 10px);
-      left: 50%;
-      transform: translateX(-50%);
-      min-width: 190px;
-      padding: 8px;
-      background: rgba(10, 30, 40, 0.94);
-      border: 1px solid var(--line);
-      box-shadow: 0 0 18px rgba(0,234,255,0.14), inset 0 0 18px rgba(0,234,255,0.08);
-      backdrop-filter: blur(10px);
-      border-radius: 12px;
-      display: none;
-      z-index: 2000;
-    }
-    .hud-menu a{
-      display: block;
-      padding: 10px 12px;
-      color: var(--text);
-      font-weight: 800;
-      font-size: 12px;
-      letter-spacing: 1px;
-      border: 1px solid rgba(0,255,255,0.10);
-      background: rgba(0,234,255,0.04);
-      border-radius: 10px;
-      margin: 6px 0;
-      text-decoration: none;
-    }
-    .hud-menu a:hover{
-      border-color: var(--line);
-      box-shadow: 0 0 16px rgba(0,234,255,0.18);
-      background: rgba(0,234,255,0.07);
-      color: var(--cyan);
-    }
-    @media (hover: hover) and (pointer: fine){
-      .hud-drop:hover .hud-menu{ display: block; }
-    }
-    .hud-drop:focus-within .hud-menu{ display: block; }
-    .hud-drop-btn:focus-visible{
-      outline: none;
-      border-color: var(--line);
-      box-shadow: 0 0 18px rgba(0,234,255,0.22);
-    }
-    @media (max-width: 520px){
-      .hud-menu{
-        left: 0;
-        transform: none;
-        width: min(320px, calc(100vw - 28px));
-      }
-    }
-  </style>
-
+  <script src="/js/toasts.js?v=1"></script>
 </body>
 </html>
