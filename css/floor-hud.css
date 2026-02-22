@@ -648,3 +648,98 @@ a[target="_blank"]{
 a[target="_blank"]:hover{
   color: #00ffff;
 }
+
+/* =====================================================
+   HUD NAV DROPDOWNS
+===================================================== */
+
+.hud-nav{
+  position: relative;
+}
+
+/* Wrapper */
+.hud-drop{
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Button should look like your hud-link */
+.hud-drop-btn{
+  cursor: pointer;
+}
+
+/* Dropdown panel */
+.hud-menu{
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+
+  min-width: 190px;
+  padding: 8px;
+
+  background: rgba(10, 30, 40, 0.94);
+  border: 1px solid var(--line);
+  box-shadow:
+    0 0 18px rgba(0,234,255,0.14),
+    inset 0 0 18px rgba(0,234,255,0.08);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+
+  display: none;
+  z-index: 2000;
+}
+
+/* Menu items */
+.hud-menu a{
+  display: block;
+  padding: 10px 12px;
+
+  color: var(--text);
+  font-weight: 800;
+  font-size: 12px;
+  letter-spacing: 1px;
+
+  border: 1px solid rgba(0,255,255,0.10);
+  background: rgba(0,234,255,0.04);
+  border-radius: 10px;
+  margin: 6px 0;
+
+  text-decoration: none;
+}
+
+.hud-menu a:hover{
+  border-color: var(--line);
+  box-shadow: 0 0 16px rgba(0,234,255,0.18);
+  background: rgba(0,234,255,0.07);
+  color: var(--cyan);
+}
+
+/* Show on hover (desktop) */
+@media (hover: hover) and (pointer: fine){
+  .hud-drop:hover .hud-menu{
+    display: block;
+  }
+}
+
+/* Show on focus/tap (mobile + keyboard) */
+.hud-drop:focus-within .hud-menu{
+  display: block;
+}
+
+/* Make the button focus ring nice */
+.hud-drop-btn:focus-visible{
+  outline: none;
+  border-color: var(--line);
+  box-shadow: 0 0 18px rgba(0,234,255,0.22);
+}
+
+/* Mobile: make dropdown full-width-ish so it's easier to tap */
+@media (max-width: 520px){
+  .hud-menu{
+    left: 0;
+    transform: none;
+    width: min(320px, calc(100vw - 28px));
+  }
+}
