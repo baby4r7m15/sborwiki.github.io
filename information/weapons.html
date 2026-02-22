@@ -3,9 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <title>SBO:R Wiki – Weapons</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/css/info.css">
-  <link rel="stylesheet" href="/css/home-hud-skin.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- HUD look (same as Floors + new Home) -->
+  <link rel="stylesheet" href="/css/floor-hud.css?v=1" />
+
+  <!-- Your info/table styling (keep) -->
+  <link rel="stylesheet" href="/css/info.css?v=1" />
+
+  <!-- Toast styling (if you made this file like we discussed) -->
+  <link rel="stylesheet" href="/css/toasts.css?v=1" />
 
   <!-- ====== FAVICON / TAB ICON ====== -->
   <link rel="icon" href="/logo.png" type="image/png" />
@@ -27,134 +34,240 @@
   <meta name="twitter:title" content="SBO:R Weapons Page" />
   <meta name="twitter:description" content="A list of weapon types in SBO:R." />
   <meta name="twitter:image" content="https://sborwiki.com/Sborlogotext.png" />
+
+  <!-- Weapons page-specific HUD tweaks -->
+  <style>
+    /* Make the old page-wrapper/grid feel like the HUD grid */
+    .page-wrapper{
+      background: transparent !important;
+      border: 0 !important;
+      box-shadow: none !important;
+      backdrop-filter: none !important;
+      border-radius: 0 !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      max-width: none !important;
+    }
+
+    /* Put your content into the HUD grid */
+    .weapons-grid{
+      padding: 22px 24px 90px;
+      display: grid;
+      grid-template-columns: 360px 1fr;
+      gap: 18px;
+      align-items: start;
+    }
+
+    @media (max-width: 980px){
+      .weapons-grid{
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Make your table panel behave like HUD panels */
+    .hud-panel .info-table{
+      width: 100%;
+    }
+
+    /* Table header vibe */
+    .info-table thead th{
+      color: var(--cyan);
+      letter-spacing: 1px;
+    }
+
+    /* Icon images behave nicely */
+    .weapon-icon{
+      width: 60px;
+      height: auto;
+      display: block;
+      filter: drop-shadow(0 0 10px rgba(0,234,255,0.18));
+    }
+
+    /* Back link polish */
+    .back-link{
+      display: inline-block;
+      margin-bottom: 10px;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+  </style>
 </head>
 
 <body>
 
-  <!-- ================= HEADER ================= -->
-  <header class="wiki-header">
-    <div class="wiki-header-inner">
+  <!-- ===== HUD TOP BAR (same as Floors/Home) ===== -->
+  <header class="hud-top">
+    <div class="hud-left">
+      <div class="hud-kicker">SWORD BLOX ONLINE: REBIRTH</div>
+      <div class="hud-title">WEAPONS</div>
+      <div class="hud-subtitle">WEAPON TYPE INDEX</div>
+    </div>
 
-      <div class="wiki-left">
-        <img src="/logo.png" class="wiki-logo" alt="Logo" />
-        <span class="wiki-title">Sword Blox Online: Rebirth Wiki</span>
+    <!-- Dropdown HUD nav (same pattern you asked for on Home) -->
+    <nav class="hud-nav" aria-label="Site navigation">
+      <a class="hud-link" href="/">Home</a>
+
+      <div class="hud-drop">
+        <button class="hud-link hud-drop-btn active" type="button" aria-haspopup="menu">
+          Information ▾
+        </button>
+        <div class="hud-menu" role="menu" aria-label="Information menu">
+          <a role="menuitem" href="/information/weapons">Weapons</a>
+        </div>
       </div>
 
-      <div class="hamburger" id="hamburger">☰</div>
-
-      <nav class="wiki-nav" id="wikiNav">
-
-        <div class="nav-item">
-          <a href="https://sborwiki.com">Home</a>
+      <div class="hud-drop">
+        <button class="hud-link hud-drop-btn" type="button" aria-haspopup="menu">
+          Floors ▾
+        </button>
+        <div class="hud-menu" role="menu" aria-label="Floors menu">
+          <a role="menuitem" href="/information/floors-1-10">Floors 1–10</a>
+          <a role="menuitem" href="/information/floors-11-20">Floors 11–20</a>
         </div>
+      </div>
+    </nav>
 
-        <div class="nav-item">
-          <span class="nav-label">Information</span>
-          <div class="dropdown">
-            <a href="/information/weapons">Weapons</a>
-            <a href="/information/floors-1-10">Floors</a>
-          </div>
-        </div>
-
-        <div class="nav-item">
-          <span class="nav-label">Floors</span>
-          <div class="dropdown">
-            <a href="/information/floors-1-10">Floors 1-10</a>
-            <a href="/information/floors-11-20">Floors 11-20</a>
-          </div>
-        </div>
-
-      </nav>
-
+    <div class="hud-right">
+      <div class="hud-chip">INDEX</div>
+      <div class="hud-chip hud-chip-soft">AUTO LOADED</div>
     </div>
   </header>
 
-  <!-- ================= PAGE WRAPPER ================= -->
-  <main class="page-wrapper">
+  <!-- ===== MAIN (HUD GRID) ===== -->
+  <main class="weapons-grid">
 
-    <!-- HERO -->
-    <section class="hero">
-      <img src="/Sborlogotext.png" class="hero-logo" alt="SBO Logo">
-    </section>
+    <!-- LEFT COLUMN -->
+    <aside class="col-left" style="display:grid; gap:18px;">
 
-    <!-- ================= CONTENT ================= -->
-    <section class="content-area">
-      <div class="content-grid">
+      <section class="hud-panel">
+        <div class="panel-head">
+          <span>NAVIGATION</span>
+          <span class="panel-chip">SYSTEM</span>
+        </div>
 
-        <!-- ================= MAIN ================= -->
-        <article class="content-left">
+        <ul class="hud-list chevrons">
+          <li><a href="/" class="back-link">← Back to Main Page</a></li>
+          <li><a href="/information/floors-1-10">Floors 1–10</a></li>
+          <li><a href="/information/floors-11-20">Floors 11–20</a></li>
+        </ul>
+      </section>
 
-          <a href="https://sborwiki.com" class="back-link">← Back to Main Page</a>
+      <section class="hud-panel">
+        <div class="panel-head">
+          <span>OVERVIEW</span>
+          <span class="panel-chip">INFO</span>
+        </div>
 
-          <div class="page-intro-box">
-            <strong>Weapons</strong>
-          </div>
+        <div class="hud-lore">
+          <p>This is a list of the weapon types currently documented in SBO:R.</p>
+          <p>Click a weapon type name to open its database page.</p>
+        </div>
+      </section>
 
-          <div class="sao-section">
+    </aside>
 
-            <div class="sao-panel sao-notice">
-              <div class="sao-header">OVERVIEW</div>
-              <p>
-                This is a list of the weapon types currently documented in SBO:R.
-              </p>
-            </div>
+    <!-- RIGHT COLUMN -->
+    <section class="col-right" style="display:grid; gap:18px;">
 
-            <div class="sao-panel">
-              <div class="sao-header">WEAPON TYPES</div>
+      <section class="hud-panel">
+        <div class="panel-head">
+          <span>WEAPON TYPES</span>
+          <span class="panel-chip">TABLE</span>
+        </div>
 
-              <table class="info-table">
-                <thead>
-                  <tr>
-                    <th>Type</th>
-                    <th>Name</th>
-                    <th>Tags</th>
-                    <th>Icon</th>
-                  </tr>
-                </thead>
-                <tbody id="weaponsTableBody">
-                  <!-- Auto generated -->
-                </tbody>
-              </table>
-            </div>
+        <table class="info-table">
+          <thead>
+            <tr>
+              <th>Type</th>
+              <th>Name</th>
+              <th>Tags</th>
+              <th>Icon</th>
+            </tr>
+          </thead>
+          <tbody id="weaponsTableBody">
+            <!-- Auto generated -->
+          </tbody>
+        </table>
+      </section>
 
-          </div>
-
-        </article>
-
-      </div>
     </section>
 
   </main>
 
-  <!-- ================= MOBILE SCRIPT (same style as your Floors page) ================= -->
+  <!-- ================= TOAST STACK (optional but consistent) ================= -->
+  <div id="sao-toast-stack">
+
+    <!-- RED: WARNING -->
+    <div class="sao-toast sao-toast-red show" role="alert" aria-live="assertive">
+      <div class="sao-toast-header">SYSTEM WARNING</div>
+      <div class="sao-toast-body">
+        The only way to be a cutie is to join the guild:
+        <a href="https://www.roblox.com/communities/104234504/SBO-R-Pupz">Pupz</a>!
+      </div>
+      <button class="sao-toast-close" type="button">✕</button>
+      <div class="sao-toast-progress"></div>
+    </div>
+
+    <!-- YELLOW: NOTICE -->
+    <div class="sao-toast sao-toast-yellow show" role="status" aria-live="polite">
+      <div class="sao-toast-header">SYSTEM NOTICE</div>
+      <div class="sao-toast-body">
+        Weapons Pages are getting a revamp! They will not be shown for a bit.
+      </div>
+      <button class="sao-toast-close" type="button">✕</button>
+      <div class="sao-toast-progress"></div>
+    </div>
+
+  </div>
+
+  <!-- ================= TOAST CLOSE SCRIPT ================= -->
   <script>
-    const hamburger = document.getElementById("hamburger");
-    const nav = document.getElementById("wikiNav");
+    const BASE_TIME = 7000;   // 7 seconds
+    const STAGGER = 1500;     // 1.5 seconds apart
 
-    function setToastOffset() {
-      const header = document.querySelector(".wiki-header");
-      const toastStack = document.getElementById("sao-toast-stack");
-      if (!header || !toastStack) return;
+    document.querySelectorAll(".sao-toast").forEach((toast, index) => {
+      const progress = toast.querySelector(".sao-toast-progress");
+      const totalTime = BASE_TIME + (index * STAGGER);
 
-      const headerHeight = header.getBoundingClientRect().height;
-      toastStack.style.top = `${headerHeight + 12}px`;
-    }
+      if (progress) {
+        progress.style.animation = `toastTimer ${totalTime / 1000}s linear forwards`;
+      }
 
-    if (hamburger && nav) {
-      hamburger.addEventListener("click", () => {
-        nav.classList.toggle("active");
-        setTimeout(setToastOffset, 50);
-      });
-    }
+      const autoClose = setTimeout(() => {
+        toast.classList.remove("show");
+        setTimeout(() => toast.remove(), 220);
+      }, totalTime);
 
-    document.querySelectorAll(".nav-label").forEach(label => {
-      label.addEventListener("click", function () {
-        if (window.innerWidth <= 768) {
-          this.parentElement.classList.toggle("active");
-          setTimeout(setToastOffset, 50);
-        }
-      });
+      const closeBtn = toast.querySelector(".sao-toast-close");
+      if (closeBtn) {
+        closeBtn.addEventListener("click", () => {
+          clearTimeout(autoClose);
+          if (progress) progress.style.animation = "none";
+          toast.classList.remove("show");
+          setTimeout(() => toast.remove(), 220);
+        });
+      }
     });
+  </script>
+
+  <!-- ================= TOAST OFFSET SCRIPT (HUD + legacy safe) ================= -->
+  <script>
+    function setToastOffset() {
+      const toastStack = document.getElementById("sao-toast-stack");
+      if (!toastStack) return;
+
+      const header = document.querySelector(".hud-top") || document.querySelector(".wiki-header");
+      if (!header) return;
+
+      if (window.innerWidth <= 768) {
+        const headerHeight = header.getBoundingClientRect().height;
+        toastStack.style.top = `${headerHeight + 12}px`;
+        toastStack.style.bottom = "auto";
+      } else {
+        toastStack.style.top = "";
+        toastStack.style.bottom = "";
+      }
+    }
 
     window.addEventListener("load", setToastOffset);
     window.addEventListener("resize", setToastOffset);
@@ -203,8 +316,7 @@
             const img = document.createElement("img");
             img.src = w.icon;
             img.alt = (w.name || w.id) + " icon";
-            img.style.width = "60px";
-            img.style.height = "auto";
+            img.className = "weapon-icon";
             iconCell.appendChild(img);
           } else {
             iconCell.textContent = "—";
@@ -220,13 +332,73 @@
 
       } catch (err) {
         console.error(err);
-        document.getElementById("weaponsTableBody").innerHTML =
-          "<tr><td colspan='4'>Failed to load weapons.</td></tr>";
+        const tbody = document.getElementById("weaponsTableBody");
+        if (tbody) tbody.innerHTML = "<tr><td colspan='4'>Failed to load weapons.</td></tr>";
       }
     }
 
     loadWeaponsTable();
   </script>
+
+  <!-- =====================================================
+       HUD NAV DROPDOWNS CSS (put in floor-hud.css ideally)
+       Keeping here as a safety net so this page works now.
+  ====================================================== -->
+  <style>
+    .hud-nav{ position: relative; }
+    .hud-drop{ position: relative; display: inline-flex; align-items: center; }
+    .hud-drop-btn{ cursor: pointer; }
+    .hud-menu{
+      position: absolute;
+      top: calc(100% + 10px);
+      left: 50%;
+      transform: translateX(-50%);
+      min-width: 190px;
+      padding: 8px;
+      background: rgba(10, 30, 40, 0.94);
+      border: 1px solid var(--line);
+      box-shadow: 0 0 18px rgba(0,234,255,0.14), inset 0 0 18px rgba(0,234,255,0.08);
+      backdrop-filter: blur(10px);
+      border-radius: 12px;
+      display: none;
+      z-index: 2000;
+    }
+    .hud-menu a{
+      display: block;
+      padding: 10px 12px;
+      color: var(--text);
+      font-weight: 800;
+      font-size: 12px;
+      letter-spacing: 1px;
+      border: 1px solid rgba(0,255,255,0.10);
+      background: rgba(0,234,255,0.04);
+      border-radius: 10px;
+      margin: 6px 0;
+      text-decoration: none;
+    }
+    .hud-menu a:hover{
+      border-color: var(--line);
+      box-shadow: 0 0 16px rgba(0,234,255,0.18);
+      background: rgba(0,234,255,0.07);
+      color: var(--cyan);
+    }
+    @media (hover: hover) and (pointer: fine){
+      .hud-drop:hover .hud-menu{ display: block; }
+    }
+    .hud-drop:focus-within .hud-menu{ display: block; }
+    .hud-drop-btn:focus-visible{
+      outline: none;
+      border-color: var(--line);
+      box-shadow: 0 0 18px rgba(0,234,255,0.22);
+    }
+    @media (max-width: 520px){
+      .hud-menu{
+        left: 0;
+        transform: none;
+        width: min(320px, calc(100vw - 28px));
+      }
+    }
+  </style>
 
 </body>
 </html>
