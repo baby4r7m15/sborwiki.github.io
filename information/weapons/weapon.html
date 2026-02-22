@@ -176,73 +176,126 @@
 
   </div>
   <script>
-  async function loadWeaponsTable() {
-    try {
-      const res = await fetch("/data/weapons-index.json", { cache: "no-store" });
-      if (!res.ok) throw new Error("Failed to load weapons-index.json");
+async function loadWeaponPage() {
+  try {
+    const params = new URLSearchParams(location.search);
+    const id = params.get("id");
+    if (!id) throw new Error("Missing ?id= in URL");
 
-      const data = await res.json();
-      const weapons = data.weapons || [];
+    // Load index to map id -> json path + display info
+    const idxRes = await fetch("/data/weapons-index.json", { cache: "no-store" });
+    if (!idxRes.ok) throw new Error("Failed to load /data/weapons-index.json");
+    const idx = await idxRes.json();
 
-      const tbody = document.getElementById("weaponsTableBody");
-      if (!tbody) return;
+    const weapon = (idx.weapons || []).find(w => w.id === id);
+    if (!weapon) throw new Error(`Unknown weapon id: ${id}`);
 
-      tbody.innerHTML = "";
+    // HUD labels
+    const titleEl = document.getElementById("weaponHudTitle");
+    const subEl = document.getElementById("weaponHudSubtitle");
+    const chipEl = document.getElementById("weaponChip");
 
-      // Fixed order (edit anytime)
-      const order = ["one-hand", "two-hand", "rapier", "dagger", "melee"];
-      weapons.sort((a, b) => order.indexOf(a.id) - order.indexOf(b.id));
+    if (titleEl) titleEl.textContent = (weapon.name || id).toUpperCase();
+    if (subEl) subEl.textContent = (weapon.tags || []).join(" • ") || "WEAPON CLASS";
+    if (chipEl) chipEl.textContent = id.toUpperCase();
 
-      weapons.forEach(w => {
-        const tr = document.createElement("tr");
+    // Load the weapon JSON (prefer index-defined path)
+    const jsonPath = weapon.json || `/data/${id}.json`;
+    const res = await fetch(jsonPath, { cache: "no-store" });
+    if (!res.ok) throw new Error(`Failed to load ${jsonPath}`);
+    const data = await res.json();
 
-        const typeCell = document.createElement("td");
-        typeCell.setAttribute("data-label", "Type");
-        typeCell.textContent = w.id;
+    renderWeapon(data);
 
-        const nameCell = document.createElement("td");
-        nameCell.setAttribute("data-label", "Name");
+  } catch (err) {
+    console.error(err);
+    const mount = document.getElementById("weaponMount");
+    if (mount) mount.textContent = "FAILED TO LOAD WEAPON DATA.";
+  }
+}
 
-        const link = document.createElement("a");
-        link.href = `/information/weapons/weapon.html?id=${encodeURIComponent(w.id)}`;
-        link.textContent = w.name || w.id;
-        nameCell.appendChild(link);
-
-        const tagsCell = document.createElement("td");
-        tagsCell.setAttribute("data-label", "Tags");
-        tagsCell.textContent = (w.tags || []).join(", ");
-
-        const iconCell = document.createElement("td");
-        iconCell.setAttribute("data-label", "Icon");
-
-        if (w.icon) {
-          const img = document.createElement("img");
-          img.src = w.icon;
-          img.alt = (w.name || w.id) + " icon";
-          img.className = "weapon-icon";
-          iconCell.appendChild(img);
-        } else {
-          iconCell.textContent = "—";
-        }
-
-        tr.appendChild(typeCell);
-        tr.appendChild(nameCell);
-        tr.appendChild(tagsCell);
-        tr.appendChild(iconCell);
-
-        tbody.appendChild(tr);
-      });
-
-    } catch (err) {
-      console.error(err);
-      const tbody = document.getElementById("weaponsTableBody");
-      if (tbody) tbody.innerHTML = "<tr><td colspan='4'>Failed to load weapons.</td></tr>";
-    }
+function renderWeapon(data) {
+  // Sidebar
+  const sidebar = document.getElementById("weaponSidebar");
+  if (sidebar && data.sidebar) {
+    sidebar.innerHTML = `
+      <section class="hud-panel">
+        <div class="panel-head"><span>${data.sidebar.title || "Tip:"}</span></div>
+        <div class="panel-body">
+          <ul class="info-list">
+            ${(data.sidebar.bullets || []).map(b => `<li>${b}</li>`).join("")}
+          </ul>
+        </div>
+      </section>
+    `;
   }
 
-  loadWeaponsTable();
-</script>
+  // Main content
+  const mount = document.getElementById("weaponMount");
+  if (!mount) return;
 
+  const overview = data.overview || {};
+  const skills = data.skills || {};
+  const tables = data.weaponTables || [];
+
+  mount.innerHTML = `
+    <section class="hud-panel">
+      <div class="panel-head"><span>OVERVIEW</span></div>
+      <div class="panel-body">
+        <p>${overview.text || ""}</p>
+        <ul class="info-list">${(overview.bullets || []).map(b => `<li>${b}</li>`).join("")}</ul>
+        ${overview.nested ? `
+          <p><strong>${overview.nested.lead || ""}</strong></p>
+          <ul class="info-list">${(overview.nested.sub || []).map(s => `<li>${s}</li>`).join("")}</ul>
+        ` : ""}
+      </div>
+    </section>
+
+    <section class="hud-panel">
+      <div class="panel-head"><span>SKILLS</span></div>
+      <div class="panel-body">
+        <p>${skills.text || ""}</p>
+        <table class="info-table">
+          <thead><tr><th>Name</th><th>Type</th><th>Requirement</th><th>Animation</th></tr></thead>
+          <tbody>
+            ${(skills.rows || []).map(r => `
+              <tr>
+                <td>${r.name}</td>
+                <td>${r.type}</td>
+                <td>${r.requirement}</td>
+                <td>${r.animation ? `<img class="skill-gif" src="${r.animation}" alt="${r.name}">` : "—"}</td>
+              </tr>
+            `).join("")}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    ${tables.map(t => `
+      <section class="hud-panel">
+        <div class="panel-head"><span>${t.title}</span></div>
+        <div class="panel-body">
+          <table class="info-table">
+            <thead><tr><th>Name</th><th>Max Skill</th><th>Attack</th><th>Obtain</th></tr></thead>
+            <tbody>
+              ${(t.rows || []).map(r => `
+                <tr>
+                  <td>${r.name}</td>
+                  <td>${r.maxSkill}</td>
+                  <td>${r.attack}</td>
+                  <td>${r.obtain}</td>
+                </tr>
+              `).join("")}
+            </tbody>
+          </table>
+        </div>
+      </section>
+    `).join("")}
+  `;
+}
+
+loadWeaponPage();
+</script>
 <script src="/js/toasts.js?v=1"></script>
 </body>
 </html>
