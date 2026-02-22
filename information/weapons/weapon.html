@@ -150,12 +150,11 @@
     </section>
 
   </main>
-
-  <!-- ================= TOAST STACK (optional but consistent) ================= -->
+<!-- ================= TOAST STACK (optional but consistent) ================= -->
   <div id="sao-toast-stack">
 
     <!-- RED: WARNING -->
-    <div class="sao-toast sao-toast-red show" role="alert" aria-live="assertive">
+    <!--<div class="sao-toast sao-toast-red show" role="alert" aria-live="assertive">
       <div class="sao-toast-header">SYSTEM WARNING</div>
       <div class="sao-toast-body">
         The only way to be a cutie is to join the guild:
@@ -163,352 +162,87 @@
       </div>
       <button class="sao-toast-close" type="button">✕</button>
       <div class="sao-toast-progress"></div>
-    </div>
+    </div>-->
 
     <!-- YELLOW: NOTICE -->
     <div class="sao-toast sao-toast-yellow show" role="status" aria-live="polite">
       <div class="sao-toast-header">SYSTEM NOTICE</div>
       <div class="sao-toast-body">
-        Weapons Pages are getting a revamp! They will not be shown for a bit.
+        Floor 19 data will be added in the future.
       </div>
       <button class="sao-toast-close" type="button">✕</button>
       <div class="sao-toast-progress"></div>
     </div>
 
   </div>
-
-  <!-- ================= TOAST CLOSE SCRIPT ================= -->
   <script>
-    const BASE_TIME = 7000;   // 7 seconds
-    const STAGGER = 1500;     // 1.5 seconds apart
+  async function loadWeaponsTable() {
+    try {
+      const res = await fetch("/data/weapons-index.json", { cache: "no-store" });
+      if (!res.ok) throw new Error("Failed to load weapons-index.json");
 
-    document.querySelectorAll(".sao-toast").forEach((toast, index) => {
-      const progress = toast.querySelector(".sao-toast-progress");
-      const totalTime = BASE_TIME + (index * STAGGER);
+      const data = await res.json();
+      const weapons = data.weapons || [];
 
-      if (progress) {
-        progress.style.animation = `toastTimer ${totalTime / 1000}s linear forwards`;
-      }
+      const tbody = document.getElementById("weaponsTableBody");
+      if (!tbody) return;
 
-      const autoClose = setTimeout(() => {
-        toast.classList.remove("show");
-        setTimeout(() => toast.remove(), 220);
-      }, totalTime);
+      tbody.innerHTML = "";
 
-      const closeBtn = toast.querySelector(".sao-toast-close");
-      if (closeBtn) {
-        closeBtn.addEventListener("click", () => {
-          clearTimeout(autoClose);
-          if (progress) progress.style.animation = "none";
-          toast.classList.remove("show");
-          setTimeout(() => toast.remove(), 220);
-        });
-      }
-    });
-  </script>
+      // Fixed order (edit anytime)
+      const order = ["one-hand", "two-hand", "rapier", "dagger", "melee"];
+      weapons.sort((a, b) => order.indexOf(a.id) - order.indexOf(b.id));
 
-  <!-- ================= TOAST OFFSET SCRIPT (HUD + legacy safe) ================= -->
-  <script>
-    function setToastOffset() {
-      const toastStack = document.getElementById("sao-toast-stack");
-      if (!toastStack) return;
+      weapons.forEach(w => {
+        const tr = document.createElement("tr");
 
-      const header = document.querySelector(".hud-top") || document.querySelector(".wiki-header");
-      if (!header) return;
+        const typeCell = document.createElement("td");
+        typeCell.setAttribute("data-label", "Type");
+        typeCell.textContent = w.id;
 
-      if (window.innerWidth <= 768) {
-        const headerHeight = header.getBoundingClientRect().height;
-        toastStack.style.top = `${headerHeight + 12}px`;
-        toastStack.style.bottom = "auto";
-      } else {
-        toastStack.style.top = "";
-        toastStack.style.bottom = "";
-      }
-    }
+        const nameCell = document.createElement("td");
+        nameCell.setAttribute("data-label", "Name");
 
-    window.addEventListener("load", setToastOffset);
-    window.addEventListener("resize", setToastOffset);
-  </script>
+        const link = document.createElement("a");
+        link.href = `/information/weapons/weapon.html?id=${encodeURIComponent(w.id)}`;
+        link.textContent = w.name || w.id;
+        nameCell.appendChild(link);
 
-  <!-- ================= WEAPON PAGE LOADER ================= -->
-  <script>
-    const byId = (id) => document.getElementById(id);
+        const tagsCell = document.createElement("td");
+        tagsCell.setAttribute("data-label", "Tags");
+        tagsCell.textContent = (w.tags || []).join(", ");
 
-    function getWeaponIdFromURL() {
-      const params = new URLSearchParams(window.location.search);
-      return params.get("id") || "one-hand";
-    }
+        const iconCell = document.createElement("td");
+        iconCell.setAttribute("data-label", "Icon");
 
-    function esc(str) {
-      if (str === null || str === undefined) return "";
-      return String(str)
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/"/g, "&quot;")
-        .replace(/'/g, "&#039;");
-    }
-
-    function renderList(items, extraClass = "") {
-      if (!Array.isArray(items) || !items.length) return "";
-      return `<ul class="hud-list ${extraClass}">${items.map(x => `<li>${esc(x)}</li>`).join("")}</ul>`;
-    }
-
-    function renderWeaponTable(title, rows) {
-      const body = (rows || []).map(w => `
-        <tr>
-          <td data-label="Weapon Name">${esc(w.name)}</td>
-          <td data-label="Max Skill">${esc(w.maxSkill)}</td>
-          <td data-label="Attack Damage">${esc(w.attack)}</td>
-          <td data-label="How to Obtain">${esc(w.obtain)}</td>
-        </tr>
-      `).join("");
-
-      return `
-        <div class="hud-panel" style="margin-top:14px;">
-          <div class="panel-head">
-            <span>${esc(title)}</span>
-            <span class="panel-chip">TABLE</span>
-          </div>
-
-          <table class="info-table">
-            <thead>
-              <tr>
-                <th>Weapon Name</th>
-                <th>Max Skill</th>
-                <th>Attack Damage</th>
-                <th>How to Obtain</th>
-              </tr>
-            </thead>
-            <tbody>
-              ${body || `<tr><td colspan="4">No items found.</td></tr>`}
-            </tbody>
-          </table>
-        </div>
-      `;
-    }
-
-    function renderSkillsTable(rows) {
-      if (!Array.isArray(rows) || !rows.length) return "";
-
-      const body = rows.map(skill => `
-        <tr>
-          <td data-label="Sword Skill">${esc(skill.name)}</td>
-          <td data-label="Type">${esc(skill.type)}</td>
-          <td data-label="Skill Requirement">${esc(skill.requirement)}</td>
-          <td data-label="Animation">
-            ${skill.animation ? `<img src="${esc(skill.animation)}" class="skill-gif" alt="${esc(skill.name)} Animation">` : "—"}
-          </td>
-        </tr>
-      `).join("");
-
-      return `
-        <table class="info-table">
-          <thead>
-            <tr>
-              <th>Sword Skill</th>
-              <th>Type</th>
-              <th>Skill Requirement</th>
-              <th>Animation</th>
-            </tr>
-          </thead>
-          <tbody>${body}</tbody>
-        </table>
-      `;
-    }
-
-    function renderSidebar(sidebar) {
-      const host = byId("weaponSidebar");
-      if (!host) return;
-
-      if (!sidebar) { host.innerHTML = ""; return; }
-
-      host.innerHTML = `
-        <section class="hud-panel">
-          <div class="panel-head">
-            <span>${esc(sidebar.title || "TIP")}</span>
-            <span class="panel-chip">SIDE</span>
-          </div>
-          ${renderList(sidebar.bullets || [], "bullets")}
-        </section>
-      `;
-    }
-
-    async function init() {
-      const weaponId = getWeaponIdFromURL();
-
-      const mount = byId("weaponMount");
-      const hudTitle = byId("weaponHudTitle");
-      const hudSubtitle = byId("weaponHudSubtitle");
-      const chip = byId("weaponChip");
-
-      try {
-        const indexRes = await fetch("/data/weapons-index.json", { cache: "no-store" });
-        if (!indexRes.ok) throw new Error("Failed to load weapons-index.json");
-        const indexData = await indexRes.json();
-
-        const meta = (indexData.weapons || []).find(w => w.id === weaponId);
-        if (!meta) throw new Error("Weapon type not found.");
-
-        const fileRes = await fetch(meta.file, { cache: "no-store" });
-        if (!fileRes.ok) throw new Error("Failed to load weapon JSON file");
-        const wdata = await fileRes.json();
-
-        // HUD top text
-        document.title = `SBO:R Wiki – ${meta.name || meta.id}`;
-        if (hudTitle) hudTitle.textContent = (meta.name || meta.id).toUpperCase();
-        if (hudSubtitle) hudSubtitle.textContent = "WEAPON TYPE DATABASE";
-        if (chip) chip.textContent = (meta.id || "WEAPON").toUpperCase();
-
-        // Sidebar
-        renderSidebar(wdata.sidebar);
-
-        // Build content using HUD panels
-        let html = `
-          <a href="/information/weapons" class="back-link">← Back to Weapons Page</a>
-
-          <div class="hud-panel">
-            <div class="panel-head">
-              <span>SYSTEM RECORD: ${esc(meta.name || meta.id)}</span>
-              <span class="panel-chip">${esc((meta.id || "WEAPON").toUpperCase())}</span>
-            </div>
-
-            <div class="hud-lore">
-              ${wdata.overview?.text ? `<p>${esc(wdata.overview.text)}</p>` : `<p>Loaded weapon type data from system index.</p>`}
-            </div>
-          </div>
-        `;
-
-        if (wdata.overview) {
-          html += `
-            <div class="hud-panel">
-              <div class="panel-head">
-                <span>OVERVIEW</span>
-                <span class="panel-chip">INFO</span>
-              </div>
-
-              <div class="hud-lore">
-                ${wdata.overview.text ? `<p>${esc(wdata.overview.text)}</p>` : ""}
-              </div>
-
-              ${renderList(wdata.overview.bullets || [], "bullets")}
-            </div>
-          `;
+        if (w.icon) {
+          const img = document.createElement("img");
+          img.src = w.icon;
+          img.alt = (w.name || w.id) + " icon";
+          img.className = "weapon-icon";
+          iconCell.appendChild(img);
+        } else {
+          iconCell.textContent = "—";
         }
 
-        if (wdata.skills) {
-          html += `
-            <div class="hud-panel">
-              <div class="panel-head">
-                <span>SKILLS</span>
-                <span class="panel-chip">DATA</span>
-              </div>
+        tr.appendChild(typeCell);
+        tr.appendChild(nameCell);
+        tr.appendChild(tagsCell);
+        tr.appendChild(iconCell);
 
-              <div class="hud-lore">
-                ${wdata.skills.text ? `<p>${esc(wdata.skills.text)}</p>` : ""}
-              </div>
+        tbody.appendChild(tr);
+      });
 
-              ${renderSkillsTable(wdata.skills.rows)}
-            </div>
-          `;
-        }
-
-        if (wdata.weaponsListInfo) {
-          html += `
-            <div class="hud-panel">
-              <div class="panel-head">
-                <span>WEAPONS LIST</span>
-                <span class="panel-chip">NOTES</span>
-              </div>
-
-              <div class="hud-lore">
-                ${wdata.weaponsListInfo.preNote ? `<p>${esc(wdata.weaponsListInfo.preNote)}</p>` : ""}
-                ${wdata.weaponsListInfo.scalingIntro ? `<p>${esc(wdata.weaponsListInfo.scalingIntro)}</p>` : ""}
-                ${wdata.weaponsListInfo.legendaryNote ? `<p><strong>${esc(wdata.weaponsListInfo.legendaryNote)}</strong></p>` : ""}
-              </div>
-
-              ${renderList(wdata.weaponsListInfo.ratingBullets || [], "bullets")}
-              ${renderList(wdata.weaponsListInfo.scalingBullets || [], "bullets")}
-            </div>
-          `;
-        }
-
-        (wdata.weaponTables || []).forEach(tbl => {
-          html += renderWeaponTable(tbl.title, tbl.rows);
-        });
-
-        mount.innerHTML = html;
-
-      } catch (err) {
-        console.error(err);
-        if (mount) mount.innerHTML = `<div class="hud-lore"><p>Error loading weapon data.</p></div>`;
-        if (hudSubtitle) hudSubtitle.textContent = "FAILED TO LOAD";
-        if (chip) chip.textContent = "ERROR";
-      }
+    } catch (err) {
+      console.error(err);
+      const tbody = document.getElementById("weaponsTableBody");
+      if (tbody) tbody.innerHTML = "<tr><td colspan='4'>Failed to load weapons.</td></tr>";
     }
+  }
 
-    init();
-  </script>
+  loadWeaponsTable();
+</script>
 
-  <!-- =====================================================
-       HUD NAV DROPDOWNS CSS (put in floor-hud.css ideally)
-       Keeping here as a safety net so this page works now.
-  ====================================================== -->
-  <style>
-    .hud-nav{ position: relative; }
-    .hud-drop{ position: relative; display: inline-flex; align-items: center; }
-    .hud-drop-btn{ cursor: pointer; }
-    .hud-menu{
-      position: absolute;
-      top: calc(100% + 10px);
-      left: 50%;
-      transform: translateX(-50%);
-      min-width: 190px;
-      padding: 8px;
-      background: rgba(10, 30, 40, 0.94);
-      border: 1px solid var(--line);
-      box-shadow: 0 0 18px rgba(0,234,255,0.14), inset 0 0 18px rgba(0,234,255,0.08);
-      backdrop-filter: blur(10px);
-      border-radius: 12px;
-      display: none;
-      z-index: 2000;
-    }
-    .hud-menu a{
-      display: block;
-      padding: 10px 12px;
-      color: var(--text);
-      font-weight: 800;
-      font-size: 12px;
-      letter-spacing: 1px;
-      border: 1px solid rgba(0,255,255,0.10);
-      background: rgba(0,234,255,0.04);
-      border-radius: 10px;
-      margin: 6px 0;
-      text-decoration: none;
-    }
-    .hud-menu a:hover{
-      border-color: var(--line);
-      box-shadow: 0 0 16px rgba(0,234,255,0.18);
-      background: rgba(0,234,255,0.07);
-      color: var(--cyan);
-    }
-    @media (hover: hover) and (pointer: fine){
-      .hud-drop:hover .hud-menu{ display: block; }
-    }
-    .hud-drop:focus-within .hud-menu{ display: block; }
-    .hud-drop-btn:focus-visible{
-      outline: none;
-      border-color: var(--line);
-      box-shadow: 0 0 18px rgba(0,234,255,0.22);
-    }
-    @media (max-width: 520px){
-      .hud-menu{
-        left: 0;
-        transform: none;
-        width: min(320px, calc(100vw - 28px));
-      }
-    }
-  </style>
-
+<script src="/js/toasts.js?v=1"></script>
 </body>
 </html>
