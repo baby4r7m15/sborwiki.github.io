@@ -3,249 +3,293 @@
 <head>
   <meta charset="UTF-8" />
   <title>SBO:R Wiki – Floors 11-20</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/css/info.css">
-  <link rel="stylesheet" href="/css/home-hud-skin.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- HUD look (same as Floors + Home HUD) -->
+  <link rel="stylesheet" href="/css/floor-hud.css?v=1" />
+
+  <!-- Keep your table/utility styles -->
+  <link rel="stylesheet" href="/css/info.css?v=1" />
+
+  <!-- Toast styling (recommended: move toast CSS out of main.css into this file) -->
+  <link rel="stylesheet" href="/css/toasts.css?v=1" />
 
   <!-- ====== FAVICON / TAB ICON ====== -->
-<link rel="icon" href="/logo.png" type="image/png" />
-<link rel="apple-touch-icon" href="/logo.png" />
+  <link rel="icon" href="/logo.png" type="image/png" />
+  <link rel="apple-touch-icon" href="/logo.png" />
 
   <!-- ====== EMBED / LINK PREVIEW ====== -->
-<meta property="og:type" content="website" />
-<meta property="og:site_name" content="Sword Blox Online: Rebirth Wiki" />
-<meta property="og:title" content="SBO:R Floors Page" />
-<meta property="og:description" content="A list of the floors in SBO:R." />
-<meta property="og:url" content="https://sborwiki.com/information/floors" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Sword Blox Online: Rebirth Wiki" />
+  <meta property="og:title" content="SBO:R Floors Page" />
+  <meta property="og:description" content="A list of the floors in SBO:R." />
+  <meta property="og:url" content="https://sborwiki.com/information/floors-1-10" />
 
-<!-- This should be your banner image (Sborlogotext) -->
-<meta property="og:image" content="https://sborwiki.com/Sborlogotext.png" />
-<meta property="og:image:alt" content="Sword Blox Online Rebirth Wiki banner" />
+  <meta property="og:image" content="https://sborwiki.com/Sborlogotext.png" />
+  <meta property="og:image:alt" content="Sword Blox Online Rebirth Wiki banner" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
 
-<!-- Optional but helps some platforms -->
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="SBO:R Floors Page" />
+  <meta name="twitter:description" content="A list of the floors in SBO:R." />
+  <meta name="twitter:image" content="https://sborwiki.com/Sborlogotext.png" />
 
-<!-- Twitter/X -->
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="SBO:R Floors Page" />
-<meta name="twitter:description" content="A list of the floors in SBO:R." />
-<meta name="twitter:image" content="https://sborwiki.com/Sborlogotext.png" />
+  <style>
+    /* Neutralize old wrapper styling so HUD owns the page */
+    .page-wrapper{
+      background: transparent !important;
+      border: 0 !important;
+      box-shadow: none !important;
+      backdrop-filter: none !important;
+      border-radius: 0 !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      max-width: none !important;
+    }
+
+    /* HUD grid shell for landing table pages */
+    .floors-grid{
+      padding: 22px 24px 90px;
+      display: grid;
+      grid-template-columns: 360px 1fr;
+      gap: 18px;
+      align-items: start;
+    }
+
+    @media (max-width: 980px){
+      .floors-grid{ grid-template-columns: 1fr; }
+    }
+
+    /* Icon images tidy */
+    .floor-map-thumb{
+      width: 80px;
+      height: auto;
+      display: block;
+      border: 1px solid rgba(0,255,255,0.16);
+      background: rgba(0,234,255,0.04);
+      box-shadow: 0 0 10px rgba(0,234,255,0.12);
+    }
+
+    /* Back link polish */
+    .back-link{
+      display: inline-block;
+      font-weight: 800;
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+    }
+
+    /* Table inside HUD panel */
+    .hud-panel .info-table{ width: 100%; }
+    .info-table thead th{
+      color: var(--cyan);
+      letter-spacing: 1px;
+    }
+  </style>
 </head>
 
 <body>
 
-  <!-- ================= HEADER ================= -->
-  <header class="wiki-header">
-    <div class="wiki-header-inner">
+  <!-- ===== HUD TOP BAR ===== -->
+  <header class="hud-top">
+    <div class="hud-left">
+      <div class="hud-kicker">SWORD BLOX ONLINE: REBIRTH</div>
+      <div class="hud-title">FLOORS 11–20</div>
+      <div class="hud-subtitle">FLOOR LANDING INDEX</div>
+    </div>
 
-      <div class="wiki-left">
-        <img src="/logo.png" class="wiki-logo" alt="Logo" />
-        <span class="wiki-title">Sword Blox Online: Rebirth Wiki</span>
+    <!-- HUD dropdown nav -->
+    <nav class="hud-nav" aria-label="Site navigation">
+      <a class="hud-link" href="/">Home</a>
+
+      <div class="hud-drop">
+        <button class="hud-link hud-drop-btn" type="button" aria-haspopup="menu">
+          Information ▾
+        </button>
+        <div class="hud-menu" role="menu" aria-label="Information menu">
+          <a role="menuitem" href="/information/weapons">Weapons</a>
+        </div>
       </div>
 
-      <div class="hamburger" id="hamburger">☰</div>
-
-      <nav class="wiki-nav" id="wikiNav">
-
-        <div class="nav-item">
-          <a href="https://sborwiki.com">Home</a>
+      <div class="hud-drop">
+        <button class="hud-link hud-drop-btn active" type="button" aria-haspopup="menu">
+          Floors ▾
+        </button>
+        <div class="hud-menu" role="menu" aria-label="Floors menu">
+          <a role="menuitem" href="/information/floors-1-10">Floors 1–10</a>
         </div>
-        
-        <div class="nav-item">
-          <span class="nav-label">Information</span>
-          <div class="dropdown">
-            <a href="/information/weapons">Weapons</a>
-            <!--<a href="#">Protective Gear</a>
-            <a href="#">Items</a>
-            <a href="#">Blacksmithing</a>
-            <a href="#">Guilds</a>
-            <a href="#">Quests</a>-->
-          </div>
-        </div>
+      </div>
+    </nav>
 
-        <!--<div class="nav-item">
-          <span class="nav-label">Events</span>
-          <div class="dropdown">
-            <a href="#">All Events</a>
-          </div>
-        </div>-->
-
-        <div class="nav-item">
-          <span class="nav-label">Floors</span>
-          <div class="dropdown">
-            <a href="/information/floors-1-10">Floors 1-10</a>
-          </div>
-        </div>
-      </nav>
-
+    <div class="hud-right">
+      <div class="hud-chip">INDEX</div>
+      <div class="hud-chip hud-chip-soft">AUTO LOADED</div>
     </div>
   </header>
 
-  <!-- ================= PAGE WRAPPER ================= -->
-  <main class="page-wrapper">
+  <!-- ===== MAIN HUD GRID ===== -->
+  <main class="floors-grid">
 
-    <!-- HERO -->
-    <section class="hero">
-      <img src="/Sborlogotext.png" class="hero-logo" alt="SBO Logo">
-    </section>
+    <!-- LEFT COLUMN -->
+    <aside class="col-left" style="display:grid; gap:18px;">
 
-    <!-- ================= CONTENT ================= -->
-    <section class="content-area">
-      <div class="content-grid">
+      <section class="hud-panel">
+        <div class="panel-head">
+          <span>NAVIGATION</span>
+          <span class="panel-chip">SYSTEM</span>
+        </div>
 
-        <!-- ================= MAIN ================= -->
-        <article class="content-left">
+        <ul class="hud-list chevrons">
+          <li><a href="/" class="back-link">← Back to Main Page</a></li>
+          <li><a href="/information/floors-1-10">Go to Floors 1–10</a></li>
+          <li><a href="/information/weapons">Weapons</a></li>
+        </ul>
+      </section>
 
-          <a href="https://sborwiki.com" class="back-link">← Back to Main Page</a>
+      <section class="hud-panel">
+        <div class="panel-head">
+          <span>OVERVIEW</span>
+          <span class="panel-chip">INFO</span>
+        </div>
 
-          <div class="page-intro-box">
-            <strong>Floors</strong>
-          </div>
+        <div class="hud-lore">
+          <p>This is a list of the floors currently in SBO:R.</p>
+          <p>Select a floor name to open its system record.</p>
+        </div>
+      </section>
 
-          <!-- SAO PANEL: Intro -->
-          <div class="sao-section">
+    </aside>
 
-            <div class="sao-panel sao-notice">
-              <div class="sao-header">OVERVIEW</div>
-              <p>
-                This is a list of the floors currently in SBO:R.
-              </p>
-            </div>
+    <!-- RIGHT COLUMN -->
+    <section class="col-right" style="display:grid; gap:18px;">
 
-            <!-- SAO PANEL: Floors -->
-<div class="sao-panel">
-  <div class="sao-header">FLOORS</div>
+      <section class="hud-panel">
+        <div class="panel-head">
+          <span>FLOORS</span>
+          <span class="panel-chip">TABLE</span>
+        </div>
 
-  <table class="info-table">
-    <thead>
-      <tr>
-        <th>Floor</th>
-        <th>Name</th>
-        <th>Tags</th>
-        <th>Map</th>
-      </tr>
-    </thead>
-    <tbody id="floorsTableBody">
-      <!-- Auto generated -->
-    </tbody>
-  </table>
-</div>
+        <table class="info-table">
+          <thead>
+            <tr>
+              <th>Floor</th>
+              <th>Name</th>
+              <th>Tags</th>
+              <th>Map</th>
+            </tr>
+          </thead>
+          <tbody id="floorsTableBody">
+            <!-- Auto generated -->
+          </tbody>
+        </table>
+      </section>
 
-
-            </div>
-
-          </div>
-
-        </article>
-
-      </div>
     </section>
 
   </main>
 
-  <!-- ================= MOBILE SCRIPT ================= -->
+  <!-- ================= TOAST STACK (optional but consistent) ================= -->
+  <div id="sao-toast-stack">
+
+    <!-- RED: WARNING -->
+    <!--<div class="sao-toast sao-toast-red show" role="alert" aria-live="assertive">
+      <div class="sao-toast-header">SYSTEM WARNING</div>
+      <div class="sao-toast-body">
+        The only way to be a cutie is to join the guild:
+        <a href="https://www.roblox.com/communities/104234504/SBO-R-Pupz">Pupz</a>!
+      </div>
+      <button class="sao-toast-close" type="button">✕</button>
+      <div class="sao-toast-progress"></div>
+    </div>-->
+
+    <!-- YELLOW: NOTICE -->
+    <div class="sao-toast sao-toast-yellow show" role="status" aria-live="polite">
+      <div class="sao-toast-header">SYSTEM NOTICE</div>
+      <div class="sao-toast-body">
+        This page will be updated after the floors 1-10 page is done.
+      </div>
+      <button class="sao-toast-close" type="button">✕</button>
+      <div class="sao-toast-progress"></div>
+    </div>
+
+  </div>
   <script>
-  const hamburger = document.getElementById("hamburger");
-  const nav = document.getElementById("wikiNav");
+  async function loadFloorsTable() {
+    try {
+      const res = await fetch("/data/floors20.json", { cache: "no-store" });
+      if (!res.ok) throw new Error("Failed to load floors10.json");
 
-  function setToastOffset() {
-    const header = document.querySelector(".wiki-header");
-    const toastStack = document.getElementById("sao-toast-stack");
-    if (!header || !toastStack) return;
+      const data = await res.json();
+      const floors = data.floors || [];
 
-    const headerHeight = header.getBoundingClientRect().height;
-    toastStack.style.top = `${headerHeight + 12}px`;
-  }
+      const tbody = document.getElementById("floorsTableBody");
+      if (!tbody) return;
 
-  // Mobile nav toggle
-  if (hamburger && nav) {
-    hamburger.addEventListener("click", () => {
-      nav.classList.toggle("active");
-      setTimeout(setToastOffset, 50);
-    });
-  }
+      tbody.innerHTML = "";
 
-  // Dropdown toggles on mobile (only if you have .nav-label elements)
-  document.querySelectorAll(".nav-label").forEach(label => {
-    label.addEventListener("click", function () {
-      if (window.innerWidth <= 768) {
-        this.parentElement.classList.toggle("active");
-        setTimeout(setToastOffset, 50);
+      // Sort by floor number
+      floors
+        .sort((a, b) => Number(a.number || a.id) - Number(b.number || b.id))
+        .forEach(floor => {
+
+          const tr = document.createElement("tr");
+
+          // Floor #
+          const floorCell = document.createElement("td");
+          floorCell.setAttribute("data-label", "Floor");
+          floorCell.textContent = floor.number || floor.id;
+
+          // Name (clickable)
+          const nameCell = document.createElement("td");
+          nameCell.setAttribute("data-label", "Name");
+
+          const link = document.createElement("a");
+          link.href = `/information/floors/1-10.html?id=${encodeURIComponent(floor.id)}`;
+          link.textContent = floor.name || `Floor ${floor.id}`;
+          nameCell.appendChild(link);
+
+          // Tags
+          const tagsCell = document.createElement("td");
+          tagsCell.setAttribute("data-label", "Tags");
+          tagsCell.textContent = (floor.tags || []).join(", ");
+
+          // Map Preview
+          const mapCell = document.createElement("td");
+          mapCell.setAttribute("data-label", "Map");
+
+          if (floor.map && floor.map.image) {
+            const img = document.createElement("img");
+            img.src = floor.map.image;
+            img.alt = floor.map.alt || `Floor ${floor.id} map`;
+            img.style.width = "80px";
+            img.style.height = "auto";
+            img.style.filter = "drop-shadow(0 0 10px rgba(0,234,255,0.18))";
+            mapCell.appendChild(img);
+          } else {
+            mapCell.textContent = "—";
+          }
+
+          tr.appendChild(floorCell);
+          tr.appendChild(nameCell);
+          tr.appendChild(tagsCell);
+          tr.appendChild(mapCell);
+
+          tbody.appendChild(tr);
+        });
+
+    } catch (err) {
+      console.error(err);
+      const tbody = document.getElementById("floorsTableBody");
+      if (tbody) {
+        tbody.innerHTML =
+          "<tr><td colspan='4'>Failed to load floors.</td></tr>";
       }
-    });
-  });
-
-  window.addEventListener("load", setToastOffset);
-  window.addEventListener("resize", setToastOffset);
-</script>
-
-
-<script>
-async function loadFloorsTable() {
-  try {
-    const res = await fetch("/data/floors20.json", { cache: "no-store" });
-    if (!res.ok) throw new Error("Failed to load floors.json");
-
-    const data = await res.json();
-    const floors = data.floors || [];
-
-    const tbody = document.getElementById("floorsTableBody");
-    tbody.innerHTML = "";
-
-    floors
-      .sort((a, b) => Number(a.number || a.id) - Number(b.number || b.id))
-      .forEach(floor => {
-
-        const tr = document.createElement("tr");
-
-        const floorCell = document.createElement("td");
-        floorCell.setAttribute("data-label", "Floor");
-        floorCell.textContent = floor.number || floor.id;
-
-        const nameCell = document.createElement("td");
-        nameCell.setAttribute("data-label", "Name");
-
-        const link = document.createElement("a");
-        link.href = `/information/floors/11-20.html?id=${floor.id}`;
-        link.textContent = floor.name || `Floor ${floor.id}`;
-        nameCell.appendChild(link);
-
-        const tagsCell = document.createElement("td");
-        tagsCell.setAttribute("data-label", "Tags");
-        tagsCell.textContent = (floor.tags || []).join(", ");
-
-        const mapCell = document.createElement("td");
-        mapCell.setAttribute("data-label", "Map");
-
-        if (floor.map && floor.map.image) {
-          const img = document.createElement("img");
-          img.src = floor.map.image;
-          img.alt = floor.map.alt || `Floor ${floor.id} map`;
-          img.style.width = "80px";
-          img.style.height = "auto";
-          mapCell.appendChild(img);
-        } else {
-          mapCell.textContent = "—";
-        }
-
-        tr.appendChild(floorCell);
-        tr.appendChild(nameCell);
-        tr.appendChild(tagsCell);
-        tr.appendChild(mapCell);
-
-        tbody.appendChild(tr);
-      });
-
-  } catch (err) {
-    console.error(err);
-    document.getElementById("floorsTableBody").innerHTML =
-      "<tr><td colspan='4'>Failed to load floors.</td></tr>";
+    }
   }
-}
 
-loadFloorsTable();
+  loadFloorsTable();
 </script>
 
+<script src="/js/toasts.js?v=1"></script>
 </body>
 </html>
