@@ -214,6 +214,83 @@
     </div>
 
   </div>
-  <script src="/js/toasts.js?v=1"></script>
+  <script>
+  async function loadFloorsTable() {
+    try {
+      const res = await fetch("/data/floors10.json", { cache: "no-store" });
+      if (!res.ok) throw new Error("Failed to load floors10.json");
+
+      const data = await res.json();
+      const floors = data.floors || [];
+
+      const tbody = document.getElementById("floorsTableBody");
+      if (!tbody) return;
+
+      tbody.innerHTML = "";
+
+      // Sort by floor number
+      floors
+        .sort((a, b) => Number(a.number || a.id) - Number(b.number || b.id))
+        .forEach(floor => {
+
+          const tr = document.createElement("tr");
+
+          // Floor #
+          const floorCell = document.createElement("td");
+          floorCell.setAttribute("data-label", "Floor");
+          floorCell.textContent = floor.number || floor.id;
+
+          // Name (clickable)
+          const nameCell = document.createElement("td");
+          nameCell.setAttribute("data-label", "Name");
+
+          const link = document.createElement("a");
+          link.href = `/information/floors/1-10.html?id=${encodeURIComponent(floor.id)}`;
+          link.textContent = floor.name || `Floor ${floor.id}`;
+          nameCell.appendChild(link);
+
+          // Tags
+          const tagsCell = document.createElement("td");
+          tagsCell.setAttribute("data-label", "Tags");
+          tagsCell.textContent = (floor.tags || []).join(", ");
+
+          // Map Preview
+          const mapCell = document.createElement("td");
+          mapCell.setAttribute("data-label", "Map");
+
+          if (floor.map && floor.map.image) {
+            const img = document.createElement("img");
+            img.src = floor.map.image;
+            img.alt = floor.map.alt || `Floor ${floor.id} map`;
+            img.style.width = "80px";
+            img.style.height = "auto";
+            img.style.filter = "drop-shadow(0 0 10px rgba(0,234,255,0.18))";
+            mapCell.appendChild(img);
+          } else {
+            mapCell.textContent = "—";
+          }
+
+          tr.appendChild(floorCell);
+          tr.appendChild(nameCell);
+          tr.appendChild(tagsCell);
+          tr.appendChild(mapCell);
+
+          tbody.appendChild(tr);
+        });
+
+    } catch (err) {
+      console.error(err);
+      const tbody = document.getElementById("floorsTableBody");
+      if (tbody) {
+        tbody.innerHTML =
+          "<tr><td colspan='4'>Failed to load floors.</td></tr>";
+      }
+    }
+  }
+
+  loadFloorsTable();
+</script>
+
+<script src="/js/toasts.js?v=1"></script>
 </body>
 </html>
