@@ -53,7 +53,6 @@
   },
 
   "weaponTables": [
-
     {
       "title": "Shop Weapons",
       "rows": [
@@ -71,7 +70,21 @@
         { "name": "Stalhrim Lance", "maxSkill": 205, "attack": 840, "obtain": "Floor 12 Shop" },
         { "name": "Blackened Riposte", "maxSkill": 225, "attack": 955, "obtain": "Floor 12 Shop" },
         { "name": "Sweet Rapier", "maxSkill": 305, "attack": 1448, "obtain": "Floor 17 Shop" },
-        { "name": "Sentry Sting", "maxSkill": 330, "attack": 1613, "obtain": "Floor 18 Squid Game Dungeon Merchant" }
+        { "name": "Sentry Sting", "maxSkill": 330, "attack": 1613, "obtain": "Floor 18 Squid Game Dungeon Merchant" },
+
+        { "name": "Eggcelerate Épée", "maxSkill": 75, "attack": 213, "obtain": "Easter Event: Easter Shop [2023 - 2024]" },
+        { "name": "Summer Rain Rapier", "maxSkill": 76, "attack": 217, "obtain": "Summer Event: Summer Shop [2023]" },
+        { "name": "Summer Atlantean Sabre", "maxSkill": 76, "attack": 217, "obtain": "Summer Event: Summer Shop [2024]" },
+        { "name": "Blessed Lance", "maxSkill": 95, "attack": 294, "obtain": "Easter Event: Easter Shop [2020 - 2022]" },
+
+        { "name": "Candy Cane Rapier", "maxSkill": 270, "attack": 1337, "obtain": "Christmas Event: Christmas Shop [2020 - 2022]" },
+        { "name": "Swiftstroke", "maxSkill": 280, "attack": 1405, "obtain": "Halloween Event: Halloween Shop [2021 - 2022]" },
+        { "name": "Crescent Blood Moon Lancer", "maxSkill": 280, "attack": 1405, "obtain": "Halloween Event: Halloween Shop/Boss Drop/Blacksmithing [2022 - 2023]" },
+        { "name": "Turkey Probe", "maxSkill": 290, "attack": 1474, "obtain": "Thanksgiving Event: Thanksgiving Shop [2021 - 2022]" },
+        { "name": "Egg Rapier", "maxSkill": 295, "attack": 1509, "obtain": "Easter Event: Easter Shop [2022]" },
+        { "name": "Icepick", "maxSkill": 305, "attack": 1579, "obtain": "Christmas Event: Christmas Shop [2021 - 2022]" },
+        { "name": "Lovers Stiletto (All Colors)", "maxSkill": 305, "attack": 1579, "obtain": "Valentines Day Event: Valentines Day Shop [2023, 2024]" },
+        { "name": "Clover Rapier", "maxSkill": 310, "attack": 1615, "obtain": "Saint Patricks Event: Saint Patrick's Day Shop [2023, 2024]" }
       ]
     },
 
@@ -94,7 +107,73 @@
         { "name": "Royal Guard Rapier", "maxSkill": 215, "attack": 897, "obtain": "Blacksmithing" },
         { "name": "Floral Rapier", "maxSkill": 235, "attack": 1013, "obtain": "Blacksmithing" },
         { "name": "Blessed Rapier", "maxSkill": 260, "attack": 1164, "obtain": "Blacksmithing" },
-        { "name": "Licorice Lancer", "maxSkill": 335, "attack": 1646, "obtain": "Blacksmithing" }
+        { "name": "Licorice Lancer", "maxSkill": 335, "attack": 1646, "obtain": "Blacksmithing" },
+
+        { "name": "Woeful Rapier", "maxSkill": 76, "attack": 217, "obtain": "Halloween Event: Blacksmithing [2023]" },
+        { "name": "Caroler Piercer", "maxSkill": 76, "attack": 217, "obtain": "Christmas Event: Blacksmithing [2023]" },
+
+        { "name": "Spectral Whisper", "maxSkill": 77, "attack": 220, "obtain": "Halloween Event: Blacksmithing [2024]" },
+        { "name": "Winter Holiday Rapier", "maxSkill": 77, "attack": 220, "obtain": "Christmas Event: QE52 Reward unlocks in Blacksmithing [2024]" },
+        { "name": "Easter Royale Rapier", "maxSkill": 78, "attack": 224, "obtain": "Easter Event: QE15 Reward unlocks in Blacksmithing [2025]" },
+
+        { "name": "Glacier Staff Mk II", "maxSkill": 115, "attack": 381, "obtain": "Halloween Event: Blacksmithing [2021 - 2022]" },
+
+        { "name": "Blessed Lance MII", "maxSkill": 195, "attack": 785, "obtain": "Easter Event: Blacksmithing [2021 - 2023]" },
+        { "name": "Blessed Lance MIII", "maxSkill": 325, "attack": 1579, "obtain": "Easter Event: Blacksmithing [2021 - 2023]" },
+
+        { "name": "Eggcelerate Épée Mk II", "maxSkill": 150, "attack": 548, "obtain": "Easter Event: Blacksmithing [2023 - 2024]" },
+        { "name": "Eggcelerate Épée Mk III", "maxSkill": 225, "attack": 955, "obtain": "Easter Event: Blacksmithing [2023 - 2024]" },
+        { "name": "Eggcelerate Épée Mk IV", "maxSkill": 300, "attack": 1415, "obtain": "Easter Event: Blacksmithing [2023 - 2024]" },
+        { "name": "Eggcelerate Épée Mk V", "maxSkill": 375, "attack": 1921, "obtain": "Easter Event: Blacksmithing [2023 - 2024]" },
+
+        { "name": "Summer Rain Rapier Mk II", "maxSkill": 152, "attack": 558, "obtain": "Summer Event: Blacksmithing [2023]" },
+        { "name": "Summer Rain Rapier Mk III", "maxSkill": 228, "attack": 972, "obtain": "Summer Event: Blacksmithing [2023]" },
+        { "name": "Summer Rain Rapier Mk IV", "maxSkill": 304, "attack": 1441, "obtain": "Summer Event: Blacksmithing [2023]" },
+        { "name": "Summer Rain Rapier Mk V", "maxSkill": 380, "attack": 1956, "obtain": "Summer Event: Blacksmithing [2023]" },
+
+        { "name": "Summer Atlantean Sabre Mk II", "maxSkill": 152, "attack": 558, "obtain": "Summer Event: Blacksmithing [2024]" },
+        { "name": "Summer Atlantean Sabre Mk III", "maxSkill": 228, "attack": 972, "obtain": "Summer Event: Blacksmithing [2023]" },
+        { "name": "Summer Atlantean Sabre Mk IV", "maxSkill": 304, "attack": 1441, "obtain": "Summer Event: Blacksmithing [2024]" },
+        { "name": "Summer Atlantean Sabre Mk V", "maxSkill": 380, "attack": 1956, "obtain": "Summer Event: Blacksmithing [2024]" },
+
+        { "name": "Woeful Rapier Mk II", "maxSkill": 152, "attack": 558, "obtain": "Halloween Event: Blacksmithing [2024]" },
+        { "name": "Woeful Rapier Mk III", "maxSkill": 228, "attack": 972, "obtain": "Halloween Event: Blacksmithing [2023]" },
+        { "name": "Woeful Rapier Mk IV", "maxSkill": 304, "attack": 1441, "obtain": "Halloween Event: Blacksmithing [2023]" },
+        { "name": "Woeful Rapier Mk V", "maxSkill": 380, "attack": 1956, "obtain": "Halloween Event: Blacksmithing [2023]" },
+
+        { "name": "Caroler Piercer Mk II", "maxSkill": 152, "attack": 558, "obtain": "Christmas Event: Blacksmithing [2023]" },
+        { "name": "Caroler Piercer Mk III", "maxSkill": 228, "attack": 972, "obtain": "Christmas Event: Blacksmithing [2023]" },
+        { "name": "Caroler Piercer Mk IV", "maxSkill": 304, "attack": 1441, "obtain": "Christmas Event: Blacksmithing [2023]" },
+        { "name": "Caroler Piercer Mk V", "maxSkill": 380, "attack": 1956, "obtain": "Christmas Event: Blacksmithing [2023]" },
+
+        { "name": "Spectral Whisper MK II", "maxSkill": 154, "attack": 568, "obtain": "Halloween Event: Blacksmithing [2024]" },
+        { "name": "Spectral Whisper MK III", "maxSkill": 231, "attack": 990, "obtain": "Halloween Event: Blacksmithing [2024]" },
+        { "name": "Spectral Whisper MK IV", "maxSkill": 308, "attack": 1467, "obtain": "Halloween Event: Blacksmithing [2024]" },
+        { "name": "Spectral Whisper MK V", "maxSkill": 385, "attack": 1992, "obtain": "Halloween Event: Blacksmithing [2024]" },
+
+        { "name": "Winter Holiday Rapier Mk II", "maxSkill": 154, "attack": 568, "obtain": "Christmas Event: QE52 Reward unlocks in Blacksmithing [2024]" },
+        { "name": "Winter Holiday Rapier Mk III", "maxSkill": 232, "attack": 996, "obtain": "Christmas Event: QE53 Reward unlocks in Blacksmithing [2024]" },
+        { "name": "Winter Holiday Rapier Mk IV", "maxSkill": 309, "attack": 1474, "obtain": "Christmas Event: QE54 Reward unlocks in Blacksmithing [2024]" },
+        { "name": "Winter Holiday Rapier Mk V", "maxSkill": 386, "attack": 1999, "obtain": "Christmas Event: QE55 Reward unlocks in Blacksmithing [2024]" },
+
+        { "name": "Easter Royale Rapier Mk II", "maxSkill": 155, "attack": 573, "obtain": "Easter Event: QE18 Reward unlocks in Blacksmithing [2025]" },
+        { "name": "Easter Royale Rapier Mk III", "maxSkill": 232, "attack": 996, "obtain": "Easter Event: QE19 Reward unlocks in Blacksmithing [2025]" },
+        { "name": "Easter Royale Rapier Mk IV", "maxSkill": 309, "attack": 1474, "obtain": "Easter Event: QE20 Reward unlocks in Blacksmithing [2025]" },
+        { "name": "Easter Royale Rapier Mk V", "maxSkill": 386, "attack": 1999, "obtain": "Easter Event: QE20-2 Reward unlocks in Blacksmithing [2025]" },
+
+        { "name": "Crescent Blood Moon Lancer", "maxSkill": 280, "attack": 1405, "obtain": "Halloween Event: Boss Drop/Shop/Blacksmithing [2022 - 2023]" },
+
+        { "name": "Spire of Judgement", "maxSkill": 375, "attack": 1921, "obtain": "Blacksmithing: Q111 Reward unlocks in Blacksmithing" },
+        { "name": "Purge", "maxSkill": 395, "attack": 2063, "obtain": "Blacksmithing: Q111 Reward unlocks in Blacksmithing" }
+      ]
+    },
+
+    {
+      "title": "Quest Weapons",
+      "rows": [
+        { "name": "Glacier Staff", "maxSkill": 45, "attack": 106, "obtain": "Halloween Event: Event Quest Reward, Event Boss Rare Drop [2021 - 2022]" },
+        { "name": "Spire of Judgement", "maxSkill": 375, "attack": 1921, "obtain": "Q111 Reward unlocks in Blacksmithing" },
+        { "name": "Purge", "maxSkill": 395, "attack": 2063, "obtain": "Q111 Reward unlocks in Blacksmithing" }
       ]
     },
 
@@ -115,7 +194,7 @@
         { "name": "Cursed Rapier", "maxSkill": 230, "attack": 984, "obtain": "Undead Reprobate (Mob Drop)" },
         { "name": "Gilded Rapier", "maxSkill": 290, "attack": 1351, "obtain": "Goblin (Mob Drop)" },
         { "name": "Candy Striker", "maxSkill": 310, "attack": 1480, "obtain": "Slim Dragon (Mob Drop)" },
-        { "name": "Pipe Stinger", "maxSkill": 325, "attack": 1579, "obtain": "Prowler Street Thug (Mob Drop)" },
+        { "name": "Pipe Stinger", "maxSkill": 325, "attack": 1579, "obtain": "Prowler Street Thug (Mob Drop), Street Enforcer (Mob Drop)" },
         { "name": "Redline Lace", "maxSkill": 337, "attack": 1660, "obtain": "The Custodian (Mob Drop)" }
       ]
     },
@@ -127,7 +206,8 @@
         { "name": "Eternity Branches", "maxSkill": 232, "attack": 996, "obtain": "Slime Lord Pengonis (Boss Drop)" },
         { "name": "Holy Rapier", "maxSkill": 250, "attack": 1103, "obtain": "Celatid (Boss Drop)" },
         { "name": "Hope Rapier", "maxSkill": 252, "attack": 1115, "obtain": "The Tormented Soul (Boss Drop)" },
-        { "name": "Die Klarheit", "maxSkill": 270, "attack": 1225, "obtain": "Young Celestia (Boss Drop)" }
+        { "name": "Die Klarheit", "maxSkill": 270, "attack": 1225, "obtain": "Young Celestia (Boss Drop)" },
+        { "name": "Crescent Blood Moon Lancer", "maxSkill": 280, "attack": 1405, "obtain": "Halloween Event: Boss Drop/Shop/Blacksmithing [2022 - 2023]" }
       ]
     },
 
@@ -143,17 +223,16 @@
     {
       "title": "Badge Weapons",
       "rows": [
-        { "name": "Silver Beater Rapier", "maxSkill": 270, "attack": 1343, "obtain": "Requires Beater Badge" },
-        { "name": "Victorious Rapier", "maxSkill": 275, "attack": 1371, "obtain": "Requires 25K Likes Badge" }
+        { "name": "Silver Beater Rapier", "maxSkill": 270, "attack": 1343, "obtain": "Floor 1 Starter Shop, Requires Beater Badge" },
+        { "name": "Victorious Rapier", "maxSkill": 275, "attack": 1371, "obtain": "Floor 1 Starter Shop, Requires 25K Likes Badge" }
       ]
     },
 
     {
       "title": "Gamepass Weapons",
       "rows": [
-        { "name": "Lambent Light VI", "maxSkill": 290, "attack": 1474, "obtain": "Requires Blood Enforcer Gamepass" }
+        { "name": "Lambent Light VI", "maxSkill": 310, "attack": 1629, "obtain": "Floor 1 Starter Shop, Requires Blood Enforcer Gamepass" }
       ]
     }
-
   ]
 }
