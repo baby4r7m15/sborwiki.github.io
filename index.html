@@ -4,9 +4,12 @@
   <meta charset="UTF-8" />
   <title>Sword Blox Online Rebirth Wiki</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/css/main.css?v=3" />
-<link rel="stylesheet" href="/css/home-hud-skin.css?v=1" />
 
+  <!-- Floors HUD CSS (exact same look) -->
+  <link rel="stylesheet" href="/css/floor-hud.css?v=1">
+
+  <!-- Toasts CSS (move your toast styles from main.css into this file) -->
+  <link rel="stylesheet" href="/css/toasts.css?v=1">
 
   <!-- ====== FAVICON / TAB ICON ====== -->
   <link rel="icon" href="/logo.png" type="image/png" />
@@ -18,12 +21,8 @@
   <meta property="og:title" content="Sword Blox Online: Rebirth Unofficial Wiki" />
   <meta property="og:description" content="Guides, weapons, stats, and everything SBO:R!" />
   <meta property="og:url" content="https://sborwiki.com/" />
-
-  <!-- This should be your banner image (Sborlogotext) -->
   <meta property="og:image" content="/Sborlogotext.png" />
   <meta property="og:image:alt" content="Sword Blox Online Rebirth Wiki banner" />
-
-  <!-- Optional but helps some platforms -->
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
 
@@ -36,255 +35,187 @@
 
 <body>
 
-  <!-- ================= HEADER ================= -->
-  <header class="wiki-header">
-    <div class="wiki-header-inner">
+  <!-- ===== TOP HUD (same structure as floors page) ===== -->
+  <header class="hud-top">
+    <div class="hud-left">
+      <div class="hud-kicker">SWORD BLOX ONLINE: REBIRTH</div>
+      <div class="hud-title">SBORWIKI</div>
+      <div class="hud-subtitle">UNOFFICIAL WIKI DATABASE</div>
+    </div>
 
-      <div class="wiki-left">
-        <img src="/logo.png" class="wiki-logo" alt="Logo" />
-        <span class="wiki-title">Sword Blox Online: Rebirth Wiki</span>
-      </div>
+    <nav class="hud-nav" aria-label="Site navigation">
+      <a class="hud-link active" href="/">Home</a>
+      <a class="hud-link" href="/information/floors-1-10">Floors 1-10</a>
+      <a class="hud-link" href="/information/floors-11-20">Floors 11-20</a>
+      <!-- Add more when ready -->
+      <!-- <a class="hud-link" href="/information/weapons">Weapons</a> -->
+    </nav>
 
-      <div class="hamburger" id="hamburger">☰</div>
-
-      <nav class="wiki-nav" id="wikiNav">
-
-        <!--<div class="nav-item">
-          <span class="nav-label">Information</span>
-          <div class="dropdown">
-            <a href="/information/weapons">Weapons</a>
-            <a href="#">Protective Gear</a>
-            <a href="#">Items</a>
-            <a href="#">Blacksmithing</a>
-            <a href="#">Guilds</a>
-            <a href="#">Quests</a>
-          </div>
-        </div>-->
-
-        <!--<div class="nav-item">
-          <span class="nav-label">Events</span>
-          <div class="dropdown">
-            <a href="#">All Events</a>
-          </div>
-        </div>-->
-
-        <div class="nav-item">
-          <span class="nav-label">Floors</span>
-          <div class="dropdown">
-            <a href="/information/floors-1-10">Floors 1-10</a>
-            <a href="/information/floors-11-20">Floors 11-20</a>
-          </div>
-        </div>
-
-      </nav>
+    <div class="hud-right">
+      <div class="hud-chip">LIVE</div>
+      <div class="hud-chip hud-chip-soft">UPDATED DAILY</div>
     </div>
   </header>
 
+  <!-- ===== GRID (same as floors page) ===== -->
+  <main class="floor-grid">
 
-  <!-- ================= PAGE WRAPPER ================= -->
-  <main class="page-wrapper">
+    <!-- ===== LEFT COLUMN ===== -->
+    <aside class="col-left">
 
-    <!-- HERO -->
-    <section class="hero">
-      <img src="/Sborlogotext.png" class="hero-logo" alt="SBO Logo">
-    </section>
+      <section class="hud-panel">
+        <div class="panel-head">
+          <span>SYSTEM NOTICE</span>
+          <span class="panel-chip">CONTACT</span>
+        </div>
 
+        <div class="hud-lore">
+          <p><strong>Please report any incorrect or missing information</strong> to <strong>@babyartie</strong> on Discord.</p>
+        </div>
+      </section>
 
-    <!-- ================= CONTENT ================= -->
-    <section class="content-area">
+      <section class="hud-panel">
+        <div class="panel-head">
+          <span>QUICK ACCESS</span>
+          <span class="panel-chip">NAV</span>
+        </div>
 
-      <div class="content-grid">
+        <ul class="hud-list chevrons">
+          <li><a href="/information/floors-1-10">Floors 1–10</a></li>
+          <li><a href="/information/floors-11-20">Floors 11–20</a></li>
+          <!-- Add more links later -->
+          <!-- <li><a href="/information/weapons">Weapons</a></li> -->
+        </ul>
+      </section>
 
-        <!-- ================= MAIN ================= -->
-        <article class="content-left">
+      <section class="hud-panel">
+        <div class="panel-head">
+          <span>WHAT'S NEW</span>
+          <span class="panel-chip">LOG</span>
+        </div>
 
-          <div class="page-intro-box">
-            Welcome to the Sword Blox Online: Rebirth Unofficial Wiki!
-          </div>
+        <ul class="hud-list">
+          <li>
+            Started <a href="/information/floors-1-10">Floors Page 1–10</a>
+          </li>
+        </ul>
+      </section>
 
-          <!-- SAO INFO PANELS -->
-          <div class="sao-section">
+      <section class="hud-panel">
+        <div class="panel-head">
+          <span>SOCIAL</span>
+          <span class="panel-chip">LINKS</span>
+        </div>
 
-            <div class="sao-panel sao-notice">
-              <div class="sao-header">SYSTEM NOTICE</div>
-              <p>
-                Please report any incorrect or missing information on here to @babyartie on Discord!
-              </p>
+        <ul class="hud-list">
+          <li>
+            <a href="https://discord.com/invite/JSy9TdyRUb">Join the Official Discord</a>
+          </li>
+          <li>
+            <a href="https://www.roblox.com/communities/5683480/SBO-R-Sword-Blox-Online-Rebirth">Roblox Group</a>
+          </li>
+        </ul>
+      </section>
+
+      <section class="hud-panel">
+        <div class="panel-head">
+          <span>WIKI STAFF</span>
+          <span class="panel-chip">CREDITS</span>
+        </div>
+
+        <ul class="hud-list bullets">
+          <li>Acheolis</li>
+          <li>AFTERHE4RTZ</li>
+          <li>Badenglishj</li>
+          <li>Kens1ies</li>
+          <li>the4thdissapointment</li>
+          <li>HazzaGCB</li>
+          <li>IINekemi</li>
+          <li>Xuekome</li>
+          <li>Exiled_01</li>
+          <li>Celestial_Paradox</li>
+        </ul>
+
+        <div style="height:12px;"></div>
+
+        <div class="panel-head slim">
+          <span>UNOFFICIAL WIKI</span>
+          <span class="panel-chip">OWNER</span>
+        </div>
+        <ul class="hud-list bullets">
+          <li>XxBelleDevxX</li>
+        </ul>
+      </section>
+
+    </aside>
+
+    <!-- ===== RIGHT COLUMN ===== -->
+    <section class="col-right" style="display:grid; gap:18px;">
+
+      <section class="hud-panel panel-map">
+        <div class="panel-head">
+          <span>SBOR SYSTEM DISPLAY</span>
+          <span class="panel-chip">HOME</span>
+        </div>
+
+        <div class="map-frame">
+          <div class="map-image-wrap">
+            <img class="map-img" src="/Sborlogotext.png" alt="Sword Blox Online Rebirth" />
+            <div class="map-overlay">
+              <div class="scanline"></div>
             </div>
-
-            <div class="sao-panel">
-  <div class="sao-header">GAME OVERVIEW</div>
-
-  <p>
-    <strong>When the gates opened, nobody expected them to close.</strong>
-  </p>
-
-  <p>
-    <strong>Sword Blox Online: Rebirth</strong> drops you into a fully immersive
-    virtual world inspired by the legendary floating realm of swords and steel.
-    What began as a revolutionary full-dive RPG quickly becomes something far
-    more dangerous — an unforgiving battlefield where strength, skill, and
-    strategy determine survival.
-  </p>
-
-  <p class="sao-dramatic-lines">
-    The logout button is disabled.<br>
-    The world has reset.<br>
-    And this time… <strong>the system remembers.</strong>
-  </p>
-</div>
-
-
-            <div class="sao-panel sao-update">
-              <div class="sao-header">UPDATE STATUS</div>
-              <p>
-                This wiki is behind the official wiki a long time so please be patient with updates! New pages are being added daily!
-              </p>
-            </div>
-
           </div>
+        </div>
 
-
-          <!-- WHAT'S NEW -->
-          <div class="page-banner">« What's New »</div>
-
-          <div class="info-box">
-            <ul>
-              <li>
-                Started <a href="https://sborwiki.com/information/floors-1-10">Floors Page 1-10</a>
-              </li>
-            </ul>
+        <div class="hud-panel subpanel">
+          <div class="panel-head slim"><span>SYSTEM RECORD: WELCOME</span></div>
+          <div class="hud-lore">
+            <p><strong>Welcome to the Sword Blox Online: Rebirth Unofficial Wiki!</strong></p>
+            <p>Guides, stats, floors, weapons, and everything SBO:R — organized into a clean HUD database.</p>
           </div>
+        </div>
+      </section>
 
+      <section class="hud-panel">
+        <div class="panel-head">
+          <span>GAME OVERVIEW</span>
+          <span class="panel-chip">LORE</span>
+        </div>
 
-          <!-- SOCIAL -->
-          <div class="page-banner">« Social »</div>
+        <div class="hud-lore">
+          <p><strong>When the gates opened, nobody expected them to close.</strong></p>
 
-          <div class="info-box">
-            <ul>
-              <li>
-                <a href="https://discord.com/invite/JSy9TdyRUb">
-                  Join the Official Discord
-                </a>
-              </li>
-              <li>
-                <a href="https://www.roblox.com/communities/5683480/SBO-R-Sword-Blox-Online-Rebirth">
-                  Roblox Group
-                </a>
-              </li>
-            </ul>
-          </div>
+          <p>
+            <strong>Sword Blox Online: Rebirth</strong> drops you into a fully immersive virtual world inspired by
+            the legendary floating realm of swords and steel. What began as a revolutionary full-dive RPG quickly becomes
+            something far more dangerous — an unforgiving battlefield where strength, skill, and strategy determine survival.
+          </p>
 
-        </article>
+          <p>
+            The logout button is disabled.<br>
+            The world has reset.<br>
+            And this time… <strong>the system remembers.</strong>
+          </p>
+        </div>
+      </section>
 
+      <section class="hud-panel">
+        <div class="panel-head">
+          <span>UPDATE STATUS</span>
+          <span class="panel-chip">NOTICE</span>
+        </div>
 
-        <!-- ================= SIDEBAR ================= -->
-        <aside class="content-right">
-
-          <div class="sao-panel">
-            <div class="sao-header">WIKI STAFF</div>
-
-            <ul>
-              <li>Acheolis</li>
-              <li>AFTERHE4RTZ</li>
-              <li>Badenglishj</li>
-              <li>Kens1ies</li>
-              <li>the4thdissapointment</li>
-              <li>HazzaGCB</li>
-              <li>IINekemi</li>
-              <li>Xuekome</li>
-              <li>Exiled_01</li>
-              <li>Celestial_Paradox</li>
-            </ul>
-
-            <br>
-
-            <strong>Unofficial Wiki</strong>
-
-            <ul>
-              <li>XxBelleDevxX</li>
-            </ul>
-          </div>
-
-        </aside>
-
-      </div>
+        <div class="hud-lore">
+          <p>
+            This wiki is behind the official wiki for now — please be patient with updates.
+            New pages are being added daily.
+          </p>
+        </div>
+      </section>
 
     </section>
 
   </main>
-
-
-  <!-- ================= NAV SCRIPT (UPDATED) ================= -->
-  <script>
-    const hamburger = document.getElementById("hamburger");
-    const nav = document.getElementById("wikiNav");
-    const navItems = document.querySelectorAll(".nav-item");
-    const labels = document.querySelectorAll(".nav-label");
-
-    function closeAllDropdowns() {
-      navItems.forEach(item => item.classList.remove("active"));
-    }
-
-    function closeNav() {
-      nav.classList.remove("active");
-      closeAllDropdowns();
-      setToastOffset(); // keep toast positioned under header
-    }
-
-    hamburger.addEventListener("click", (e) => {
-      e.stopPropagation();
-      nav.classList.toggle("active");
-
-      if (!nav.classList.contains("active")) {
-        closeAllDropdowns();
-      }
-
-      setTimeout(setToastOffset, 50);
-    });
-
-    labels.forEach(label => {
-      label.addEventListener("click", function (e) {
-        if (window.innerWidth <= 768) {
-          e.stopPropagation();
-
-          const item = this.closest(".nav-item");
-          const wasOpen = item.classList.contains("active");
-
-          closeAllDropdowns();
-
-          if (!wasOpen) item.classList.add("active");
-
-          setTimeout(setToastOffset, 50);
-        }
-      });
-    });
-
-    // Clicking any nav link closes the menu on mobile
-    nav.querySelectorAll("a").forEach(a => {
-      a.addEventListener("click", () => {
-        if (window.innerWidth <= 768) closeNav();
-      });
-    });
-
-    // Tap outside closes nav + dropdowns (mobile)
-    document.addEventListener("click", () => {
-      if (window.innerWidth <= 768) closeNav();
-    });
-
-    // Prevent taps inside nav from bubbling and auto-closing it
-    nav.addEventListener("click", (e) => e.stopPropagation());
-
-    // If resized to desktop, reset mobile state
-    window.addEventListener("resize", () => {
-      if (window.innerWidth > 768) {
-        nav.classList.remove("active");
-        closeAllDropdowns();
-      }
-      setToastOffset();
-    });
-  </script>
-
 
   <!-- ================= TOAST STACK ================= -->
   <div id="sao-toast-stack">
@@ -293,7 +224,8 @@
     <div class="sao-toast sao-toast-red show" role="alert" aria-live="assertive">
       <div class="sao-toast-header">SYSTEM WARNING</div>
       <div class="sao-toast-body">
-        The only way to be a cutie is to join the guild: <a href="https://www.roblox.com/communities/104234504/SBO-R-Pupz">Pupz</a>!
+        The only way to be a cutie is to join the guild:
+        <a href="https://www.roblox.com/communities/104234504/SBO-R-Pupz">Pupz</a>!
       </div>
       <button class="sao-toast-close" type="button">✕</button>
       <div class="sao-toast-progress"></div>
@@ -309,78 +241,78 @@
       <div class="sao-toast-progress"></div>
     </div>
 
-    <!-- GREEN: STATUS (EXAMPLES) -->
-    <!--<div class="sao-toast sao-toast-green show" role="status" aria-live="polite">
+    <!-- GREEN: STATUS (EXAMPLE) -->
+    <!--
+    <div class="sao-toast sao-toast-green show" role="status" aria-live="polite">
       <div class="sao-toast-header">SYSTEM STATUS</div>
       <div class="sao-toast-body">
         Weapons Pages are completed! (floor 19 weapons not included.)
       </div>
       <button class="sao-toast-close" type="button">✕</button>
       <div class="sao-toast-progress"></div>
-    </div>-->
+    </div>
+    -->
 
   </div>
 
-
   <!-- ================= TOAST CLOSE SCRIPT ================= -->
   <script>
-  const BASE_TIME = 7000;   // 7 seconds
-  const STAGGER = 1500;     // 1.5 seconds apart
+    const BASE_TIME = 7000;   // 7 seconds
+    const STAGGER = 1500;     // 1.5 seconds apart
 
-  document.querySelectorAll(".sao-toast").forEach((toast, index) => {
+    document.querySelectorAll(".sao-toast").forEach((toast, index) => {
+      const progress = toast.querySelector(".sao-toast-progress");
+      const totalTime = BASE_TIME + (index * STAGGER);
 
-    const progress = toast.querySelector(".sao-toast-progress");
-    const totalTime = BASE_TIME + (index * STAGGER);
+      // Animate progress bar
+      if (progress) {
+        progress.style.animation = `toastTimer ${totalTime / 1000}s linear forwards`;
+      }
 
-    // Animate progress bar
-    if (progress) {
-      progress.style.animation = `toastTimer ${totalTime / 1000}s linear forwards`;
-    }
-
-    // Auto close
-    const autoClose = setTimeout(() => {
-      toast.classList.remove("show");
-      setTimeout(() => toast.remove(), 220);
-    }, totalTime);
-
-    // Manual close
-    const closeBtn = toast.querySelector(".sao-toast-close");
-    if (closeBtn) {
-      closeBtn.addEventListener("click", () => {
-        clearTimeout(autoClose);
-        if (progress) progress.style.animation = "none";
+      // Auto close
+      const autoClose = setTimeout(() => {
         toast.classList.remove("show");
         setTimeout(() => toast.remove(), 220);
-      });
-    }
+      }, totalTime);
 
-  });
-</script>
+      // Manual close
+      const closeBtn = toast.querySelector(".sao-toast-close");
+      if (closeBtn) {
+        closeBtn.addEventListener("click", () => {
+          clearTimeout(autoClose);
+          if (progress) progress.style.animation = "none";
+          toast.classList.remove("show");
+          setTimeout(() => toast.remove(), 220);
+        });
+      }
+    });
+  </script>
 
-
-  <!-- ================= TOAST OFFSET SCRIPT ================= -->
+  <!-- ================= TOAST OFFSET SCRIPT (HUD + legacy safe) ================= -->
   <script>
-  function setToastOffset() {
-    const header = document.querySelector(".wiki-header");
-    const toastStack = document.getElementById("sao-toast-stack");
-    if (!header || !toastStack) return;
+    function setToastOffset() {
+      const toastStack = document.getElementById("sao-toast-stack");
+      if (!toastStack) return;
 
-    // Mobile: tuck under header
-    if (window.innerWidth <= 768) {
-      const headerHeight = header.getBoundingClientRect().height;
-      toastStack.style.top = `${headerHeight + 12}px`;
-      toastStack.style.bottom = "auto";
-    } else {
-      // Desktop: bottom-right (remove inline top so CSS wins)
-      toastStack.style.top = "";
-      toastStack.style.bottom = "";
+      // Works on BOTH: old pages (.wiki-header) and HUD pages (.hud-top)
+      const header = document.querySelector(".hud-top") || document.querySelector(".wiki-header");
+      if (!header) return;
+
+      // Mobile: tuck under header
+      if (window.innerWidth <= 768) {
+        const headerHeight = header.getBoundingClientRect().height;
+        toastStack.style.top = `${headerHeight + 12}px`;
+        toastStack.style.bottom = "auto";
+      } else {
+        // Desktop: let CSS position it (usually bottom-right)
+        toastStack.style.top = "";
+        toastStack.style.bottom = "";
+      }
     }
-  }
 
-  window.addEventListener("load", setToastOffset);
-  window.addEventListener("resize", setToastOffset);
-</script>
-
+    window.addEventListener("load", setToastOffset);
+    window.addEventListener("resize", setToastOffset);
+  </script>
 
 </body>
 </html>
