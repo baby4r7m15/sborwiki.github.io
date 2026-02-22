@@ -53,7 +53,6 @@
   },
 
   "weaponTables": [
-
     {
       "title": "Shop Weapons",
       "rows": [
@@ -71,7 +70,21 @@
         { "name": "Stalhrim Dagger", "maxSkill": 205, "attack": 780, "obtain": "Floor 12 Shop" },
         { "name": "Echoe", "maxSkill": 225, "attack": 886, "obtain": "Floor 12 Shop" },
         { "name": "Sweet Dagger", "maxSkill": 305, "attack": 1344, "obtain": "Floor 17 Shop" },
-        { "name": "Catchblade", "maxSkill": 330, "attack": 1497, "obtain": "Floor 18 Squid Game Dungeon Merchant" }
+        { "name": "Catchblade", "maxSkill": 330, "attack": 1497, "obtain": "Floor 18 Squid Game Dungeon Merchant" },
+
+        { "name": "Eggsacting Edge", "maxSkill": 75, "attack": 197, "obtain": "Easter Event: Easter Shop [2023 - 2024]" },
+        { "name": "Shark Tooth Dagger", "maxSkill": 76, "attack": 201, "obtain": "Summer Event: Summer Shop [2023]" },
+        { "name": "Summer Atlantean Dagger", "maxSkill": 76, "attack": 201, "obtain": "Summer Event: Summer Shop [2024]" },
+        { "name": "Holy Dagger", "maxSkill": 95, "attack": 273, "obtain": "Easter Event: Easter Shop [2020 - 2022 Only]" },
+
+        { "name": "Coal Dagger", "maxSkill": 270, "attack": 1241, "obtain": "Christmas Event: Christmas Shop [2020 - 2022]" },
+        { "name": "Webcutter", "maxSkill": 280, "attack": 1305, "obtain": "Halloween Event: Halloween Shop [2021 - 2022]" },
+        { "name": "Crescent Blood Moon Gar", "maxSkill": 280, "attack": 1305, "obtain": "Halloween Event: Halloween Shop/Boss Drop/Blacksmithing [2022 - 2023]" },
+        { "name": "Carver", "maxSkill": 290, "attack": 1369, "obtain": "Thanksgiving Event: Thanksgiving Shop [2021 - 2022]" },
+        { "name": "Duck Decimator", "maxSkill": 295, "attack": 1401, "obtain": "Easter Event: Easter Shop [2022]" },
+        { "name": "Peppermint Dagger", "maxSkill": 305, "attack": 1467, "obtain": "Christmas Event: Christmas Shop [2021 - 2022]" },
+        { "name": "Lovers Micro Edge (All Colors)", "maxSkill": 305, "attack": 1467, "obtain": "Valentines Day Event: Valentines Day Shop [2023, 2024]" },
+        { "name": "Clover Dagger", "maxSkill": 310, "attack": 1500, "obtain": "Saint Patricks Event: Saint Patrick's Day Shop [2023, 2024]" }
       ]
     },
 
@@ -94,7 +107,103 @@
         { "name": "Thiefs Blade", "maxSkill": 215, "attack": 833, "obtain": "Blacksmithing" },
         { "name": "Floral Dagger", "maxSkill": 235, "attack": 941, "obtain": "Blacksmithing" },
         { "name": "Blessed Dagger", "maxSkill": 260, "attack": 1080, "obtain": "Blacksmithing" },
-        { "name": "Sour Lemon Stabber", "maxSkill": 335, "attack": 1529, "obtain": "Blacksmithing" }
+        { "name": "Sour Lemon Stabber", "maxSkill": 335, "attack": 1529, "obtain": "Blacksmithing" },
+
+        { "name": "Harvest Reaver", "maxSkill": 76, "attack": 201, "obtain": "Halloween Event: Blacksmithing [2023]" },
+        { "name": "Mistletoe Dagger", "maxSkill": 76, "attack": 201, "obtain": "Christmas Event: Blacksmithing [2023]" },
+        { "name": "Nightshade Fang", "maxSkill": 77, "attack": 205, "obtain": "Halloween Event: Blacksmithing [2024]" },
+        { "name": "Winter Holiday Dagger", "maxSkill": 77, "attack": 205, "obtain": "Christmas Event: QE52 Reward unlocks in Blacksmithing [2024]" },
+        { "name": "Easter Royale Dagger", "maxSkill": 78, "attack": 208, "obtain": "Easter Event: QE15 Reward unlocks in Blacksmithing [2025]" },
+
+        { "name": "Bane Wand Mk II", "maxSkill": 115, "attack": 354, "obtain": "Halloween Event: Blacksmithing [2021 - 2022]" },
+
+        { "name": "Holy Dagger MII", "maxSkill": 195, "attack": 729, "obtain": "Easter Event: Blacksmithing [2021 - 2023]" },
+        { "name": "Holy Dagger MIII", "maxSkill": 325, "attack": 1466, "obtain": "Easter Event: Blacksmithing [2021 - 2023]" },
+
+        { "name": "Eggsacting Edge Mk II", "maxSkill": 150, "attack": 509, "obtain": "Easter Event: Blacksmithing [2023 - 2024]" },
+        { "name": "Eggsacting Edge Mk III", "maxSkill": 225, "attack": 886, "obtain": "Easter Event: Blacksmithing [2023 - 2024]" },
+        { "name": "Eggsacting Edge Mk IV", "maxSkill": 300, "attack": 1314, "obtain": "Easter Event: Blacksmithing [2023 - 2024]" },
+        { "name": "Eggsacting Edge Mk V", "maxSkill": 375, "attack": 1784, "obtain": "Easter Event: Blacksmithing [2023 - 2024]" },
+
+        { "name": "Shark Tooth Dagger Mk II", "maxSkill": 152, "attack": 518, "obtain": "Summer Event: Blacksmithing [2023]" },
+        { "name": "Shark Tooth Dagger Mk III", "maxSkill": 228, "attack": 903, "obtain": "Summer Event: Blacksmithing [2023]" },
+        { "name": "Shark Tooth Dagger Mk IV", "maxSkill": 304, "attack": 1338, "obtain": "Summer Event: Blacksmithing [2023]" },
+        { "name": "Shark Tooth Dagger Mk V", "maxSkill": 380, "attack": 1816, "obtain": "Summer Event: Blacksmithing [2023]" },
+
+        { "name": "Summer Atlantean Dagger Mk II", "maxSkill": 152, "attack": 518, "obtain": "Summer Event: Blacksmithing [2024]" },
+        { "name": "Summer Atlantean Dagger Mk III", "maxSkill": 228, "attack": 903, "obtain": "Summer Event: Blacksmithing [2024]" },
+        { "name": "Summer Atlantean Dagger Mk IV", "maxSkill": 304, "attack": 1338, "obtain": "Summer Event: Blacksmithing [2024]" },
+        { "name": "Summer Atlantean Dagger Mk V", "maxSkill": 380, "attack": 1816, "obtain": "Summer Event: Blacksmithing [2024]" },
+
+        { "name": "Harvest Reaver Mk II", "maxSkill": 152, "attack": 518, "obtain": "Halloween Event: Blacksmithing [2023]" },
+        { "name": "Harvest Reaver Mk III", "maxSkill": 228, "attack": 903, "obtain": "Halloween Event: Blacksmithing [2023]" },
+        { "name": "Harvest Reaver Mk IV", "maxSkill": 304, "attack": 1338, "obtain": "Halloween Event: Blacksmithing [2023]" },
+        { "name": "Harvest Reaver Mk V", "maxSkill": 380, "attack": 1816, "obtain": "Halloween Event: Blacksmithing [2023]" },
+
+        { "name": "Mistletoe Dagger Mk II", "maxSkill": 152, "attack": 518, "obtain": "Christmas Event: Blacksmithing [2023]" },
+        { "name": "Mistletoe Dagger Mk III", "maxSkill": 228, "attack": 903, "obtain": "Christmas Event: Blacksmithing [2023]" },
+        { "name": "Mistletoe Dagger Mk IV", "maxSkill": 304, "attack": 1338, "obtain": "Christmas Event: Blacksmithing [2023]" },
+        { "name": "Mistletoe Dagger Mk V", "maxSkill": 380, "attack": 1816, "obtain": "Christmas Event: Blacksmithing [2023]" },
+
+        { "name": "Nightshade Fang MK II", "maxSkill": 154, "attack": 528, "obtain": "Halloween Event: Blacksmithing [2024]" },
+        { "name": "Nightshade Fang MK III", "maxSkill": 231, "attack": 919, "obtain": "Halloween Event: Blacksmithing [2024]" },
+        { "name": "Nightshade Fang MK IV", "maxSkill": 308, "attack": 1362, "obtain": "Halloween Event: Blacksmithing [2024]" },
+        { "name": "Nightshade Fang MK V", "maxSkill": 385, "attack": 1849, "obtain": "Halloween Event: Blacksmithing [2024]" },
+
+        { "name": "Winter Holiday Dagger Mk II", "maxSkill": 154, "attack": 528, "obtain": "Christmas Event: QE52 Reward unlocks in Blacksmithing [2024]" },
+        { "name": "Winter Holiday Dagger Mk III", "maxSkill": 232, "attack": 924, "obtain": "Christmas Event: QE53 Reward unlocks in Blacksmithing [2024]" },
+        { "name": "Winter Holiday Dagger Mk IV", "maxSkill": 309, "attack": 1368, "obtain": "Christmas Event: QE54 Reward unlocks in Blacksmithing [2024]" },
+        { "name": "Winter Holiday Dagger Mk V", "maxSkill": 386, "attack": 1856, "obtain": "Christmas Event: QE52 Reward unlocks in Blacksmithing [2024]" },
+
+        { "name": "Easter Royale Dagger Mk II", "maxSkill": 155, "attack": 532, "obtain": "Easter Event: QE18 Reward unlocks in Blacksmithing [2025]" },
+        { "name": "Easter Royale Dagger Mk III", "maxSkill": 232, "attack": 924, "obtain": "Easter Event: QE19 Reward unlocks in Blacksmithing [2025]" },
+        { "name": "Easter Royale Dagger Mk IV", "maxSkill": 309, "attack": 1368, "obtain": "Easter Event: QE20 Reward unlocks in Blacksmithing [2025]" },
+        { "name": "Easter Royale Dagger Mk V", "maxSkill": 386, "attack": 1856, "obtain": "Easter Event: QE20-2 Reward unlocks in Blacksmithing [2025]" },
+
+        { "name": "Crescent Blood Moon Gar", "maxSkill": 280, "attack": 1305, "obtain": "Halloween Event: Boss Drop/Shop/Blacksmithing [2022 - 2023]" }
+      ]
+    },
+
+    {
+      "title": "Quest Weapons",
+      "rows": [
+        { "name": "Bane Wand", "maxSkill": 45, "attack": 99, "obtain": "Halloween Event: Event Quest Reward, Event Boss Rare Drop [2021 - 2022]" },
+        { "name": "Null Fang", "maxSkill": 375, "attack": 1784, "obtain": "Q111 Reward unlocks in Blacksmithing" },
+        { "name": "Silence", "maxSkill": 395, "attack": 1915, "obtain": "Q111 Reward unlocks in Blacksmithing" }
+      ]
+    },
+
+    {
+      "title": "Mob Drop Weapons",
+      "rows": [
+        { "name": "GrandMaster Steel Dagger", "maxSkill": 16, "attack": 25, "obtain": "Kobold Sentinel" },
+        { "name": "Moras Edge", "maxSkill": 30, "attack": 57, "obtain": "Swamp Cobra" },
+        { "name": "Deserts Fury", "maxSkill": 50, "attack": 114, "obtain": "Sand Scorpion, Egyptian Cobra" },
+        { "name": "Crystalized Edge", "maxSkill": 70, "attack": 180, "obtain": "Frost Chaurus" },
+        { "name": "Molten Thief", "maxSkill": 90, "attack": 253, "obtain": "Twin-Tailed Blood Wolf" },
+        { "name": "Eternal Shard", "maxSkill": 110, "attack": 333, "obtain": "Chomper" },
+        { "name": "Tourmaline Edge", "maxSkill": 130, "attack": 419, "obtain": "Worm" },
+        { "name": "Aquatic Dagger", "maxSkill": 150, "attack": 509, "obtain": "Atlantian Guard" },
+        { "name": "Sai", "maxSkill": 170, "attack": 604, "obtain": "Dragon" },
+        { "name": "Vindictus Edge", "maxSkill": 190, "attack": 703, "obtain": "Commoner" },
+        { "name": "Vine Striker", "maxSkill": 210, "attack": 807, "obtain": "Garish Garbera" },
+        { "name": "Xantheril", "maxSkill": 230, "attack": 913, "obtain": "Ghost Panther" },
+        { "name": "Gilded Dagger", "maxSkill": 290, "attack": 1255, "obtain": "Goblin" },
+        { "name": "Candy Kunai", "maxSkill": 310, "attack": 1375, "obtain": "Candy Crab" },
+        { "name": "Box Cutter", "maxSkill": 325, "attack": 1466, "obtain": "Cutter Street Thug" }
+      ]
+    },
+
+    {
+      "title": "Boss Drop Weapons",
+      "rows": [
+        { "name": "Obsidibite", "maxSkill": 10, "attack": 14.5, "obtain": "Shadesworn the Corrupted" },
+        { "name": "Pharaoh's Edge", "maxSkill": 72, "attack": 187, "obtain": "Stallord" },
+        { "name": "Holy Light Dagger", "maxSkill": 250, "attack": 1024, "obtain": "Super Luo" },
+        { "name": "Hope Dagger", "maxSkill": 252, "attack": 1035, "obtain": "The Tormented Soul" },
+        { "name": "Die Vergangenheit", "maxSkill": 270, "attack": 1138, "obtain": "Young Celestia" },
+        { "name": "Failshard", "maxSkill": 337, "attack": 1541, "obtain": "The Custodian" },
+        { "name": "Crescent Blood Moon Gar", "maxSkill": 280, "attack": 1305, "obtain": "Halloween Event: Boss Drop/Shop/Blacksmithing [2022 - 2023]" }
       ]
     },
 
@@ -110,17 +219,16 @@
     {
       "title": "Badge Weapons",
       "rows": [
-        { "name": "Silver Beater Dagger", "maxSkill": 270, "attack": 1247, "obtain": "Requires Beater Badge" },
-        { "name": "Victorious Dagger", "maxSkill": 275, "attack": 1273, "obtain": "Requires 25K Likes Badge" }
+        { "name": "Silver Beater Dagger", "maxSkill": 270, "attack": 1247, "obtain": "Floor 1 Shop, Requires Beater Badge" },
+        { "name": "Victorious Dagger", "maxSkill": 275, "attack": 1273, "obtain": "Floor 1 Shop, Requires 25K Likes Badge" }
       ]
     },
 
     {
       "title": "Gamepass Weapons",
       "rows": [
-        { "name": "Ebon Dagger", "maxSkill": 310, "attack": 1500, "obtain": "Requires Beast Tamer Gamepass" }
+        { "name": "Ebon Dagger", "maxSkill": 310, "attack": 1500, "obtain": "Floor 1 Starter Shop, Requires Beast Tamer Gamepass" }
       ]
     }
-
   ]
 }
