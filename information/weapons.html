@@ -219,6 +219,74 @@
     </div>
 
   </div>
-  <script src="/js/toasts.js?v=1"></script>
+  <script>
+  async function loadWeaponsTable() {
+    try {
+      const res = await fetch("/data/weapons-index.json", { cache: "no-store" });
+      if (!res.ok) throw new Error("Failed to load weapons-index.json");
+
+      const data = await res.json();
+      const weapons = data.weapons || [];
+
+      const tbody = document.getElementById("weaponsTableBody");
+      if (!tbody) return;
+
+      tbody.innerHTML = "";
+
+      // Fixed order (edit anytime)
+      const order = ["one-hand", "two-hand", "rapier", "dagger", "melee"];
+      weapons.sort((a, b) => order.indexOf(a.id) - order.indexOf(b.id));
+
+      weapons.forEach(w => {
+        const tr = document.createElement("tr");
+
+        const typeCell = document.createElement("td");
+        typeCell.setAttribute("data-label", "Type");
+        typeCell.textContent = w.id;
+
+        const nameCell = document.createElement("td");
+        nameCell.setAttribute("data-label", "Name");
+
+        const link = document.createElement("a");
+        link.href = `/information/weapons/weapon.html?id=${encodeURIComponent(w.id)}`;
+        link.textContent = w.name || w.id;
+        nameCell.appendChild(link);
+
+        const tagsCell = document.createElement("td");
+        tagsCell.setAttribute("data-label", "Tags");
+        tagsCell.textContent = (w.tags || []).join(", ");
+
+        const iconCell = document.createElement("td");
+        iconCell.setAttribute("data-label", "Icon");
+
+        if (w.icon) {
+          const img = document.createElement("img");
+          img.src = w.icon;
+          img.alt = (w.name || w.id) + " icon";
+          img.className = "weapon-icon";
+          iconCell.appendChild(img);
+        } else {
+          iconCell.textContent = "—";
+        }
+
+        tr.appendChild(typeCell);
+        tr.appendChild(nameCell);
+        tr.appendChild(tagsCell);
+        tr.appendChild(iconCell);
+
+        tbody.appendChild(tr);
+      });
+
+    } catch (err) {
+      console.error(err);
+      const tbody = document.getElementById("weaponsTableBody");
+      if (tbody) tbody.innerHTML = "<tr><td colspan='4'>Failed to load weapons.</td></tr>";
+    }
+  }
+
+  loadWeaponsTable();
+</script>
+
+<script src="/js/toasts.js?v=1"></script>
 </body>
 </html>
