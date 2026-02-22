@@ -583,3 +583,68 @@ body{
 @media (prefers-reduced-motion: reduce){
   .map-tooltip-scan{ animation: none; }
 }
+
+/* =====================================================
+   HUD LINK POLISH (Homepage + Floors)
+===================================================== */
+
+/* Base link style */
+a{
+  color: #7beeff;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.15s ease, text-shadow 0.15s ease;
+}
+
+/* Subtle animated underline */
+a::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0%;
+  height: 1px;
+  background: var(--cyan);
+  box-shadow: 0 0 8px rgba(0,234,255,0.5);
+  transition: width 0.18s ease;
+}
+
+/* Hover glow */
+a:hover{
+  color: var(--cyan);
+  text-shadow: 0 0 8px rgba(0,234,255,0.35);
+}
+
+a:hover::after{
+  width: 100%;
+}
+
+/* Strong links inside panels */
+.hud-panel a{
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* List links (quick access etc.) feel more “button-like” */
+.hud-list a{
+  display: inline-block;
+  padding: 2px 2px;
+}
+
+/* Navigation links stay clean (no animated underline) */
+.hud-link{
+  position: relative;
+}
+
+.hud-link::after{
+  display: none;
+}
+
+/* External links slightly different glow (optional) */
+a[target="_blank"]{
+  color: #9ff5ff;
+}
+
+a[target="_blank"]:hover{
+  color: #00ffff;
+}
