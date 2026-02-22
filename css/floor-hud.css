@@ -1,6 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap");
 
-:root{
+/* =====================================================
+   FLOOR HUD / SITE HUD (Single Source of Truth)
+   - Includes: layout, panels, map, tooltip, link polish,
+     and STABLE dropdown nav (no hover-closing)
+===================================================== */
+
+:root {
   --bg1: rgba(5, 15, 25, 0.88);
   --panel: rgba(10, 30, 40, 0.78);
   --line: rgba(0, 255, 255, 0.25);
@@ -9,20 +15,27 @@
   --text: #e6f7ff;
 }
 
-*{ margin:0; padding:0; box-sizing:border-box; }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-body{
+body {
   font-family: "Montserrat", sans-serif;
   color: var(--text);
   min-height: 100vh;
   background:
-    radial-gradient(1200px 600px at 30% 10%, rgba(0,234,255,0.18), transparent 60%),
+    radial-gradient(1200px 600px at 30% 10%, rgba(0, 234, 255, 0.18), transparent 60%),
     linear-gradient(var(--bg1), var(--bg1)),
     url("/css/background2.jpg") center / cover no-repeat;
 }
 
-/* ===== TOP HUD ===== */
-.hud-top{
+/* =====================================================
+   TOP HUD
+===================================================== */
+
+.hud-top {
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -35,40 +48,41 @@ body{
   padding: 18px 24px;
   background: rgba(10, 30, 40, 0.86);
   border-bottom: 1px solid var(--line);
-  box-shadow: 0 0 24px rgba(0,234,255,0.14);
+  box-shadow: 0 0 24px rgba(0, 234, 255, 0.14);
   backdrop-filter: blur(8px);
 }
 
-.hud-kicker{
+.hud-kicker {
   font-size: 12px;
   letter-spacing: 2px;
   opacity: 0.85;
 }
 
-.hud-title{
+.hud-title {
   font-size: 26px;
   font-weight: 800;
   letter-spacing: 2px;
   color: var(--cyan);
-  text-shadow: 0 0 14px rgba(0,234,255,0.28);
+  text-shadow: 0 0 14px rgba(0, 234, 255, 0.28);
   line-height: 1.05;
 }
 
-.hud-subtitle{
+.hud-subtitle {
   font-size: 14px;
   font-weight: 700;
   letter-spacing: 2px;
   opacity: 0.9;
 }
 
-.hud-nav{
+.hud-nav {
   display: flex;
   gap: 12px;
   justify-content: center;
   flex-wrap: wrap;
+  align-items: center;
 }
 
-.hud-link{
+.hud-link {
   text-decoration: none;
   color: var(--text);
   font-weight: 700;
@@ -77,27 +91,27 @@ body{
 
   padding: 8px 10px;
   border: 1px solid var(--line2);
-  background: rgba(0,234,255,0.06);
-  box-shadow: 0 0 10px rgba(0,234,255,0.10);
+  background: rgba(0, 234, 255, 0.06);
+  box-shadow: 0 0 10px rgba(0, 234, 255, 0.1);
 }
 
-.hud-link:hover{
-  box-shadow: 0 0 16px rgba(0,234,255,0.18);
+.hud-link:hover {
+  box-shadow: 0 0 16px rgba(0, 234, 255, 0.18);
 }
 
-.hud-link.active{
+.hud-link.active {
   border-color: var(--line);
-  box-shadow: 0 0 18px rgba(0,234,255,0.22);
+  box-shadow: 0 0 18px rgba(0, 234, 255, 0.22);
 }
 
-.hud-right{
+.hud-right {
   display: flex;
   gap: 10px;
   justify-content: end;
   flex-wrap: wrap;
 }
 
-.hud-chip{
+.hud-chip {
   font-size: 11px;
   font-weight: 800;
   letter-spacing: 1px;
@@ -105,17 +119,21 @@ body{
 
   padding: 6px 10px;
   border: 1px solid var(--line);
-  background: rgba(0,234,255,0.05);
-  box-shadow: 0 0 12px rgba(0,234,255,0.12);
+  background: rgba(0, 234, 255, 0.05);
+  box-shadow: 0 0 12px rgba(0, 234, 255, 0.12);
 }
-.hud-chip-soft{
+
+.hud-chip-soft {
   color: var(--text);
   border-color: var(--line2);
   opacity: 0.95;
 }
 
-/* ===== GRID ===== */
-.floor-grid{
+/* =====================================================
+   GRID
+===================================================== */
+
+.floor-grid {
   padding: 22px 24px 90px;
   display: grid;
   grid-template-columns: 360px 1fr;
@@ -123,42 +141,46 @@ body{
   align-items: start;
 }
 
-.col-left{
+.col-left {
   display: grid;
   gap: 18px;
 }
 
-/* ===== PANELS ===== */
-.hud-panel{
+/* =====================================================
+   PANELS
+===================================================== */
+
+.hud-panel {
   position: relative;
   overflow: hidden;
   background: var(--panel);
   border: 1px solid var(--line);
   box-shadow:
-    0 0 18px rgba(0,234,255,0.14),
-    inset 0 0 18px rgba(0,234,255,0.08);
+    0 0 18px rgba(0, 234, 255, 0.14),
+    inset 0 0 18px rgba(0, 234, 255, 0.08);
   backdrop-filter: blur(8px);
   padding: 16px;
 }
 
-.hud-panel::before{
-  content:"";
-  position:absolute;
-  inset:-2px;
-  pointer-events:none;
-  background: linear-gradient(90deg, transparent, rgba(0,234,255,0.10), transparent);
+.hud-panel::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  pointer-events: none;
+  background: linear-gradient(90deg, transparent, rgba(0, 234, 255, 0.1), transparent);
   opacity: 0.25;
   transform: translateX(-40%);
 }
-.hud-panel:hover::before{
+
+.hud-panel:hover::before {
   transform: translateX(40%);
   transition: transform 0.9s ease;
 }
 
-.panel-head{
-  display:flex;
+.panel-head {
+  display: flex;
   justify-content: space-between;
-  align-items:center;
+  align-items: center;
   margin-bottom: 12px;
 
   color: var(--cyan);
@@ -167,41 +189,45 @@ body{
   font-size: 13px;
 }
 
-.panel-head.slim{
+.panel-head.slim {
   margin-bottom: 10px;
 }
 
-.panel-chip{
+.panel-chip {
   font-size: 11px;
   font-weight: 800;
   letter-spacing: 1px;
   padding: 5px 9px;
   border: 1px solid var(--line2);
-  background: rgba(0,234,255,0.05);
+  background: rgba(0, 234, 255, 0.05);
   color: var(--text);
 }
 
-/* ===== LISTS ===== */
-.hud-list{
+/* =====================================================
+   LISTS
+===================================================== */
+
+.hud-list {
   list-style: none;
   display: grid;
   gap: 10px;
 }
 
-.hud-list li{
+.hud-list li {
   opacity: 0.95;
   line-height: 1.4;
   padding: 10px 10px;
   border: 1px solid var(--line2);
-  background: rgba(0,234,255,0.04);
+  background: rgba(0, 234, 255, 0.04);
 }
 
-.hud-list.bullets li{
+.hud-list.bullets li {
   padding-left: 34px;
   position: relative;
 }
-.hud-list.bullets li::before{
-  content:"";
+
+.hud-list.bullets li::before {
+  content: "";
   width: 8px;
   height: 8px;
   border-radius: 50%;
@@ -210,15 +236,16 @@ body{
   top: 50%;
   transform: translateY(-50%);
   background: var(--cyan);
-  box-shadow: 0 0 10px rgba(0,234,255,0.45);
+  box-shadow: 0 0 10px rgba(0, 234, 255, 0.45);
 }
 
-.hud-list.chevrons li{
+.hud-list.chevrons li {
   padding-left: 34px;
   position: relative;
 }
-.hud-list.chevrons li::before{
-  content:"»";
+
+.hud-list.chevrons li::before {
+  content: "»";
   position: absolute;
   left: 12px;
   top: 50%;
@@ -228,10 +255,13 @@ body{
   opacity: 0.95;
 }
 
-/* ===== LORE TEXT BLOCK ===== */
-.hud-lore{
+/* =====================================================
+   LORE
+===================================================== */
+
+.hud-lore {
   border: 1px solid var(--line2);
-  background: rgba(0,234,255,0.04);
+  background: rgba(0, 234, 255, 0.04);
   padding: 12px 12px;
   line-height: 1.6;
   opacity: 0.95;
@@ -239,236 +269,163 @@ body{
   gap: 10px;
 }
 
-.hud-lore p{
+.hud-lore p {
   margin: 0;
 }
 
-/* ===== MAP PANEL ===== */
-.panel-map{
+/* =====================================================
+   MAP PANEL
+===================================================== */
+
+.panel-map {
   padding: 16px;
   display: grid;
   gap: 14px;
 }
 
-.map-frame{
+.map-frame {
   border: 1px solid var(--line2);
-  background: rgba(0,234,255,0.04);
+  background: rgba(0, 234, 255, 0.04);
   overflow: hidden;
   position: relative;
 }
 
-/* if you use an image */
-.map-img{
-  display:block;
+.map-img {
+  display: block;
   width: 100%;
   height: auto;
 }
 
-.map-placeholder{
+.map-placeholder {
   position: relative;
   height: 360px;
   background:
-    radial-gradient(900px 320px at 35% 45%, rgba(0,234,255,0.12), transparent 60%),
-    rgba(0,234,255,0.03);
+    radial-gradient(900px 320px at 35% 45%, rgba(0, 234, 255, 0.12), transparent 60%),
+    rgba(0, 234, 255, 0.03);
 }
 
-/* Map image wrapper + overlay callouts */
-.map-image-wrap{
+.map-image-wrap {
   position: relative;
 }
 
-.map-overlay{
+/* overlay must accept interaction (tooltips/callouts) */
+.map-overlay {
   position: absolute;
   inset: 0;
-  pointer-events: none;
+  pointer-events: auto;
 }
 
-.scanline{
-  position:absolute;
-  inset:0;
-  background: linear-gradient(180deg, transparent, rgba(0,234,255,0.08), transparent);
+.scanline {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent, rgba(0, 234, 255, 0.08), transparent);
   animation: scan 3.6s linear infinite;
   opacity: 0.75;
 }
-@keyframes scan{
-  0%{ transform: translateY(-100%); }
-  100%{ transform: translateY(100%); }
-}
 
-/* callouts */
-.callout{
-  position: absolute;
-  padding: 6px 10px;
-  font-size: 12px;
-  border: 1px solid var(--line2);
-  background: rgba(10,30,40,0.70);
-  box-shadow: 0 0 12px rgba(0,234,255,0.12);
+@keyframes scan {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
 }
-.callout.a{ top: 38%; left: 12%; }
-.callout.b{ top: 22%; right: 10%; }
-.callout.c{ top: 52%; right: 18%; }
-.callout.d{ bottom: 16%; right: 12%; }
-.callout.e{ bottom: 22%; left: 10%; }
 
 /* key points subpanel inside map */
-.subpanel{
+.subpanel {
   border-color: var(--line2);
 }
 
-/* ===== OPTIONAL NOTE ===== */
-.floor-note{
+/* =====================================================
+   SYSTEM NOTE
+===================================================== */
+
+.floor-note {
   position: fixed;
   right: 24px;
   bottom: 24px;
   width: min(420px, calc(100vw - 48px));
-  padding: 14px 14px 14px;
+  padding: 14px;
 
-  background: rgba(10,30,40,0.88);
+  background: rgba(10, 30, 40, 0.88);
   border: 1px solid var(--line);
-  box-shadow: 0 0 22px rgba(0,234,255,0.18);
+  box-shadow: 0 0 22px rgba(0, 234, 255, 0.18);
   backdrop-filter: blur(8px);
 }
 
-.floor-note-title{
+.floor-note-title {
   color: var(--cyan);
   font-weight: 800;
   letter-spacing: 1px;
   margin-bottom: 6px;
 }
-.floor-note-body{
+
+.floor-note-body {
   opacity: 0.92;
   line-height: 1.5;
 }
 
-/* ===== RESPONSIVE ===== */
-@media (max-width: 980px){
-  .hud-top{
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-  .hud-right{ justify-content: center; }
-  .floor-grid{
-    grid-template-columns: 1fr;
-  }
-  .map-placeholder{ height: 320px; }
-}
-
-@media (max-width: 520px){
-  .hud-title{ font-size: 22px; }
-  .hud-panel{ padding: 14px; }
-  .map-placeholder{ height: 280px; }
-}
-
-/* ===== EXTRA MOBILE SAFETY ===== */
-@media (max-width: 520px){
-
-  /* Sticky HUD: reduce footprint */
-  .hud-top{
-    padding: 14px 14px;
-    gap: 10px;
-  }
-  .hud-kicker{ font-size: 11px; letter-spacing: 1.5px; }
-  .hud-subtitle{ font-size: 12px; letter-spacing: 1.5px; }
-
-  /* Tags/chips: smaller + wrap nicely */
-  .hud-right{ gap: 8px; }
-  .hud-chip{
-    font-size: 10px;
-    padding: 5px 8px;
-  }
-
-  /* Callouts: shrink so they don’t stomp the map */
-  .callout{
-    font-size: 10px;
-    padding: 5px 8px;
-    max-width: 60%;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
-  /* SYSTEM NOTE: don’t block the bottom of the page */
-  .floor-note{
-    left: 14px;
-    right: 14px;
-    bottom: 14px;
-    width: auto;
-    max-height: 38vh;
-    overflow: auto;
-  }
-}
-
-/* Even better UX: on tiny screens, put the note in-flow (no overlay) */
-@media (max-width: 420px){
-  .floor-note{
-    position: static;
-    margin: 14px;
-    max-height: none;
-  }
-  .floor-grid{
-    padding-bottom: 24px; /* no need to reserve space for overlay */
-  }
-}
-
-/* Accessibility: respect reduced motion */
-@media (prefers-reduced-motion: reduce){
-  .scanline{ animation: none; }
-}
-
 /* =====================================================
-   SAO MAP INTERACTIVITY (Hover + Mobile Tap)
+   CALLOUTS (SAO buttons)
 ===================================================== */
 
-/* Overlay must accept interaction now */
-.map-overlay{
-  pointer-events: auto; /* was none */
-}
+.callout {
+  position: absolute;
+  padding: 6px 10px;
+  font-size: 12px;
 
-/* Make callouts real buttons + SAO glow */
-.callout{
+  border: 1px solid var(--line2);
+  background: rgba(10, 30, 40, 0.7);
+  box-shadow: 0 0 12px rgba(0, 234, 255, 0.12);
+
   pointer-events: auto;
   cursor: pointer;
-
   border-radius: 10px;
   backdrop-filter: blur(8px);
-
-  /* Keep your vibe */
   color: var(--text);
 
   transition: transform 0.14s ease, box-shadow 0.14s ease, border-color 0.14s ease;
 }
 
 .callout:hover,
-.callout:focus-visible{
+.callout:focus-visible {
   transform: translateY(-1px) scale(1.02);
   border-color: var(--line);
-  box-shadow: 0 0 18px rgba(0,234,255,0.22);
+  box-shadow: 0 0 18px rgba(0, 234, 255, 0.22);
   outline: none;
 }
 
-/* Tiny “ping” dot on callouts for SAO feel */
-.callout::before{
-  content:"";
-  display:inline-block;
+.callout::before {
+  content: "";
+  display: inline-block;
   width: 8px;
   height: 8px;
   border-radius: 999px;
   margin-right: 8px;
-  background: rgba(0,234,255,0.85);
-  box-shadow: 0 0 10px rgba(0,234,255,0.55);
+  background: rgba(0, 234, 255, 0.85);
+  box-shadow: 0 0 10px rgba(0, 234, 255, 0.55);
   vertical-align: middle;
 }
 
-/* ===== Tooltip Panel ===== */
-.map-tooltip{
+/* Optional preset positions (if you still use .a/.b/etc somewhere) */
+.callout.a { top: 38%; left: 12%; }
+.callout.b { top: 22%; right: 10%; }
+.callout.c { top: 52%; right: 18%; }
+.callout.d { bottom: 16%; right: 12%; }
+.callout.e { bottom: 22%; left: 10%; }
+
+/* =====================================================
+   TOOLTIP
+===================================================== */
+
+.map-tooltip {
   position: absolute;
   z-index: 50;
   width: min(360px, calc(100% - 20px));
-  padding: 12px 12px 12px;
+  padding: 12px;
 
-  background: rgba(10,30,40,0.94);
+  background: rgba(10, 30, 40, 0.94);
   border: 1px solid var(--line);
-  box-shadow: 0 0 24px rgba(0,234,255,0.18), inset 0 0 18px rgba(0,234,255,0.10);
+  box-shadow:
+    0 0 24px rgba(0, 234, 255, 0.18),
+    inset 0 0 18px rgba(0, 234, 255, 0.1);
   backdrop-filter: blur(10px);
 
   border-radius: 14px;
@@ -479,54 +436,54 @@ body{
   transition: opacity 0.14s ease, transform 0.14s ease;
 }
 
-.map-tooltip.show{
+.map-tooltip.show {
   opacity: 1;
   transform: translateY(0) scale(1);
 }
 
-.map-tooltip-scan{
-  position:absolute;
-  inset:0;
-  background: linear-gradient(180deg, transparent, rgba(0,234,255,0.08), transparent);
+.map-tooltip-scan {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent, rgba(0, 234, 255, 0.08), transparent);
   animation: scan 3.6s linear infinite;
   opacity: 0.55;
-  pointer-events:none;
+  pointer-events: none;
 }
 
-.map-tooltip-head{
+.map-tooltip-head {
   position: relative;
-  display:flex;
+  display: flex;
   justify-content: space-between;
-  align-items:center;
+  align-items: center;
   gap: 10px;
   margin-bottom: 8px;
 }
 
-.map-tooltip-title{
+.map-tooltip-title {
   font-weight: 800;
   letter-spacing: 1.5px;
   color: var(--cyan);
-  text-shadow: 0 0 14px rgba(0,234,255,0.25);
+  text-shadow: 0 0 14px rgba(0, 234, 255, 0.25);
   font-size: 13px;
 }
 
-.map-tooltip-close{
+.map-tooltip-close {
   border: 1px solid var(--line2);
-  background: rgba(0,234,255,0.06);
+  background: rgba(0, 234, 255, 0.06);
   color: var(--text);
   border-radius: 10px;
   padding: 6px 10px;
   cursor: pointer;
   font-weight: 800;
-  box-shadow: 0 0 10px rgba(0,234,255,0.12);
+  box-shadow: 0 0 10px rgba(0, 234, 255, 0.12);
 }
 
-.map-tooltip-close:hover{
-  box-shadow: 0 0 16px rgba(0,234,255,0.18);
+.map-tooltip-close:hover {
+  box-shadow: 0 0 16px rgba(0, 234, 255, 0.18);
   border-color: var(--line);
 }
 
-.map-tooltip-system{
+.map-tooltip-system {
   position: relative;
   font-size: 11px;
   font-weight: 800;
@@ -535,34 +492,255 @@ body{
 
   padding: 7px 10px;
   border: 1px solid var(--line2);
-  background: rgba(0,234,255,0.05);
+  background: rgba(0, 234, 255, 0.05);
   margin-bottom: 10px;
 }
 
-.map-tooltip-body{
+.map-tooltip-body {
   position: relative;
   font-size: 13px;
   line-height: 1.6;
   opacity: 0.95;
 
-  padding: 10px 10px;
+  padding: 10px;
   border: 1px solid var(--line2);
-  background: rgba(0,234,255,0.04);
+  background: rgba(0, 234, 255, 0.04);
 }
 
-/* Optional “danger” styling when danger === WARNING */
-.map-tooltip.danger{
+/* Danger state */
+.map-tooltip.danger {
   border-color: rgba(255, 80, 80, 0.55);
-  box-shadow: 0 0 26px rgba(255, 80, 80, 0.22), inset 0 0 18px rgba(0,234,255,0.08);
+  box-shadow:
+    0 0 26px rgba(255, 80, 80, 0.22),
+    inset 0 0 18px rgba(0, 234, 255, 0.08);
 }
-.map-tooltip.danger .map-tooltip-title{
+
+.map-tooltip.danger .map-tooltip-title {
   color: #ffb3b3;
   text-shadow: 0 0 14px rgba(255, 80, 80, 0.25);
 }
 
-/* ===== Mobile: Tooltip becomes a pinned bottom “SYSTEM PANEL” ===== */
-@media (max-width: 520px){
-  .map-tooltip{
+/* =====================================================
+   LINK POLISH
+===================================================== */
+
+a {
+  color: #7beeff;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.15s ease, text-shadow 0.15s ease;
+}
+
+a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0%;
+  height: 1px;
+  background: var(--cyan);
+  box-shadow: 0 0 8px rgba(0, 234, 255, 0.5);
+  transition: width 0.18s ease;
+}
+
+a:hover {
+  color: var(--cyan);
+  text-shadow: 0 0 8px rgba(0, 234, 255, 0.35);
+}
+
+a:hover::after {
+  width: 100%;
+}
+
+.hud-panel a {
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.hud-list a {
+  display: inline-block;
+  padding: 2px 2px;
+}
+
+/* HUD buttons shouldn't get underline sweep */
+.hud-link::after {
+  display: none;
+}
+
+a[target="_blank"] {
+  color: #9ff5ff;
+}
+
+a[target="_blank"]:hover {
+  color: #00ffff;
+}
+
+/* =====================================================
+   HUD NAV DROPDOWNS (STABLE HOVER)
+   Fixes: menu closing when moving mouse to dropdown
+===================================================== */
+
+.hud-drop {
+  position: relative;
+  display: inline-block;
+}
+
+.hud-drop-btn {
+  cursor: pointer;
+}
+
+/* IMPORTANT: keep menu "present" using opacity/visibility (not display none) */
+.hud-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+
+  margin-top: 6px; /* small spacing (no hover gap) */
+  min-width: 200px;
+  padding: 10px;
+
+  background: rgba(10, 30, 40, 0.94);
+  border: 1px solid var(--line);
+  box-shadow:
+    0 0 18px rgba(0, 234, 255, 0.14),
+    inset 0 0 18px rgba(0, 234, 255, 0.08);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4px);
+  transition: opacity 0.15s ease, transform 0.15s ease, visibility 0.15s ease;
+  z-index: 2000;
+}
+
+.hud-menu a {
+  display: block;
+  padding: 10px 12px;
+
+  color: var(--text);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 1px;
+
+  border-radius: 10px;
+  margin: 6px 0;
+  text-decoration: none;
+  background: rgba(0, 234, 255, 0.04);
+  border: 1px solid rgba(0, 255, 255, 0.12);
+}
+
+.hud-menu a:hover {
+  border-color: var(--line);
+  box-shadow: 0 0 14px rgba(0, 234, 255, 0.18);
+  background: rgba(0, 234, 255, 0.08);
+  color: var(--cyan);
+}
+
+/* Keep open while hovering wrapper OR keyboard focus */
+.hud-drop:hover .hud-menu,
+.hud-drop:focus-within .hud-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.hud-drop-btn:focus-visible {
+  outline: none;
+  border-color: var(--line);
+  box-shadow: 0 0 18px rgba(0, 234, 255, 0.22);
+}
+
+/* =====================================================
+   RESPONSIVE + ACCESSIBILITY
+===================================================== */
+
+@media (max-width: 980px) {
+  .hud-top {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hud-right {
+    justify-content: center;
+  }
+
+  .floor-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .map-placeholder {
+    height: 320px;
+  }
+}
+
+@media (max-width: 520px) {
+  .hud-title {
+    font-size: 22px;
+  }
+
+  .hud-panel {
+    padding: 14px;
+  }
+
+  .map-placeholder {
+    height: 280px;
+  }
+
+  /* Sticky HUD: reduce footprint */
+  .hud-top {
+    padding: 14px;
+    gap: 10px;
+  }
+
+  .hud-kicker {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+  }
+
+  .hud-subtitle {
+    font-size: 12px;
+    letter-spacing: 1.5px;
+  }
+
+  /* Tags/chips: smaller + wrap nicely */
+  .hud-right {
+    gap: 8px;
+  }
+
+  .hud-chip {
+    font-size: 10px;
+    padding: 5px 8px;
+  }
+
+  /* Callouts: shrink so they don’t stomp the map */
+  .callout {
+    font-size: 10px;
+    padding: 5px 8px;
+    max-width: 60%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* Dropdown: easier to tap */
+  .hud-menu {
+    left: 0;
+    width: min(320px, calc(100vw - 28px));
+  }
+
+  /* SYSTEM NOTE: don’t block the bottom of the page */
+  .floor-note {
+    left: 14px;
+    right: 14px;
+    bottom: 14px;
+    width: auto;
+    max-height: 38vh;
+    overflow: auto;
+  }
+
+  /* Mobile tooltip becomes pinned bottom sheet */
+  .map-tooltip {
     position: fixed;
     left: 14px !important;
     right: 14px !important;
@@ -573,257 +751,35 @@ body{
     overflow: auto;
   }
 
-  /* Make it feel intentional, not just “floating” */
-  .map-tooltip.pinned{
-    box-shadow: 0 0 28px rgba(0,234,255,0.22);
+  .map-tooltip.pinned {
+    box-shadow: 0 0 28px rgba(0, 234, 255, 0.22);
   }
 }
 
-/* Accessibility: respect reduced motion */
-@media (prefers-reduced-motion: reduce){
-  .map-tooltip-scan{ animation: none; }
-}
+/* Even better UX: on tiny screens, put note in-flow */
+@media (max-width: 420px) {
+  .floor-note {
+    position: static;
+    margin: 14px;
+    max-height: none;
+  }
 
-/* =====================================================
-   HUD LINK POLISH (Homepage + Floors)
-===================================================== */
-
-/* Base link style */
-a{
-  color: #7beeff;
-  text-decoration: none;
-  position: relative;
-  transition: color 0.15s ease, text-shadow 0.15s ease;
-}
-
-/* Subtle animated underline */
-a::after{
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -2px;
-  width: 0%;
-  height: 1px;
-  background: var(--cyan);
-  box-shadow: 0 0 8px rgba(0,234,255,0.5);
-  transition: width 0.18s ease;
-}
-
-/* Hover glow */
-a:hover{
-  color: var(--cyan);
-  text-shadow: 0 0 8px rgba(0,234,255,0.35);
-}
-
-a:hover::after{
-  width: 100%;
-}
-
-/* Strong links inside panels */
-.hud-panel a{
-  font-weight: 700;
-  letter-spacing: 0.5px;
-}
-
-/* List links (quick access etc.) feel more “button-like” */
-.hud-list a{
-  display: inline-block;
-  padding: 2px 2px;
-}
-
-/* Navigation links stay clean (no animated underline) */
-.hud-link{
-  position: relative;
-}
-
-.hud-link::after{
-  display: none;
-}
-
-/* External links slightly different glow (optional) */
-a[target="_blank"]{
-  color: #9ff5ff;
-}
-
-a[target="_blank"]:hover{
-  color: #00ffff;
-}
-
-/* =====================================================
-   HUD NAV DROPDOWNS
-===================================================== */
-
-.hud-nav{
-  position: relative;
-}
-
-/* Wrapper */
-.hud-drop{
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-}
-
-/* Button should look like your hud-link */
-.hud-drop-btn{
-  cursor: pointer;
-}
-
-/* Dropdown panel */
-.hud-menu{
-  position: absolute;
-  top: calc(100% + 10px);
-  left: 50%;
-  transform: translateX(-50%);
-
-  min-width: 190px;
-  padding: 8px;
-
-  background: rgba(10, 30, 40, 0.94);
-  border: 1px solid var(--line);
-  box-shadow:
-    0 0 18px rgba(0,234,255,0.14),
-    inset 0 0 18px rgba(0,234,255,0.08);
-  backdrop-filter: blur(10px);
-  border-radius: 12px;
-
-  display: none;
-  z-index: 2000;
-}
-
-/* Menu items */
-.hud-menu a{
-  display: block;
-  padding: 10px 12px;
-
-  color: var(--text);
-  font-weight: 800;
-  font-size: 12px;
-  letter-spacing: 1px;
-
-  border: 1px solid rgba(0,255,255,0.10);
-  background: rgba(0,234,255,0.04);
-  border-radius: 10px;
-  margin: 6px 0;
-
-  text-decoration: none;
-}
-
-.hud-menu a:hover{
-  border-color: var(--line);
-  box-shadow: 0 0 16px rgba(0,234,255,0.18);
-  background: rgba(0,234,255,0.07);
-  color: var(--cyan);
-}
-
-/* Show on hover (desktop) */
-@media (hover: hover) and (pointer: fine){
-  .hud-drop:hover .hud-menu{
-    display: block;
+  .floor-grid {
+    padding-bottom: 24px;
   }
 }
 
-/* Show on focus/tap (mobile + keyboard) */
-.hud-drop:focus-within .hud-menu{
-  display: block;
-}
-
-/* Make the button focus ring nice */
-.hud-drop-btn:focus-visible{
-  outline: none;
-  border-color: var(--line);
-  box-shadow: 0 0 18px rgba(0,234,255,0.22);
-}
-
-/* Mobile: make dropdown full-width-ish so it's easier to tap */
-@media (max-width: 520px){
-  .hud-menu{
-    left: 0;
-    transform: none;
-    width: min(320px, calc(100vw - 28px));
+/* Accessibility: reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .scanline {
+    animation: none;
   }
-}
 
-/* =====================================================
-   HUD NAV DROPDOWNS (shared)
-===================================================== */
+  .map-tooltip-scan {
+    animation: none;
+  }
 
-.hud-nav{ position: relative; }
-
-.hud-drop{
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-}
-
-.hud-drop-btn{
-  cursor: pointer;
-}
-
-.hud-menu{
-  position: absolute;
-  top: calc(100% + 10px);
-  left: 50%;
-  transform: translateX(-50%);
-
-  min-width: 190px;
-  padding: 8px;
-
-  background: rgba(10, 30, 40, 0.94);
-  border: 1px solid var(--line);
-  box-shadow:
-    0 0 18px rgba(0,234,255,0.14),
-    inset 0 0 18px rgba(0,234,255,0.08);
-  backdrop-filter: blur(10px);
-  border-radius: 12px;
-
-  display: none;
-  z-index: 2000;
-}
-
-.hud-menu a{
-  display: block;
-  padding: 10px 12px;
-
-  color: var(--text);
-  font-weight: 800;
-  font-size: 12px;
-  letter-spacing: 1px;
-
-  border: 1px solid rgba(0,255,255,0.10);
-  background: rgba(0,234,255,0.04);
-  border-radius: 10px;
-  margin: 6px 0;
-
-  text-decoration: none;
-}
-
-.hud-menu a:hover{
-  border-color: var(--line);
-  box-shadow: 0 0 16px rgba(0,234,255,0.18);
-  background: rgba(0,234,255,0.07);
-  color: var(--cyan);
-}
-
-/* Desktop hover */
-@media (hover: hover) and (pointer: fine){
-  .hud-drop:hover .hud-menu{ display: block; }
-}
-
-/* Mobile + keyboard focus */
-.hud-drop:focus-within .hud-menu{ display: block; }
-
-.hud-drop-btn:focus-visible{
-  outline: none;
-  border-color: var(--line);
-  box-shadow: 0 0 18px rgba(0,234,255,0.22);
-}
-
-/* Mobile: easier to tap */
-@media (max-width: 520px){
-  .hud-menu{
-    left: 0;
-    transform: none;
-    width: min(320px, calc(100vw - 28px));
+  .hud-panel:hover::before {
+    transition: none;
   }
 }
