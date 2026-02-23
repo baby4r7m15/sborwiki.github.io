@@ -38,11 +38,13 @@
         }
       ],
       "bosses": [
-        "name": "",
+        {
+          "name": "",
           "level": "",
           "location": "",
           "drops": "",
           "notes": ""
+        }
       ],
       "quests": [
         {
@@ -172,7 +174,7 @@
           "name": "Illfang the Kobold Lord",
           "level": "10",
           "location": "Boss Room",
-          "drops": "Iron Ore", "Copper Ore, Illfang Tooth, Illfang's Shield, Coat of Midnight (One-time Drop)",
+          "drops": "Iron Ore, Copper Ore, Illfang Tooth, Illfang's Shield, Coat of Midnight (One-time Drop)",
           "notes": "1800xp|240col|20k hp"
         }
       ],
