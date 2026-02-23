@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SBO:R Wiki – Protective Gear</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- HUD look (same as Floors + new Home) -->
+  <link rel="stylesheet" href="/css/floor-hud.css?v=1" />
+
+  <!-- Your info/table styling (keep) -->
+  <link rel="stylesheet" href="/css/info.css?v=1" />
+
+  <!-- Toast styling -->
+  <link rel="stylesheet" href="/css/toasts.css?v=1" />
+
+  <!-- ====== FAVICON / TAB ICON ====== -->
+  <link rel="icon" href="/logo.png" type="image/png" />
+  <link rel="apple-touch-icon" href="/logo.png" />
+
+  <!-- ====== EMBED / LINK PREVIEW ====== -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Sword Blox Online: Rebirth Wiki" />
+  <meta property="og:title" content="SBO:R Protective Gear Page" />
+  <meta property="og:description" content="A list of protective gear types in SBO:R." />
+  <meta property="og:url" content="https://sborwiki.com/information/gear" />
+
+  <meta property="og:image" content="https://sborwiki.com/Sborlogotext.png" />
+  <meta property="og:image:alt" content="Sword Blox Online Rebirth Wiki banner" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="SBO:R Protective Gear Page" />
+  <meta name="twitter:description" content="A list of protective gear types in SBO:R." />
+  <meta name="twitter:image" content="https://sborwiki.com/Sborlogotext.png" />
+
+  <!-- Gear page-specific HUD tweaks -->
+  <style>
+    .page-wrapper{
+      background: transparent !important;
+      border: 0 !important;
+      box-shadow: none !important;
+      backdrop-filter: none !important;
+      border-radius: 0 !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      max-width: none !important;
+    }
+
+    .gear-grid{
+      padding: 22px 24px 90px;
+      display: grid;
+      grid-template-columns: 360px 1fr;
+      gap: 18px;
+      align-items: start;
+    }
+
+    @media (max-width: 980px){
+      .gear-grid{
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .hud-panel .info-table{
+      width: 100%;
+    }
+
+    .info-table thead th{
+      color: var(--cyan);
+      letter-spacing: 1px;
+    }
+
+    .gear-icon{
+      width: 60px;
+      height: auto;
+      display: block;
+      filter: drop-shadow(0 0 10px rgba(0,234,255,0.18));
+    }
+
+    .back-link{
+      display: inline-block;
+      margin-bottom: 10px;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ===== HUD TOP BAR ===== -->
+  <header class="hud-top">
+    <div class="hud-left">
+      <div class="hud-kicker">SWORD BLOX ONLINE: REBIRTH</div>
+      <div class="hud-title">PROTECTIVE GEAR</div>
+      <div class="hud-subtitle">GEAR TYPE INDEX</div>
+    </div>
+
+    <nav id="site-nav" class="hud-nav" aria-label="Site navigation"></nav>
+
+    <div class="hud-right">
+      <div class="hud-chip">INDEX</div>
+      <div class="hud-chip hud-chip-soft">AUTO LOADED</div>
+    </div>
+  </header>
+
+  <!-- ===== MAIN (HUD GRID) ===== -->
+  <main class="gear-grid">
+
+    <!-- LEFT COLUMN -->
+    <aside class="col-left" style="display:grid; gap:18px;">
+
+      <section class="hud-panel">
+        <div class="panel-head">
+          <span>NAVIGATION</span>
+          <span class="panel-chip">SYSTEM</span>
+        </div>
+
+        <ul class="hud-list chevrons">
+          <li><a href="/" class="back-link">← Back to Main Page</a></li>
+        </ul>
+      </section>
+
+      <section class="hud-panel">
+        <div class="panel-head">
+          <span>OVERVIEW</span>
+          <span class="panel-chip">INFO</span>
+        </div>
+
+        <div class="hud-lore">
+          <p>This is a list of the protective gear types currently documented in SBO:R.</p>
+          <p>Click a gear type name to open its database page.</p>
+        </div>
+      </section>
+
+    </aside>
+
+    <!-- RIGHT COLUMN -->
+    <section class="col-right" style="display:grid; gap:18px;">
+
+      <section class="hud-panel">
+        <div class="panel-head">
+          <span>PROTECTIVE GEAR TYPES</span>
+          <span class="panel-chip">TABLE</span>
+        </div>
+
+        <table class="info-table">
+          <thead>
+            <tr>
+              <th>Type</th>
+              <th>Name</th>
+              <th>Tags</th>
+              <th>Icon</th>
+            </tr>
+          </thead>
+          <tbody id="gearTableBody">
+            <!-- Auto generated -->
+          </tbody>
+        </table>
+      </section>
+
+    </section>
+
+  </main>
+
+  <!-- ================= TOAST STACK (optional but consistent) ================= -->
+  <div id="sao-toast-stack">
+
+    <!-- YELLOW: NOTICE -->
+    <div class="sao-toast sao-toast-yellow show" role="status" aria-live="polite">
+      <div class="sao-toast-header">SYSTEM NOTICE</div>
+      <div class="sao-toast-body">
+        Protective gear data will be expanded over time.
+      </div>
+      <button class="sao-toast-close" type="button">✕</button>
+      <div class="sao-toast-progress"></div>
+    </div>
+
+  </div>
+
+  <script>
+    async function loadGearTable() {
+      try {
+        const res = await fetch("/data/gear-index.json", { cache: "no-store" });
+        if (!res.ok) throw new Error("Failed to load gear-index.json");
+
+        const data = await res.json();
+        const gear = data.gear || [];
+
+        const tbody = document.getElementById("gearTableBody");
+        if (!tbody) return;
+
+        tbody.innerHTML = "";
+
+        // Optional fixed order (edit anytime)
+        // Put your preferred ids in here. Anything not listed will sort after, alphabetically.
+        const order = [
+          "helmet",
+          "chest",
+          "gloves",
+          "boots",
+          "shield",
+          "accessory"
+        ];
+
+        const orderIndex = (id) => {
+          const i = order.indexOf(id);
+          return i === -1 ? 9999 : i;
+        };
+
+        gear.sort((a, b) => {
+          const ai = orderIndex(a.id);
+          const bi = orderIndex(b.id);
+          if (ai !== bi) return ai - bi;
+          return String(a.id || "").localeCompare(String(b.id || ""));
+        });
+
+        gear.forEach(g => {
+          const tr = document.createElement("tr");
+
+          const typeCell = document.createElement("td");
+          typeCell.setAttribute("data-label", "Type");
+          typeCell.textContent = g.id;
+
+          const nameCell = document.createElement("td");
+          nameCell.setAttribute("data-label", "Name");
+
+          const link = document.createElement("a");
+          link.href = `/information/gear/gear.html?id=${encodeURIComponent(g.id)}`;
+          link.textContent = g.name || g.id;
+          nameCell.appendChild(link);
+
+          const tagsCell = document.createElement("td");
+          tagsCell.setAttribute("data-label", "Tags");
+          tagsCell.textContent = (g.tags || []).join(", ");
+
+          const iconCell = document.createElement("td");
+          iconCell.setAttribute("data-label", "Icon");
+
+          if (g.icon) {
+            const img = document.createElement("img");
+            img.src = g.icon;
+            img.alt = (g.name || g.id) + " icon";
+            img.className = "gear-icon";
+            iconCell.appendChild(img);
+          } else {
+            iconCell.textContent = "—";
+          }
+
+          tr.appendChild(typeCell);
+          tr.appendChild(nameCell);
+          tr.appendChild(tagsCell);
+          tr.appendChild(iconCell);
+
+          tbody.appendChild(tr);
+        });
+
+      } catch (err) {
+        console.error(err);
+        const tbody = document.getElementById("gearTableBody");
+        if (tbody) tbody.innerHTML = "<tr><td colspan='4'>Failed to load protective gear.</td></tr>";
+      }
+    }
+
+    loadGearTable();
+  </script>
+
+  <script src="/js/toasts.js?v=1"></script>
+  <script src="/js/navbar.js?v=1"></script>
+</body>
+</html>
