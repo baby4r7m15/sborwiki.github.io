@@ -31,6 +31,12 @@ body {
     url("/css/background2.jpg") center / cover no-repeat;
 }
 
+/* Desktop parallax effect */
+@media (min-width: 1025px) {
+  body {
+    background-attachment: fixed;
+  }
+}
 /* =====================================================
    TOP HUD
 ===================================================== */
