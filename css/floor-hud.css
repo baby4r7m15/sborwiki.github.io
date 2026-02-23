@@ -298,6 +298,53 @@ body::before {
 }
 
 /* =====================================================
+   TABLES (Mobs/Bosses/Quests)
+===================================================== */
+
+.hud-table-wrap {
+  border: 1px solid var(--line2);
+  background: rgba(0, 234, 255, 0.03);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.hud-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 760px; /* allows horizontal scroll on small screens */
+}
+
+.hud-table th,
+.hud-table td {
+  border-bottom: 1px solid rgba(0, 255, 255, 0.12);
+  padding: 10px 10px;
+  text-align: left;
+  vertical-align: top;
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.hud-table th {
+  color: var(--cyan);
+  font-weight: 800;
+  letter-spacing: 1px;
+  background: rgba(10, 30, 40, 0.72);
+  border-bottom: 1px solid var(--line2);
+  position: sticky;
+  top: 0; /* works inside the scroll container */
+  z-index: 1;
+}
+
+.hud-table tr:hover td {
+  background: rgba(0, 234, 255, 0.05);
+}
+
+.hud-td-muted {
+  opacity: 0.85;
+  letter-spacing: 0.8px;
+}
+
+/* =====================================================
    MAP PANEL
 ===================================================== */
 
