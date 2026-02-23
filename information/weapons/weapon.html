@@ -11,14 +11,13 @@
   <!-- Your existing table/utility styles (keep) -->
   <link rel="stylesheet" href="/css/info.css?v=1" />
 
-  <!-- Toast styling (recommended: move toast CSS out of main.css into this file) -->
+  <!-- Toast styling -->
   <link rel="stylesheet" href="/css/toasts.css?v=1" />
 
   <link rel="icon" href="/logo.png" type="image/png" />
   <link rel="apple-touch-icon" href="/logo.png" />
 
   <style>
-    /* Page wrapper neutralize (old layout classes won't fight HUD) */
     .page-wrapper{
       background: transparent !important;
       border: 0 !important;
@@ -30,7 +29,6 @@
       max-width: none !important;
     }
 
-    /* HUD grid shell for this page */
     .weapon-grid{
       padding: 22px 24px 90px;
       display: grid;
@@ -43,19 +41,16 @@
       .weapon-grid{ grid-template-columns: 1fr; }
     }
 
-    /* Ensure mounted content uses HUD spacing */
     #weaponMount{
       display: grid;
       gap: 14px;
     }
 
-    /* Sidebar becomes normal HUD column */
     #weaponSidebar{
       display: grid;
       gap: 18px;
     }
 
-    /* Make banners/headings feel more HUD-native while still using your existing classes */
     .page-banner{
       background: rgba(0,234,255,0.05) !important;
       border: 1px solid var(--line) !important;
@@ -66,10 +61,8 @@
       letter-spacing: 1.5px;
     }
 
-    /* Tables inside panels */
     .hud-panel .info-table{ width: 100%; }
 
-    /* Keep your gifs tidy */
     .skill-gif{
       max-width: 120px;
       height: auto;
@@ -79,7 +72,6 @@
       box-shadow: 0 0 10px rgba(0,234,255,0.12);
     }
 
-    /* Back link polish */
     .back-link{
       display: inline-block;
       font-weight: 800;
@@ -111,9 +103,7 @@
   <main class="weapon-grid">
 
     <!-- LEFT COLUMN (SIDEBAR) -->
-    <aside class="col-left" id="weaponSidebar">
-      <!-- Rendered from JSON (panel injected by JS) -->
-    </aside>
+    <aside class="col-left" id="weaponSidebar"></aside>
 
     <!-- RIGHT COLUMN (CONTENT) -->
     <section class="col-right" style="display:grid; gap:18px;">
@@ -128,21 +118,9 @@
     </section>
 
   </main>
-<!-- ================= TOAST STACK (optional but consistent) ================= -->
+
+  <!-- ================= TOAST STACK ================= -->
   <div id="sao-toast-stack">
-
-    <!-- RED: WARNING -->
-    <!--<div class="sao-toast sao-toast-red show" role="alert" aria-live="assertive">
-      <div class="sao-toast-header">SYSTEM WARNING</div>
-      <div class="sao-toast-body">
-        The only way to be a cutie is to join the guild:
-        <a href="https://www.roblox.com/communities/104234504/SBO-R-Pupz">Pupz</a>!
-      </div>
-      <button class="sao-toast-close" type="button">✕</button>
-      <div class="sao-toast-progress"></div>
-    </div>-->
-
-    <!-- YELLOW: NOTICE -->
     <div class="sao-toast sao-toast-yellow show" role="status" aria-live="polite">
       <div class="sao-toast-header">SYSTEM NOTICE</div>
       <div class="sao-toast-body">
@@ -151,130 +129,169 @@
       <button class="sao-toast-close" type="button">✕</button>
       <div class="sao-toast-progress"></div>
     </div>
-
   </div>
+
   <script>
-async function loadWeaponPage() {
-  try {
-    const params = new URLSearchParams(location.search);
-    const id = params.get("id");
-    if (!id) throw new Error("Missing ?id= in URL");
+    async function loadWeaponPage() {
+      try {
+        const params = new URLSearchParams(location.search);
+        const id = params.get("id");
+        if (!id) throw new Error("Missing ?id= in URL");
 
-    // Load index to map id -> json path + display info
-    const idxRes = await fetch("/data/weapons-index.json", { cache: "no-store" });
-    if (!idxRes.ok) throw new Error("Failed to load /data/weapons-index.json");
-    const idx = await idxRes.json();
+        // Load index to map id -> json path + display info
+        const idxRes = await fetch("/data/weapons-index.json", { cache: "no-store" });
+        if (!idxRes.ok) throw new Error("Failed to load /data/weapons-index.json");
+        const idx = await idxRes.json();
 
-    const weapon = (idx.weapons || []).find(w => w.id === id);
-    if (!weapon) throw new Error(`Unknown weapon id: ${id}`);
+        const weapon = (idx.weapons || []).find(w => w.id === id);
+        if (!weapon) throw new Error(`Unknown weapon id: ${id}`);
 
-    // HUD labels
-    const titleEl = document.getElementById("weaponHudTitle");
-    const subEl = document.getElementById("weaponHudSubtitle");
-    const chipEl = document.getElementById("weaponChip");
+        // HUD labels
+        const titleEl = document.getElementById("weaponHudTitle");
+        const subEl = document.getElementById("weaponHudSubtitle");
+        const chipEl = document.getElementById("weaponChip");
 
-    if (titleEl) titleEl.textContent = (weapon.name || id).toUpperCase();
-    if (subEl) subEl.textContent = (weapon.tags || []).join(" • ") || "WEAPON CLASS";
-    if (chipEl) chipEl.textContent = id.toUpperCase();
+        if (titleEl) titleEl.textContent = (weapon.name || id).toUpperCase();
+        if (subEl) subEl.textContent = (weapon.tags || []).join(" • ") || "WEAPON CLASS";
+        if (chipEl) chipEl.textContent = id.toUpperCase();
 
-    // Load the weapon JSON (prefer index-defined path)
-    const jsonPath = weapon.json || `/data/${id}.json`;
-    const res = await fetch(jsonPath, { cache: "no-store" });
-    if (!res.ok) throw new Error(`Failed to load ${jsonPath}`);
-    const data = await res.json();
+        // Load the weapon JSON (prefer index-defined path)
+        const jsonPath = weapon.file || weapon.json || `/data/${id}.json`;
+        const res = await fetch(jsonPath, { cache: "no-store" });
+        if (!res.ok) throw new Error(`Failed to load ${jsonPath}`);
+        const data = await res.json();
 
-    renderWeapon(data);
+        renderWeapon(data);
 
-  } catch (err) {
-    console.error(err);
-    const mount = document.getElementById("weaponMount");
-    if (mount) mount.textContent = "FAILED TO LOAD WEAPON DATA.";
-  }
-}
+      } catch (err) {
+        console.error(err);
+        const mount = document.getElementById("weaponMount");
+        if (mount) mount.textContent = "FAILED TO LOAD WEAPON DATA.";
+      }
+    }
 
-function renderWeapon(data) {
-  // Sidebar
-  const sidebar = document.getElementById("weaponSidebar");
-  if (sidebar && data.sidebar) {
-    sidebar.innerHTML = `
-      <section class="hud-panel">
-        <div class="panel-head"><span>${data.sidebar.title || "Tip:"}</span></div>
-        <div class="panel-body">
-          <ul class="info-list">
-            ${(data.sidebar.bullets || []).map(b => `<li>${b}</li>`).join("")}
-          </ul>
+    // ---- helpers ----
+
+    function escapeHTML(value) {
+      const s = (value === null || value === undefined) ? "" : String(value);
+      return s
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#39;");
+    }
+
+    function renderList(items) {
+      const arr = Array.isArray(items) ? items : [];
+      if (!arr.length) return "";
+      return `<ul class="info-list">${arr.map(x => `<li>${escapeHTML(x)}</li>`).join("")}</ul>`;
+    }
+
+    // ---- renderer ----
+
+    function renderWeapon(data) {
+      // Sidebar (always includes navigation)
+      const sidebar = document.getElementById("weaponSidebar");
+      if (sidebar) {
+        const notesPanel = data.sidebar ? `
+          <section class="hud-panel">
+            <div class="panel-head"><span>${escapeHTML(data.sidebar.title || "NOTES")}</span><span class="panel-chip">INFO</span></div>
+            <div class="panel-body">
+              ${renderList(data.sidebar.bullets)}
+            </div>
+          </section>
+        ` : "";
+
+        sidebar.innerHTML = `
+          <section class="hud-panel">
+            <div class="panel-head"><span>NAVIGATION</span><span class="panel-chip">SYSTEM</span></div>
+            <div class="panel-body">
+              <ul class="hud-list chevrons">
+                <li><a href="/information/weapons/" class="back-link">← Back to Weapons</a></li>
+                <li><a href="/" class="back-link">← Back to Main Page</a></li>
+              </ul>
+            </div>
+          </section>
+          ${notesPanel}
+        `;
+      }
+
+      // Main content
+      const mount = document.getElementById("weaponMount");
+      if (!mount) return;
+
+      const overview = data.overview || {};
+      const skills = data.skills || {};
+      const tables = data.weaponTables || [];
+
+      const nested = overview.nested || null;
+      const nestedBlock = (nested && (nested.lead || (Array.isArray(nested.sub) && nested.sub.length))) ? `
+        <div style="margin-top:10px;">
+          ${nested.lead ? `<p><strong>${escapeHTML(nested.lead)}</strong></p>` : ""}
+          ${renderList(nested.sub)}
         </div>
-      </section>
-    `;
-  }
+      ` : "";
 
-  // Main content
-  const mount = document.getElementById("weaponMount");
-  if (!mount) return;
+      mount.innerHTML = `
+        <section class="hud-panel">
+          <div class="panel-head"><span>OVERVIEW</span></div>
+          <div class="panel-body">
+            ${overview.text ? `<p>${escapeHTML(overview.text)}</p>` : ""}
+            ${renderList(overview.bullets)}
+            ${nestedBlock}
+          </div>
+        </section>
 
-  const overview = data.overview || {};
-  const skills = data.skills || {};
-  const tables = data.weaponTables || [];
+        <section class="hud-panel">
+          <div class="panel-head"><span>SKILLS</span></div>
+          <div class="panel-body">
+            ${skills.text ? `<p>${escapeHTML(skills.text)}</p>` : ""}
+            ${Array.isArray(skills.rows) && skills.rows.length ? `
+              <table class="info-table">
+                <thead><tr><th>Name</th><th>Type</th><th>Requirement</th><th>Animation</th></tr></thead>
+                <tbody>
+                  ${(skills.rows || []).map(r => `
+                    <tr>
+                      <td>${escapeHTML(r.name || "—")}</td>
+                      <td>${escapeHTML(r.type || "—")}</td>
+                      <td>${escapeHTML(r.requirement || "—")}</td>
+                      <td>${r.animation ? `<img class="skill-gif" src="${escapeHTML(r.animation)}" alt="${escapeHTML((r.name || "Skill") + " animation")}">` : "—"}</td>
+                    </tr>
+                  `).join("")}
+                </tbody>
+              </table>
+            ` : `<p>—</p>`}
+          </div>
+        </section>
 
-  mount.innerHTML = `
-    <section class="hud-panel">
-      <div class="panel-head"><span>OVERVIEW</span></div>
-      <div class="panel-body">
-        <p>${overview.text || ""}</p>
-        <ul class="info-list">${(overview.bullets || []).map(b => `<li>${b}</li>`).join("")}</ul>
-        ${overview.nested ? `
-          <p><strong>${overview.nested.lead || ""}</strong></p>
-          <ul class="info-list">${(overview.nested.sub || []).map(s => `<li>${s}</li>`).join("")}</ul>
-        ` : ""}
-      </div>
-    </section>
+        ${(tables || []).map(t => `
+          <section class="hud-panel">
+            <div class="panel-head"><span>${escapeHTML(t.title || "WEAPON TABLE")}</span></div>
+            <div class="panel-body">
+              <table class="info-table">
+                <thead><tr><th>Name</th><th>Max Skill</th><th>Attack</th><th>Obtain</th></tr></thead>
+                <tbody>
+                  ${(t.rows || []).map(r => `
+                    <tr>
+                      <td>${escapeHTML(r.name || "—")}</td>
+                      <td>${escapeHTML(r.maxSkill || "—")}</td>
+                      <td>${escapeHTML(r.attack || "—")}</td>
+                      <td>${escapeHTML(r.obtain || "—")}</td>
+                    </tr>
+                  `).join("")}
+                </tbody>
+              </table>
+            </div>
+          </section>
+        `).join("")}
+      `;
+    }
 
-    <section class="hud-panel">
-      <div class="panel-head"><span>SKILLS</span></div>
-      <div class="panel-body">
-        <p>${skills.text || ""}</p>
-        <table class="info-table">
-          <thead><tr><th>Name</th><th>Type</th><th>Requirement</th><th>Animation</th></tr></thead>
-          <tbody>
-            ${(skills.rows || []).map(r => `
-              <tr>
-                <td>${r.name}</td>
-                <td>${r.type}</td>
-                <td>${r.requirement}</td>
-                <td>${r.animation ? `<img class="skill-gif" src="${r.animation}" alt="${r.name}">` : "—"}</td>
-              </tr>
-            `).join("")}
-          </tbody>
-        </table>
-      </div>
-    </section>
+    loadWeaponPage();
+  </script>
 
-    ${tables.map(t => `
-      <section class="hud-panel">
-        <div class="panel-head"><span>${t.title}</span></div>
-        <div class="panel-body">
-          <table class="info-table">
-            <thead><tr><th>Name</th><th>Max Skill</th><th>Attack</th><th>Obtain</th></tr></thead>
-            <tbody>
-              ${(t.rows || []).map(r => `
-                <tr>
-                  <td>${r.name}</td>
-                  <td>${r.maxSkill}</td>
-                  <td>${r.attack}</td>
-                  <td>${r.obtain}</td>
-                </tr>
-              `).join("")}
-            </tbody>
-          </table>
-        </div>
-      </section>
-    `).join("")}
-  `;
-}
-
-loadWeaponPage();
-</script>
-<script src="/js/toasts.js?v=1"></script>
+  <script src="/js/toasts.js?v=1"></script>
   <script src="/js/navbar.js?v=1"></script>
 </body>
 </html>
