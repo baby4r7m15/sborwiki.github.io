@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SBO:R Wiki – Protective Gear</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- HUD look (same as Floors + Home HUD) -->
+  <link rel="stylesheet" href="/css/floor-hud.css?v=1" />
+
+  <!-- Your existing table/utility styles (keep) -->
+  <link rel="stylesheet" href="/css/info.css?v=1" />
+
+  <!-- Toast styling -->
+  <link rel="stylesheet" href="/css/toasts.css?v=1" />
+
+  <link rel="icon" href="/logo.png" type="image/png" />
+  <link rel="apple-touch-icon" href="/logo.png" />
+
+  <style>
+    .page-wrapper{
+      background: transparent !important;
+      border: 0 !important;
+      box-shadow: none !important;
+      backdrop-filter: none !important;
+      border-radius: 0 !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      max-width: none !important;
+    }
+
+    .gear-grid{
+      padding: 22px 24px 90px;
+      display: grid;
+      grid-template-columns: 360px 1fr;
+      gap: 18px;
+      align-items: start;
+    }
+
+    @media (max-width: 980px){
+      .gear-grid{ grid-template-columns: 1fr; }
+    }
+
+    #gearMount{
+      display: grid;
+      gap: 14px;
+    }
+
+    #gearSidebar{
+      display: grid;
+      gap: 18px;
+    }
+
+    .page-banner{
+      background: rgba(0,234,255,0.05) !important;
+      border: 1px solid var(--line) !important;
+      box-shadow: 0 0 18px rgba(0,234,255,0.14), inset 0 0 18px rgba(0,234,255,0.08);
+      backdrop-filter: blur(8px);
+      color: var(--cyan) !important;
+      text-shadow: 0 0 14px rgba(0,234,255,0.22);
+      letter-spacing: 1.5px;
+    }
+
+    .hud-panel .info-table{ width: 100%; }
+
+    /* Reuse same class name for consistency with your CSS, but keep it semantically gear-safe */
+    .skill-gif{
+      max-width: 120px;
+      height: auto;
+      display: block;
+      border: 1px solid rgba(0,255,255,0.16);
+      background: rgba(0,234,255,0.04);
+      box-shadow: 0 0 10px rgba(0,234,255,0.12);
+    }
+
+    .back-link{
+      display: inline-block;
+      font-weight: 800;
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ===== HUD TOP BAR ===== -->
+  <header class="hud-top">
+    <div class="hud-left">
+      <div class="hud-kicker">SWORD BLOX ONLINE: REBIRTH</div>
+      <div class="hud-title" id="gearHudTitle">PROTECTIVE GEAR</div>
+      <div class="hud-subtitle" id="gearHudSubtitle">LOADING…</div>
+    </div>
+
+    <nav id="site-nav" class="hud-nav" aria-label="Site navigation"></nav>
+
+    <div class="hud-right" id="gearHudTags">
+      <div class="hud-chip">DATABASE</div>
+      <div class="hud-chip hud-chip-soft">JSON</div>
+    </div>
+  </header>
+
+  <!-- ===== MAIN HUD GRID ===== -->
+  <main class="gear-grid">
+
+    <!-- LEFT COLUMN (SIDEBAR) -->
+    <aside class="col-left" id="gearSidebar">
+      <!-- Rendered from JSON (panel injected by JS) -->
+    </aside>
+
+    <!-- RIGHT COLUMN (CONTENT) -->
+    <section class="col-right" style="display:grid; gap:18px;">
+      <section class="hud-panel">
+        <div class="panel-head">
+          <span>SYSTEM RECORD: GEAR DATA</span>
+          <span class="panel-chip" id="gearChip">LOADING</span>
+        </div>
+
+        <div id="gearMount">LOADING…</div>
+      </section>
+    </section>
+
+  </main>
+
+  <!-- ================= TOAST STACK (optional but consistent) ================= -->
+  <div id="sao-toast-stack">
+    <div class="sao-toast sao-toast-yellow show" role="status" aria-live="polite">
+      <div class="sao-toast-header">SYSTEM NOTICE</div>
+      <div class="sao-toast-body">
+        Protective gear data will be expanded over time.
+      </div>
+      <button class="sao-toast-close" type="button">✕</button>
+      <div class="sao-toast-progress"></div>
+    </div>
+  </div>
+
+  <script>
+    async function loadGearPage() {
+      try {
+        const params = new URLSearchParams(location.search);
+        const id = params.get("id");
+        if (!id) throw new Error("Missing ?id= in URL");
+
+        // Load index to map id -> json path + display info
+        const idxRes = await fetch("/data/gear-index.json", { cache: "no-store" });
+        if (!idxRes.ok) throw new Error("Failed to load /data/gear-index.json");
+        const idx = await idxRes.json();
+
+        const gearItem = (idx.gear || []).find(g => g.id === id);
+        if (!gearItem) throw new Error(`Unknown gear id: ${id}`);
+
+        // HUD labels
+        const titleEl = document.getElementById("gearHudTitle");
+        const subEl = document.getElementById("gearHudSubtitle");
+        const chipEl = document.getElementById("gearChip");
+
+        if (titleEl) titleEl.textContent = (gearItem.name || id).toUpperCase();
+        if (subEl) subEl.textContent = (gearItem.tags || []).join(" • ") || "GEAR CLASS";
+        if (chipEl) chipEl.textContent = id.toUpperCase();
+
+        // Load the gear JSON (prefer index-defined path)
+        // Your index uses "file" — support "json" too just in case.
+        const jsonPath = gearItem.file || gearItem.json || `/data/${id}.json`;
+
+        const res = await fetch(jsonPath, { cache: "no-store" });
+        if (!res.ok) throw new Error(`Failed to load ${jsonPath}`);
+        const data = await res.json();
+
+        renderGear(data);
+
+      } catch (err) {
+        console.error(err);
+        const mount = document.getElementById("gearMount");
+        if (mount) mount.textContent = "FAILED TO LOAD GEAR DATA.";
+      }
+    }
+
+    function renderGear(data) {
+      // Sidebar
+      const sidebar = document.getElementById("gearSidebar");
+      if (sidebar) {
+        if (data.sidebar) {
+          sidebar.innerHTML = `
+            <section class="hud-panel">
+              <div class="panel-head"><span>${data.sidebar.title || "Tip:"}</span></div>
+              <div class="panel-body">
+                <ul class="info-list">
+                  ${(data.sidebar.bullets || []).map(b => `<li>${b}</li>`).join("")}
+                </ul>
+              </div>
+            </section>
+          `;
+        } else {
+          // Helpful default sidebar if JSON doesn't provide one
+          sidebar.innerHTML = `
+            <section class="hud-panel">
+              <div class="panel-head"><span>NAVIGATION</span><span class="panel-chip">SYSTEM</span></div>
+              <div class="panel-body">
+                <ul class="hud-list chevrons">
+                  <li><a href="/information/gear" class="back-link">← Back to Gear Index</a></li>
+                  <li><a href="/" class="back-link">← Back to Main Page</a></li>
+                </ul>
+              </div>
+            </section>
+          `;
+        }
+      }
+
+      // Main content
+      const mount = document.getElementById("gearMount");
+      if (!mount) return;
+
+      const overview = data.overview || {};
+      const skills = data.skills || {};
+      const tables = data.gearTables || data.weaponTables || []; // allow either key, for compatibility
+
+      mount.innerHTML = `
+        <section class="hud-panel">
+          <div class="panel-head"><span>OVERVIEW</span></div>
+          <div class="panel-body">
+            <p>${overview.text || ""}</p>
+            <ul class="info-list">${(overview.bullets || []).map(b => `<li>${b}</li>`).join("")}</ul>
+            ${overview.nested ? `
+              <p><strong>${overview.nested.lead || ""}</strong></p>
+              <ul class="info-list">${(overview.nested.sub || []).map(s => `<li>${s}</li>`).join("")}</ul>
+            ` : ""}
+          </div>
+        </section>
+
+        <section class="hud-panel">
+          <div class="panel-head"><span>SKILLS</span></div>
+          <div class="panel-body">
+            <p>${skills.text || ""}</p>
+            <table class="info-table">
+              <thead><tr><th>Name</th><th>Type</th><th>Requirement</th><th>Animation</th></tr></thead>
+              <tbody>
+                ${(skills.rows || []).map(r => `
+                  <tr>
+                    <td>${r.name || ""}</td>
+                    <td>${r.type || ""}</td>
+                    <td>${r.requirement || ""}</td>
+                    <td>${r.animation ? `<img class="skill-gif" src="${r.animation}" alt="${(r.name || "Skill") + " animation"}">` : "—"}</td>
+                  </tr>
+                `).join("")}
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        ${tables.map(t => `
+          <section class="hud-panel">
+            <div class="panel-head"><span>${t.title || "GEAR TABLE"}</span></div>
+            <div class="panel-body">
+              <table class="info-table">
+                <thead><tr><th>Name</th><th>Max Skill</th><th>Defense</th><th>Obtain</th></tr></thead>
+                <tbody>
+                  ${(t.rows || []).map(r => `
+                    <tr>
+                      <td>${r.name || ""}</td>
+                      <td>${r.maxSkill || ""}</td>
+                      <td>${r.defense || r.attack || ""}</td>
+                      <td>${r.obtain || ""}</td>
+                    </tr>
+                  `).join("")}
+                </tbody>
+              </table>
+            </div>
+          </section>
+        `).join("")}
+      `;
+    }
+
+    loadGearPage();
+  </script>
+
+  <script src="/js/toasts.js?v=1"></script>
+  <script src="/js/navbar.js?v=1"></script>
+</body>
+</html>
