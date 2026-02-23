@@ -1,0 +1,22 @@
+{
+  "items": [
+    { "type": "link", "label": "Home", "href": "/" },
+
+    {
+      "type": "dropdown",
+      "label": "Information",
+      "items": [
+        { "label": "Weapons", "href": "/information/weapons" }
+      ]
+    },
+
+    {
+      "type": "dropdown",
+      "label": "Floors",
+      "items": [
+        { "label": "Floors 1–10", "href": "/information/floors-1-10" },
+        { "label": "Floors 11–20", "href": "/information/floors-11-20" }
+      ]
+    }
+  ]
+}
