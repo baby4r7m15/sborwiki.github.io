@@ -4,7 +4,7 @@
       "id": "1",
       "number": 1,
       "name": "Town of Beginnings",
-      "tags": ["SAFE ZONE", "NO MOBS"],
+      "tags": ["SAFE ZONE"],
       "info": [
         "Safe Zone — No Mobs",
         "First Spawn / Starting Location",
@@ -90,7 +90,7 @@
       "id": "2",
       "number": 2,
       "name": "Swordsman Fields",
-      "tags": ["COMBAT ZONE", "FIELD MOBS"],
+      "tags": ["Level 1-27+", "FIELD MOBS"],
       "info": [
         "First Combat Area",
         "Home of Illfang the Kobold Lord (Boss)",
@@ -169,7 +169,7 @@
       "id": "3",
       "number": 3,
       "name": "Swamp Land",
-      "tags": ["COMBAT ZONE", "SWAMP MOBS"],
+      "tags": ["Level 27+", "SWAMP MOBS"],
       "info": [
         "Floor 3 is a small swamp.",
         "There isn't a lot to do on floor 3 besides the boss.",
@@ -224,7 +224,7 @@
       "id": "4",
       "number": 4,
       "name": "Desert Land",
-      "tags": ["COMBAT ZONE", "DESERT MOBS"],
+      "tags": ["Level 45+", "DESERT MOBS"],
       "info": [
         "Large Desert Biome",
         "Home of Stallord (Boss)",
