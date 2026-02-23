@@ -4,6 +4,10 @@
    FLOOR HUD / SITE HUD (Single Source of Truth)
    - Includes: layout, panels, map, tooltip, link polish,
      and STABLE dropdown nav (no hover-closing)
+   - Background upgrade:
+     ✅ Pinned background (does not scroll)
+     ✅ More consistent rendering than background-attachment: fixed
+     ✅ 1080p-friendly image size (use a ~1920px wide export)
 ===================================================== */
 
 :root {
@@ -21,22 +25,36 @@
   box-sizing: border-box;
 }
 
+/* Base page */
 body {
   font-family: "Montserrat", sans-serif;
   color: var(--text);
   min-height: 100vh;
+
+  /* Let the fixed ::before layer own the background */
+  background: none;
+}
+
+/* ✅ Pinned + prettier background layer (doesn't scroll) */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+
   background:
     radial-gradient(1200px 600px at 30% 10%, rgba(0, 234, 255, 0.18), transparent 60%),
     linear-gradient(var(--bg1), var(--bg1)),
     url("/css/background2.jpg") center / cover no-repeat;
+
+  /* Subtle polish to improve perceived detail/contrast */
+  filter: saturate(1.06) contrast(1.06);
+
+  /* Helps some browsers keep it steady/crisp */
+  transform: translateZ(0);
+  will-change: transform;
 }
 
-/* Desktop parallax effect */
-@media (min-width: 1025px) {
-  body {
-    background-attachment: fixed;
-  }
-}
 /* =====================================================
    TOP HUD
 ===================================================== */
