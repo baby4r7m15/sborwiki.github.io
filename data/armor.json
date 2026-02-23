@@ -9,12 +9,27 @@
     ]
   },
   "overview": {
-    "text": "Armor provides survivability through Defense and Dexterity bonuses. Different obtain methods provide varying power scaling.",
-    "bullets": [
-      "Defense × 5 = flat damage reduction",
-      "Dexterity × 10 = bonus HP from equipment"
+  "text": "Armor is essential to survive in this game, whether it is a mob, boss, or Player you're fighting. As you keep leveling up, you'll be able to equip better armor to survive. Armor provides Defense and Dexterity, with Defense reducing the damage you receive, and Dexterity granting you more Health.",
+  "bullets": [
+    "Defense Stat × 5 = flat damage reduction. Example: 300.5 Defense from equipment subtracts 1,502.5 damage from hits.",
+    "Each stat point invested in DEF adds 0.01 to the multiplier. With 500 DEF points: Defense Stat × 10. Example: 300.5 Defense from equipment subtracts 3,005 damage from hits.",
+    "Dexterity Stat × 10 = bonus Health from equipment. Example: 2,402 Dexterity from equipment grants +24,020 Health.",
+    "Each stat point invested in VIT adds 0.01 to the multiplier. With 500 VIT points: Dexterity Stat × 15. Example: 2,402 Dexterity from equipment grants +36,030 Health."
+  ],
+  "nested": {
+    "lead": "Extra mechanics & notes:",
+    "sub": [
+      "Any armor with a Resistance stat provides 40% Resistance, which lowers the amount of time you're inflicted with the corresponding status effect, and lowers any damage that you receive from it.",
+      "Each stat point invested in VIT adds +0.01% Resistance to all status effects. With 500 VIT points, you will have +5% Resistance to all status effects.",
+      "Any damage from Status Effects will show purple damage numbers.",
+      "Any damage from Sword Skills will show orange damage numbers.",
+      "Please note that armor for each associated floor will have their Level rated according to how they are obtained.",
+      "Crafted = Highest, Boss Drop = 2nd Highest, Mob Drop = 2nd Lowest, Shops = Lowest.",
+      "Badge and Gamepass Armor scale according to your Level: Badge scales every 5 levels; Gamepass scales every level.",
+      "Any armor with a Max Level stat in-game will have both their Max Level and Max Stats displayed in the tables."
     ]
-  },
+  }
+},
   "gearTables": [
     {
       "title": "SHOP ARMOR",
