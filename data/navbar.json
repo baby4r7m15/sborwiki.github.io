@@ -7,7 +7,7 @@
       "label": "Information",
       "items": [
         { "label": "Weapons", "href": "/information/weapons" },
-        { "label": "Protective Gear", "href": "/information/gear" }
+        { "label": "Protective Gear", "href": "/information/protective-gear" }
       ]
     },
 
