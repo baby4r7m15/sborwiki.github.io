@@ -6,7 +6,8 @@
       "type": "dropdown",
       "label": "Information",
       "items": [
-        { "label": "Weapons", "href": "/information/weapons" }
+        { "label": "Weapons", "href": "/information/weapons" },
+        { "label": "Protective Gear", "href": "/information/gear" }
       ]
     },
 
