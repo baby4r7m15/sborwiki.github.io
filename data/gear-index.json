@@ -12,21 +12,21 @@
       "name": "Upper Headgear",
       "tags": ["Head", "Utility"],
       "file": "/data/upper.json",
-      "icon": "/images/Headwearlogo.png"
+      "icon": "/images/gear/Headwearlogo.png"
     },
     {
       "id": "lower",
       "name": "Lower Headgear",
       "tags": ["Back", "UTILITY"],
       "file": "/data/lower.json",
-      "icon": "/images/LowerHeadwear.png"
+      "icon": "/images/gear/LowerHeadwear.png"
     },
     {
       "id": "shield",
       "name": "Shields",
       "tags": ["BLOCK", "TANK"],
       "file": "/data/shield.json",
-      "icon": "/images/Shield.png"
+      "icon": "/images/gear/Shield.png"
     }
   ]
 }
