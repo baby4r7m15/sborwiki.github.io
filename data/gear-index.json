@@ -3,21 +3,21 @@
     {
       "id": "armor",
       "name": "Armor",
-      "tags": ["Torso", "DEFENSE"],
+      "tags": ["TORSO", "DEFENSE"],
       "file": "/data/armor.json",
       "icon": "/images/gear/Armorlogo.png"
     },
     {
       "id": "upper",
       "name": "Upper Headgear",
-      "tags": ["Head", "Utility"],
+      "tags": ["HEAD", "UTILITY"],
       "file": "/data/upper.json",
       "icon": "/images/gear/Headwearlogo.png"
     },
     {
       "id": "lower",
       "name": "Lower Headgear",
-      "tags": ["Back", "UTILITY"],
+      "tags": ["BACK", "UTILITY"],
       "file": "/data/lower.json",
       "icon": "/images/gear/LowerHeadwear.png"
     },
