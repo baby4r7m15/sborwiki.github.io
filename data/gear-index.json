@@ -1,0 +1,32 @@
+{
+  "gear": [
+    {
+      "id": "armor",
+      "name": "Armor",
+      "tags": ["Torso", "DEFENSE"],
+      "file": "/data/armor.json",
+      "icon": "/images/gear/Armorlogo.png"
+    },
+    {
+      "id": "upper",
+      "name": "Upper Headgear",
+      "tags": ["Head", "Utility"],
+      "file": "/data/upper.json",
+      "icon": "/images/Headwearlogo.png"
+    },
+    {
+      "id": "lower",
+      "name": "Lower Headgear",
+      "tags": ["Back", "UTILITY"],
+      "file": "/data/lower.json",
+      "icon": "/images/LowerHeadwear.png"
+    },
+    {
+      "id": "shield",
+      "name": "Shields",
+      "tags": ["BLOCK", "TANK"],
+      "file": "/data/shield.json",
+      "icon": "/images/Shield.png"
+    }
+  ]
+}
