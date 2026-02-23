@@ -166,7 +166,7 @@
         { "name": "Santa Outfit", "level": { "min": 1, "max": 140 }, "defense": { "min": 1, "max": 208.5 }, "dexterity": { "min": 5, "max": 1069 }, "obtain": "Christmas Event: Holiday Shop" },
         { "name": "Ms Santa Outfit", "level": { "min": 1, "max": 130 }, "defense": { "min": 1, "max": 188.5 }, "dexterity": { "min": 5, "max": 967 }, "obtain": "Christmas Event: Holiday Shop" }
       ]
-    }.
+    },
     {
       "title": "BADGE ARMOR",
       "columns": [
