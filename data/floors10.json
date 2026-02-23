@@ -6,20 +6,21 @@
       "name": "Town of Beginnings",
       "tags": ["SAFE ZONE"],
       "info": [
-        "Safe Zone — No Mobs",
-        "First Spawn / Starting Location",
-        "Main Shop, Inn, NPCs",
-        "Black Iron Palace"
+        "Floor 1 is home to the Iconic Town of beginnings as shown in 'Aincrad'.",
+        "This is where players first start the game.",
+        "You can find the starter shop, event shop, blacksmith, an inn, cole's cuts, as well as a fishing spot.",
+        "Behind the teleport Pad, there is the Iconic 'Black Iron Palace', Some events are hosted here but it is used as a place of history."
       ],
       "activities": [
         "Change Appearance",
         "Fishing",
         "Blacksmithing / Crafting",
+        "Shopping",
         "Amphitheater Seating / Meeting"
       ],
       "shops": [
         "Starter Shop",
-        "Misc Merchant",
+        "Misc Merchant (Crystals, Potions, Dyes)",
         "Event Shop"
       ],
       "lore": [
@@ -92,9 +93,9 @@
       "name": "Swordsman Fields",
       "tags": ["Level 1-27+", "FIELD MOBS"],
       "info": [
-        "First Combat Area",
-        "Home of Illfang the Kobold Lord (Boss)",
-        "Boars/Wolves (Mobs)"
+        "First Combat Area, this is the first floor players begin leveling up.",
+        "Getting levels on this floor is slow at first, so it is ideal that you find a guild or party.",
+        "There is also a town on this floor you can buy potions and some gear. You can also aquire guild uniforms here."
       ],
       "activities": [
         "Mob Grinding",
@@ -184,10 +185,7 @@
       ],
       "lore": [
         "The Swamp Lands is where warmth dies and comfort becomes a memory. The air hangs heavy and damp, clinging to armor and skin alike. Cold mist rolls endlessly across flooded plains, turning every breath into a chilling reminder that this floor was never meant to nurture life.",
-        "At first glance the marsh seems still — shallow waters stretching beneath a gray sky, moss-covered ruins barely rising above the mire — but the silence is deceptive. Beneath the murk, serpents coil unseen, crocodiles drift like shadows, and unseen creatures disturb the surface with sudden, violent splashes.",
-        "The water never truly dries. Boots remain soaked, footing slips without warning, and the chill seeps through metal and cloth until stamina drains as surely as HP. Players who linger too long find their movements sluggish, their reactions dulled by the relentless cold.",
-        "Rising from the flooded expanse stands the Slime Caverns, a stone structure emerging from the swamp like a monument to decay. It looms in the fog from nearly every direction, its entrance the only promise of progress — and the source of the swamp’s corruption.",
-        "Within the cavern’s slick, twisting corridors, moisture drips endlessly from the ceiling as giant snails gather in flooded chambers. At the center waits Lord Slug, grotesque sovereign of stagnation. His presence thickens the very water around him, turning the swamp itself into a weapon. Floor 3 is not conquered through haste or bravery alone — it is endured. And those who cannot withstand the cold, the wet, and the weight of the mire will simply disappear beneath it."
+        "At first glance the marsh seems still — shallow waters stretching beneath a gray sky, moss-covered ruins barely rising above the mire — but the silence is deceptive. Beneath the murk, serpents coil unseen, crocodiles drift like shadows, and unseen creatures disturb the surface with sudden, violent splashes."
       ],
       "map": {
         "image": "/images/floors/floor3map.png",
@@ -226,10 +224,11 @@
       "name": "Desert Land",
       "tags": ["Level 45+", "DESERT MOBS"],
       "info": [
-        "Large Desert Biome",
-        "Home of Stallord (Boss)",
-        "Scorpions and Cobras (Mobs)",
-        "Ancient Gold Mine"
+        "Floor 4 is larger in size compared to floor 3, but it is pretty simple to navigate.",
+        "From spawn there is 2 shops ahead of you. One forward to the left and the other near the village exit.",
+        "Outside the walls there are 3 paths. Straight takes you to the canyon. Left takes you to a spot most use as an sk farm. Right takes you around to the tower in a scenic way.",
+        "Floor 4 does have a gold mine in the canyon.",
+        "It is generally a good idea to have help on this floor. especially if you are in the lower levels. As the mobs can poison you or give you the bleed status."
       ],
       "activities": [
         "Mob Grinding",
@@ -242,11 +241,7 @@
       ],
       "lore": [
         "Floor 4 greets players not with cold or rain — but with heat that suffocates. Endless dunes stretch beneath a merciless sun, the sand shifting constantly as though the land itself refuses to stay still.",
-        "Wind howls across the desert in violent gusts, carving the terrain into towering ridges and swallowing footprints within seconds. Visibility drops without warning when sandstorms roll in, turning even short journeys into dangerous gambles.",
-        "Scorpions burrow beneath the dunes, striking from below with venomous precision, while cobras coil silently between broken stone and half-buried ruins. The desert is not loud like the fields, nor oppressive like the swamp — it is patient.",
-        "Veterans whisper the floor doesn’t behave naturally. Encounters feel placed, not found. Aggro snaps too fast. Spawns cluster where players are weakest, like the system is collecting data and correcting outcomes mid-run.",
-        "Some swear the landmarks drift by a few steps between trips — an outpost slightly off, a ruin not where it was, a path that ‘should’ exist suddenly gone. If you trust your memory more than your map, the sand will punish you for it.",
-        "At the far end of the desert rises the Boss Tower, framed by canyon walls carved by centuries of wind. Within waits Stallord — a colossal demon sovereign whose skull gleams like obsidian under the sun. When the battle begins, the storm answers… and the floor stops feeling like a place, and starts feeling like a test."
+        "Wind howls across the desert in violent gusts, carving the terrain into towering ridges and swallowing footprints within seconds. Visibility drops without warning when sandstorms roll in, turning even short journeys into dangerous gambles."
       ],
       "map": {
         "image": "/images/floors/floor4map.png",
@@ -256,31 +251,22 @@
             "label": "Spawn",
             "top": "38%",
             "left": "8%",
-            "desc": "Heat shimmer, dry wind, and a horizon that looks the same in every direction.",
+            "desc": "Small village accompanied by floor 4's shops and some quest NPC's.",
             "system": "SYSTEM: Entry Point"
-          },
-          {
-            "label": "Desert Outpost",
-            "top": "45%",
-            "left": "30%",
-            "desc": "A battered safe pocket. Water, supplies, and exhausted parties counting potions.",
-            "system": "SYSTEM: Neutral Settlement"
           },
           {
             "label": "Relic Ruins",
             "top": "25%",
             "left": "55%",
-            "desc": "Ancient stone swallowed by sand. Players report ‘layout inconsistencies’ between visits.",
-            "system": "SYSTEM: Anomaly Detected",
-            "danger": "CAUTION"
+            "desc": "Ancient mine in the side of the canyon with gold ores.",
+            "system": "SYSTEM: Ruined Mines"
           },
           {
             "label": "Canyon Pass",
-            "top": "60%",
-            "left": "65%",
+            "top": "45%",
+            "left": "30%",
             "desc": "A narrow route with bad sightlines. Ambush territory—especially during storms.",
             "system": "SYSTEM: Pathing Hazard",
-            "danger": "CAUTION"
           },
           {
             "label": "Tower",
@@ -292,7 +278,7 @@
           }
         ]
       },
-      "systemNote": "Floor 4 is a vast desert. Harsh sunlight, shifting terrain, and strange spawn behavior make endurance the true challenge."
+      "systemNote": "Floor 4 is a vast desert. Empty and Sandy."
     }
   ]
 }
