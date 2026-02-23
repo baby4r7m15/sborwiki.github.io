@@ -278,7 +278,6 @@
             <div class="panel-body">
               <ul class="hud-list chevrons">
                 <li><a href="/information/protective-gear/" class="back-link">← Back to Protective Gear</a></li>
-                <li><a href="/" class="back-link">← Back to Main Page</a></li>
               </ul>
             </div>
           </section>
@@ -304,28 +303,6 @@
               <p><strong>${overview.nested.lead || ""}</strong></p>
               <ul class="info-list">${(overview.nested.sub || []).map(s => `<li>${s}</li>`).join("")}</ul>
             ` : ""}
-          </div>
-        </section>
-
-        <section class="hud-panel">
-          <div class="panel-head"><span>SKILLS</span></div>
-          <div class="panel-body">
-            <p>${skills.text || ""}</p>
-            ${Array.isArray(skills.rows) && skills.rows.length ? `
-              <table class="info-table">
-                <thead><tr><th>Name</th><th>Type</th><th>Requirement</th><th>Animation</th></tr></thead>
-                <tbody>
-                  ${(skills.rows || []).map(r => `
-                    <tr>
-                      <td>${r.name || "—"}</td>
-                      <td>${r.type || "—"}</td>
-                      <td>${r.requirement || "—"}</td>
-                      <td>${r.animation ? `<img class="skill-gif" src="${r.animation}" alt="${(r.name || "Skill") + " animation"}">` : "—"}</td>
-                    </tr>
-                  `).join("")}
-                </tbody>
-              </table>
-            ` : `<p>—</p>`}
           </div>
         </section>
 
