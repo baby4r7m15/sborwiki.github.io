@@ -266,7 +266,7 @@
             "top": "45%",
             "left": "30%",
             "desc": "A narrow route with bad sightlines. Ambush territory—especially during storms.",
-            "system": "SYSTEM: Pathing Hazard",
+            "system": "SYSTEM: Pathing Hazard"
           },
           {
             "label": "Tower",
