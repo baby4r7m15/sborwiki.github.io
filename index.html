@@ -43,33 +43,8 @@
       <div class="hud-subtitle">UNOFFICIAL WIKI DATABASE</div>
     </div>
 
-    <nav class="hud-nav" aria-label="Site navigation">
-
-  <a class="hud-link active" href="/">Home</a>
-
-  <!-- INFORMATION dropdown -->
-  <div class="hud-drop">
-    <button class="hud-link hud-drop-btn" type="button" aria-haspopup="menu">
-      Information ▾
-    </button>
-    <div class="hud-menu" role="menu" aria-label="Information menu">
-      <a role="menuitem" href="/information/weapons">Weapons</a>
-    </div>
-  </div>
-
-  <!-- FLOORS dropdown -->
-  <div class="hud-drop">
-    <button class="hud-link hud-drop-btn" type="button" aria-haspopup="menu">
-      Floors ▾
-    </button>
-    <div class="hud-menu" role="menu" aria-label="Floors menu">
-      <a role="menuitem" href="/information/floors-1-10">Floors 1–10</a>
-      <a role="menuitem" href="/information/floors-11-20">Floors 11–20</a>
-    </div>
-  </div>
-
-</nav>
-
+    <nav id="site-nav" class="hud-nav" aria-label="Site navigation"></nav>
+    
     <div class="hud-right">
       <div class="hud-chip">LIVE</div>
       <div class="hud-chip hud-chip-soft">Cardinal Version: 3</div>
@@ -274,5 +249,6 @@
 
   </div>
   <script src="/js/toasts.js?v=1"></script>
+  <script src="/js/navbar.js?v=1"></script>
 </body>
 </html>
