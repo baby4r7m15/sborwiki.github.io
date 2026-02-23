@@ -28,6 +28,26 @@
         "Most players gather here before stepping into real combat zones.",
         "The Black Iron Palace is treated like a monument… and a warning."
       ],
+      "mobs": [
+        {
+          "name": "Training Dummy",
+          "level": "0",
+          "location": "Amphitheater Stage",
+          "drops": "None",
+          "notes": "Hitting these will show you your attack damage and crit damage."
+        }
+      ],
+      "bosses": [
+      ],
+      "quests": [
+        {
+          "name": "Tutorial",
+          "giver": "Kai",
+          "objective": "Play the game tutorial.",
+          "reward": "None",
+          "notes": "You can start the tutorial at any point."
+        }
+      ],
       "map": {
         "image": "/images/floors/floor1map.png",
         "alt": "Floor 1 map",
@@ -86,7 +106,6 @@
       },
       "systemNote": "Floor 1 is the primary safe hub for new players."
     },
-
     {
       "id": "2",
       "number": 2,
@@ -97,21 +116,69 @@
         "Getting levels on this floor is slow at first, so it is ideal that you find a guild or party.",
         "There is also a town on this floor you can buy potions and some gear. You can also aquire guild uniforms here."
       ],
-      "activities": [
-        "Mob Grinding",
-        "Side Quests",
-        "Material Farming"
-      ],
-      "shops": [
-        "Floor 2 Shop",
-        "Guild Merchants"
-      ],
+      "activities": ["Mob Grinding", "Side Quests", "Material Farming"],
+      "shops": ["Floor 2 Shop", "Guild Merchants"],
       "lore": [
         "Swordsman Fields is where safety ends and survival begins. Beyond the Town of Beginnings, the land opens into rolling plains filled with restless monsters and inexperienced adventurers testing their strength.",
         "The fields appear peaceful at first glance — wind through tall grass, distant hills, scattered ruins — but danger spawns relentlessly. Boars charge without warning, wolves hunt in packs, and hesitation is punished swiftly.",
         "At the far end of the floor stands the looming Boss Tower, home to Illfang the Kobold Lord. The structure can be seen from nearly anywhere in the fields, a constant reminder that progress demands coordination.",
         "Many guilds form here out of necessity rather than ambition. Players quickly learn that reckless solo grinding leads to shattered HP bars and broken morale.",
         "Veteran players often say the system subtly adjusts aggression on this floor — as if measuring whether newcomers are worthy of advancing. Whether rumor or reality, one truth remains: Floor 2 decides who will continue climbing… and who will not."
+      ],
+      "mobs": [
+        {
+          "name": "Boar",
+          "level": "1-3",
+          "location": "Open Fields",
+          "drops": "Boar Hide",
+          "notes": "Level 1: 2xp|2col|40hp Level 2: 5xp|10col|70hp Level 3: 7xp|15col|110 hp"
+        },
+        {
+          "name": "Wolf",
+          "level": "4-6",
+          "location": "Forest",
+          "drops": "Wolf Hide",
+          "notes": "Level 4: 10xp|20col|150hp Level 5: 12xp|25col|200hp Level 6: 15xp|30col|250 hp"
+        },
+        {
+          "name": "Kobold Sentinel",
+          "level": "7-9",
+          "location": "Dungeon",
+          "drops": "Grandmaster Steel Blade", "Grandmaster Steel Dagger",
+          "notes": "Level 7: 17xp|35col|300hp Level 8: 20xp|40col|360hp Level 9: 22xp|45col|4200 hp"
+        },
+        {
+          "name": "Corrupted Sentinel",
+          "level": "10-12",
+          "location": "Dungeon",
+          "drops": "Grandmaster Steel Greatsword", "Grandmaster Steel Rapier",
+          "notes": "Level 10: 35xp|50col|480hp Level 11: 37xp|60col|550hp Level 12: 40xp|65col|620 hp"
+        }
+      ],
+      "bosses": [
+        {
+          "name": "Shadesworn the Corrupted (Mini Boss)",
+          "level": "6",
+          "location": "Mini Boss Room",
+          "drops": "Obsidibite", "Grandmaster Shield",
+          "notes": "1080xp|144col|14k hp"
+        },
+        {
+          "name": "Illfang the Kobold Lord",
+          "level": "10",
+          "location": "Boss Room",
+          "drops": "Iron Ore", "Copper Ore", "Illfang Tooth", "Illfang's Shield", "Coat of Midnight (One-time Drop)",
+          "notes": "1800xp|240col|20k hp"
+        }
+      ],
+      "quests": [
+        {
+          "name": "Prove Your Blade (Placeholder)",
+          "giver": "Village Guard",
+          "objective": "Defeat 5 field mobs (placeholder)",
+          "reward": "Col + XP (Placeholder)",
+          "notes": "Placeholder quest entry for table testing."
+        }
       ],
       "map": {
         "image": "/images/floors/floor2map.png",
@@ -165,7 +232,6 @@
       },
       "systemNote": "Floor 2 is the beginning floor for leveling."
     },
-
     {
       "id": "3",
       "number": 3,
@@ -176,16 +242,38 @@
         "There isn't a lot to do on floor 3 besides the boss.",
         "The tower should be visible everywhere on the floor."
       ],
-      "activities": [
-        "Mob Farming.",
-        "Boss Battle."
-      ],
-      "shops": [
-        "Floor 3 Shop"
-      ],
+      "activities": ["Mob Farming.", "Boss Battle."],
+      "shops": ["Floor 3 Shop"],
       "lore": [
         "The Swamp Lands is where warmth dies and comfort becomes a memory. The air hangs heavy and damp, clinging to armor and skin alike. Cold mist rolls endlessly across flooded plains, turning every breath into a chilling reminder that this floor was never meant to nurture life.",
         "At first glance the marsh seems still — shallow waters stretching beneath a gray sky, moss-covered ruins barely rising above the mire — but the silence is deceptive. Beneath the murk, serpents coil unseen, crocodiles drift like shadows, and unseen creatures disturb the surface with sudden, violent splashes."
+      ],
+      "mobs": [
+        {
+          "name": "Swamp Serpent (Placeholder)",
+          "level": "27-30",
+          "location": "Marsh Pools",
+          "drops": "Venom Sac (Placeholder)",
+          "notes": "Placeholder mob entry for table testing."
+        }
+      ],
+      "bosses": [
+        {
+          "name": "Slime Cavern Guardian (Placeholder)",
+          "level": "??",
+          "location": "Tower / Slime Caverns",
+          "drops": "Boss Loot (Placeholder)",
+          "notes": "Placeholder boss entry for table testing."
+        }
+      ],
+      "quests": [
+        {
+          "name": "Mire Samples (Placeholder)",
+          "giver": "Swamp Researcher",
+          "objective": "Collect 3 swamp materials (placeholder)",
+          "reward": "Potion / Col (Placeholder)",
+          "notes": "Placeholder quest entry for table testing."
+        }
       ],
       "map": {
         "image": "/images/floors/floor3map.png",
@@ -217,7 +305,6 @@
       },
       "systemNote": "Floor 3 is a swamp. Damp and cold, with just snakes and snails to keep you company."
     },
-
     {
       "id": "4",
       "number": 4,
@@ -230,18 +317,38 @@
         "Floor 4 does have a gold mine in the canyon.",
         "It is generally a good idea to have help on this floor. especially if you are in the lower levels. As the mobs can poison you or give you the bleed status."
       ],
-      "activities": [
-        "Mob Grinding",
-        "Material Farming",
-        "Boss Battle"
-      ],
-      "shops": [
-        "Desert Outpost Shop",
-        "Relic Trader"
-      ],
+      "activities": ["Mob Grinding", "Material Farming", "Boss Battle"],
+      "shops": ["Desert Outpost Shop", "Relic Trader"],
       "lore": [
         "Floor 4 greets players not with cold or rain — but with heat that suffocates. Endless dunes stretch beneath a merciless sun, the sand shifting constantly as though the land itself refuses to stay still.",
         "Wind howls across the desert in violent gusts, carving the terrain into towering ridges and swallowing footprints within seconds. Visibility drops without warning when sandstorms roll in, turning even short journeys into dangerous gambles."
+      ],
+      "mobs": [
+        {
+          "name": "Sand Viper (Placeholder)",
+          "level": "45-48",
+          "location": "Dunes / Canyon Edge",
+          "drops": "Viper Fang (Placeholder)",
+          "notes": "Placeholder mob entry for table testing."
+        }
+      ],
+      "bosses": [
+        {
+          "name": "Stallord (Placeholder)",
+          "level": "??",
+          "location": "Tower",
+          "drops": "Boss Loot (Placeholder)",
+          "notes": "Placeholder boss entry for table testing."
+        }
+      ],
+      "quests": [
+        {
+          "name": "Heatproof Supplies (Placeholder)",
+          "giver": "Outpost Quartermaster",
+          "objective": "Deliver supplies to the canyon route (placeholder)",
+          "reward": "Gear / Col (Placeholder)",
+          "notes": "Placeholder quest entry for table testing."
+        }
       ],
       "map": {
         "image": "/images/floors/floor4map.png",
