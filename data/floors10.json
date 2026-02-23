@@ -38,6 +38,11 @@
         }
       ],
       "bosses": [
+        "name": "",
+          "level": "",
+          "location": "",
+          "drops": "",
+          "notes": ""
       ],
       "quests": [
         {
@@ -144,14 +149,14 @@
           "name": "Kobold Sentinel",
           "level": "7-9",
           "location": "Dungeon",
-          "drops": "Grandmaster Steel Blade", "Grandmaster Steel Dagger",
+          "drops": "Grandmaster Steel Blade, Grandmaster Steel Dagger",
           "notes": "Level 7: 17xp|35col|300hp Level 8: 20xp|40col|360hp Level 9: 22xp|45col|4200 hp"
         },
         {
           "name": "Corrupted Sentinel",
           "level": "10-12",
           "location": "Dungeon",
-          "drops": "Grandmaster Steel Greatsword", "Grandmaster Steel Rapier",
+          "drops": "Grandmaster Steel Greatsword, Grandmaster Steel Rapier",
           "notes": "Level 10: 35xp|50col|480hp Level 11: 37xp|60col|550hp Level 12: 40xp|65col|620 hp"
         }
       ],
@@ -160,14 +165,14 @@
           "name": "Shadesworn the Corrupted (Mini Boss)",
           "level": "6",
           "location": "Mini Boss Room",
-          "drops": "Obsidibite", "Grandmaster Shield",
+          "drops": "Obsidibite, Grandmaster Shield",
           "notes": "1080xp|144col|14k hp"
         },
         {
           "name": "Illfang the Kobold Lord",
           "level": "10",
           "location": "Boss Room",
-          "drops": "Iron Ore", "Copper Ore", "Illfang Tooth", "Illfang's Shield", "Coat of Midnight (One-time Drop)",
+          "drops": "Iron Ore", "Copper Ore, Illfang Tooth, Illfang's Shield, Coat of Midnight (One-time Drop)",
           "notes": "1800xp|240col|20k hp"
         }
       ],
