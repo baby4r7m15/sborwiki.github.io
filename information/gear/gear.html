@@ -159,7 +159,6 @@
         if (chipEl) chipEl.textContent = id.toUpperCase();
 
         // Load the gear JSON (prefer index-defined path)
-        // Index uses "file" — support "json" too just in case.
         const jsonPath = gearItem.file || gearItem.json || `/data/${id}.json`;
 
         const res = await fetch(jsonPath, { cache: "no-store" });
@@ -177,11 +176,20 @@
 
     // ----- helpers -----
 
+    function escapeHTML(value) {
+      const s = (value === null || value === undefined) ? "" : String(value);
+      return s
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#39;");
+    }
+
     function levelMax(v) {
       if (v === null || v === undefined) return -1;
       if (typeof v === "number") return v;
       if (typeof v === "string") {
-        // If you ever have "140 [Max]" strings, pull the first number
         const n = parseFloat(v);
         return Number.isFinite(n) ? n : -1;
       }
@@ -194,7 +202,6 @@
     }
 
     function statToText(v) {
-      // supports number, string, or {min,max}
       if (v === null || v === undefined) return "—";
       if (typeof v === "number") return String(v);
       if (typeof v === "string") return v;
@@ -203,26 +210,24 @@
         const min = (v.min ?? null);
         const max = (v.max ?? null);
 
-        // If only max is known, show it as Max
         if (min === null && max !== null) return `${max} [Max]`;
-
-        // If min & max are both present
         if (min !== null && max !== null) {
           if (min === max) return String(max);
           return `${min} → ${max}`;
         }
-
-        // If only min exists
         if (min !== null && max === null) return String(min);
-
         return "—";
       }
-
       return String(v);
     }
 
+    function renderList(items) {
+      const arr = Array.isArray(items) ? items : [];
+      if (!arr.length) return "";
+      return `<ul class="info-list">${arr.map(x => `<li>${escapeHTML(x)}</li>`).join("")}</ul>`;
+    }
+
     function renderTableDynamic(t) {
-      // If JSON provides columns, use them. Otherwise default to armor layout.
       const columns = (Array.isArray(t.columns) && t.columns.length)
         ? t.columns
         : [
@@ -233,16 +238,15 @@
             { key: "obtain", label: "Obtain" }
           ];
 
-      // Sort rows by level (max) when possible
       const rows = Array.isArray(t.rows) ? [...t.rows] : [];
       rows.sort((a, b) => levelMax(a.level) - levelMax(b.level));
 
-      const thead = columns.map(c => `<th>${c.label}</th>`).join("");
+      const thead = columns.map(c => `<th>${escapeHTML(c.label)}</th>`).join("");
 
       const tbody = rows.map(r => {
         const tds = columns.map(c => {
-          const val = statToText(r[c.key]);
-          return `<td data-label="${c.label}">${val}</td>`;
+          const raw = statToText(r[c.key]);
+          return `<td data-label="${escapeHTML(c.label)}">${escapeHTML(raw)}</td>`;
         }).join("");
         return `<tr>${tds}</tr>`;
       }).join("");
@@ -258,16 +262,14 @@
     // ----- renderer -----
 
     function renderGear(data) {
-      // Sidebar (always includes navigation)
+      // Sidebar
       const sidebar = document.getElementById("gearSidebar");
       if (sidebar) {
         const notesPanel = data.sidebar ? `
           <section class="hud-panel">
-            <div class="panel-head"><span>${data.sidebar.title || "NOTES"}</span><span class="panel-chip">INFO</span></div>
+            <div class="panel-head"><span>${escapeHTML(data.sidebar.title || "NOTES")}</span><span class="panel-chip">INFO</span></div>
             <div class="panel-body">
-              <ul class="info-list">
-                ${(data.sidebar.bullets || []).map(b => `<li>${b}</li>`).join("")}
-              </ul>
+              ${renderList(data.sidebar.bullets)}
             </div>
           </section>
         ` : "";
@@ -290,25 +292,29 @@
       if (!mount) return;
 
       const overview = data.overview || {};
-      const skills = data.skills || {};
-      const tables = data.gearTables || data.weaponTables || []; // allow either key, for compatibility
+      const tables = data.gearTables || data.weaponTables || [];
+
+      const nested = overview.nested || null;
+      const nestedBlock = (nested && (nested.lead || (Array.isArray(nested.sub) && nested.sub.length))) ? `
+        <div style="margin-top:10px;">
+          ${nested.lead ? `<p><strong>${escapeHTML(nested.lead)}</strong></p>` : ""}
+          ${renderList(nested.sub)}
+        </div>
+      ` : "";
 
       mount.innerHTML = `
         <section class="hud-panel">
           <div class="panel-head"><span>OVERVIEW</span></div>
           <div class="panel-body">
-            <p>${overview.text || ""}</p>
-            <ul class="info-list">${(overview.bullets || []).map(b => `<li>${b}</li>`).join("")}</ul>
-            ${overview.nested ? `
-              <p><strong>${overview.nested.lead || ""}</strong></p>
-              <ul class="info-list">${(overview.nested.sub || []).map(s => `<li>${s}</li>`).join("")}</ul>
-            ` : ""}
+            ${overview.text ? `<p>${escapeHTML(overview.text)}</p>` : ""}
+            ${renderList(overview.bullets)}
+            ${nestedBlock}
           </div>
         </section>
 
         ${(tables || []).map(t => `
           <section class="hud-panel">
-            <div class="panel-head"><span>${t.title || "GEAR TABLE"}</span></div>
+            <div class="panel-head"><span>${escapeHTML(t.title || "GEAR TABLE")}</span></div>
             <div class="panel-body">
               ${renderTableDynamic(t)}
             </div>
