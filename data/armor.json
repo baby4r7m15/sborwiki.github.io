@@ -1,1 +1,210 @@
-wee
+{
+  "sidebar": {
+    "title": "Armor Notes",
+    "bullets": [
+      "Defense reduces incoming damage.",
+      "Dexterity increases maximum HP.",
+      "Some special armors scale with your level (Min → Max)."
+    ]
+  },
+  "overview": {
+    "text": "Armor provides survivability through Defense and Dexterity bonuses. Different obtain methods provide varying power scaling.",
+    "bullets": [
+      "Defense × 5 = flat damage reduction (base rule).",
+      "Dexterity × 10 = bonus HP from equipment (base rule).",
+      "Crafted armor tends to have the highest floor-based scaling; shop armor is lowest."
+    ]
+  },
+  "skills": {
+    "text": "Armor does not grant active combat skills.",
+    "rows": []
+  },
+  "gearTables": [
+    {
+      "title": "SHOP ARMOR",
+      "columns": [
+        { "key": "name", "label": "Name" },
+        { "key": "level", "label": "Level" },
+        { "key": "defense", "label": "Defense" },
+        { "key": "dexterity", "label": "Dexterity" },
+        { "key": "obtain", "label": "Obtain" }
+      ],
+      "rows": [
+        { "name": "Beginner Armor", "level": { "min": 1, "max": 1 }, "defense": { "min": 0.5, "max": 0.5 }, "dexterity": { "min": 3, "max": 3 }, "obtain": "Starter Inventory, Floor 1 Shop" },
+        { "name": "Fields Warrior", "level": { "min": 3, "max": 3 }, "defense": { "min": 1.5, "max": 1.5 }, "dexterity": { "min": 6, "max": 6 }, "obtain": "Floor 1 Shop, Floor 2 Shop" },
+        { "name": "Midnight Platemail", "level": { "min": 4, "max": 4 }, "defense": { "min": 2, "max": 2 }, "dexterity": { "min": 9, "max": 9 }, "obtain": "Floor 1 Shop" },
+        { "name": "Combat Armor", "level": { "min": 7, "max": 7 }, "defense": { "min": 3.5, "max": 3.5 }, "dexterity": { "min": 18, "max": 18 }, "obtain": "Floor 1 Shop, Floor 2 Shop" },
+        { "name": "Swamp Wanderer", "level": { "min": 15, "max": 15 }, "defense": { "min": 9, "max": 9 }, "dexterity": { "min": 51, "max": 51 }, "obtain": "Floor 2 Shop, Floor 3 Shop" },
+        { "name": "Swamp Legend", "level": { "min": 19, "max": 19 }, "defense": { "min": 12.5, "max": 12.5 }, "dexterity": { "min": 70, "max": 70 }, "obtain": "Floor 2 Shop, Floor 3 Shop" },
+        { "name": "Desert Ranger", "level": { "min": 23, "max": 23 }, "defense": { "min": 16, "max": 16 }, "dexterity": { "min": 91, "max": 91 }, "obtain": "Floor 3 Shop, Floor 4 Shop" },
+        { "name": "Crimson Defender", "level": { "min": 27, "max": 27 }, "defense": { "min": 20, "max": 20 }, "dexterity": { "min": 113, "max": 113 }, "obtain": "Floor 4 Shop" },
+        { "name": "Arctic Cloak", "level": { "min": 30, "max": 30 }, "defense": { "min": 23, "max": 23 }, "dexterity": { "min": 130, "max": 130 }, "obtain": "Floor 4 Shop, Floor 5 Shop" },
+        { "name": "Winter Wolf Armor", "level": { "min": 35, "max": 35 }, "defense": { "min": 28.5, "max": 28.5 }, "dexterity": { "min": 161, "max": 161 }, "obtain": "Floor 5 Shop" },
+        { "name": "Flame Samurai", "level": { "min": 45, "max": 45 }, "defense": { "min": 40, "max": 40 }, "dexterity": { "min": 226, "max": 226 }, "obtain": "Floor 5 Shop" },
+        { "name": "Wanderers Robes", "level": { "min": 53, "max": 53 }, "defense": { "min": 50, "max": 50 }, "dexterity": { "min": 283, "max": 283 }, "obtain": "Floor 7 Shop" },
+        { "name": "Iron Samurai", "level": { "min": 55, "max": 55 }, "defense": { "min": 52.5, "max": 52.5 }, "dexterity": { "min": 297, "max": 297 }, "obtain": "Floor 5 Shop" },
+        { "name": "Midnight Attire", "level": { "min": 57, "max": 57 }, "defense": { "min": 55.5, "max": 55.5 }, "dexterity": { "min": 312, "max": 312 }, "obtain": "Floor 7 Shop" },
+        { "name": "Corrupt Platemail", "level": { "min": 65, "max": 65 }, "defense": { "min": 66, "max": 66 }, "dexterity": { "min": 373, "max": 373 }, "obtain": "Floor 5 Shop" },
+        { "name": "Burutori", "level": { "min": 75, "max": 75 }, "defense": { "min": 80, "max": 80 }, "dexterity": { "min": 454, "max": 454 }, "obtain": "Floor 9 Shop" },
+        { "name": "Chinese Cloak", "level": { "min": 85, "max": 85 }, "defense": { "min": 95, "max": 95 }, "dexterity": { "min": 538, "max": 538 }, "obtain": "Floor 10 Shop" },
+        { "name": "Light Samurai", "level": { "min": 90, "max": 90 }, "defense": { "min": 102.5, "max": 102.5 }, "dexterity": { "min": 581, "max": 581 }, "obtain": "Floor 10 Shop" },
+        { "name": "Commoner Garments", "level": { "min": 93, "max": 93 }, "defense": { "min": 107.5, "max": 107.5 }, "dexterity": { "min": 608, "max": 608 }, "obtain": "Floor 10 Shop" },
+        { "name": "Guardian Platemail", "level": { "min": 95, "max": 95 }, "defense": { "min": 110.5, "max": 110.5 }, "dexterity": { "min": 626, "max": 626 }, "obtain": "Floor 10 Shop" },
+        { "name": "Eternal Loyalty", "level": { "min": 105, "max": 105 }, "defense": { "min": 126.5, "max": 126.5 }, "dexterity": { "min": 717, "max": 717 }, "obtain": "Floor 12 Shop" },
+        { "name": "Floral Armor", "level": { "min": 110, "max": 110 }, "defense": { "min": 135, "max": 135 }, "dexterity": { "min": 763, "max": 763 }, "obtain": "Floor 12 Shop" },
+        { "name": "Forest Shadow", "level": { "min": 112, "max": 112 }, "defense": { "min": 138, "max": 138 }, "dexterity": { "min": 782, "max": 782 }, "obtain": "Floor 12 Shop (also dropped by Ghost Panther)" },
+        { "name": "Rulid Combatant", "level": { "min": 136, "max": 136 }, "defense": { "min": 179.5, "max": 179.5 }, "dexterity": { "min": 1018, "max": 1018 }, "obtain": "Floor 16 Shop" },
+        { "name": "Rulid Battle Attire", "level": { "min": 139, "max": 139 }, "defense": { "min": 185, "max": 185 }, "dexterity": { "min": 1048, "max": 1048 }, "obtain": "Floor 16 Shop" },
+        { "name": "Rulid Priest", "level": { "min": 142, "max": 142 }, "defense": { "min": 190.5, "max": 190.5 }, "dexterity": { "min": 1079, "max": 1079 }, "obtain": "Floor 16 Shop" }
+      ]
+    },
+    {
+      "title": "BLACKSMITH ARMOR",
+      "columns": [
+        { "key": "name", "label": "Name" },
+        { "key": "level", "label": "Level" },
+        { "key": "defense", "label": "Defense" },
+        { "key": "dexterity", "label": "Dexterity" },
+        { "key": "obtain", "label": "Obtain" }
+      ],
+      "rows": [
+        { "name": "Combat Armor Mk II", "level": { "min": 10, "max": 10 }, "defense": { "min": 5.5, "max": 5.5 }, "dexterity": { "min": 29, "max": 29 }, "obtain": "Blacksmithing" },
+
+        { "name": "Rabbit Hunters Armor", "level": { "min": 34, "max": 34 }, "defense": { "min": 27.5, "max": 27.5 }, "dexterity": { "min": 155, "max": 155 }, "obtain": "Easter Event: Blacksmithing (2023–2024)" },
+        { "name": "Rabbit Plated Armor", "level": { "min": 36, "max": 36 }, "defense": { "min": 29.5, "max": 29.5 }, "dexterity": { "min": 167, "max": 167 }, "obtain": "Easter Event: Blacksmithing (2025)" },
+        { "name": "Rabbit Hunters Armor Mk II", "level": { "min": 68, "max": 68 }, "defense": { "min": 70, "max": 70 }, "dexterity": { "min": 397, "max": 397 }, "obtain": "Easter Event: Blacksmithing (2023–2024)" },
+        { "name": "Rabbit Plated Armor Mk II", "level": { "min": 72, "max": 72 }, "defense": { "min": 76, "max": 76 }, "dexterity": { "min": 429, "max": 429 }, "obtain": "Easter Event: Blacksmithing (2025)" },
+        { "name": "Rabbit Hunters Armor Mk III", "level": { "min": 102, "max": 102 }, "defense": { "min": 121.5, "max": 121.5 }, "dexterity": { "min": 689, "max": 689 }, "obtain": "Easter Event: Blacksmithing (2023–2024)" },
+        { "name": "Rabbit Plated Armor Mk III", "level": { "min": 108, "max": 108 }, "defense": { "min": 131.5, "max": 131.5 }, "dexterity": { "min": 744, "max": 744 }, "obtain": "Easter Event: Blacksmithing (2025)" },
+        { "name": "Rabbit Hunters Armor Mk IV", "level": { "min": 136, "max": 136 }, "defense": { "min": 179.5, "max": 179.5 }, "dexterity": { "min": 1018, "max": 1018 }, "obtain": "Easter Event: Blacksmithing (2023–2024)" },
+        { "name": "Rabbit Plated Armor Mk IV", "level": { "min": 142, "max": 142 }, "defense": { "min": 190.5, "max": 190.5 }, "dexterity": { "min": 1079, "max": 1079 }, "obtain": "Easter Event: Blacksmithing (2025)" },
+
+        { "name": "Rabbit Pelt Armor MK II", "level": { "min": 160, "max": 160 }, "defense": { "min": 224, "max": 224 }, "dexterity": { "min": 1268, "max": 1268 }, "obtain": "Easter Event: Blacksmithing" },
+
+        { "name": "Rabbit Hunters Armor Mk V", "level": { "min": 170, "max": 170 }, "defense": { "min": 243, "max": 243 }, "dexterity": { "min": 1377, "max": 1377 }, "obtain": "Easter Event: Blacksmithing (2023–2024)" },
+        { "name": "Rabbit Plated Armor Mk V", "level": { "min": 178, "max": 178 }, "defense": { "min": 258.5, "max": 258.5 }, "dexterity": { "min": 1466, "max": 1466 }, "obtain": "Easter Event: Blacksmithing (2025)" },
+
+        { "name": "Winter Guardian Armor", "level": { "min": 170, "max": 170 }, "defense": { "min": 243, "max": 243 }, "dexterity": { "min": 1377, "max": 1377 }, "obtain": "Christmas Event: Blacksmithing (2023)" },
+        { "name": "Bloodred Knight Armor", "level": { "min": 170, "max": 170 }, "defense": { "min": 243, "max": 243 }, "dexterity": { "min": 1377, "max": 1377 }, "obtain": "Halloween Event: Blacksmithing (2024)" },
+        { "name": "Winter Holiday Armor", "level": { "min": 175, "max": 175 }, "defense": { "min": 253, "max": 253 }, "dexterity": { "min": 1432, "max": 1432 }, "obtain": "Christmas Event: Blacksmithing (unlocks after completing QE60-2, 2024)" },
+
+        { "name": "Custodian Attire", "level": { "min": 195, "max": 195 }, "defense": { "min": 292.5, "max": 292.5 }, "dexterity": { "min": 1658, "max": 1658 }, "obtain": "Blacksmithing" },
+        { "name": "Kringlewrath Iron Mantle", "level": { "min": 205, "max": 205 }, "defense": { "min": 313, "max": 313 }, "dexterity": { "min": 1775, "max": 1775 }, "obtain": "Christmas Event: Blacksmithing" }
+      ]
+    },
+    {
+      "title": "MOB ARMOR",
+      "columns": [
+        { "key": "name", "label": "Name" },
+        { "key": "level", "label": "Level" },
+        { "key": "defense", "label": "Defense" },
+        { "key": "dexterity", "label": "Dexterity" },
+        { "key": "obtain", "label": "Obtain" }
+      ],
+      "rows": [
+        { "name": "Dark Samurai", "level": { "min": 50, "max": 50 }, "defense": { "min": 46.5, "max": 46.5 }, "dexterity": { "min": 261, "max": 261 }, "obtain": "Flame Boar" },
+        { "name": "Pilgrim Shroud", "level": { "min": 60, "max": 60 }, "defense": { "min": 59.5, "max": 59.5 }, "dexterity": { "min": 335, "max": 335 }, "obtain": "Kufuku no Toruko (2020)" },
+        { "name": "Laurel Armor", "level": { "min": 98, "max": 98 }, "defense": { "min": 115, "max": 115 }, "dexterity": { "min": 652, "max": 652 }, "obtain": "Knight" },
+        { "name": "Sky Armor", "level": { "min": 122, "max": 122 }, "defense": { "min": 155, "max": 155 }, "dexterity": { "min": 878, "max": 878 }, "obtain": "Grimm" },
+
+        { "name": "Pilgrim Light Armor", "level": { "min": 1, "max": 140 }, "defense": { "min": 1, "max": 208.5 }, "dexterity": { "min": 5, "max": 1069 }, "obtain": "Thanksgiving Event: Fall Magic Shroom (2021–2022)" }
+      ]
+    },
+    {
+      "title": "BOSS ARMOR",
+      "columns": [
+        { "key": "name", "label": "Name" },
+        { "key": "level", "label": "Level" },
+        { "key": "defense", "label": "Defense" },
+        { "key": "dexterity", "label": "Dexterity" },
+        { "key": "obtain", "label": "Obtain" }
+      ],
+      "rows": [
+        { "name": "Coat of Midnight", "level": { "min": 16, "max": 16 }, "defense": { "min": 10, "max": 10 }, "dexterity": { "min": 55, "max": 55 }, "obtain": "Illfang The Kobold Lord" },
+        { "name": "Auroras Cloak", "level": { "min": 46, "max": 46 }, "defense": { "min": 41.5, "max": 41.5 }, "dexterity": { "min": 233, "max": 233 }, "obtain": "X'rphan the White Wyrm" },
+        { "name": "Stone Armor", "level": { "min": 66, "max": 66 }, "defense": { "min": 67.5, "max": 67.5 }, "dexterity": { "min": 381, "max": 381 }, "obtain": "Storm Atronach" },
+        { "name": "Krakens Platemail", "level": { "min": 86, "max": 86 }, "defense": { "min": 96.5, "max": 96.5 }, "dexterity": { "min": 546, "max": 546 }, "obtain": "Karth'uk The Crystal Kraken" },
+        { "name": "Vehement Resistance", "level": { "min": 106, "max": 106 }, "defense": { "min": 128, "max": 128 }, "dexterity": { "min": 726, "max": 726 }, "obtain": "Grimlock the Fallen King" },
+        { "name": "Peaceful Rest", "level": { "min": 115, "max": 115 }, "defense": { "min": 143, "max": 143 }, "dexterity": { "min": 811, "max": 811 }, "obtain": "The Tormented Soul" },
+        { "name": "Corrupted Sky", "level": { "min": 126, "max": 126 }, "defense": { "min": 162, "max": 162 }, "dexterity": { "min": 917, "max": 917 }, "obtain": "Leader Grimm" },
+        { "name": "Goblin Garments", "level": { "min": 152, "max": 152 }, "defense": { "min": 209, "max": 209 }, "dexterity": { "min": 1183, "max": 1183 }, "obtain": "Leader Goblin" },
+        { "name": "Two-Headed Soul", "level": { "min": 158, "max": 158 }, "defense": { "min": 220, "max": 220 }, "dexterity": { "min": 1247, "max": 1247 }, "obtain": "Two-Headed Giant" },
+        { "name": "Candy Soldier Uniform", "level": { "min": 162, "max": 162 }, "defense": { "min": 227.5, "max": 227.5 }, "dexterity": { "min": 1290, "max": 1290 }, "obtain": "Captain Sweet the Forever Child" },
+        { "name": "Heavy Ledger Coat", "level": { "min": 185, "max": 185 }, "defense": { "min": 272.5, "max": 272.5 }, "dexterity": { "min": 1544, "max": 1544 }, "obtain": "Loan Shark Boss" },
+
+        { "name": "Akumu Cloak", "level": { "min": 1, "max": 135 }, "defense": { "min": 1, "max": 198.5 }, "dexterity": { "min": 5, "max": 1018 }, "obtain": "Halloween Event: Cursed Wolfpack Leader (2021)" },
+        { "name": "Pilgrim Heavy Armor", "level": { "min": 1, "max": 140 }, "defense": { "min": 1, "max": 208.5 }, "dexterity": { "min": 5, "max": 1069 }, "obtain": "Thanksgiving Event: Father Shroom (2021), Grandfather Shroom (2022)" }
+      ]
+    },
+    {
+      "title": "QUEST ARMOR",
+      "columns": [
+        { "key": "name", "label": "Name" },
+        { "key": "level", "label": "Level" },
+        { "key": "defense", "label": "Defense" },
+        { "key": "dexterity", "label": "Dexterity" },
+        { "key": "obtain", "label": "Obtain" }
+      ],
+      "rows": [
+        { "name": "Rabbit Pelt Armor", "level": { "min": 80, "max": 80 }, "defense": { "min": 87.5, "max": 87.5 }, "dexterity": { "min": 495, "max": 495 }, "obtain": "Easter Event: Easter Quest #1 Reward" },
+        { "name": "Ghost Memories", "level": { "min": 118, "max": 118 }, "defense": { "min": 148, "max": 148 }, "dexterity": { "min": 839, "max": 839 }, "obtain": "Quest #61 Reward" },
+        { "name": "Heavens Apprentice", "level": { "min": 128, "max": 128 }, "defense": { "min": 165.5, "max": 165.5 }, "dexterity": { "min": 937, "max": 937 }, "obtain": "Quest #65 Reward" },
+        { "name": "Graceful Armor", "level": { "min": 130, "max": 130 }, "defense": { "min": 169, "max": 169 }, "dexterity": { "min": 957, "max": 957 }, "obtain": "Quest #67 Reward" }
+      ]
+    },
+    {
+      "title": "EVENT SHOP ARMOR",
+      "columns": [
+        { "key": "name", "label": "Name" },
+        { "key": "level", "label": "Level" },
+        { "key": "defense", "label": "Defense" },
+        { "key": "dexterity", "label": "Dexterity" },
+        { "key": "obtain", "label": "Obtain" }
+      ],
+      "rows": [
+        { "name": "Elf Outfit", "level": { "min": 1, "max": 140 }, "defense": { "min": 1, "max": 208.5 }, "dexterity": { "min": 5, "max": 1069 }, "obtain": "Christmas Event: Holiday Shop" },
+        { "name": "Santa Outfit", "level": { "min": 1, "max": 140 }, "defense": { "min": 1, "max": 208.5 }, "dexterity": { "min": 5, "max": 1069 }, "obtain": "Christmas Event: Holiday Shop" },
+        { "name": "Ms Santa Outfit", "level": { "min": 1, "max": 130 }, "defense": { "min": 1, "max": 188.5 }, "dexterity": { "min": 5, "max": 967 }, "obtain": "Christmas Event: Holiday Shop" }
+      ]
+    }.
+    {
+      "title": "BADGE ARMOR",
+      "columns": [
+        { "key": "name", "label": "Name" },
+        { "key": "level", "label": "Level" },
+        { "key": "defense", "label": "Defense" },
+        { "key": "dexterity", "label": "Dexterity" },
+        { "key": "obtain", "label": "Obtain" }
+      ],
+      "rows": [
+        { "name": "Midnight Combat Armor", "level": { "min": 1, "max": 140 }, "defense": { "min": 1, "max": 208.5 }, "dexterity": { "min": 5, "max": 1069 }, "obtain": "Floor 1 Starter Shop, Requires Beta Tester Badge" },
+        { "name": "Spriggan Knight Armor", "level": { "min": 1, "max": 140 }, "defense": { "min": 1, "max": 208.5 }, "dexterity": { "min": 5, "max": 1069 }, "obtain": "Floor 1 Starter Shop, Requires 5K Likes Badge" },
+        { "name": "Ordinal Scale Armor", "level": { "min": 1, "max": 140 }, "defense": { "min": 1, "max": 208.5 }, "dexterity": { "min": 5, "max": 1069 }, "obtain": "Floor 1 Starter Shop, Requires 10K Likes Badge" },
+        { "name": "Festive Kimono", "level": { "min": 1, "max": 148 }, "defense": { "min": 1, "max": 224.5 }, "dexterity": { "min": 5, "max": 1152 }, "obtain": "Floor 1 Starter Shop, Requires 7 Million Visits / 100 Thousand Favorites Badge" }
+      ]
+    },
+    {
+      "title": "GAMEPASS ARMOR",
+      "columns": [
+        { "key": "name", "label": "Name" },
+        { "key": "level", "label": "Level" },
+        { "key": "defense", "label": "Defense" },
+        { "key": "dexterity", "label": "Dexterity" },
+        { "key": "obtain", "label": "Obtain" }
+      ],
+      "rows": [
+        { "name": "Silica Attire", "level": { "min": 1, "max": 160 }, "defense": { "min": 0.5, "max": 249.5 }, "dexterity": { "min": 3, "max": 1279 }, "obtain": "Floor 1 Starter Shop, Requires Beast Tamer Gamepass" },
+        { "name": "Blue Swordsman Outfit", "level": { "min": 1, "max": 150 }, "defense": { "min": 1, "max": 229 }, "dexterity": { "min": 5, "max": 1173 }, "obtain": "Floor 1 Starter Shop, Requires Blue Swordsman Gamepass" },
+        { "name": "Field Heavy Armor", "level": { "min": 1, "max": 150 }, "defense": { "min": 1, "max": 229 }, "dexterity": { "min": 5, "max": 1173 }, "obtain": "Floor 1 Starter Shop, Requires Veteran Merchant Gamepass" },
+        { "name": "Novice Heavy Armor", "level": { "min": 1, "max": 150 }, "defense": { "min": 1, "max": 229 }, "dexterity": { "min": 5, "max": 1173 }, "obtain": "Floor 1 Starter Shop, Requires Veteran Merchant Gamepass" },
+        { "name": "Red Samurai Armor", "level": { "min": 1, "max": 150 }, "defense": { "min": 1, "max": 229 }, "dexterity": { "min": 5, "max": 1173 }, "obtain": "Floor 1 Starter Shop, Requires Red Samurai Gamepass" },
+        { "name": "Kamakura Combat Armor", "level": { "min": 1, "max": 150 }, "defense": { "min": 1, "max": 229 }, "dexterity": { "min": 5, "max": 1173 }, "obtain": "Floor 1 Starter Shop, Requires Red Samurai Gamepass" },
+        { "name": "Sinon Attire VI", "level": { "min": 1, "max": 160 }, "defense": { "min": 1, "max": 249.5 }, "dexterity": { "min": 5, "max": 1279 }, "obtain": "Floor 1 Starter Shop, Requires Sharp Shooter Gamepass" },
+        { "name": "Lisbeth Attire", "level": { "min": 1, "max": 150 }, "defense": { "min": 1, "max": 229 }, "dexterity": { "min": 5, "max": 1173 }, "obtain": "Floor 1 Starter Shop, Requires Master Blacksmith Gamepass" },
+        { "name": "Blood Enforcer VI", "level": { "min": 1, "max": 150 }, "defense": { "min": 1, "max": 229 }, "dexterity": { "min": 5, "max": 1173 }, "obtain": "Floor 1 Starter Shop, Requires Blood Enforcer Gamepass" },
+        { "name": "Blackwyrm Coat VI", "level": { "min": 1, "max": 150 }, "defense": { "min": 1, "max": 229 }, "dexterity": { "min": 5, "max": 1173 }, "obtain": "Floor 1 Starter Shop, Requires Black Swordsman Gamepass" },
+        { "name": "Grandmaster Armor", "level": { "min": 1, "max": 160 }, "defense": { "min": 1, "max": 279 }, "dexterity": { "min": 5, "max": 1279 }, "obtain": "Floor 1 Starter Shop, Requires Grandmaster Liberator Gamepass" }
+      ]
+    }
+  ]
+}
