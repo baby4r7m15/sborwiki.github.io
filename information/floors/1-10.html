@@ -12,7 +12,6 @@
   <link rel="apple-touch-icon" href="/logo.png" />
 </head>
 
-  
 <body>
 
   <!-- ===== HUD TOP BAR ===== -->
@@ -62,13 +61,62 @@
         <div id="mapHost"></div>
       </div>
 
+      <!-- FLOOR DATA (Lore) -->
       <div class="hud-panel subpanel">
-  <div class="panel-head slim"><span>SYSTEM RECORD: FLOOR DATA</span></div>
+        <div class="panel-head slim"><span>SYSTEM RECORD: FLOOR DATA</span></div>
+        <div class="hud-lore" id="floorLore">LOADING…</div>
+      </div>
 
-  <div class="hud-lore" id="floorLore">
-    LOADING…
-  </div>
-</div>
+      <!-- NEW: MOBS + BOSSES -->
+      <div class="hud-panel subpanel">
+        <div class="panel-head slim">
+          <span>SYSTEM RECORD: MOBS & BOSSES</span>
+          <span class="panel-chip" id="mobChip">ENCOUNTERS</span>
+        </div>
+
+        <div class="hud-table-wrap">
+          <table class="hud-table" aria-label="Mobs and Bosses table">
+            <thead>
+              <tr>
+                <th>TYPE</th>
+                <th>NAME</th>
+                <th>LEVEL</th>
+                <th>LOCATION</th>
+                <th>DROPS</th>
+                <th>NOTES</th>
+              </tr>
+            </thead>
+            <tbody id="mobsBossesBody">
+              <tr><td colspan="6" class="hud-td-muted">LOADING…</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- NEW: QUESTS -->
+      <div class="hud-panel subpanel">
+        <div class="panel-head slim">
+          <span>SYSTEM RECORD: QUESTS</span>
+          <span class="panel-chip" id="questChip">OBJECTIVES</span>
+        </div>
+
+        <div class="hud-table-wrap">
+          <table class="hud-table" aria-label="Quests table">
+            <thead>
+              <tr>
+                <th>QUEST</th>
+                <th>GIVER</th>
+                <th>OBJECTIVE</th>
+                <th>REWARD</th>
+                <th>NOTES</th>
+              </tr>
+            </thead>
+            <tbody id="questsBody">
+              <tr><td colspan="5" class="hud-td-muted">LOADING…</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
 
     </section>
 
@@ -100,17 +148,14 @@
     return el;
   }
 
-  // Safe list renderer (won't crash if an element is missing)
   function renderList(targetUl, items) {
     if (!targetUl) return;
     targetUl.innerHTML = "";
     (items || []).forEach(item => targetUl.appendChild(li(item)));
   }
 
-  // Lore renderer (array of paragraphs OR single string)
   function renderLore(target, lore) {
     if (!target) return;
-
     target.innerHTML = "";
 
     if (Array.isArray(lore) && lore.length) {
@@ -130,6 +175,91 @@
     }
 
     target.textContent = "NO LORE DATA AVAILABLE.";
+  }
+
+  // ===== TABLE HELPERS =====
+
+  function td(text, muted = false) {
+    const cell = document.createElement("td");
+    cell.textContent = (text ?? "").toString();
+    if (muted) cell.className = "hud-td-muted";
+    return cell;
+  }
+
+  function clearTbody(tbody) {
+    if (!tbody) return;
+    tbody.innerHTML = "";
+  }
+
+  function renderMobsBosses(tbody, mobs, bosses) {
+    if (!tbody) return;
+
+    const mobRows = Array.isArray(mobs) ? mobs : [];
+    const bossRows = Array.isArray(bosses) ? bosses : [];
+
+    clearTbody(tbody);
+
+    const combined = [
+      ...mobRows.map(x => ({ ...x, __type: "MOB" })),
+      ...bossRows.map(x => ({ ...x, __type: "BOSS" }))
+    ];
+
+    if (!combined.length) {
+      const tr = document.createElement("tr");
+      tr.appendChild(td("NO ENCOUNTER DATA AVAILABLE.", true));
+      tr.lastChild.colSpan = 6;
+      tbody.appendChild(tr);
+      return;
+    }
+
+    combined.forEach(row => {
+      const tr = document.createElement("tr");
+      tr.appendChild(td(row.__type || ""));
+      tr.appendChild(td(row.name || ""));
+      tr.appendChild(td(row.level || ""));
+      tr.appendChild(td(row.location || ""));
+      tr.appendChild(td(row.drops || ""));
+      tr.appendChild(td(row.notes || ""));
+      tbody.appendChild(tr);
+    });
+  }
+
+  function renderQuests(tbody, quests) {
+    if (!tbody) return;
+
+    clearTbody(tbody);
+
+    const rows = Array.isArray(quests) ? quests : [];
+
+    if (!rows.length) {
+      const tr = document.createElement("tr");
+      tr.appendChild(td("NO QUEST DATA AVAILABLE.", true));
+      tr.lastChild.colSpan = 5;
+      tbody.appendChild(tr);
+      return;
+    }
+
+    // Support either objects OR simple strings
+    rows.forEach(q => {
+      const tr = document.createElement("tr");
+
+      if (typeof q === "string") {
+        tr.appendChild(td(q));
+        tr.appendChild(td(""));
+        tr.appendChild(td(""));
+        tr.appendChild(td(""));
+        tr.appendChild(td(""));
+        tbody.appendChild(tr);
+        return;
+      }
+
+      tr.appendChild(td(q.name || ""));
+      tr.appendChild(td(q.giver || ""));
+      tr.appendChild(td(q.objective || ""));
+      tr.appendChild(td(q.reward || ""));
+      tr.appendChild(td(q.notes || ""));
+      tbody.appendChild(tr);
+    });
   }
 
   // ===== SAO MAP TOOLTIP SYSTEM =====
@@ -183,21 +313,15 @@
   }
 
   function positionTooltip(tip, anchorEl, containerEl) {
-    // Default: position near the callout in the map container
     const cRect = containerEl.getBoundingClientRect();
     const aRect = anchorEl.getBoundingClientRect();
-
-    // Tooltip size (after unhide)
     const tRect = tip.getBoundingClientRect();
 
-    // Try above-right first
     let x = (aRect.left - cRect.left) + 14;
     let y = (aRect.top - cRect.top) - tRect.height - 12;
 
-    // If above goes off-screen, put below
     if (y < 8) y = (aRect.top - cRect.top) + aRect.height + 10;
 
-    // Clamp inside container
     x = clamp(x, 8, cRect.width - tRect.width - 8);
     y = clamp(y, 8, cRect.height - tRect.height - 8);
 
@@ -224,18 +348,14 @@
       tip.hidden = false;
       tip.classList.add("show");
 
-      // Danger styling hook
       tip.classList.toggle("danger", (tip.dataset.danger === "WARNING"));
 
-      // Desktop: position near callout. Mobile: becomes a bottom sheet via CSS.
       if (!isTouchLike()) {
-        // Need a layout pass to measure size
         requestAnimationFrame(() => {
           positionTooltip(tip, el, container);
         });
       }
 
-      // Accessibility
       el.setAttribute("aria-expanded", "true");
     }
 
@@ -256,7 +376,6 @@
       hideTip(true);
     });
 
-    // Tap outside to close on mobile, click outside on desktop when pinned
     document.addEventListener("pointerdown", (e) => {
       if (tip.hidden) return;
       const inTip = tip.contains(e.target);
@@ -264,7 +383,6 @@
       if (!inTip && !inCallout) hideTip(true);
     });
 
-    // Build callout buttons
     (callouts || []).forEach((c) => {
       const btn = document.createElement("button");
       btn.type = "button";
@@ -273,13 +391,11 @@
       btn.setAttribute("aria-haspopup", "dialog");
       btn.setAttribute("aria-expanded", "false");
 
-      // Support top/left/right/bottom from JSON
       if (c.top) btn.style.top = c.top;
       if (c.left) btn.style.left = c.left;
       if (c.right) btn.style.right = c.right;
       if (c.bottom) btn.style.bottom = c.bottom;
 
-      // Desktop hover/focus previews (non-pinned)
       btn.addEventListener("pointerenter", () => {
         if (isTouchLike()) return;
         if (pinned) return;
@@ -302,25 +418,21 @@
         hideTip(true);
       });
 
-      // Click/tap pins on mobile (and also works on desktop)
       btn.addEventListener("click", (e) => {
         e.stopPropagation();
 
-        // If tapping the same callout while pinned -> close
         if (pinned && pinnedEl === btn) {
           hideTip(true);
           return;
         }
 
-        // Pin always on touch devices
-        const shouldPin = isTouchLike() ? true : true;
+        const shouldPin = true;
         showTipFor(btn, c, shouldPin);
       });
 
       overlay.appendChild(btn);
     });
 
-    // Keep tooltip positioned if window resizes (desktop)
     window.addEventListener("resize", () => {
       if (!tip.hidden && pinned && pinnedEl && !isTouchLike()) {
         positionTooltip(tip, pinnedEl, container);
@@ -348,7 +460,6 @@
       const overlay = document.createElement("div");
       overlay.className = "map-overlay";
 
-      // Tooltip + interactive callouts live inside the wrap
       wrap.appendChild(img);
       wrap.appendChild(overlay);
       host.appendChild(wrap);
@@ -425,6 +536,10 @@
       mapChip.textContent = floor.name ? floor.name.toUpperCase() : "FLOOR MAP";
     }
     renderMap(floor.map);
+
+    // NEW: Tables
+    renderMobsBosses(byId("mobsBossesBody"), floor.mobs, floor.bosses);
+    renderQuests(byId("questsBody"), floor.quests);
 
     // System note
     const noteBox = byId("systemNoteBox");
