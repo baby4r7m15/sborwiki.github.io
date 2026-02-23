@@ -252,17 +252,26 @@
             <div class="panel-head"><span>${t.title || "GEAR TABLE"}</span></div>
             <div class="panel-body">
               <table class="info-table">
-                <thead><tr><th>Name</th><th>Max Skill</th><th>Defense</th><th>Obtain</th></tr></thead>
-                <tbody>
-                  ${(t.rows || []).map(r => `
-                    <tr>
-                      <td>${r.name || ""}</td>
-                      <td>${r.maxSkill || ""}</td>
-                      <td>${r.defense || r.attack || ""}</td>
-                      <td>${r.obtain || ""}</td>
-                    </tr>
-                  `).join("")}
-                </tbody>
+                <thead>
+  <tr>
+    <th>Name</th>
+    <th>Level</th>
+    <th>Defense</th>
+    <th>Dexterity</th>
+    <th>Obtain</th>
+  </tr>
+</thead>
+<tbody>
+  ${(t.rows || []).map(r => `
+    <tr>
+      <td>${r.name || ""}</td>
+      <td>${r.level || ""}</td>
+      <td>${r.defense || ""}</td>
+      <td>${r.dexterity || ""}</td>
+      <td>${r.obtain || ""}</td>
+    </tr>
+  `).join("")}
+</tbody>
               </table>
             </div>
           </section>
