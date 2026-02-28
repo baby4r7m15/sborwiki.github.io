@@ -23,18 +23,18 @@
       ]
     }
   },
-"skills": {
-  "text": "This weapon type currently has 7 unlockable sword skills. Reaver is a Universal sword skill that all weapons will unlock first at 5 Skill. Each new sword skill unlocked is stronger than the previous one, and capable of hitting more enemies at the same time. Investing points into AGI will increase your weapon's Attack Speed, the speed of the 4 lower level skills, and lower Sword Skill cooldowns.",
-  "rows": [
-    { "name": "Reaver", "type": "Two Hand", "requirement": "5 Skill", "animation": "/images/2HReaver.gif" },
-    { "name": "Avalanche", "type": "Two Hand", "requirement": "25 Skill", "animation": "/images/Avalanche1.gif" },
-    { "name": "Avalanche II", "type": "Two Hand", "requirement": "75 Skill", "animation": "/images/Avalanche2.gif" },
-    { "name": "Avalanche III", "type": "Two Hand", "requirement": "150 Skill", "animation": "/images/Avalanche3.gif" },
-    { "name": "Backslash", "type": "Two Hand", "requirement": "225 Skill", "animation": "/images/Backslash.gif" },
-    { "name": "Cascade", "type": "Two Hand", "requirement": "300 Skill", "animation": "/images/Cascade.gif" },
-    { "name": "Cyclone", "type": "Two Hand", "requirement": "375 Skill", "animation": "/images/Cyclone.gif" }
-  ]
-},
+  "skills": {
+    "text": "This weapon type currently has 7 unlockable sword skills. Reaver is a Universal sword skill that all weapons will unlock first at 5 Skill. Each new sword skill unlocked is stronger than the previous one, and capable of hitting more enemies at the same time. Investing points into AGI will increase your weapon's Attack Speed, the speed of the 4 lower level skills, and lower Sword Skill cooldowns.",
+    "rows": [
+      { "name": "Reaver", "type": "Two Hand", "requirement": "5 Skill", "animation": "/images/2HReaver.gif" },
+      { "name": "Avalanche", "type": "Two Hand", "requirement": "25 Skill", "animation": "/images/Avalanche1.gif" },
+      { "name": "Avalanche II", "type": "Two Hand", "requirement": "75 Skill", "animation": "/images/Avalanche2.gif" },
+      { "name": "Avalanche III", "type": "Two Hand", "requirement": "150 Skill", "animation": "/images/Avalanche3.gif" },
+      { "name": "Backslash", "type": "Two Hand", "requirement": "225 Skill", "animation": "/images/Backslash.gif" },
+      { "name": "Cascade", "type": "Two Hand", "requirement": "300 Skill", "animation": "/images/Cascade.gif" },
+      { "name": "Cyclone", "type": "Two Hand", "requirement": "375 Skill", "animation": "/images/Cyclone.gif" }
+    ]
+  },
   "weaponsListInfo": {
     "preNote": "Please note that weapons for each associated floor will have their Skill Level rated according to how they are obtained.",
     "ratingBullets": [
@@ -217,6 +217,25 @@
         { "name": "Fatal Scythe", "maxSkill": "310 [Max]", "attack": "2307 [Max]", "obtain": "Halloween Event: Blacksmithing" },
         { "name": "Clover Greatsword", "maxSkill": "310 [Max]", "attack": "2307 [Max]", "obtain": "Saint Patricks Event: Saint Patrick's Day Shop [2023, 2024]" },
         { "name": "Krampus Klaws", "maxSkill": "320 [Max]", "attack": "2410 [Max]", "obtain": "Christmas Event: Drops from Perfidious Krampus" }
+      ]
+    },
+
+    {
+      "title": "Badge Weapons",
+      "rows": [
+        { "name": "The Monolith", "maxSkill": 270, "attack": 1910, "obtain": "Floor 1 Starter Shop, Requires 5K Likes Badge" },
+        { "name": "Silver Beater 2H", "maxSkill": 270, "attack": 1918, "obtain": "Floor 1 Starter Shop, Requires Beater Badge" },
+        { "name": "Victorious Claymore", "maxSkill": 275, "attack": 1958, "obtain": "Floor 1 Starter Shop, Requires 25K Likes Badge" }
+      ]
+    },
+
+    {
+      "title": "Gamepass Weapons",
+      "rows": [
+        { "name": "Ground Gorge", "maxSkill": 290, "attack": 2106, "obtain": "Floor 1 Starter Shop, Requires Veteran Merchant Gamepass" },
+        { "name": "Ground Splitter", "maxSkill": 290, "attack": 2106, "obtain": "Floor 1 Starter Shop, Requires Veteran Merchant Gamepass" },
+        { "name": "Shattering Gorge", "maxSkill": 290, "attack": 2106, "obtain": "Floor 1 Starter Shop, Requires Veteran Merchant Gamepass" },
+        { "name": "Hecate", "maxSkill": 310, "attack": 2304, "obtain": "Floor 1 Starter Shop, Requires Sharp Shooter Gamepass" }
       ]
     }
   ]
