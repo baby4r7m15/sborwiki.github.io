@@ -110,7 +110,7 @@
       "id": "2",
       "number": 2,
       "name": "Swordsman Fields",
-      "tags": ["Level 1-12", "FIELD MOBS", "Mob Skill Cap 20", "Boss/Mini Skill Cap 60"],
+      "tags": ["Level 1-12", "FIELD MOBS"],
       "info": [
         "First Combat Area, this is the first floor players begin leveling up.",
         "Getting levels on this floor is slow at first, so it is ideal that you find a guild or party.",
@@ -393,7 +393,7 @@
       "id": "3",
       "number": 3,
       "name": "Swamp Land",
-      "tags": ["Level 10-20", "SWAMP MOBS", "Mob Skill Cap 40", "Boss Skill Cap 80"],
+      "tags": ["Level 10-20", "SWAMP MOBS"],
       "info": [
         "Floor 3 is a small swamp.",
         "There isn't a lot to do on floor 3 besides the boss.",
@@ -596,7 +596,7 @@
       "id": "4",
       "number": 4,
       "name": "Desert Land",
-      "tags": ["Level 20-30", "DESERT MOBS", "Mob Skill Cap 60", "Boss Skill Cap 100"],
+      "tags": ["Level 20-30", "DESERT MOBS"],
       "info": [
         "Floor 4 is larger in size compared to floor 3, but it is pretty simple to navigate.",
         "From spawn there is 2 shops ahead of you. One forward to the left and the other near the village exit.",
@@ -804,7 +804,7 @@
       "id": "5",
       "number": 5,
       "name": "Icy Caverns",
-      "tags": ["Level 30-40", "ICE MOBS", "Mob Skill Cap 80", "Boss Skill Cap 120"],
+      "tags": ["Level 30-40", "ICE MOBS"],
       "info": [
         "A snowy mountainous floor with dangerous ice routes and a dungeon leading to the boss."
       ],
@@ -977,7 +977,7 @@
       "id": "6",
       "number": 6,
       "name": "Hellfire Wasteland",
-      "tags": ["Level 40-51", "FIRE MOBS", "Mob Skill Cap 100", "Boss Skill Cap 140"],
+      "tags": ["Level 40-51", "FIRE MOBS"],
       "info": [
         "A hell-themed floor with lava hazards. Lava can instantly kill you.",
         "Two major paths: one deeper into the floor, one into an open area."
@@ -1141,7 +1141,7 @@
       "id": "7",
       "number": 7,
       "name": "Luminara Grove",
-      "tags": ["Level 50-60", "FOREST MOBS", "Mob Skill Cap 120", "Boss Skill Cap 160"],
+      "tags": ["Level 50-60", "FOREST MOBS"],
       "info": [
         "A mushroom-forest themed floor with branching routes.",
         "Includes blacksmith access and multiple boss encounters."
@@ -1314,7 +1314,7 @@
       "id": "8",
       "number": 8,
       "name": "Graves",
-      "tags": ["Level 60-70", "UNDEAD MOBS", "Mob Skill Cap 140", "Boss Skill Cap 180"],
+      "tags": ["Level 60-70", "UNDEAD MOBS"],
       "info": [
         "A graveyard-themed floor with heavy undead farming near the dungeon entrance."
       ],
@@ -1447,7 +1447,7 @@
       "id": "9",
       "number": 9,
       "name": "Tropical Sea",
-      "tags": ["Level 70-80", "SEA MOBS", "Mob Skill Cap 160", "Mini Skill Cap 200"],
+      "tags": ["Level 70-80", "SEA MOBS"],
       "info": [
         "A large seaside-themed floor with a massive dungeon and a hidden shop."
       ],
@@ -1541,7 +1541,7 @@
       "id": "10",
       "number": 10,
       "name": "Sakura Serenity",
-      "tags": ["Level 80-90", "SAMURAI MOBS", "Mob Skill Cap 180", "Boss Skill Cap 220"],
+      "tags": ["Level 80-90", "SAMURAI MOBS"],
       "info": [
         "A feudal Japan-inspired floor with a walled town and branching paths outside."
       ],
