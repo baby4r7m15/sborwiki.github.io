@@ -127,39 +127,85 @@
       "shops": ["Floor 2 Shop", "Guild Merchants"],
       "lore": [
         "Swordsman Fields is where safety ends and survival begins. Beyond the Town of Beginnings, the land opens into rolling plains filled with restless monsters and inexperienced adventurers testing their strength.",
-        "The fields appear peaceful at first glance — wind through tall grass, distant hills, scattered ruins — but danger spawns relentlessly. Boars charge without warning, wolves hunt in packs, and hesitation is punished swiftly.",
-        "At the far end of the floor stands the looming Boss Tower, home to Illfang the Kobold Lord. The structure can be seen from nearly anywhere in the fields, a constant reminder that progress demands coordination.",
-        "Many guilds form here out of necessity rather than ambition. Players quickly learn that reckless solo grinding leads to shattered HP bars and broken morale.",
-        "Veteran players often say the system subtly adjusts aggression on this floor — as if measuring whether newcomers are worthy of advancing. Whether rumor or reality, one truth remains: Floor 2 decides who will continue climbing… and who will not."
+        "The fields appear peaceful at first glance — wind through tall grass, distant hills, scattered ruins — but danger spawns relentlessly. Boars charge without warning, wolves hunt in packs, and hesitation is punished swiftly."
       ],
       "mobs": [
         {
           "name": "Boar",
-          "level": "1-3",
+          "level": "1",
           "location": "Open Fields",
           "drops": "Boar Hide",
-          "notes": "Level 1: 2xp|2col|40hp Level 2: 5xp|10col|70hp Level 3: 7xp|15col|110 hp"
+          "notes": "2xp | 2col | 40hp"
+        },
+        {
+          "name": "Boar",
+          "level": "2",
+          "location": "Open Fields",
+          "drops": "Boar Hide",
+          "notes": "5xp | 10col | 70hp"
+        },
+        {
+          "name": "Boar",
+          "level": "3",
+          "location": "Open Fields",
+          "drops": "Boar Hide",
+          "notes": "7xp | 15col | 110 hp"
         },
         {
           "name": "Wolf",
-          "level": "4-6",
+          "level": "4",
           "location": "Forest",
           "drops": "Wolf Hide",
-          "notes": "Level 4: 10xp|20col|150hp Level 5: 12xp|25col|200hp Level 6: 15xp|30col|250 hp"
+          "notes": "10xp | 20col | 150hp"
+        },
+        {
+          "name": "Wolf",
+          "level": "5",
+          "location": "Forest",
+          "drops": "Wolf Hide",
+          "notes": "12xp | 25col | 200hp"
+        },
+        {
+          "name": "Wolf",
+          "level": "6",
+          "location": "Forest",
+          "drops": "Wolf Hide",
+          "notes": "15xp | 30col | 250 hp"
         },
         {
           "name": "Kobold Sentinel",
-          "level": "7-9",
+          "level": "7",
           "location": "Dungeon",
           "drops": "Grandmaster Steel Blade, Grandmaster Steel Dagger",
-          "notes": "Level 7: 17xp|35col|300hp Level 8: 20xp|40col|360hp Level 9: 22xp|45col|4200 hp"
+          "notes": "17xp | 35col | 300hp"
+        },
+        {
+          "name": "Kobold Sentinel",
+          "level": "8",
+          "location": "Dungeon",
+          "drops": "Grandmaster Steel Blade, Grandmaster Steel Dagger",
+          "notes": "20xp | 40col | 360hp"
         },
         {
           "name": "Corrupted Sentinel",
-          "level": "10-12",
+          "level": "10",
           "location": "Dungeon",
           "drops": "Grandmaster Steel Greatsword, Grandmaster Steel Rapier",
-          "notes": "Level 10: 35xp|50col|480hp Level 11: 37xp|60col|550hp Level 12: 40xp|65col|620 hp"
+          "notes": "35xp | 50col | 480hp"
+        },
+        {
+          "name": "Corrupted Sentinel",
+          "level": "11",
+          "location": "Dungeon",
+          "drops": "Grandmaster Steel Greatsword, Grandmaster Steel Rapier",
+          "notes": "37xp | 60col | 550hp"
+        },
+        {
+          "name": "Corrupted Sentinel",
+          "level": "12",
+          "location": "Dungeon",
+          "drops": "Grandmaster Steel Greatsword, Grandmaster Steel Rapier",
+          "notes": "40xp | 65col | 620 hp"
         }
       ],
       "bosses": [
@@ -168,14 +214,14 @@
           "level": "6",
           "location": "Mini Boss Room",
           "drops": "Obsidibite, Grandmaster Shield",
-          "notes": "1080xp|144col|14k hp"
+          "notes": "1080xp |144col | 14k hp"
         },
         {
           "name": "Illfang the Kobold Lord",
           "level": "10",
           "location": "Boss Room",
           "drops": "Iron Ore, Copper Ore, Illfang Tooth, Illfang's Shield, Coat of Midnight (One-time Drop)",
-          "notes": "1800xp|240col|20k hp"
+          "notes": "1800xp | 240col | 20k hp"
         }
       ],
       "quests": [
