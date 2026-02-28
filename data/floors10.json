@@ -229,8 +229,57 @@
           "name": "Gain Sword Skills",
           "giver": "Field Swordsman",
           "objective": "Kill 10 Boars",
-          "reward": "200 Col | 25 Exp",
-          "notes": "This will give you enough skill to unlock your first skill 'Reaver' for any of your sword classes."
+          "reward": "25 EXP, 200 Col",
+          "notes": "Q#03 • Interval: Quarter Hour • Prerequisites: None • NPC: right outside the Spawn Pad."
+        },
+        {
+          "name": "Clear the Fields",
+          "giver": "Field Warden",
+          "objective": "Kill 20 Boars",
+          "reward": "100 EXP, 400 Col",
+          "notes": "Q#04 • Interval: Half Hour • Prerequisites: None • NPC: along the left cobblestone path to the Dungeon, just before the mine crater."
+        },
+        {
+          "name": "Hunt in the Woods",
+          "giver": "Woods Tracker",
+          "objective": "Kill 20 Wolves, Kill 20 Boars",
+          "reward": "128 EXP, 800 Col",
+          "notes": "Q#05 • Interval: Hourly • Prerequisites: None • NPC: on the fishing bridge behind the town."
+        },
+        {
+          "name": "Fight Dungeon Minions",
+          "giver": "Sentinel Slayer",
+          "objective": "Kill 15 Kobold Sentinels",
+          "reward": "180 EXP, 800 Col",
+          "notes": "Q#06 • Interval: Hourly • Prerequisites: None • NPC: inside the 1st-tier red Dungeon level, in the large open room."
+        },
+        {
+          "name": "Defeat Mysterious Monster",
+          "giver": "Monster Hunter",
+          "objective": "Kill 1 Shadesworn the Corrupted, Kill 20 Corrupted Sentinels",
+          "reward": "320 EXP, 1500 Col",
+          "notes": "Q#07 • Interval: One-Time • Prerequisites: None • NPC: inside the 2nd-tier blue Dungeon level, in the large open room."
+        },
+        {
+          "name": "Locate Admin Console",
+          "giver": "Hacker Lady",
+          "objective": "Find the Admin Console",
+          "reward": "240 EXP, 900 Col, Corruption Slicer",
+          "notes": "Q#08 • Interval: One-Time • Prerequisites: None • NPC: inside the 2nd-tier blue Dungeon level, near a hall entrance off the great room."
+        },
+        {
+          "name": "Fear of the Boss",
+          "giver": "Fearful Player",
+          "objective": "Enter the Boss Room",
+          "reward": "300 EXP, 700 Col",
+          "notes": "Q#09 • Interval: One-Time • Prerequisites: None • NPC: inside the 2nd-tier blue Dungeon level, near one of the doors on a wall of the great room."
+        },
+        {
+          "name": "The Boss Hunt",
+          "giver": "Determined Swordsman",
+          "objective": "Kill Illfang The Kobold Lord",
+          "reward": "480 EXP, 1500 Col",
+          "notes": "Q#10 • Interval: One-Time • Prerequisites: None • NPC: inside the Boss Room, hiding in a corner."
         }
       ],
       "map": {
@@ -321,11 +370,53 @@
       ],
       "quests": [
         {
-          "name": "Mire Samples (Placeholder)",
-          "giver": "Swamp Researcher",
-          "objective": "Collect 3 swamp materials (placeholder)",
-          "reward": "Potion / Col (Placeholder)",
-          "notes": "Placeholder quest entry for table testing."
+          "name": "Cobra Menace",
+          "giver": "Snake Warden",
+          "objective": "Kill 10 Swamp Cobras",
+          "reward": "400 EXP, 600 Col",
+          "notes": "Q#11 • Interval: Half-Hour • Prerequisites: None • NPC: by following the lighted stone pathway ahead."
+        },
+        {
+          "name": "Reptile Rampage",
+          "giver": "Reptile Ranger",
+          "objective": "Kill 10 Swamp Cobra, Kill 10 Swamp Snakes",
+          "reward": "800 EXP, 1200 Col",
+          "notes": "Q#12 • Interval: 16 Hours • Prerequisites: None • NPC route: follow the lighted stone path from Q#11, go Right at first fork, then Left at second fork; keep following until you spot the NPC."
+        },
+        {
+          "name": "Crodocile Crisis",
+          "giver": "Croc Hunter",
+          "objective": "Kill 10 Marshland Crocodiles",
+          "reward": "550 EXP, 900 Col",
+          "notes": "Q#13 • Interval: Half-Hour • Prerequisites: None • NPC: near the large area of willow trees in the north of the map."
+        },
+        {
+          "name": "Tough Crocs",
+          "giver": "Swamp Warrior",
+          "objective": "Kill 20 Marshland Crocodiles",
+          "reward": "1100 EXP, 1800 Col",
+          "notes": "Q#14 • Interval: 16 Hours • Prerequisites: None • NPC: near the Dungeon entrance, inside the forested area just before the crocodiles."
+        },
+        {
+          "name": "Slimy Situation",
+          "giver": "Mud Scout",
+          "objective": "Kill 20 Snails",
+          "reward": "1100 EXP, 1800 Col",
+          "notes": "Q#15 • Interval: Hourly • Prerequisites: None • NPC: standing outside the Dungeon entrance."
+        },
+        {
+          "name": "Boss Room Rumble",
+          "giver": "Scared Sally",
+          "objective": "Enter the Boss Room",
+          "reward": "1000 EXP, 1000 Col",
+          "notes": "Q#16 • Interval: One-Time • Prerequisites: None • NPC: inside the Dungeon in the entrance area."
+        },
+        {
+          "name": "Defeat the King of Slugs",
+          "giver": "Fearful Freddy",
+          "objective": "Kill Lord Slug, Kill 10 Snails",
+          "reward": "2000 EXP, 2000 Col",
+          "notes": "Q#17 • Interval: One-Time • Prerequisites: None • NPC: inside the Boss Room just to the left of the entrance."
         }
       ],
       "map": {
@@ -396,11 +487,39 @@
       ],
       "quests": [
         {
-          "name": "Heatproof Supplies (Placeholder)",
-          "giver": "Outpost Quartermaster",
-          "objective": "Deliver supplies to the canyon route (placeholder)",
-          "reward": "Gear / Col (Placeholder)",
-          "notes": "Placeholder quest entry for table testing."
+          "name": "Scorpions in the Sand",
+          "giver": "Scorpion Slayer",
+          "objective": "Kill 20 Sand Scorpions, Kill 10 Blood Scorpions",
+          "reward": "2400 EXP, 3650 Col",
+          "notes": "Q#18 • Interval: Hourly • Prerequisites: None • NPC: found outside the safe zone."
+        },
+        {
+          "name": "Dungeon Infestation",
+          "giver": "Sand Swordsman",
+          "objective": "Kill 15 Blood Scorpions, Kill 15 Albino Scorpions",
+          "reward": "2850 EXP, 4200 Col",
+          "notes": "Q#19 • Interval: 16 Hours • Prerequisites: None • NPC: inside the Dungeon in the entrance area."
+        },
+        {
+          "name": "Ghost Reaper Standoff",
+          "giver": "Desert Ranger",
+          "objective": "Kill Stallord",
+          "reward": "2600 EXP, 2300 Col",
+          "notes": "Q#20 • Interval: One-Time • Prerequisites: None • NPC: inside the Boss Room by the entrance area."
+        },
+        {
+          "name": "Desert Detour",
+          "giver": "Worried Friend",
+          "objective": "Find Desert Path",
+          "reward": "1000 EXP, 1500 Col",
+          "notes": "Q#21 • Interval: One-Time • Prerequisites: None • NPC: inside the town at its entrance."
+        },
+        {
+          "name": "Boulder Barrier",
+          "giver": "Stone Solver",
+          "objective": "Kill 30 black Scorpions",
+          "reward": "2500 EXP, 3600 Col, Unlocks the left side of the Desert",
+          "notes": "Q#22 • Interval: One-Time • Prerequisites: None • NPC: on upper desert path to left of canyon by large Boulder."
         }
       ],
       "map": {
