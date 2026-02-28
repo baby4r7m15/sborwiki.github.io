@@ -9,27 +9,27 @@
     ]
   },
   "overview": {
-  "text": "Armor is essential to survive in this game, whether it is a mob, boss, or Player you're fighting. As you keep leveling up, you'll be able to equip better armor to survive. Armor provides Defense and Dexterity, with Defense reducing the damage you receive, and Dexterity granting you more Health.",
-  "bullets": [
-    "Defense Stat × 5 = flat damage reduction. Example: 300.5 Defense from equipment subtracts 1,502.5 damage from hits.",
-    "Each stat point invested in DEF adds 0.01 to the multiplier. With 500 DEF points: Defense Stat × 10. Example: 300.5 Defense from equipment subtracts 3,005 damage from hits.",
-    "Dexterity Stat × 10 = bonus Health from equipment. Example: 2,402 Dexterity from equipment grants +24,020 Health.",
-    "Each stat point invested in VIT adds 0.01 to the multiplier. With 500 VIT points: Dexterity Stat × 15. Example: 2,402 Dexterity from equipment grants +36,030 Health."
-  ],
-  "nested": {
-    "lead": "Extra mechanics & notes:",
-    "sub": [
-      "Any armor with a Resistance stat provides 40% Resistance, which lowers the amount of time you're inflicted with the corresponding status effect, and lowers any damage that you receive from it.",
-      "Each stat point invested in VIT adds +0.01% Resistance to all status effects. With 500 VIT points, you will have +5% Resistance to all status effects.",
-      "Any damage from Status Effects will show purple damage numbers.",
-      "Any damage from Sword Skills will show orange damage numbers.",
-      "Please note that armor for each associated floor will have their Level rated according to how they are obtained.",
-      "Crafted = Highest, Boss Drop = 2nd Highest, Mob Drop = 2nd Lowest, Shops = Lowest.",
-      "Badge and Gamepass Armor scale according to your Level: Badge scales every 5 levels; Gamepass scales every level.",
-      "Any armor with a Max Level stat in-game will have both their Max Level and Max Stats displayed in the tables."
-    ]
-  }
-},
+    "text": "Armor is essential to survive in this game, whether it is a mob, boss, or Player you're fighting. As you keep leveling up, you'll be able to equip better armor to survive. Armor provides Defense and Dexterity, with Defense reducing the damage you receive, and Dexterity granting you more Health.",
+    "bullets": [
+      "Defense Stat × 5 = flat damage reduction. Example: 300.5 Defense from equipment subtracts 1,502.5 damage from hits.",
+      "Each stat point invested in DEF adds 0.01 to the multiplier. With 500 DEF points: Defense Stat × 10. Example: 300.5 Defense from equipment subtracts 3,005 damage from hits.",
+      "Dexterity Stat × 10 = bonus Health from equipment. Example: 2,402 Dexterity from equipment grants +24,020 Health.",
+      "Each stat point invested in VIT adds 0.01 to the multiplier. With 500 VIT points: Dexterity Stat × 15. Example: 2,402 Dexterity from equipment grants +36,030 Health."
+    ],
+    "nested": {
+      "lead": "Extra mechanics & notes:",
+      "sub": [
+        "Any armor with a Resistance stat provides 40% Resistance, which lowers the amount of time you're inflicted with the corresponding status effect, and lowers any damage that you receive from it.",
+        "Each stat point invested in VIT adds +0.01% Resistance to all status effects. With 500 VIT points, you will have +5% Resistance to all status effects.",
+        "Any damage from Status Effects will show purple damage numbers.",
+        "Any damage from Sword Skills will show orange damage numbers.",
+        "Please note that armor for each associated floor will have their Level rated according to how they are obtained.",
+        "Crafted = Highest, Boss Drop = 2nd Highest, Mob Drop = 2nd Lowest, Shops = Lowest.",
+        "Badge and Gamepass Armor scale according to your Level: Badge scales every 5 levels; Gamepass scales every level.",
+        "Any armor with a Max Level stat in-game will have both their Max Level and Max Stats displayed in the tables."
+      ]
+    }
+  },
   "gearTables": [
     {
       "title": "SHOP ARMOR",
@@ -66,7 +66,10 @@
         { "name": "Forest Shadow", "level": { "min": 112, "max": 112 }, "defense": { "min": 138, "max": 138 }, "dexterity": { "min": 782, "max": 782 }, "obtain": "Floor 12 Shop, Ghost Panther" },
         { "name": "Rulid Combatant", "level": { "min": 136, "max": 136 }, "defense": { "min": 179.5, "max": 179.5 }, "dexterity": { "min": 1018, "max": 1018 }, "obtain": "Floor 16 Shop" },
         { "name": "Rulid Battle Attire", "level": { "min": 139, "max": 139 }, "defense": { "min": 185, "max": 185 }, "dexterity": { "min": 1048, "max": 1048 }, "obtain": "Floor 16 Shop" },
-        { "name": "Rulid Priest", "level": { "min": 142, "max": 142 }, "defense": { "min": 190.5, "max": 190.5 }, "dexterity": { "min": 1079, "max": 1079 }, "obtain": "Floor 16 Shop" }
+        { "name": "Rulid Priest", "level": { "min": 142, "max": 142 }, "defense": { "min": 190.5, "max": 190.5 }, "dexterity": { "min": 1079, "max": 1079 }, "obtain": "Floor 16 Shop" },
+
+        { "name": "Frostbound Traveler Garb", "level": { "min": 185, "max": 185 }, "defense": { "min": 272.5, "max": 272.5 }, "dexterity": { "min": 1544, "max": 1544 }, "obtain": "sunstone merchant" },
+        { "name": "Warbound Vestments", "level": { "min": 185, "max": 185 }, "defense": { "min": 272.5, "max": 272.5 }, "dexterity": { "min": 1544, "max": 1544 }, "obtain": "sunstone merchant" }
       ]
     },
 
@@ -122,7 +125,9 @@
         { "name": "Goblin Garments", "level": { "min": 152, "max": 152 }, "defense": { "min": 209, "max": 209 }, "dexterity": { "min": 1183, "max": 1183 }, "obtain": "Leader Goblin" },
         { "name": "Two-Headed Soul", "level": { "min": 158, "max": 158 }, "defense": { "min": 220, "max": 220 }, "dexterity": { "min": 1247, "max": 1247 }, "obtain": "Two-Headed Giant" },
         { "name": "Candy Soldier Uniform", "level": { "min": 162, "max": 162 }, "defense": { "min": 227.5, "max": 227.5 }, "dexterity": { "min": 1290, "max": 1290 }, "obtain": "Captain Sweet the Forever Child" },
-        { "name": "Heavy Ledger Coat", "level": { "min": 185, "max": 185 }, "defense": { "min": 272.5, "max": 272.5 }, "dexterity": { "min": 1544, "max": 1544 }, "obtain": "Loan Shark Boss" }
+        { "name": "Heavy Ledger Coat", "level": { "min": 185, "max": 185 }, "defense": { "min": 272.5, "max": 272.5 }, "dexterity": { "min": 1544, "max": 1544 }, "obtain": "Loan Shark Boss" },
+
+        { "name": "Oslund Coat", "level": { "min": 217, "max": 217 }, "defense": { "min": 338, "max": 338 }, "dexterity": { "min": 1917, "max": 1917 }, "obtain": "Oslund the Hollow Flame" }
       ]
     },
 
@@ -169,17 +174,21 @@
         { "key": "obtain", "label": "Obtain" }
       ],
       "rows": [
-        { "name": "Silica Attire", "level": { "min": null, "max": 160 }, "defense": { "min": null, "max": 249.5 }, "dexterity": { "min": null, "max": 1279 }, "obtain": "Floor 1 Starter Shop, Requires Beast Tamer Gamepass" },
-        { "name": "Blue Swordsman Outfit", "level": { "min": null, "max": 160 }, "defense": { "min": null, "max": 249.5 }, "dexterity": { "min": null, "max": 1279 }, "obtain": "Floor 1 Starter Shop, Requires Blue Swordsman Gamepass" },
-        { "name": "Field Heavy Armor", "level": { "min": null, "max": 160 }, "defense": { "min": null, "max": 249.5 }, "dexterity": { "min": null, "max": 1279 }, "obtain": "Floor 1 Starter Shop, Requires Veteran Merchant Gamepass" },
-        { "name": "Novice Heavy Armor", "level": { "min": null, "max": 160 }, "defense": { "min": null, "max": 249.5 }, "dexterity": { "min": null, "max": 1279 }, "obtain": "Floor 1 Starter Shop, Requires Veteran Merchant Gamepass" },
-        { "name": "Red Samurai Armor", "level": { "min": null, "max": 160 }, "defense": { "min": null, "max": 249.5 }, "dexterity": { "min": null, "max": 1279 }, "obtain": "Floor 1 Starter Shop, Requires Red Samurai Gamepass" },
-        { "name": "Kamakura Combat Armor", "level": { "min": null, "max": 160 }, "defense": { "min": null, "max": 249.5 }, "dexterity": { "min": null, "max": 1279 }, "obtain": "Floor 1 Starter Shop, Requires Red Samurai Gamepass" },
-        { "name": "Sinon Attire VI", "level": { "min": null, "max": 160 }, "defense": { "min": null, "max": 249.5 }, "dexterity": { "min": null, "max": 1279 }, "obtain": "Floor 1 Starter Shop, Requires Sharp Shooter Gamepass" },
-        { "name": "Lisbeth Attire", "level": { "min": null, "max": 160 }, "defense": { "min": null, "max": 249.5 }, "dexterity": { "min": null, "max": 1279 }, "obtain": "Floor 1 Starter Shop, Requires Master Blacksmith Gamepass" },
-        { "name": "Blood Enforcer VI", "level": { "min": null, "max": 160 }, "defense": { "min": null, "max": 249.5 }, "dexterity": { "min": null, "max": 1279 }, "obtain": "Floor 1 Starter Shop, Requires Blood Enforcer Gamepass" },
-        { "name": "Blackwyrm Coat VI", "level": { "min": null, "max": 160 }, "defense": { "min": null, "max": 249.5 }, "dexterity": { "min": null, "max": 1279 }, "obtain": "Floor 1 Starter Shop, Requires Black Swordsman Gamepass" },
-        { "name": "Grandmaster Armor", "level": { "min": null, "max": 160 }, "defense": { "min": null, "max": 279 }, "dexterity": { "min": null, "max": 1279 }, "obtain": "Floor 1 Starter Shop, Requires Grandmaster Liberator Gamepass" }
+        { "name": "Silica Attire", "level": { "min": 1, "max": 160 }, "defense": { "min": 0.5, "max": 249.5 }, "dexterity": { "min": 3, "max": 1279 }, "obtain": "Floor 1 Starter Shop, Requires Beast Tamer Gamepass" },
+
+        { "name": "Blue Swordsman Outfit", "level": { "min": 1, "max": 150 }, "defense": { "min": 1, "max": 229 }, "dexterity": { "min": 5, "max": 1173 }, "obtain": "Floor 1 Starter Shop, Requires Blue Swordsman Gamepass" },
+        { "name": "Field Heavy Armor", "level": { "min": 1, "max": 150 }, "defense": { "min": 1, "max": 229 }, "dexterity": { "min": 5, "max": 1173 }, "obtain": "Floor 1 Starter Shop, Requires Veteran Merchant Gamepass" },
+        { "name": "Novice Heavy Armor", "level": { "min": 1, "max": 150 }, "defense": { "min": 1, "max": 229 }, "dexterity": { "min": 5, "max": 1173 }, "obtain": "Floor 1 Starter Shop, Requires Veteran Merchant Gamepass" },
+        { "name": "Red Samurai Armor", "level": { "min": 1, "max": 150 }, "defense": { "min": 1, "max": 229 }, "dexterity": { "min": 5, "max": 1173 }, "obtain": "Floor 1 Starter Shop, Requires Red Samurai Gamepass" },
+        { "name": "Kamakura Combat Armor", "level": { "min": 1, "max": 150 }, "defense": { "min": 1, "max": 229 }, "dexterity": { "min": 5, "max": 1173 }, "obtain": "Floor 1 Starter Shop, Requires Red Samurai Gamepass" },
+        { "name": "Sinon Attire VI", "level": { "min": 1, "max": 150 }, "defense": { "min": 1, "max": 229 }, "dexterity": { "min": 5, "max": 1173 }, "obtain": "Floor 1 Starter Shop, Requires Sharp Shooter Gamepass" },
+        { "name": "Lisbeth Attire", "level": { "min": 1, "max": 150 }, "defense": { "min": 1, "max": 229 }, "dexterity": { "min": 5, "max": 1173 }, "obtain": "Floor 1 Starter Shop, Requires Master Blacksmith Gamepass" },
+        { "name": "Blood Enforcer VI", "level": { "min": 1, "max": 150 }, "defense": { "min": 1, "max": 229 }, "dexterity": { "min": 5, "max": 1173 }, "obtain": "Floor 1 Starter Shop, Requires Blood Enforcer Gamepass" },
+        { "name": "Blackwyrm Coat VI", "level": { "min": 1, "max": 150 }, "defense": { "min": 1, "max": 229 }, "dexterity": { "min": 5, "max": 1173 }, "obtain": "Floor 1 Starter Shop, Requires Black Swordsman Gamepass" },
+
+        { "name": "Integrity Petal Ceremonial Plate", "level": { "min": 1, "max": 150 }, "defense": { "min": 1, "max": 241.5 }, "dexterity": { "min": 5, "max": 1173 }, "obtain": "Floor 1 Starter Shop, Requires Integrity Petal Gamepass" },
+
+        { "name": "Grandmaster Armor", "level": { "min": 1, "max": 160 }, "defense": { "min": 1, "max": 279 }, "dexterity": { "min": 5, "max": 1279 }, "obtain": "Floor 1 Starter Shop, Requires Grandmaster Liberator Gamepass" }
       ]
     },
 
