@@ -226,11 +226,11 @@
       ],
       "quests": [
         {
-          "name": "Prove Your Blade (Placeholder)",
-          "giver": "Village Guard",
-          "objective": "Defeat 5 field mobs (placeholder)",
-          "reward": "Col + XP (Placeholder)",
-          "notes": "Placeholder quest entry for table testing."
+          "name": "Gain Sword Skills",
+          "giver": "Field Swordsman",
+          "objective": "Kill 10 Boars",
+          "reward": "200 Col | 25 Exp",
+          "notes": "This will give you enough skill to unlock your first skill 'Reaver' for any of your sword classes."
         }
       ],
       "map": {
