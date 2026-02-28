@@ -191,6 +191,7 @@
     tbody.innerHTML = "";
   }
 
+  // UPDATED: respects row.type on both mobs and bosses (e.g., "Mini Boss", "Boss")
   function renderMobsBosses(tbody, mobs, bosses) {
     if (!tbody) return;
 
@@ -200,8 +201,8 @@
     clearTbody(tbody);
 
     const combined = [
-      ...mobRows.map(x => ({ ...x, __type: "MOB" })),
-      ...bossRows.map(x => ({ ...x, __type: "BOSS" }))
+      ...mobRows.map(x => ({ ...x, __type: x.type || "MOB" })),
+      ...bossRows.map(x => ({ ...x, __type: x.type || "BOSS" }))
     ];
 
     if (!combined.length) {
@@ -537,7 +538,7 @@
     }
     renderMap(floor.map);
 
-    // NEW: Tables
+    // Tables
     renderMobsBosses(byId("mobsBossesBody"), floor.mobs, floor.bosses);
     renderQuests(byId("questsBody"), floor.quests);
 
