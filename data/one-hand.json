@@ -21,18 +21,18 @@
     }
   },
   "skills": {
-  "text": "This weapon type currently has 7 unlockable sword skills. Reaver is a Universal sword skill that all weapons unlock at 5 Skill.",
-  "rows": [
-    { "name": "Reaver", "type": "One Hand", "requirement": "5 Skill", "animation": "/images/1HReaver.gif" },
-    { "name": "Sharp Nail", "type": "One Hand", "requirement": "25 Skill", "animation": "/images/SharpNail.gif" },
-    { "name": "Sharp Nail II", "type": "One Hand", "requirement": "75 Skill", "animation": "/images/SharpNail2.gif" },
-    { "name": "Sharp Nail III", "type": "One Hand", "requirement": "150 Skill", "animation": "/images/SharpNail3.gif" },
-    { "name": "Dual Weild", "type": "Passive One Hand", "requirement": "200 Skill", "animation": "" },
-    { "name": "Gale Slicer", "type": "Dual One Hand", "requirement": "225 Skill", "animation": "/images/GaleSlicer.gif" },
-    { "name": "Starburst", "type": "Dual One Hand", "requirement": "300 Skill", "animation": "/images/Starburst.gif" },
-    { "name": "Starburst Stream", "type": "Dual One Hand", "requirement": "375 Skill", "animation": "/images/StarburstStream.gif" }
-  ]
-},
+    "text": "This weapon type currently has 7 unlockable sword skills. Reaver is a Universal sword skill that all weapons unlock at 5 Skill.",
+    "rows": [
+      { "name": "Reaver", "type": "One Hand", "requirement": "5 Skill", "animation": "/images/1HReaver.gif" },
+      { "name": "Sharp Nail", "type": "One Hand", "requirement": "25 Skill", "animation": "/images/SharpNail.gif" },
+      { "name": "Sharp Nail II", "type": "One Hand", "requirement": "75 Skill", "animation": "/images/SharpNail2.gif" },
+      { "name": "Sharp Nail III", "type": "One Hand", "requirement": "150 Skill", "animation": "/images/SharpNail3.gif" },
+      { "name": "Dual Weild", "type": "Passive One Hand", "requirement": "200 Skill", "animation": "" },
+      { "name": "Gale Slicer", "type": "Dual One Hand", "requirement": "225 Skill", "animation": "/images/GaleSlicer.gif" },
+      { "name": "Starburst", "type": "Dual One Hand", "requirement": "300 Skill", "animation": "/images/Starburst.gif" },
+      { "name": "Starburst Stream", "type": "Dual One Hand", "requirement": "375 Skill", "animation": "/images/StarburstStream.gif" }
+    ]
+  },
   "weaponsListInfo": {
     "preNote": "Please note that weapons for each associated floor will have their Skill Level rated according to how they are obtained.",
     "ratingBullets": [
@@ -71,7 +71,6 @@
         { "name": "Enforcer Blade", "maxSkill": 330, "attack": 1843, "obtain": "Floor 18 Squid Game Dungeon Merchant" }
       ]
     },
-
     {
       "title": "Blacksmithing / Crafted Weapons",
       "rows": [
@@ -97,7 +96,6 @@
         { "name": "Butterscotch Blade", "maxSkill": 335, "attack": 1881, "obtain": "Blacksmithing" }
       ]
     },
-
     {
       "title": "Quest Rewards",
       "rows": [
@@ -107,7 +105,6 @@
         { "name": "Decree", "maxSkill": 395, "attack": 2357, "obtain": "Q111 Reward (Unlocks in Blacksmithing)" }
       ]
     },
-
     {
       "title": "Mob Drops",
       "rows": [
@@ -128,7 +125,6 @@
         { "name": "Crowbar Edge", "maxSkill": 325, "attack": 1805, "obtain": "Slugger Street Thug (Mob Drop)" }
       ]
     },
-
     {
       "title": "Boss Drops",
       "rows": [
@@ -143,7 +139,6 @@
         { "name": "Redline Protocol", "maxSkill": 337, "attack": 1897, "obtain": "The Arbitrator (Boss Drop)" }
       ]
     },
-
     {
       "title": "Event Weapons",
       "rows": [
@@ -215,7 +210,6 @@
         { "name": "Clover Blade", "maxSkill": 310, "attack": 1846, "obtain": "Saint Patricks Event: Saint Patrick's Day Shop [2023, 2024]" }
       ]
     },
-
     {
       "title": "Legendary Weapons",
       "rows": [
@@ -224,7 +218,6 @@
         { "name": "Divinity", "maxSkill": 340, "attack": 2304, "obtain": "Blacksmithing (Legendary Tier)" }
       ]
     },
-
     {
       "title": "Badge Weapons",
       "rows": [
@@ -235,7 +228,6 @@
         { "name": "Victorious Blade", "maxSkill": 275, "attack": 1567, "obtain": "Floor 1 Shop, Requires 25K Likes Badge" }
       ]
     },
-
     {
       "title": "Gamepass Weapons",
       "rows": [
