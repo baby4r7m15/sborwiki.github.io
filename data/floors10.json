@@ -105,11 +105,12 @@
       },
       "systemNote": "Floor 1 is the primary safe hub for new players."
     },
+
     {
       "id": "2",
       "number": 2,
       "name": "Swordsman Fields",
-      "tags": ["Level 1-27+", "FIELD MOBS"],
+      "tags": ["Level 1-12", "FIELD MOBS", "Mob Skill Cap 20", "Boss/Mini Skill Cap 60"],
       "info": [
         "First Combat Area, this is the first floor players begin leveling up.",
         "Getting levels on this floor is slow at first, so it is ideal that you find a guild or party.",
@@ -127,93 +128,154 @@
           "level": "1",
           "location": "Open Fields",
           "drops": "Boar Hide",
-          "notes": "2xp | 2col | 40hp"
+          "exp": 2,
+          "col": 5,
+          "capSkill": 20,
+          "notes": "2xp | 5col"
         },
         {
           "name": "Boar",
           "level": "2",
           "location": "Open Fields",
           "drops": "Boar Hide",
-          "notes": "5xp | 10col | 70hp"
+          "exp": 5,
+          "col": 10,
+          "capSkill": 20,
+          "notes": "5xp | 10col"
         },
         {
           "name": "Boar",
           "level": "3",
           "location": "Open Fields",
           "drops": "Boar Hide",
-          "notes": "7xp | 15col | 110 hp"
+          "exp": 7,
+          "col": 15,
+          "capSkill": 20,
+          "notes": "7xp | 15col"
+        },
+        {
+          "name": "Wolf",
+          "level": "3",
+          "location": "Forest",
+          "drops": "Wolf Hide",
+          "exp": 7,
+          "col": 15,
+          "capSkill": 20,
+          "notes": "7xp | 15col"
         },
         {
           "name": "Wolf",
           "level": "4",
           "location": "Forest",
           "drops": "Wolf Hide",
-          "notes": "10xp | 20col | 150hp"
+          "exp": 10,
+          "col": 20,
+          "capSkill": 20,
+          "notes": "10xp | 20col"
         },
         {
           "name": "Wolf",
           "level": "5",
           "location": "Forest",
           "drops": "Wolf Hide",
-          "notes": "12xp | 25col | 200hp"
+          "exp": 12,
+          "col": 25,
+          "capSkill": 20,
+          "notes": "12xp | 25col"
         },
         {
           "name": "Wolf",
           "level": "6",
           "location": "Forest",
           "drops": "Wolf Hide",
-          "notes": "15xp | 30col | 250 hp"
+          "exp": 15,
+          "col": 30,
+          "capSkill": 20,
+          "notes": "15xp | 30col"
         },
         {
           "name": "Kobold Sentinel",
           "level": "7",
           "location": "Dungeon",
-          "drops": "Grandmaster Steel Blade, Grandmaster Steel Dagger",
-          "notes": "17xp | 35col | 300hp"
+          "drops": "GrandMaster Steel Blade, GrandMaster Steel Dagger",
+          "exp": 17,
+          "col": 35,
+          "capSkill": 20,
+          "notes": "17xp | 35col"
         },
         {
           "name": "Kobold Sentinel",
           "level": "8",
           "location": "Dungeon",
-          "drops": "Grandmaster Steel Blade, Grandmaster Steel Dagger",
-          "notes": "20xp | 40col | 360hp"
+          "drops": "GrandMaster Steel Blade, GrandMaster Steel Dagger",
+          "exp": 20,
+          "col": 40,
+          "capSkill": 20,
+          "notes": "20xp | 40col"
+        },
+        {
+          "name": "Kobold Sentinel",
+          "level": "9",
+          "location": "Dungeon",
+          "drops": "GrandMaster Steel Blade, GrandMaster Steel Dagger",
+          "exp": 22,
+          "col": 45,
+          "capSkill": 20,
+          "notes": "22xp | 45col"
         },
         {
           "name": "Corrupted Sentinel",
           "level": "10",
           "location": "Dungeon",
-          "drops": "Grandmaster Steel Greatsword, Grandmaster Steel Rapier",
-          "notes": "35xp | 50col | 480hp"
+          "drops": "GrandMaster Steel Greatsword, GrandMaster Steel Rapier",
+          "exp": 35,
+          "col": 50,
+          "capSkill": 20,
+          "notes": "35xp | 50col"
         },
         {
           "name": "Corrupted Sentinel",
           "level": "11",
           "location": "Dungeon",
-          "drops": "Grandmaster Steel Greatsword, Grandmaster Steel Rapier",
-          "notes": "37xp | 60col | 550hp"
+          "drops": "GrandMaster Steel Greatsword, GrandMaster Steel Rapier",
+          "exp": 37,
+          "col": 60,
+          "capSkill": 20,
+          "notes": "37xp | 60col"
         },
         {
           "name": "Corrupted Sentinel",
           "level": "12",
           "location": "Dungeon",
-          "drops": "Grandmaster Steel Greatsword, Grandmaster Steel Rapier",
-          "notes": "40xp | 65col | 620 hp"
+          "drops": "GrandMaster Steel Greatsword, GrandMaster Steel Rapier",
+          "exp": 40,
+          "col": 65,
+          "capSkill": 20,
+          "notes": "40xp | 65col"
         }
       ],
       "bosses": [
         {
-          "name": "Shadesworn the Corrupted (Mini Boss)",
+          "name": "Shadesworn the Corrupted",
+          "type": "Mini Boss",
           "level": "6",
           "location": "Mini Boss Room",
-          "drops": "Obsidibite, Grandmaster Shield",
-          "notes": "1080xp |144col | 14k hp"
+          "drops": "Obsidibite, GrandMaster Shield",
+          "exp": 1080,
+          "col": 144,
+          "capSkill": 60,
+          "notes": "1080xp | 144col"
         },
         {
           "name": "Illfang the Kobold Lord",
+          "type": "Boss",
           "level": "10",
           "location": "Boss Room",
-          "drops": "Iron Ore, Copper Ore, Illfang Tooth, Illfang's Shield, Coat of Midnight (One-time Drop)",
-          "notes": "1800xp | 240col | 20k hp"
+          "drops": "Iron Ore (0-2), Copper Ore (0-2), Illfangs Tooth, Illfangs Shield, Coat of Midnight (Last Hit)",
+          "exp": 1800,
+          "col": 240,
+          "capSkill": 60,
+          "notes": "1800xp | 240col"
         }
       ],
       "quests": [
@@ -326,94 +388,126 @@
       },
       "systemNote": "Floor 2 is the beginning floor for leveling."
     },
+
     {
       "id": "3",
       "number": 3,
       "name": "Swamp Land",
-      "tags": ["Level 27+", "SWAMP MOBS"],
+      "tags": ["Level 10-20", "SWAMP MOBS", "Mob Skill Cap 40", "Boss Skill Cap 80"],
       "info": [
         "Floor 3 is a small swamp.",
         "There isn't a lot to do on floor 3 besides the boss.",
         "The tower should be visible everywhere on the floor."
       ],
-      "activities": ["Mob Farming.", "Boss Battle."],
+      "activities": ["Mob Farming", "Boss Battle"],
       "shops": ["Floor 3 Shop"],
       "lore": [
-        "The Swamp Lands is where warmth dies and comfort becomes a memory. The air hangs heavy and damp, clinging to armor and skin alike. Cold mist rolls endlessly across flooded plains, turning every breath into a chilling reminder that this floor was never meant to nurture life.",
-        "At first glance the marsh seems still — shallow waters stretching beneath a gray sky, moss-covered ruins barely rising above the mire — but the silence is deceptive. Beneath the murk, serpents coil unseen, crocodiles drift like shadows, and unseen creatures disturb the surface with sudden, violent splashes."
+        "The Swamp Lands is where warmth dies and comfort becomes a memory. The air hangs heavy and damp, clinging to armor and skin alike.",
+        "At first glance the marsh seems still — but the silence is deceptive."
       ],
       "mobs": [
         {
           "name": "Swamp Snake",
           "level": "10",
-          "location": "Swamp Lands",
+          "location": "Swamp / Marsh",
           "drops": "Malachite Ore, Swamp Striker",
-          "notes": "35xp | 50col | 40 Skill cap"
+          "exp": 35,
+          "col": 50,
+          "capSkill": 40,
+          "notes": "35xp | 50col"
         },
         {
           "name": "Swamp Snake",
           "level": "12",
-          "location": "Swamp Lands",
+          "location": "Swamp / Marsh",
           "drops": "Malachite Ore, Swamp Striker",
-          "notes": "40xp | 60col | 40 Skill cap"
+          "exp": 40,
+          "col": 60,
+          "capSkill": 40,
+          "notes": "40xp | 60col"
         },
         {
           "name": "Swamp Cobra",
           "level": "11",
-          "location": "Swamp Lands",
+          "location": "Swamp / Marsh",
           "drops": "Malachite Ore, Moras Edge",
-          "notes": "37xp | 55col | 40 Skill cap"
+          "exp": 37,
+          "col": 55,
+          "capSkill": 40,
+          "notes": "37xp | 55col"
         },
         {
           "name": "Swamp Cobra",
           "level": "12",
-          "location": "Swamp Lands",
+          "location": "Swamp / Marsh",
           "drops": "Malachite Ore, Moras Edge",
-          "notes": "40xp | 60col | 40 Skill cap"
+          "exp": 40,
+          "col": 60,
+          "capSkill": 40,
+          "notes": "40xp | 60col"
         },
         {
           "name": "Marshland Crocodile",
           "level": "15",
-          "location": "Swamp Lands",
+          "location": "Marsh Pools",
           "drops": "Corundum Ore, Glade Striker",
-          "notes": "47xp | 75col | 40 Skill cap"
+          "exp": 47,
+          "col": 75,
+          "capSkill": 40,
+          "notes": "47xp | 75col"
         },
         {
           "name": "Marshland Crocodile",
           "level": "18",
-          "location": "Swamp Lands",
+          "location": "Marsh Pools",
           "drops": "Corundum Ore, Glade Striker",
-          "notes": "55xp | 90col | 40 Skill cap"
+          "exp": 55,
+          "col": 90,
+          "capSkill": 40,
+          "notes": "55xp | 90col"
         },
         {
           "name": "Snail",
           "level": "16",
-          "location": "Swamp Lands",
+          "location": "Marsh Pools",
           "drops": "Corundum Ore, Glade Blade",
-          "notes": "50xp | 80col | 40 Skill cap"
+          "exp": 50,
+          "col": 80,
+          "capSkill": 40,
+          "notes": "50xp | 80col"
         },
         {
           "name": "Snail",
           "level": "18",
-          "location": "Swamp Lands",
+          "location": "Marsh Pools",
           "drops": "Corundum Ore, Glade Blade",
-          "notes": "55xp | 90col | 40 Skill cap"
+          "exp": 55,
+          "col": 90,
+          "capSkill": 40,
+          "notes": "55xp | 90col"
         },
         {
           "name": "Snail",
           "level": "20",
-          "location": "Swamp Lands",
+          "location": "Marsh Pools",
           "drops": "Corundum Ore, Glade Blade",
-          "notes": "70xp | 100col | 40 Skill cap"
+          "exp": 70,
+          "col": 100,
+          "capSkill": 40,
+          "notes": "70xp | 100col"
         }
       ],
       "bosses": [
         {
           "name": "Lord Slug",
+          "type": "Boss",
           "level": "20",
           "location": "Boss Room",
           "drops": "Malachite Ore (0-2), Corundum Ore (0-2), Lord Slugs Slime, Legendary Malachite Blade",
-          "notes": "3600xp | 480col | 80 Skill cap"
+          "exp": 3600,
+          "col": 480,
+          "capSkill": 80,
+          "notes": "3600xp | 480col"
         }
       ],
       "quests": [
@@ -422,49 +516,49 @@
           "giver": "Snake Warden",
           "objective": "Kill 10 Swamp Cobras",
           "reward": "400 EXP, 600 Col",
-          "notes": "Q#11 • Interval: Half-Hour • Prerequisites: None • NPC: by following the lighted stone pathway ahead."
+          "notes": "Q#11 • Interval: Half-Hour • Prerequisites: None"
         },
         {
           "name": "Reptile Rampage",
           "giver": "Reptile Ranger",
           "objective": "Kill 10 Swamp Cobra, Kill 10 Swamp Snakes",
           "reward": "800 EXP, 1200 Col",
-          "notes": "Q#12 • Interval: 16 Hours • Prerequisites: None • NPC route: follow the lighted stone path from Q#11, go Right at first fork, then Left at second fork; keep following until you spot the NPC."
+          "notes": "Q#12 • Interval: 16 Hours • Prerequisites: None"
         },
         {
           "name": "Crodocile Crisis",
           "giver": "Croc Hunter",
           "objective": "Kill 10 Marshland Crocodiles",
           "reward": "550 EXP, 900 Col",
-          "notes": "Q#13 • Interval: Half-Hour • Prerequisites: None • NPC: near the large area of willow trees in the north of the map."
+          "notes": "Q#13 • Interval: Half-Hour • Prerequisites: None"
         },
         {
           "name": "Tough Crocs",
           "giver": "Swamp Warrior",
           "objective": "Kill 20 Marshland Crocodiles",
           "reward": "1100 EXP, 1800 Col",
-          "notes": "Q#14 • Interval: 16 Hours • Prerequisites: None • NPC: near the Dungeon entrance, inside the forested area just before the crocodiles."
+          "notes": "Q#14 • Interval: 16 Hours • Prerequisites: None"
         },
         {
           "name": "Slimy Situation",
           "giver": "Mud Scout",
           "objective": "Kill 20 Snails",
           "reward": "1100 EXP, 1800 Col",
-          "notes": "Q#15 • Interval: Hourly • Prerequisites: None • NPC: standing outside the Dungeon entrance."
+          "notes": "Q#15 • Interval: Hourly • Prerequisites: None"
         },
         {
           "name": "Boss Room Rumble",
           "giver": "Scared Sally",
           "objective": "Enter the Boss Room",
           "reward": "1000 EXP, 1000 Col",
-          "notes": "Q#16 • Interval: One-Time • Prerequisites: None • NPC: inside the Dungeon in the entrance area."
+          "notes": "Q#16 • Interval: One-Time • Prerequisites: None"
         },
         {
           "name": "Defeat the King of Slugs",
           "giver": "Fearful Freddy",
           "objective": "Kill Lord Slug, Kill 10 Snails",
           "reward": "2000 EXP, 2000 Col",
-          "notes": "Q#17 • Interval: One-Time • Prerequisites: None • NPC: inside the Boss Room just to the left of the entrance."
+          "notes": "Q#17 • Interval: One-Time • Prerequisites: None"
         }
       ],
       "map": {
@@ -495,105 +589,140 @@
           }
         ]
       },
-      "systemNote": "Floor 3 is a swamp. Damp and cold, with just snakes and snails to keep you company."
+      "systemNote": "Floor 3 is a swamp. Damp and cold."
     },
+
     {
       "id": "4",
       "number": 4,
       "name": "Desert Land",
-      "tags": ["Level 45+", "DESERT MOBS"],
+      "tags": ["Level 20-30", "DESERT MOBS", "Mob Skill Cap 60", "Boss Skill Cap 100"],
       "info": [
         "Floor 4 is larger in size compared to floor 3, but it is pretty simple to navigate.",
         "From spawn there is 2 shops ahead of you. One forward to the left and the other near the village exit.",
         "Outside the walls there are 3 paths. Straight takes you to the canyon. Left takes you to a spot most use as an sk farm. Right takes you around to the tower in a scenic way.",
         "Floor 4 does have a gold mine in the canyon.",
-        "It is generally a good idea to have help on this floor. especially if you are in the lower levels. As the mobs can poison you or give you the bleed status."
+        "It is generally a good idea to have help on this floor, especially if you are in the lower levels."
       ],
       "activities": ["Mob Grinding", "Material Farming", "Boss Battle"],
       "shops": ["Desert Outpost Shop", "Relic Trader"],
       "lore": [
-        "Floor 4 greets players not with cold or rain — but with heat that suffocates. Endless dunes stretch beneath a merciless sun, the sand shifting constantly as though the land itself refuses to stay still.",
-        "Wind howls across the desert in violent gusts, carving the terrain into towering ridges and swallowing footprints within seconds. Visibility drops without warning when sandstorms roll in, turning even short journeys into dangerous gambles."
+        "Floor 4 greets players not with cold or rain — but with heat that suffocates.",
+        "Sandstorms can turn short journeys into dangerous gambles."
       ],
       "mobs": [
         {
           "name": "Sand Scorpion",
           "level": "20",
-          "location": "Desert Land",
+          "location": "Open Desert",
           "drops": "Deserts Fury",
-          "notes": "70xp | 100col | 60 Skill cap"
+          "exp": 70,
+          "col": 100,
+          "capSkill": 60,
+          "notes": "70xp | 100col"
         },
         {
           "name": "Sand Scorpion",
           "level": "21",
-          "location": "Desert Land",
+          "location": "Open Desert",
           "drops": "Deserts Fury",
-          "notes": "72xp | 105col | 60 Skill cap"
+          "exp": 72,
+          "col": 105,
+          "capSkill": 60,
+          "notes": "72xp | 105col"
         },
         {
           "name": "Sand Scorpion",
           "level": "22",
-          "location": "Desert Land",
+          "location": "Open Desert",
           "drops": "Deserts Fury",
-          "notes": "75xp | 110col | 60 Skill cap"
+          "exp": 75,
+          "col": 110,
+          "capSkill": 60,
+          "notes": "75xp | 110col"
         },
         {
           "name": "Egyptian Cobra",
           "level": "24",
-          "location": "Desert Land",
+          "location": "Desert Paths",
           "drops": "Deserts Fury",
-          "notes": "80xp | 120col | 60 Skill cap"
+          "exp": 80,
+          "col": 120,
+          "capSkill": 60,
+          "notes": "80xp | 120col"
         },
         {
           "name": "Egyptian Cobra",
           "level": "26",
-          "location": "Desert Land",
+          "location": "Desert Paths",
           "drops": "Deserts Fury",
-          "notes": "85xp | 130col | 60 Skill cap"
+          "exp": 85,
+          "col": 130,
+          "capSkill": 60,
+          "notes": "85xp | 130col"
         },
         {
           "name": "Scorpion",
           "level": "25",
-          "location": "Desert Land",
+          "location": "Desert / Canyon Edge",
           "drops": "Neko Slayer",
-          "notes": "82xp | 125col | 60 Skill cap"
+          "exp": 82,
+          "col": 125,
+          "capSkill": 60,
+          "notes": "82xp | 125col"
         },
         {
           "name": "Blood Scorpion",
           "level": "27",
-          "location": "Desert Land",
+          "location": "Dungeon / Desert",
           "drops": "Lightning Edge",
-          "notes": "87xp | 135col | 60 Skill cap"
+          "exp": 87,
+          "col": 135,
+          "capSkill": 60,
+          "notes": "87xp | 135col"
         },
         {
           "name": "Blood Scorpion",
           "level": "29",
-          "location": "Desert Land",
+          "location": "Dungeon / Desert",
           "drops": "Lightning Edge",
-          "notes": "92xp | 145col | 60 Skill cap"
+          "exp": 92,
+          "col": 145,
+          "capSkill": 60,
+          "notes": "92xp | 145col"
         },
         {
           "name": "Albino Scorpion",
           "level": "28",
-          "location": "Desert Land",
+          "location": "Dungeon",
           "drops": "Desert Striker",
-          "notes": "90xp | 140col | 60 Skill cap"
+          "exp": 90,
+          "col": 140,
+          "capSkill": 60,
+          "notes": "90xp | 140col"
         },
         {
           "name": "Albino Scorpion",
           "level": "30",
-          "location": "Desert Land",
+          "location": "Dungeon",
           "drops": "Desert Striker",
-          "notes": "105xp | 150col | 60 Skill cap"
+          "exp": 105,
+          "col": 150,
+          "capSkill": 60,
+          "notes": "105xp | 150col"
         }
       ],
       "bosses": [
         {
           "name": "Stallord",
+          "type": "Boss",
           "level": "30",
           "location": "Boss Room",
           "drops": "Gold Ore (0-2), Stallords Eye, Pharaoh's Edge",
-          "notes": "5400xp | 720col | 100 Skill cap"
+          "exp": 5400,
+          "col": 720,
+          "capSkill": 100,
+          "notes": "5400xp | 720col"
         }
       ],
       "quests": [
@@ -602,35 +731,35 @@
           "giver": "Scorpion Slayer",
           "objective": "Kill 20 Sand Scorpions, Kill 10 Blood Scorpions",
           "reward": "2400 EXP, 3650 Col",
-          "notes": "Q#18 • Interval: Hourly • Prerequisites: None • NPC: found outside the safe zone."
+          "notes": "Q#18 • Interval: Hourly • Prerequisites: None"
         },
         {
           "name": "Dungeon Infestation",
           "giver": "Sand Swordsman",
           "objective": "Kill 15 Blood Scorpions, Kill 15 Albino Scorpions",
           "reward": "2850 EXP, 4200 Col",
-          "notes": "Q#19 • Interval: 16 Hours • Prerequisites: None • NPC: inside the Dungeon in the entrance area."
+          "notes": "Q#19 • Interval: 16 Hours • Prerequisites: None"
         },
         {
           "name": "Ghost Reaper Standoff",
           "giver": "Desert Ranger",
           "objective": "Kill Stallord",
           "reward": "2600 EXP, 2300 Col",
-          "notes": "Q#20 • Interval: One-Time • Prerequisites: None • NPC: inside the Boss Room by the entrance area."
+          "notes": "Q#20 • Interval: One-Time • Prerequisites: None"
         },
         {
           "name": "Desert Detour",
           "giver": "Worried Friend",
           "objective": "Find Desert Path",
           "reward": "1000 EXP, 1500 Col",
-          "notes": "Q#21 • Interval: One-Time • Prerequisites: None • NPC: inside the town at its entrance."
+          "notes": "Q#21 • Interval: One-Time • Prerequisites: None"
         },
         {
           "name": "Boulder Barrier",
           "giver": "Stone Solver",
           "objective": "Kill 30 black Scorpions",
           "reward": "2500 EXP, 3600 Col, Unlocks the left side of the Desert",
-          "notes": "Q#22 • Interval: One-Time • Prerequisites: None • NPC: on upper desert path to left of canyon by large Boulder."
+          "notes": "Q#22 • Interval: One-Time • Prerequisites: None"
         }
       ],
       "map": {
@@ -668,7 +797,837 @@
           }
         ]
       },
-      "systemNote": "Floor 4 is a vast desert. Empty and Sandy."
+      "systemNote": "Floor 4 is a vast desert."
+    },
+
+    {
+      "id": "5",
+      "number": 5,
+      "name": "Icy Caverns",
+      "tags": ["Level 30-40", "ICE MOBS", "Mob Skill Cap 80", "Boss Skill Cap 120"],
+      "info": [
+        "A snowy mountainous floor with dangerous ice routes and a dungeon leading to the boss."
+      ],
+      "activities": ["Mob Grinding", "Maze / Labyrinth", "Dungeon", "Boss Battle"],
+      "shops": ["Floor 5 Shop"],
+      "lore": [
+        "Snow falls constantly and the floor feels like it never warms.",
+        "The deeper you go, the more the ice feels alive."
+      ],
+      "mobs": [
+        {
+          "name": "Winter Wolf",
+          "level": "30",
+          "location": "Snowfields / Paths",
+          "drops": "Wolf Hide",
+          "exp": 105,
+          "col": 150,
+          "capSkill": 80,
+          "notes": "105xp | 150col"
+        },
+        {
+          "name": "Winter Wolf",
+          "level": "31",
+          "location": "Snowfields / Paths",
+          "drops": "Wolf Hide",
+          "exp": 107,
+          "col": 155,
+          "capSkill": 80,
+          "notes": "107xp | 155col"
+        },
+        {
+          "name": "Winter Wolf",
+          "level": "33",
+          "location": "Snowfields / Paths",
+          "drops": "Wolf Hide",
+          "exp": 112,
+          "col": 165,
+          "capSkill": 80,
+          "notes": "112xp | 165col"
+        },
+        {
+          "name": "Winter Wolf",
+          "level": "35",
+          "location": "Snowfields / Paths",
+          "drops": "Wolf Hide",
+          "exp": 117,
+          "col": 175,
+          "capSkill": 80,
+          "notes": "117xp | 175col"
+        },
+        {
+          "name": "Winter Wolf",
+          "level": "39",
+          "location": "Snowfields / Paths",
+          "drops": "Wolf Hide",
+          "exp": 127,
+          "col": 195,
+          "capSkill": 80,
+          "notes": "127xp | 195col"
+        },
+        {
+          "name": "Frost Chaurus",
+          "level": "33",
+          "location": "Near Cabin / Dungeon",
+          "drops": "Bourne Ore, Legendary Stalhrim Blade, Crystalized Edge",
+          "exp": 112,
+          "col": 165,
+          "capSkill": 80,
+          "notes": "112xp | 165col"
+        },
+        {
+          "name": "Frost Chaurus",
+          "level": "34",
+          "location": "Near Cabin / Dungeon",
+          "drops": "Bourne Ore, Legendary Stalhrim Blade, Crystalized Edge",
+          "exp": 115,
+          "col": 170,
+          "capSkill": 80,
+          "notes": "115xp | 170col"
+        },
+        {
+          "name": "Frost Chaurus",
+          "level": "36",
+          "location": "Near Cabin / Dungeon",
+          "drops": "Bourne Ore, Legendary Stalhrim Blade, Crystalized Edge",
+          "exp": 120,
+          "col": 180,
+          "capSkill": 80,
+          "notes": "120xp | 180col"
+        },
+        {
+          "name": "White Baby Wyrm",
+          "level": "36",
+          "location": "Dungeon / Boss Approach",
+          "drops": "Bourne Ore, Blade of Ice, Frostberge Skewer",
+          "exp": 120,
+          "col": 180,
+          "capSkill": 80,
+          "notes": "120xp | 180col"
+        },
+        {
+          "name": "White Baby Wyrm",
+          "level": "38",
+          "location": "Dungeon / Boss Approach",
+          "drops": "Bourne Ore, Blade of Ice, Frostberge Skewer",
+          "exp": 125,
+          "col": 190,
+          "capSkill": 80,
+          "notes": "125xp | 190col"
+        },
+        {
+          "name": "White Baby Wyrm",
+          "level": "39",
+          "location": "Dungeon / Boss Approach",
+          "drops": "Bourne Ore, Blade of Ice, Frostberge Skewer",
+          "exp": 127,
+          "col": 195,
+          "capSkill": 80,
+          "notes": "127xp | 195col"
+        }
+      ],
+      "bosses": [
+        {
+          "name": "X'rphan the White Wyrm",
+          "type": "Boss",
+          "level": "40",
+          "location": "Boss Room",
+          "drops": "Bourne Ore (0-2), Xrphans Feather, Auroras Cloak",
+          "exp": 7200,
+          "col": 960,
+          "capSkill": 120,
+          "notes": "7200xp | 960col"
+        }
+      ],
+      "quests": [
+        {
+          "name": "Wolves on the run",
+          "giver": "Concerned Villager",
+          "objective": "Kill 8 Winter Wolves, Find the Mountain Bridge",
+          "reward": "1000 EXP, 1600 Col",
+          "notes": "Q#27 • Interval: Hourly • Prerequisites: None"
+        },
+        {
+          "name": "Trapped in the Cabin",
+          "giver": "Worried Friends",
+          "objective": "Kill 10 Frost Chaurus, Kill 10 Winter Wolves, Find the Cabin NPC",
+          "reward": "2300 EXP, 3400 Col",
+          "notes": "Q#28 • Interval: 16 Hours • Prerequisites: None"
+        },
+        {
+          "name": "The Dragon Dilemma",
+          "giver": "Arctic Adventurer",
+          "objective": "Kill 20 White Baby Wyrms, Find the Dungeon Entrance",
+          "reward": "2500 EXP, 3800 Col",
+          "notes": "Q#29 • Interval: One-Time • Prerequisites: None"
+        },
+        {
+          "name": "The White Wyrm!",
+          "giver": "Dragon Hunter",
+          "objective": "Kill 10 White Baby Wyrms, Kill X'rphan the White Wyrm",
+          "reward": "4000 EXP, 3000 Col",
+          "notes": "Q#30 • Interval: One-Time • Prerequisites: None"
+        }
+      ],
+      "map": null,
+      "systemNote": "Ice floor with maze + wyrm boss."
+    },
+
+    {
+      "id": "6",
+      "number": 6,
+      "name": "Hellfire Wasteland",
+      "tags": ["Level 40-51", "FIRE MOBS", "Mob Skill Cap 100", "Boss Skill Cap 140"],
+      "info": [
+        "A hell-themed floor with lava hazards. Lava can instantly kill you.",
+        "Two major paths: one deeper into the floor, one into an open area."
+      ],
+      "activities": ["Mob Grinding", "Dungeon", "Boss Battle"],
+      "shops": ["Floor 6 Shop"],
+      "lore": [
+        "The air is heavy, the ground scorched, and mistakes melt fast."
+      ],
+      "mobs": [
+        {
+          "name": "Flame Boar",
+          "level": "40",
+          "location": "Wasteland",
+          "drops": "Boar Hide, Dark Samurai",
+          "exp": 140,
+          "col": 200,
+          "capSkill": 100,
+          "notes": "140xp | 200col"
+        },
+        {
+          "name": "Flame Boar",
+          "level": "41",
+          "location": "Wasteland",
+          "drops": "Boar Hide, Dark Samurai",
+          "exp": 142,
+          "col": 205,
+          "capSkill": 100,
+          "notes": "142xp | 205col"
+        },
+        {
+          "name": "Flame Boar",
+          "level": "44",
+          "location": "Wasteland",
+          "drops": "Boar Hide, Dark Samurai",
+          "exp": 150,
+          "col": 220,
+          "capSkill": 100,
+          "notes": "150xp | 220col"
+        },
+        {
+          "name": "Blood Wolf",
+          "level": "42",
+          "location": "Wasteland",
+          "drops": "Wolf Hide",
+          "exp": 145,
+          "col": 210,
+          "capSkill": 100,
+          "notes": "145xp | 210col"
+        },
+        {
+          "name": "Twin-Tailed Blood Wolf",
+          "level": "44",
+          "location": "Wasteland",
+          "drops": "Demonite, Wolf Hide, Molten Thief",
+          "exp": 150,
+          "col": 220,
+          "capSkill": 100,
+          "notes": "150xp | 220col"
+        },
+        {
+          "name": "Twin-Tailed Blood Wolf",
+          "level": "46",
+          "location": "Wasteland",
+          "drops": "Demonite, Wolf Hide, Molten Thief",
+          "exp": 155,
+          "col": 230,
+          "capSkill": 100,
+          "notes": "155xp | 230col"
+        },
+        {
+          "name": "Twin-Tailed Blood Wolf",
+          "level": "47",
+          "location": "Wasteland",
+          "drops": "Demonite, Wolf Hide, Molten Thief",
+          "exp": 157,
+          "col": 235,
+          "capSkill": 100,
+          "notes": "157xp | 235col"
+        },
+        {
+          "name": "Ember Spider",
+          "level": "46",
+          "location": "Wasteland / Caves",
+          "drops": "Demonite, Spider Potion, Infernal Cleaver",
+          "exp": 155,
+          "col": 230,
+          "capSkill": 100,
+          "notes": "155xp | 230col"
+        },
+        {
+          "name": "Ember Spider",
+          "level": "47",
+          "location": "Wasteland / Caves",
+          "drops": "Demonite, Spider Potion, Infernal Cleaver",
+          "exp": 157,
+          "col": 235,
+          "capSkill": 100,
+          "notes": "157xp | 235col"
+        },
+        {
+          "name": "Ember Spider",
+          "level": "49",
+          "location": "Wasteland / Caves",
+          "drops": "Demonite, Spider Potion, Infernal Cleaver",
+          "exp": 162,
+          "col": 245,
+          "capSkill": 100,
+          "notes": "162xp | 245col"
+        },
+        {
+          "name": "Bloodsilk Spider",
+          "level": "48",
+          "location": "Wasteland / Dungeon",
+          "drops": "Demonite, Spider Potion, Volcanic Blade, Molten Lance",
+          "exp": 160,
+          "col": 240,
+          "capSkill": 100,
+          "notes": "160xp | 240col"
+        },
+        {
+          "name": "Bloodsilk Spider",
+          "level": "49",
+          "location": "Wasteland / Dungeon",
+          "drops": "Demonite, Spider Potion, Volcanic Blade, Molten Lance",
+          "exp": 162,
+          "col": 245,
+          "capSkill": 100,
+          "notes": "162xp | 245col"
+        },
+        {
+          "name": "Bloodsilk Spider",
+          "level": "51",
+          "location": "Wasteland / Dungeon",
+          "drops": "Demonite, Spider Potion, Volcanic Blade, Molten Lance",
+          "exp": 177,
+          "col": 255,
+          "capSkill": 100,
+          "notes": "177xp | 255col"
+        }
+      ],
+      "bosses": [
+        {
+          "name": "Uakmaroth, the Demon Lord",
+          "type": "Boss",
+          "level": "50",
+          "location": "Boss Room",
+          "drops": "Demonite (0-2), Uakmaroths Horn, Yukkis Mourne",
+          "exp": 9000,
+          "col": 1200,
+          "capSkill": 140,
+          "notes": "9000xp | 1200col"
+        }
+      ],
+      "quests": [],
+      "map": null,
+      "systemNote": "Lava hazard floor. Don’t fall."
+    },
+
+    {
+      "id": "7",
+      "number": 7,
+      "name": "Luminara Grove",
+      "tags": ["Level 50-60", "FOREST MOBS", "Mob Skill Cap 120", "Boss Skill Cap 160"],
+      "info": [
+        "A mushroom-forest themed floor with branching routes.",
+        "Includes blacksmith access and multiple boss encounters."
+      ],
+      "activities": ["Mob Grinding", "Dungeon", "Boss Battle"],
+      "shops": ["Floor 7 Shop"],
+      "lore": [
+        "It feels alive — not in the comforting way."
+      ],
+      "mobs": [
+        {
+          "name": "Forest Wolf",
+          "level": "50",
+          "location": "Forest Paths",
+          "drops": "Wolf Hide",
+          "exp": 175,
+          "col": 250,
+          "capSkill": 120,
+          "notes": "175xp | 250col"
+        },
+        {
+          "name": "Magic Shroom",
+          "level": "53",
+          "location": "Forest",
+          "drops": "Angels Dust, Gran",
+          "exp": 182,
+          "col": 265,
+          "capSkill": 120,
+          "notes": "182xp | 265col"
+        },
+        {
+          "name": "Magic Shroom",
+          "level": "54",
+          "location": "Forest",
+          "drops": "Angels Dust, Gran",
+          "exp": 185,
+          "col": 270,
+          "capSkill": 120,
+          "notes": "185xp | 270col"
+        },
+        {
+          "name": "Chomper",
+          "level": "54",
+          "location": "Forest",
+          "drops": "Eternal Shard",
+          "exp": 185,
+          "col": 270,
+          "capSkill": 120,
+          "notes": "185xp | 270col"
+        },
+        {
+          "name": "Stone Golem",
+          "level": "55",
+          "location": "Rocky Areas",
+          "drops": "Mossy Stone, Shiek Greatsword",
+          "exp": 187,
+          "col": 275,
+          "capSkill": 120,
+          "notes": "187xp | 275col"
+        },
+        {
+          "name": "Spriggan",
+          "level": "56",
+          "location": "Forest",
+          "drops": "Angels Dust, Timberland Striker",
+          "exp": 190,
+          "col": 280,
+          "capSkill": 120,
+          "notes": "190xp | 280col"
+        },
+        {
+          "name": "Spriggan",
+          "level": "58",
+          "location": "Forest",
+          "drops": "Angels Dust, Timberland Striker",
+          "exp": 195,
+          "col": 290,
+          "capSkill": 120,
+          "notes": "195xp | 290col"
+        },
+        {
+          "name": "Spriggan",
+          "level": "59",
+          "location": "Forest",
+          "drops": "Angels Dust, Timberland Striker",
+          "exp": 197,
+          "col": 295,
+          "capSkill": 120,
+          "notes": "197xp | 295col"
+        },
+        {
+          "name": "Blue Ore Golem",
+          "level": "57",
+          "location": "Ore Golem Area",
+          "drops": "Iron Ore (0-2), Copper Ore (0-2), Bourne Ore (0-2), Mossy Stone (0-2)",
+          "exp": 192,
+          "col": 285,
+          "capSkill": 120,
+          "notes": "192xp | 285col"
+        },
+        {
+          "name": "Blue Ore Golem",
+          "level": "59",
+          "location": "Ore Golem Area",
+          "drops": "Iron Ore (0-2), Copper Ore (0-2), Bourne Ore (0-2), Mossy Stone (0-2)",
+          "exp": 197,
+          "col": 295,
+          "capSkill": 120,
+          "notes": "197xp | 295col"
+        },
+        {
+          "name": "Red Ore Golem",
+          "level": "59",
+          "location": "Ore Golem Area",
+          "drops": "Iron Ore (0-2), Copper Ore (0-2), Bourne Ore (0-2), Mossy Stone (0-2)",
+          "exp": 197,
+          "col": 295,
+          "capSkill": 120,
+          "notes": "197xp | 295col"
+        },
+        {
+          "name": "Red Ore Golem",
+          "level": "60",
+          "location": "Ore Golem Area",
+          "drops": "Iron Ore (0-2), Copper Ore (0-2), Bourne Ore (0-2), Mossy Stone (0-2)",
+          "exp": 210,
+          "col": 300,
+          "capSkill": 120,
+          "notes": "210xp | 300col"
+        }
+      ],
+      "bosses": [
+        {
+          "name": "Father Shroom",
+          "type": "Boss",
+          "level": "55",
+          "location": "Dungeon",
+          "drops": "Shiek Greatsword",
+          "exp": 9900,
+          "col": 1320,
+          "capSkill": 160,
+          "notes": "9900xp | 1320col"
+        },
+        {
+          "name": "Storm Atronach",
+          "type": "Boss",
+          "level": "60",
+          "location": "Boss Chamber",
+          "drops": "Angels Dust (0-2), Plasma Extract, Stone Armor, The Green Flame Sword",
+          "exp": 10800,
+          "col": 1440,
+          "capSkill": 160,
+          "notes": "10800xp | 1440col"
+        }
+      ],
+      "quests": [
+        {
+          "name": "Chomper Control",
+          "giver": "Quest NPC (Floor 7)",
+          "objective": "Kill Chompers (see quest list)",
+          "reward": "See quest list",
+          "notes": "Floor 7 quests exist (Q#34–Q#39) on List of Quests page."
+        }
+      ],
+      "map": null,
+      "systemNote": "Mushroom forest with multiple bosses."
+    },
+
+    {
+      "id": "8",
+      "number": 8,
+      "name": "Graves",
+      "tags": ["Level 60-70", "UNDEAD MOBS", "Mob Skill Cap 140", "Boss Skill Cap 180"],
+      "info": [
+        "A graveyard-themed floor with heavy undead farming near the dungeon entrance."
+      ],
+      "activities": ["Mob Grinding", "Dungeon", "Boss Battle"],
+      "shops": ["Floor 8 Shop"],
+      "lore": [
+        "Bones underfoot. Silence overhead. Something always moving just out of sight."
+      ],
+      "mobs": [
+        {
+          "name": "Worm",
+          "level": "60",
+          "location": "Graves",
+          "drops": "Ebony Ore, Tourmaline Edge",
+          "exp": 210,
+          "col": 300,
+          "capSkill": 140,
+          "notes": "210xp | 300col"
+        },
+        {
+          "name": "Worm",
+          "level": "61",
+          "location": "Graves",
+          "drops": "Ebony Ore, Tourmaline Edge",
+          "exp": 212,
+          "col": 305,
+          "capSkill": 140,
+          "notes": "212xp | 305col"
+        },
+        {
+          "name": "Lizard",
+          "level": "62",
+          "location": "Graves",
+          "drops": "Ebony Ore, Shadow Guardian",
+          "exp": 215,
+          "col": 310,
+          "capSkill": 140,
+          "notes": "215xp | 310col"
+        },
+        {
+          "name": "Lizard",
+          "level": "63",
+          "location": "Graves",
+          "drops": "Ebony Ore, Shadow Guardian",
+          "exp": 217,
+          "col": 315,
+          "capSkill": 140,
+          "notes": "217xp | 315col"
+        },
+        {
+          "name": "Skeleton",
+          "level": "64",
+          "location": "Dungeon Entrance Area",
+          "drops": "Bone Meal, Deaths Kiss",
+          "exp": 220,
+          "col": 320,
+          "capSkill": 140,
+          "notes": "220xp | 320col"
+        },
+        {
+          "name": "Skeleton",
+          "level": "65",
+          "location": "Dungeon Entrance Area",
+          "drops": "Bone Meal, Deaths Kiss",
+          "exp": 222,
+          "col": 325,
+          "capSkill": 140,
+          "notes": "222xp | 325col"
+        },
+        {
+          "name": "Skeleton",
+          "level": "67",
+          "location": "Dungeon Entrance Area",
+          "drops": "Bone Meal, Deaths Kiss",
+          "exp": 227,
+          "col": 335,
+          "capSkill": 140,
+          "notes": "227xp | 335col"
+        },
+        {
+          "name": "Shadow Walker",
+          "level": "68",
+          "location": "Graves / Dungeon",
+          "drops": "Bone Meal, Wretched Greatsword",
+          "exp": 230,
+          "col": 340,
+          "capSkill": 140,
+          "notes": "230xp | 340col"
+        },
+        {
+          "name": "Shadow Walker",
+          "level": "69",
+          "location": "Graves / Dungeon",
+          "drops": "Bone Meal, Wretched Greatsword",
+          "exp": 232,
+          "col": 345,
+          "capSkill": 140,
+          "notes": "232xp | 345col"
+        },
+        {
+          "name": "Shadow Walker",
+          "level": "70",
+          "location": "Graves / Dungeon",
+          "drops": "Bone Meal, Wretched Greatsword",
+          "exp": 245,
+          "col": 350,
+          "capSkill": 140,
+          "notes": "245xp | 350col"
+        }
+      ],
+      "bosses": [
+        {
+          "name": "Bonnz the Skeleton Lord",
+          "type": "Boss",
+          "level": "70",
+          "location": "Boss Room",
+          "drops": "Bone Meal (0-2), Ebony Ore (0-2), Petrified Skull, Stone Shield, Skull of the Forgotten",
+          "exp": 12600,
+          "col": 1680,
+          "capSkill": 180,
+          "notes": "12600xp | 1680col"
+        }
+      ],
+      "quests": [],
+      "map": null,
+      "systemNote": "Popular leveling floor near dungeon entrance."
+    },
+
+    {
+      "id": "9",
+      "number": 9,
+      "name": "Tropical Sea",
+      "tags": ["Level 70-80", "SEA MOBS", "Mob Skill Cap 160", "Mini Skill Cap 200"],
+      "info": [
+        "A large seaside-themed floor with a massive dungeon and a hidden shop."
+      ],
+      "activities": ["Mob Grinding", "Dungeon", "Boss Battle"],
+      "shops": ["Hidden Shop", "Misc Merchant (Stamina Crystals)"],
+      "lore": [
+        "It’s beautiful until you realize how much of it wants you dead."
+      ],
+      "mobs": [
+        {
+          "name": "Sea Turtle",
+          "level": "70",
+          "location": "Beach / Sea Routes",
+          "drops": "Coral, Aqua Buster",
+          "exp": 245,
+          "col": 350,
+          "capSkill": 160,
+          "notes": "245xp | 350col"
+        },
+        {
+          "name": "Giant Crab",
+          "level": "71",
+          "location": "Beach / Sea Routes",
+          "drops": "Coral, Aquatic Striker",
+          "exp": 247,
+          "col": 355,
+          "capSkill": 160,
+          "notes": "247xp | 355col"
+        },
+        {
+          "name": "Octopus",
+          "level": "74",
+          "location": "Sea",
+          "drops": "Sea Jewel",
+          "exp": 255,
+          "col": 370,
+          "capSkill": 160,
+          "notes": "255xp | 370col"
+        },
+        {
+          "name": "Jellyfish",
+          "level": "76",
+          "location": "Sea",
+          "drops": "Sea Jewel, Aqua Blade",
+          "exp": 260,
+          "col": 380,
+          "capSkill": 160,
+          "notes": "260xp | 380col"
+        },
+        {
+          "name": "Atlantian Guard",
+          "level": "77",
+          "location": "Dungeon",
+          "drops": "Scale, Aquatic Dagger",
+          "exp": 262,
+          "col": 385,
+          "capSkill": 160,
+          "notes": "262xp | 385col"
+        }
+      ],
+      "bosses": [
+        {
+          "name": "Guardian of the Gate",
+          "type": "Mini Boss",
+          "level": "75",
+          "location": "Dungeon Gate",
+          "drops": "Scale, Coral, Poseidons Trident",
+          "exp": 13500,
+          "col": 1800,
+          "capSkill": 200,
+          "notes": "13500xp | 1800col"
+        },
+        {
+          "name": "Karth'uk The Crystal Kraken",
+          "type": "Boss",
+          "level": "80",
+          "location": "Boss Room",
+          "drops": "Scale, Sea Jewel, Krakens Beak, Krakens Platemail, Krakens Skin",
+          "exp": 14400,
+          "col": 1920,
+          "capSkill": null,
+          "notes": "14400xp | 1920col"
+        }
+      ],
+      "quests": [],
+      "map": null,
+      "systemNote": "Hidden shop + ocean dungeon."
+    },
+
+    {
+      "id": "10",
+      "number": 10,
+      "name": "Sakura Serenity",
+      "tags": ["Level 80-90", "SAMURAI MOBS", "Mob Skill Cap 180", "Boss Skill Cap 220"],
+      "info": [
+        "A feudal Japan-inspired floor with a walled town and branching paths outside."
+      ],
+      "activities": ["Mob Grinding", "Boss Battle"],
+      "shops": ["Floor 10 Shop", "Item Merchant (Stamina Crystals)"],
+      "lore": [
+        "Quiet streets. Sharp steel. The calm here feels intentional."
+      ],
+      "mobs": [
+        {
+          "name": "Mantis",
+          "level": "80",
+          "location": "Fields / Paths",
+          "drops": "Cyber Rapier",
+          "exp": 280,
+          "col": 400,
+          "capSkill": 180,
+          "notes": "280xp | 400col"
+        },
+        {
+          "name": "Dead Samurai",
+          "level": "84",
+          "location": "Outside Town",
+          "drops": "Butterfly Rapier, Samurai Helmet",
+          "exp": 290,
+          "col": 420,
+          "capSkill": 180,
+          "notes": "290xp | 420col"
+        },
+        {
+          "name": "Dragon",
+          "level": "85",
+          "location": "Outside Town",
+          "drops": "Sai",
+          "exp": 292,
+          "col": 425,
+          "capSkill": 180,
+          "notes": "292xp | 425col"
+        },
+        {
+          "name": "Dragon",
+          "level": "88",
+          "location": "Outside Town",
+          "drops": "Sai",
+          "exp": 300,
+          "col": 440,
+          "capSkill": 180,
+          "notes": "300xp | 440col"
+        },
+        {
+          "name": "Oni",
+          "level": "86",
+          "location": "Overrun Village Route",
+          "drops": "Kamikaze Katana",
+          "exp": 295,
+          "col": 430,
+          "capSkill": 180,
+          "notes": "295xp | 430col"
+        },
+        {
+          "name": "Samurai",
+          "level": "89",
+          "location": "Outside Town",
+          "drops": "Butterfly Katana, Samurai Helmet",
+          "exp": 302,
+          "col": 445,
+          "capSkill": 180,
+          "notes": "302xp | 445col"
+        }
+      ],
+      "bosses": [
+        {
+          "name": "Hotoke The Enlightened",
+          "type": "Boss",
+          "level": "90",
+          "location": "Boss Room",
+          "drops": "Monks Sash, Yang Katana",
+          "exp": 16200,
+          "col": 2160,
+          "capSkill": 220,
+          "notes": "16200xp | 2160col"
+        }
+      ],
+      "quests": [],
+      "map": null,
+      "systemNote": "Samurai-themed floor with high-damage mobs."
     }
   ]
 }
