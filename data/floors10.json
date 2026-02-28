@@ -37,15 +37,7 @@
           "notes": "Hitting these will show you your attack damage and crit damage."
         }
       ],
-      "bosses": [
-        {
-          "name": "",
-          "level": "",
-          "location": "",
-          "drops": "",
-          "notes": ""
-        }
-      ],
+      "bosses": [],
       "quests": [
         {
           "name": "Tutorial",
@@ -352,20 +344,76 @@
       ],
       "mobs": [
         {
-          "name": "Swamp Serpent (Placeholder)",
-          "level": "27-30",
-          "location": "Marsh Pools",
-          "drops": "Venom Sac (Placeholder)",
-          "notes": "Placeholder mob entry for table testing."
+          "name": "Swamp Snake",
+          "level": "10",
+          "location": "Swamp Lands",
+          "drops": "Malachite Ore, Swamp Striker",
+          "notes": "35xp | 50col | 40 Skill cap"
+        },
+        {
+          "name": "Swamp Snake",
+          "level": "12",
+          "location": "Swamp Lands",
+          "drops": "Malachite Ore, Swamp Striker",
+          "notes": "40xp | 60col | 40 Skill cap"
+        },
+        {
+          "name": "Swamp Cobra",
+          "level": "11",
+          "location": "Swamp Lands",
+          "drops": "Malachite Ore, Moras Edge",
+          "notes": "37xp | 55col | 40 Skill cap"
+        },
+        {
+          "name": "Swamp Cobra",
+          "level": "12",
+          "location": "Swamp Lands",
+          "drops": "Malachite Ore, Moras Edge",
+          "notes": "40xp | 60col | 40 Skill cap"
+        },
+        {
+          "name": "Marshland Crocodile",
+          "level": "15",
+          "location": "Swamp Lands",
+          "drops": "Corundum Ore, Glade Striker",
+          "notes": "47xp | 75col | 40 Skill cap"
+        },
+        {
+          "name": "Marshland Crocodile",
+          "level": "18",
+          "location": "Swamp Lands",
+          "drops": "Corundum Ore, Glade Striker",
+          "notes": "55xp | 90col | 40 Skill cap"
+        },
+        {
+          "name": "Snail",
+          "level": "16",
+          "location": "Swamp Lands",
+          "drops": "Corundum Ore, Glade Blade",
+          "notes": "50xp | 80col | 40 Skill cap"
+        },
+        {
+          "name": "Snail",
+          "level": "18",
+          "location": "Swamp Lands",
+          "drops": "Corundum Ore, Glade Blade",
+          "notes": "55xp | 90col | 40 Skill cap"
+        },
+        {
+          "name": "Snail",
+          "level": "20",
+          "location": "Swamp Lands",
+          "drops": "Corundum Ore, Glade Blade",
+          "notes": "70xp | 100col | 40 Skill cap"
         }
       ],
       "bosses": [
         {
-          "name": "Slime Cavern Guardian (Placeholder)",
-          "level": "??",
-          "location": "Tower / Slime Caverns",
-          "drops": "Boss Loot (Placeholder)",
-          "notes": "Placeholder boss entry for table testing."
+          "name": "Lord Slug",
+          "level": "20",
+          "location": "Boss Room",
+          "drops": "Malachite Ore (0-2), Corundum Ore (0-2), Lord Slugs Slime, Legendary Malachite Blade",
+          "notes": "3600xp | 480col | 80 Skill cap"
         }
       ],
       "quests": [
@@ -469,20 +517,83 @@
       ],
       "mobs": [
         {
-          "name": "Sand Viper (Placeholder)",
-          "level": "45-48",
-          "location": "Dunes / Canyon Edge",
-          "drops": "Viper Fang (Placeholder)",
-          "notes": "Placeholder mob entry for table testing."
+          "name": "Sand Scorpion",
+          "level": "20",
+          "location": "Desert Land",
+          "drops": "Deserts Fury",
+          "notes": "70xp | 100col | 60 Skill cap"
+        },
+        {
+          "name": "Sand Scorpion",
+          "level": "21",
+          "location": "Desert Land",
+          "drops": "Deserts Fury",
+          "notes": "72xp | 105col | 60 Skill cap"
+        },
+        {
+          "name": "Sand Scorpion",
+          "level": "22",
+          "location": "Desert Land",
+          "drops": "Deserts Fury",
+          "notes": "75xp | 110col | 60 Skill cap"
+        },
+        {
+          "name": "Egyptian Cobra",
+          "level": "24",
+          "location": "Desert Land",
+          "drops": "Deserts Fury",
+          "notes": "80xp | 120col | 60 Skill cap"
+        },
+        {
+          "name": "Egyptian Cobra",
+          "level": "26",
+          "location": "Desert Land",
+          "drops": "Deserts Fury",
+          "notes": "85xp | 130col | 60 Skill cap"
+        },
+        {
+          "name": "Scorpion",
+          "level": "25",
+          "location": "Desert Land",
+          "drops": "Neko Slayer",
+          "notes": "82xp | 125col | 60 Skill cap"
+        },
+        {
+          "name": "Blood Scorpion",
+          "level": "27",
+          "location": "Desert Land",
+          "drops": "Lightning Edge",
+          "notes": "87xp | 135col | 60 Skill cap"
+        },
+        {
+          "name": "Blood Scorpion",
+          "level": "29",
+          "location": "Desert Land",
+          "drops": "Lightning Edge",
+          "notes": "92xp | 145col | 60 Skill cap"
+        },
+        {
+          "name": "Albino Scorpion",
+          "level": "28",
+          "location": "Desert Land",
+          "drops": "Desert Striker",
+          "notes": "90xp | 140col | 60 Skill cap"
+        },
+        {
+          "name": "Albino Scorpion",
+          "level": "30",
+          "location": "Desert Land",
+          "drops": "Desert Striker",
+          "notes": "105xp | 150col | 60 Skill cap"
         }
       ],
       "bosses": [
         {
-          "name": "Stallord (Placeholder)",
-          "level": "??",
-          "location": "Tower",
-          "drops": "Boss Loot (Placeholder)",
-          "notes": "Placeholder boss entry for table testing."
+          "name": "Stallord",
+          "level": "30",
+          "location": "Boss Room",
+          "drops": "Gold Ore (0-2), Stallords Eye, Pharaoh's Edge",
+          "notes": "5400xp | 720col | 100 Skill cap"
         }
       ],
       "quests": [
