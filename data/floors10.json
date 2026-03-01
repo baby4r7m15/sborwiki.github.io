@@ -969,7 +969,50 @@
           "notes": "Q#30 • Interval: One-Time • Prerequisites: None"
         }
       ],
-      "map": null,
+      "map": {
+        "image": "/images/floors/floor5map.png",
+        "alt": "Floor 5 map",
+        "callouts": [
+          {
+            "label": "Spawn",
+            "top": "72%",
+            "left": "78%",
+            "desc": "Cold air. Crunching snow. The floor welcomes you with silence.",
+            "system": "SYSTEM: Entry Point"
+          },
+          {
+            "label": "Cabin Area",
+            "top": "78%",
+            "left": "18%",
+            "desc": "A tiny pocket of warmth that feels suspiciously fragile.",
+            "system": "SYSTEM: Shelter Node"
+          },
+          {
+            "label": "Ice Maze",
+            "top": "42%",
+            "left": "68%",
+            "desc": "A winding maze of ice walls. Every wrong turn wastes warmth.",
+            "system": "SYSTEM: Labyrinth Zone",
+            "danger": "CAUTION"
+          },
+          {
+            "label": "Dungeon Entrance",
+            "top": "85%",
+            "left": "62%",
+            "desc": "The air gets sharper near the entrance—like the ice is watching.",
+            "system": "SYSTEM: Dungeon Access",
+            "danger": "WARNING"
+          },
+          {
+            "label": "Boss Room",
+            "top": "18%",
+            "left": "10%",
+            "desc": "The wyrm’s domain. The snow here feels… too still.",
+            "system": "SYSTEM: Boss Structure",
+            "danger": "WARNING"
+          }
+        ]
+      },
       "systemNote": "Ice floor with maze + wyrm boss."
     },
 
@@ -984,9 +1027,7 @@
       ],
       "activities": ["Mob Grinding", "Dungeon", "Boss Battle"],
       "shops": ["Floor 6 Shop"],
-      "lore": [
-        "The air is heavy, the ground scorched, and mistakes melt fast."
-      ],
+      "lore": ["The air is heavy, the ground scorched, and mistakes melt fast."],
       "mobs": [
         {
           "name": "Flame Boar",
@@ -1133,7 +1174,50 @@
         }
       ],
       "quests": [],
-      "map": null,
+      "map": {
+        "image": "/images/floors/floor6map.png",
+        "alt": "Floor 6 map",
+        "callouts": [
+          {
+            "label": "Spawn",
+            "top": "82%",
+            "left": "50%",
+            "desc": "Heat hits first. Then the smell of smoke. Then the panic.",
+            "system": "SYSTEM: Entry Point"
+          },
+          {
+            "label": "Safe Ridge",
+            "top": "64%",
+            "left": "18%",
+            "desc": "A narrow strip of ground that isn’t actively trying to kill you.",
+            "system": "SYSTEM: Stable Ground"
+          },
+          {
+            "label": "Lava Lake",
+            "top": "52%",
+            "left": "32%",
+            "desc": "One slip and you’re done. No warnings. No mercy.",
+            "system": "SYSTEM: Lethal Hazard",
+            "danger": "WARNING"
+          },
+          {
+            "label": "Maze / Ruins",
+            "top": "56%",
+            "left": "76%",
+            "desc": "Tight corridors over glowing cracks. Don’t get cornered.",
+            "system": "SYSTEM: Hostile Zone",
+            "danger": "CAUTION"
+          },
+          {
+            "label": "Boss Room",
+            "top": "18%",
+            "left": "10%",
+            "desc": "The demon lord’s throne area. The air is heavier here.",
+            "system": "SYSTEM: Boss Structure",
+            "danger": "WARNING"
+          }
+        ]
+      },
       "systemNote": "Lava hazard floor. Don’t fall."
     },
 
@@ -1148,9 +1232,7 @@
       ],
       "activities": ["Mob Grinding", "Dungeon", "Boss Battle"],
       "shops": ["Floor 7 Shop"],
-      "lore": [
-        "It feels alive — not in the comforting way."
-      ],
+      "lore": ["It feels alive — not in the comforting way."],
       "mobs": [
         {
           "name": "Forest Wolf",
@@ -1306,7 +1388,49 @@
           "notes": "Floor 7 quests exist (Q#34–Q#39) on List of Quests page."
         }
       ],
-      "map": null,
+      "map": {
+        "image": "/images/floors/floor7map.png",
+        "alt": "Floor 7 map",
+        "callouts": [
+          {
+            "label": "Spawn",
+            "top": "84%",
+            "left": "50%",
+            "desc": "Blue glow in the air. Mushrooms bigger than houses. Don’t trust the beauty.",
+            "system": "SYSTEM: Entry Point"
+          },
+          {
+            "label": "Blacksmith / Hub",
+            "top": "78%",
+            "left": "12%",
+            "desc": "A place to repair your gear and pretend everything is normal.",
+            "system": "SYSTEM: Service Node"
+          },
+          {
+            "label": "River Path",
+            "top": "62%",
+            "left": "52%",
+            "desc": "A winding route through glowing growth. Easy to get turned around.",
+            "system": "SYSTEM: Route Split"
+          },
+          {
+            "label": "Dungeon Entrance",
+            "top": "20%",
+            "left": "86%",
+            "desc": "The glow gets harsher near the entrance—like a warning light.",
+            "system": "SYSTEM: Dungeon Access",
+            "danger": "CAUTION"
+          },
+          {
+            "label": "Boss Area",
+            "top": "18%",
+            "left": "24%",
+            "desc": "Where the grove stops feeling alive and starts feeling hungry.",
+            "system": "SYSTEM: Boss Structure",
+            "danger": "WARNING"
+          }
+        ]
+      },
       "systemNote": "Mushroom forest with multiple bosses."
     },
 
@@ -1320,9 +1444,7 @@
       ],
       "activities": ["Mob Grinding", "Dungeon", "Boss Battle"],
       "shops": ["Floor 8 Shop"],
-      "lore": [
-        "Bones underfoot. Silence overhead. Something always moving just out of sight."
-      ],
+      "lore": ["Bones underfoot. Silence overhead. Something always moving just out of sight."],
       "mobs": [
         {
           "name": "Worm",
@@ -1439,7 +1561,43 @@
         }
       ],
       "quests": [],
-      "map": null,
+      "map": {
+        "image": "/images/floors/floor8map.png",
+        "alt": "Floor 8 map",
+        "callouts": [
+          {
+            "label": "Spawn",
+            "top": "78%",
+            "left": "14%",
+            "desc": "Gravestones and fog. The silence here feels staged.",
+            "system": "SYSTEM: Entry Point"
+          },
+          {
+            "label": "Undead Farm",
+            "top": "62%",
+            "left": "55%",
+            "desc": "The popular grind area. The dead respawn faster than comfort returns.",
+            "system": "SYSTEM: High Activity Zone",
+            "danger": "CAUTION"
+          },
+          {
+            "label": "Dungeon Entrance",
+            "top": "40%",
+            "left": "70%",
+            "desc": "A dark opening that swallows light and courage.",
+            "system": "SYSTEM: Dungeon Access",
+            "danger": "WARNING"
+          },
+          {
+            "label": "Boss Room",
+            "top": "18%",
+            "left": "88%",
+            "desc": "Where the skeleton lord waits. You can almost hear bones smiling.",
+            "system": "SYSTEM: Boss Structure",
+            "danger": "WARNING"
+          }
+        ]
+      },
       "systemNote": "Popular leveling floor near dungeon entrance."
     },
 
@@ -1453,9 +1611,7 @@
       ],
       "activities": ["Mob Grinding", "Dungeon", "Boss Battle"],
       "shops": ["Hidden Shop", "Misc Merchant (Stamina Crystals)"],
-      "lore": [
-        "It’s beautiful until you realize how much of it wants you dead."
-      ],
+      "lore": ["It’s beautiful until you realize how much of it wants you dead."],
       "mobs": [
         {
           "name": "Sea Turtle",
@@ -1533,7 +1689,57 @@
         }
       ],
       "quests": [],
-      "map": null,
+      "map": {
+        "image": "/images/floors/floor9map.png",
+        "alt": "Floor 9 map",
+        "callouts": [
+          {
+            "label": "Spawn",
+            "top": "70%",
+            "left": "14%",
+            "desc": "Salt air and bright water. The danger hides under the sparkle.",
+            "system": "SYSTEM: Entry Point"
+          },
+          {
+            "label": "Dock / Fort",
+            "top": "42%",
+            "left": "54%",
+            "desc": "Wooden platforms and watch posts. A staging point for sea runs.",
+            "system": "SYSTEM: Outpost Node"
+          },
+          {
+            "label": "Shipwreck",
+            "top": "56%",
+            "left": "56%",
+            "desc": "Broken hulls and sharp boards. Loot… and ambushes.",
+            "system": "SYSTEM: Salvage Zone",
+            "danger": "CAUTION"
+          },
+          {
+            "label": "Hidden Shop",
+            "top": "30%",
+            "left": "22%",
+            "desc": "A shop tucked away from main paths. If you know, you know.",
+            "system": "SYSTEM: Concealed Vendor"
+          },
+          {
+            "label": "Dungeon Entrance",
+            "top": "34%",
+            "left": "86%",
+            "desc": "The ocean goes dark near the entrance. That’s your warning.",
+            "system": "SYSTEM: Dungeon Access",
+            "danger": "WARNING"
+          },
+          {
+            "label": "Boss Room",
+            "top": "16%",
+            "left": "78%",
+            "desc": "The kraken’s domain. The water feels… wrong here.",
+            "system": "SYSTEM: Boss Structure",
+            "danger": "WARNING"
+          }
+        ]
+      },
       "systemNote": "Hidden shop + ocean dungeon."
     },
 
@@ -1547,9 +1753,7 @@
       ],
       "activities": ["Mob Grinding", "Boss Battle"],
       "shops": ["Floor 10 Shop", "Item Merchant (Stamina Crystals)"],
-      "lore": [
-        "Quiet streets. Sharp steel. The calm here feels intentional."
-      ],
+      "lore": ["Quiet streets. Sharp steel. The calm here feels intentional."],
       "mobs": [
         {
           "name": "Mantis",
@@ -1626,7 +1830,49 @@
         }
       ],
       "quests": [],
-      "map": null,
+      "map": {
+        "image": "/images/floors/floor10map.png",
+        "alt": "Floor 10 map",
+        "callouts": [
+          {
+            "label": "Spawn",
+            "top": "72%",
+            "left": "18%",
+            "desc": "Quiet lantern light and the sound of wind through gates.",
+            "system": "SYSTEM: Entry Point"
+          },
+          {
+            "label": "Walled Town",
+            "top": "62%",
+            "left": "42%",
+            "desc": "A calm center with shops and routes leading outward.",
+            "system": "SYSTEM: Settlement Node"
+          },
+          {
+            "label": "Training Grounds",
+            "top": "46%",
+            "left": "60%",
+            "desc": "Wide paths and open spaces—perfect for duels and ambushes.",
+            "system": "SYSTEM: Combat Zone",
+            "danger": "CAUTION"
+          },
+          {
+            "label": "Outer Routes",
+            "top": "34%",
+            "left": "22%",
+            "desc": "Branching paths where the samurai mobs roam.",
+            "system": "SYSTEM: Route Split"
+          },
+          {
+            "label": "Boss Room",
+            "top": "18%",
+            "left": "84%",
+            "desc": "The enlightened one waits. The calm here feels manufactured.",
+            "system": "SYSTEM: Boss Structure",
+            "danger": "WARNING"
+          }
+        ]
+      },
       "systemNote": "Samurai-themed floor with high-damage mobs."
     }
   ]
