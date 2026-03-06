@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>SBO:R Wiki – Guide</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="/css/floor-hud.css?v=1">
+<link rel="stylesheet" href="/css/toasts.css?v=1">
+
+<link rel="icon" href="/logo.png" type="image/png" />
+<link rel="apple-touch-icon" href="/logo.png" />
+
+<style>
+
+.guide-content{
+display:grid;
+gap:18px;
+}
+
+.guide-image{
+width:100%;
+border-radius:14px;
+border:1px solid rgba(255,255,255,.12);
+}
+
+.guide-caption{
+margin-top:8px;
+font-size:.9rem;
+opacity:.8;
+}
+
+.guide-table{
+width:100%;
+border-collapse:collapse;
+}
+
+.guide-table th,
+.guide-table td{
+padding:10px 12px;
+border-bottom:1px solid rgba(255,255,255,.1);
+}
+
+.guide-table th{
+text-transform:uppercase;
+font-size:.8rem;
+opacity:.9;
+}
+
+.guide-callout{
+padding:14px;
+border-radius:12px;
+border:1px solid rgba(255,255,255,.14);
+background:rgba(255,255,255,.04);
+}
+
+.guide-steps{
+padding-left:18px;
+display:grid;
+gap:8px;
+}
+
+.guide-list{
+padding-left:18px;
+display:grid;
+gap:6px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header class="hud-top">
+
+<div class="hud-left">
+<div class="hud-kicker">SWORD BLOX ONLINE: REBIRTH</div>
+<div class="hud-title" id="guideTitle">GUIDE</div>
+<div class="hud-subtitle" id="guideSubtitle">LOADING…</div>
+</div>
+
+<nav id="site-nav" class="hud-nav"></nav>
+
+<div class="hud-right">
+<div class="hud-chip">GUIDE</div>
+<div class="hud-chip hud-chip-soft">JSON</div>
+</div>
+
+</header>
+
+<main class="floor-grid">
+
+<!-- LEFT COLUMN -->
+
+<aside class="col-left">
+
+<section class="hud-panel">
+<div class="panel-head">
+<span>ABOUT THIS GUIDE</span>
+<span class="panel-chip">INFO</span>
+</div>
+
+<div class="hud-lore" id="guideIntro"></div>
+</section>
+
+<section class="hud-panel">
+<div class="panel-head">
+<span>QUICK LINKS</span>
+<span class="panel-chip">NAV</span>
+</div>
+
+<ul class="hud-list chevrons" id="guideLinks"></ul>
+</section>
+
+<section class="hud-panel">
+<div class="panel-head">
+<span>REPORT INFO</span>
+<span class="panel-chip">CONTACT</span>
+</div>
+
+<div class="hud-lore">
+<p>Report missing info to <strong>@babyartie</strong> on Discord.</p>
+</div>
+</section>
+
+</aside>
+
+<!-- RIGHT COLUMN -->
+
+<section class="col-right guide-content">
+
+<section class="hud-panel panel-map">
+
+<div class="panel-head">
+<span>SYSTEM DISPLAY</span>
+<span class="panel-chip">GUIDE</span>
+</div>
+
+<div class="map-frame">
+<div class="map-image-wrap">
+<img class="map-img" id="guideBanner" src="/Sborlogotext.png">
+<div class="map-overlay">
+<div class="scanline"></div>
+</div>
+</div>
+</div>
+
+<div class="hud-panel subpanel">
+<div class="panel-head slim">
+<span>SYSTEM RECORD</span>
+</div>
+
+<div class="hud-lore" id="guideHero"></div>
+</div>
+
+</section>
+
+<div id="guideSections"></div>
+
+</section>
+
+</main>
+
+<div id="sao-toast-stack"></div>
+
+<script src="/js/navbar.js?v=1"></script>
+<script src="/js/toasts.js?v=1"></script>
+<script src="/js/guide-page.js?v=1"></script>
+
+</body>
+</html>
