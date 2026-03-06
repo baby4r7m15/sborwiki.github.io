@@ -1,0 +1,78 @@
+{
+"title":"Beginner Guide",
+"subtitle":"START HERE",
+
+"bannerImage":"/images/floors/floor1map.png",
+
+"intro":[
+"This guide helps brand new players understand how to start SBO:R.",
+"Follow these steps to avoid common beginner mistakes."
+],
+
+"quickLinks":[
+{ "label":"Weapons Info", "href":"/information/weapons" },
+{ "label":"Floors 1-10", "href":"/information/floors-1-10" }
+],
+
+"sections":[
+
+{
+"type":"callout",
+"title":"SYSTEM NOTICE",
+"text":"Do not spend all your currency early."
+},
+
+{
+"type":"text",
+"title":"Getting Started",
+"paragraphs":[
+"Your first goal is understanding the town layout.",
+"Locate the shop, inn, and crafting stations before leaving town."
+]
+},
+
+{
+"type":"steps",
+"title":"First Steps",
+"items":[
+"Learn the town layout",
+"Choose a weapon you enjoy",
+"Fight weak enemies first",
+"Return to town often",
+"Upgrade gear slowly"
+]
+},
+
+{
+"type":"image",
+"title":"Town of Beginnings",
+"src":"/images/floors/floor1map.png",
+"alt":"Floor 1 map",
+"caption":"Most beginner services are located here."
+},
+
+{
+"type":"table",
+"title":"Early Priorities",
+"columns":["Priority","Why","Recommended"],
+"rows":[
+["Weapon Choice","Defines your combat style","Important"],
+["Defense","Helps survivability","Recommended"],
+["Potion Supply","Prevents deaths","Keep some"],
+["Rushing Floors","Can cause deaths","Avoid early"]
+]
+},
+
+{
+"type":"list",
+"title":"Common Beginner Mistakes",
+"items":[
+"Spending all money immediately",
+"Ignoring defense stats",
+"Rushing floors too fast",
+"Using weapons you dislike"
+]
+}
+
+]
+}
