@@ -2,32 +2,20 @@
 "title":"Beginner Guide",
 "subtitle":"START HERE",
 
-"bannerImage":"/images/floors/floor1map.png",
-
 "intro":[
 "This guide helps brand new players understand how to start SBO:R.",
 "Follow these steps to avoid common beginner mistakes."
 ],
 
-"quickLinks":[
-{ "label":"Weapons Info", "href":"/information/weapons" },
-{ "label":"Floors 1-10", "href":"/information/floors-1-10" }
-],
+"quickLinks":[],
 
 "sections":[
-
-{
-"type":"callout",
-"title":"SYSTEM NOTICE",
-"text":"Do not spend all your currency early."
-},
-
 {
 "type":"text",
 "title":"Getting Started",
 "paragraphs":[
-"Your first goal is understanding the town layout.",
-"Locate the shop, inn, and crafting stations before leaving town."
+"Your first goal is to choose your weapon type. Each has it's advantages and disadvantages. But One-Hand is easiest to start with.",
+"You can go from floor 1 to floor 2 as soon as you start. Most of what is on floor 1 is pretty useless till you start getting levels."
 ]
 },
 
@@ -35,20 +23,13 @@
 "type":"steps",
 "title":"First Steps",
 "items":[
-"Learn the town layout",
-"Choose a weapon you enjoy",
-"Fight weak enemies first",
-"Return to town often",
-"Upgrade gear slowly"
+"Travel to Floor 2: Swordsman Field",
+"Choose a weapon type you enjoy",
+"Fight weak enemies first (Level 1 Boars)",
+"Do the Quests on floor 2! They help with getting quick XP and give you COL.",
+"Join a guild so you can get help progressing.",
+"It is a good idea to use the 2 defense 1 strength stat strategy. Maxing defense will help you so much no matter what."
 ]
-},
-
-{
-"type":"image",
-"title":"Town of Beginnings",
-"src":"/images/floors/floor1map.png",
-"alt":"Floor 1 map",
-"caption":"Most beginner services are located here."
 },
 
 {
@@ -69,8 +50,7 @@
 "items":[
 "Spending all money immediately",
 "Ignoring defense stats",
-"Rushing floors too fast",
-"Using weapons you dislike"
+"Rushing floors too fast"
 ]
 }
 
